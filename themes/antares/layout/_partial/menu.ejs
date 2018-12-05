@@ -1,0 +1,8 @@
+<nav class="blog-nav">
+  <a class="site-title" href="<%- url_for(theme.menu[i]) %>"><%= config.title %></a>
+  <% for (var i in theme.menu){ %>
+  <a class="blog-nav__item" href="<%- url_for(theme.menu[i]) %>">
+    <%= i %></a
+  >
+  <% } %>
+</nav>

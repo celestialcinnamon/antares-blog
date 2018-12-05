@@ -1,0 +1,45 @@
+<div class="blog-post--full">
+    <!-- Title -->
+    <header class="blog-header">
+      <h2 class="blog-post-title">
+          <a href="<%- config.root %><%- item.path %>">
+              <%- item.title || item.link%>
+          </a>
+      </h2>
+    <!-- Date and Author -->
+    <p class="blog-post-meta">
+        <%= item.date.format(config.date_format) %>
+        <% if(item.author) { %>
+            by <%- item.author %>
+        <% } %>
+    </p>
+    </header>
+    <!-- Content -->
+    <%- item.content %>
+    <hr />
+    <!-- Tags and Categories links -->
+    <% if (item.tags && item.tags.length){ %>
+    <%
+        var tags = [];
+        item.tags.forEach(function(tag){
+            tags.push('<a class="tag" href="' + config.root + tag.path + '">#' + tag.name + '</a>');
+        });
+    %>
+    <div class="blog-tags-container">
+        <strong>Tags</strong>
+        <%- tags.join(' ') %>
+    </div>
+    <% } %>
+    <% if (item.categories && item.categories.length){ %>
+    <%
+        var categories = [];
+        item.categories.forEach(function(category){
+            categories.push('<a href="' + config.root + category.path + '">' + category.name + '</a>');
+        });
+    %>
+    <div class="blog-categories-container">
+        <strong>Filed under </strong>
+        <%- categories.join(' / ') %>
+    </div>
+    <% } %>
+</div>
