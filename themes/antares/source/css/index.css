@@ -118,6 +118,18 @@ hr {
   padding: 1rem;
 }
 
+.sidebar ul {
+  list-style-type: "🖛 ";
+}
+
+.sidebar a {
+  color: #acf;
+}
+
+.sidebar a:`hover {
+  color: #3af;
+}
+
 .sidebar--floating {
   position: sticky;
   top: 15rem;
