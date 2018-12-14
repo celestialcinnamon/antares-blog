@@ -44,11 +44,11 @@
     const categories = item.categories.data
     if(categories && categories.length > 0) { %>
     <%
-        const categories_html = categories.map(tag => `<a class="category" href="${config.root}${tag.path}">${tag.name}</a>`)
+        const categories_html = categories.map(tag => `<a style="padding: 0 0.75ch;" class="category" href="${config.root}${tag.path}">${tag.name}</a>`)
     %>
     <section class="flex" style="margin-top: 1rem;">
         <span style="padding-right: 1ch;">Filed under</span>
-        <%- categories_html.join('\n');  %>
+        <%- categories_html.join('|');  %>
     </section>
 <% } %>
     

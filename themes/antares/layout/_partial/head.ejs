@@ -2,6 +2,7 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title><%= page.title || config.title %></title>
   <%
     var description = config.description 
     if(is_post()) description = page.excerpt
@@ -11,8 +12,23 @@
     content="<%= description %>"
   />
   <meta name="author" content="<%= config.author %>" />
-  <link rel="icon" href="favicon/favicon.ico" />
-  <title><%= page.title || config.title %></title>
+  
+  <!-- Favicon and PWA theme -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/antares-blog/images/apple-touch-icon.png?v=qABxGEXnbd">
+  <link rel="icon" type="image/png" sizes="32x32" href="/antares-blog/images/favicon-32x32.png?v=qABxGEXnbd">
+  <link rel="icon" type="image/png" sizes="194x194" href="/antares-blog/images/favicon-194x194.png?v=qABxGEXnbd">
+  <link rel="icon" type="image/png" sizes="192x192" href="/antares-blog/images/android-chrome-192x192.png?v=qABxGEXnbd">
+  <link rel="icon" type="image/png" sizes="16x16" href="/antares-blog/images/favicon-16x16.png?v=qABxGEXnbd">
+  <link rel="manifest" href="/antares-blog/images/site.webmanifest?v=qABxGEXnbd">
+  <link rel="mask-icon" href="/antares-blog/images/safari-pinned-tab.svg?v=qABxGEXnbd" color="#ff5555">
+  <link rel="shortcut icon" href="/antares-blog/images/favicon.ico?v=qABxGEXnbd">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-TileImage" content="/antares-blog/images/mstile-144x144.png?v=qABxGEXnbd">
+  <meta name="msapplication-config" content="/antares-blog/images/browserconfig.xml?v=qABxGEXnbd">
+  <meta name="theme-color" content="#ffeedd">
+
+
+
   <!-- Bootstrap core CSS -->
   <%- css('css/normalize.css') %>
   <%- css('css/index.css') %>

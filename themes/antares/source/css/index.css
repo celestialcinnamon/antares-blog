@@ -236,10 +236,17 @@ a {
   margin:0;
 }
 
+.post--full ul li,
+.post--full ol li {
+  font-size: 1rem;
+}
+
+.post--full ul,
+.post--full ol,
 .post--full p {
   max-width: 70ch;
-  margin: auto;
-  margin-top: 1rem;
+  margin: 0.5rem auto;
+  /* margin-top: 1rem; */
 }
 
 .highlight {
@@ -330,7 +337,14 @@ hr {
   display: block;
 }
 
+.blog-tags-container {
+  margin-bottom: 1rem;
+}
+
 @media only screen and (min-width: 1024px) {
+  
+  .post--full ul li,
+  .post--full ol li,
   p {
     font-size: 1.15rem;
   }
