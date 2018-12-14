@@ -1,4 +1,12 @@
-<%- partial('_partial/header', {title: 'This page is under construction'}) %>
-<div class="blog-post--full">
-    <p>Sorry about that. In the meantime, you can browse other posts in this blog through the <a href="/<%= config.archive_dir %>">Antares archives</a>. Or like the <a href="https://facebook.com/antaresprogramming" target="_blank">Antares Facebook page</a>.</p>
-</div>
+<section class="section section--meta">
+    <% const posts = (page.posts.data) %>
+    <header class="section__heading">
+        <h1>Posts tagged <span class="tag">#<%- page.tag %></span></h1>
+    </header>
+
+    <div class="card-grid">
+        <% posts.forEach(item => { %>
+        <%- partial('_partial/article-excerpt', {item: item, is_featured: false}) %>
+        <% }) %>
+    </div>
+</section>

@@ -115,6 +115,11 @@ body {
   padding: 0.5rem;
 }
 
+.section--meta {
+  height: 100%;
+  width: 100%;
+}
+
 .post {
   padding: 0.5rem;
 }

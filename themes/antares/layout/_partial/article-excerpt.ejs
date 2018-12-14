@@ -1,4 +1,4 @@
-<div class="post <%- (!!is_featured)? 'post--featured':'' %>">
+<article class="post <%- (!!is_featured)? 'post--featured':'' %>">
     <!-- Title -->
     <h3 class="post__title">
         <a href="<%- config.root %><%- item.path %>">
@@ -36,10 +36,20 @@
             tags.push('<a class="tag" href="' + config.root + tag.path + '">#' + tag.name + '</a>');
         });
     %>
-    <div class="flex">
+    <section class="flex">
         <%- tags.join(' ') %>
-    </div>
+    </section>
     <% } %>
-
+<% 
+    const categories = item.categories.data
+    if(categories && categories.length > 0) { %>
+    <%
+        const categories_html = categories.map(tag => `<a class="category" href="${config.root}${tag.path}">${tag.name}</a>`)
+    %>
+    <section class="flex" style="margin-top: 1rem;">
+        <span style="padding-right: 1ch;">Filed under</span>
+        <%- categories_html.join('\n');  %>
+    </section>
+<% } %>
     
 </div>
