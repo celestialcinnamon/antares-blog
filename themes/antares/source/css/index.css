@@ -236,6 +236,18 @@ a {
   margin:0;
 }
 
+.post--full .img-wrapper {
+  max-width: 60ch;
+  margin: auto;
+  overflow: hidden;
+  overflow-x: auto;
+  width: auto;
+}
+
+.img-wrapper img {
+  max-height: 30ch;
+}
+
 .post--full ul li,
 .post--full ol li {
   font-size: 1rem;
