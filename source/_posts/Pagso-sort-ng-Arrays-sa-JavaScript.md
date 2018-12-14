@@ -3,6 +3,9 @@ title: Pagso-sort ng Arrays sa JavaScript
 date: 2018-12-14 21:52:53
 tags: [javascript,web]
 category: [Web,Tricks,JavaScript]
+author: 
+    name: Francis Rubio
+    image: images/francis-rubio.jpg
 ---
 
 Sa article na ito, tatalakayin natin kung paano mag-sort nga arrays using JavaScript.

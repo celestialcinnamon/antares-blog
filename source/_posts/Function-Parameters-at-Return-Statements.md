@@ -3,6 +3,9 @@ title: Function Parameters at Return Statements
 date: 2018-12-14 23:43:37
 tags: [javascript, web]
 categories: [JavaScript,Tricks,Web]
+author: 
+    name: Francis Rubio
+    image: images/francis-rubio.jpg
 ---
 Kung nahihirapan kayong maintindihan kung paano gumagana ang function parameters, kailangan nating balikan ang Math (kasi sa mga kakilala ko mas pamilyar kayo rito so ito ginamit kong example).
 
