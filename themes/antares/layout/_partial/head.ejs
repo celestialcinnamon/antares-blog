@@ -9,7 +9,7 @@
   %>
   <meta
     name="description"
-    content="<%= description %>"
+    content="<%- strip_html(description) %>"
   />
   <meta name="author" content="<%= config.author %>" />
   

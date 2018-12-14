@@ -12,7 +12,14 @@ Sa article na ito, tatalakayin natin kung paano mag-sort nga arrays using JavaSc
 Madali lang mag-sort ng array, mga bessywap. Let’s say na may array tayo ng mga pangalan:
 
 ```javascript
-let arrayOfNames = [    "Annalise Keating",    "Wesley Gibbins",    "Laurel Castillo",    "Michaela Pratt",    "Connor Walsh",    "Asher Millstone"]
+let arrayOfNames = [
+    "Annalise Keating",
+    "Wesley Gibbins",
+    "Laurel Castillo",
+    "Michaela Pratt",
+    "Connor Walsh",
+    "Asher Millstone"
+]
 ```
 
 Kapag gusto natin silang i-sort, gagamitin lang natin ang sort() function. By default, sino-sort nito ang mga laman ng array alphabetically (according sa kanilang Unicode code point)
