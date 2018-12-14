@@ -1,8 +1,30 @@
-<div class="blog-header">
-  <h1 class="blog-title">
-    <%- !!title? title : "Antares Programming" %>
-  </h1>
-  <!--<p class="blog-description">
-    
-  </p>-->
-</div>
+<section class="cover">
+  <header class="cover__header">
+    <%- image_tag('images/antares_logotype.svg', {alt: "Antares Logo", class:'cover__logo'}) %>
+    <h2 class="cover__title">Blog</h2>
+    <div class="expand"></div>
+    <a class="cover__link" href="https://facebook.com/antaresprogramming" target="_blank"><%- image_tag('images/facebook.svg', {alt: "Go to Facebook"}) %></a>
+  </header>
+</section>
+<nav class="nav">
+  <a class="nav-item" href="/antares-blog/" title="Home" aria-label="Go to home">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 34"><path d="M16 34V22h8v12h10V18h6L20 0 0 18h6v16z"/></svg>
+    <span class="nav-item--desktop">Home</span>
+  </a>
+  <a class="nav-item" href="/antares-blog/archives" title="Archives" aria-label="Go to post archives">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36"><path d="M35.09 4.45l-2.77-3.36A3.043 3.043 0 0 0 30 0H6c-.93 0-1.76.43-2.31 1.09L.92 4.45C.34 5.15 0 6.03 0 7v25c0 2.21 1.79 4 4 4h28c2.21 0 4-1.79 4-4V7c0-.97-.34-1.85-.91-2.55zM18 29L7 18h7v-4h8v4h7L18 29zM4.25 4l1.63-2h24l1.87 2H4.25z"/></svg>
+    <span class="nav-item--desktop">Archives</span>
+  </a>
+  <a href="#search" title="Search for something" class="nav-item search">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34.97999954223633 34.97999954223633"><path d="M25 22h-1.59l-.55-.55C24.82 19.18 26 16.23 26 13c0-7.18-5.82-13-13-13S0 5.82 0 13s5.82 13 13 13c3.23 0 6.18-1.18 8.45-3.13l.55.55V25l10 9.98L34.98 32 25 22zm-12 0a9 9 0 1 1 .001-18.001A9 9 0 0 1 13 22z"/></svg>
+    <span class="nav-item--desktop">Search</span>
+  </a>
+  <!--a class="nav-item" href="/antares-blog/archives" title="About" aria-label="Find out more about Antares">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><path d="M20 0C8.95 0 0 8.95 0 20s8.95 20 20 20 20-8.95 20-20S31.05 0 20 0zm2 30h-4V18h4v12zm0-16h-4v-4h4v4z"/></svg>
+    <span class="nav-item--desktop">About</span>
+  </a-->
+  <a class="nav-item" href="/antares-blog/infographics" title="Infographics" aria-label="See our infographic features">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36"><path d="M36 32V4c0-2.21-1.79-4-4-4H4C1.79 0 0 1.79 0 4v28c0 2.21 1.79 4 4 4h28c2.21 0 4-1.79 4-4zM11 21l5 6.01L23 18l9 12H4l7-9z"/></svg>
+    <span class="nav-item--desktop">Infographics</span>
+  </a>
+</nav>

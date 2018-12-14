@@ -1,6 +1,35 @@
-<%- partial('_partial/header', {title : 'Antares Programming' }) %>
+<div class="index">
+    <section class="section">
+        <header class="section__heading">
+            <h2>Featured Article</h2>
+        </header>
+        <% 
+            page.posts.each(function(item){ 
+                let articleIsFeatured = item.is_featured;
+                if(articleIsFeatured) {
+        %>
+            <%- partial('_partial/article-excerpt', {item: item, is_featured: articleIsFeatured}) %>
+        <% }}); %>
+        
+    </section>
+    
+    <section class="section">
+        <header class="section__heading">
+            <h2>Other Articles</h2>
+        </header>
+        <% 
+            console.log(page.posts);
+            page.posts.each(function(item){ 
+        %>
+            <%- partial('_partial/article-excerpt', {item: item, is_featured: false}) %>
+        <% }); %>
+        
+    </section>
+</div>
 
-<% page.posts.each(function(item){ %>
-    <%- partial('_partial/article-excerpt', {item: item}) %>
-<% }); %>
-<%- partial('_partial/pagination') %>
+<!--div class="posts-container">
+    < page.posts.each(function(item){ %>
+        <- partial('_partial/article-excerpt', {item: item}) %>
+    < }); %>
+</div>
+<%- partial('_partial/pagination') %>-->

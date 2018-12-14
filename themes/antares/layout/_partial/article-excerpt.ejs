@@ -1,17 +1,23 @@
-<div class="blog-post">
+<div class="post <%- (!!is_featured)? 'post--featured':'' %>">
     <!-- Title -->
-    <h1 class="blog-post-title">
+    <h3 class="post__title">
         <a href="<%- config.root %><%- item.path %>">
             <%- item.title %>
         </a>
-    </h1>
+    </h3>
     <!-- Date and Author -->
-    <p class="blog-post-meta">
-        <%= item.date.format(config.date_format) %>
-        <% if(item.author) { %>
-            by <%- item.author %>
-        <% } %>
-    </p>
+    <% 
+    if(item.author) { %>
+        <div class="flex">
+            <figure class="author">
+                <%- image_tag(item.author.image, {alt: item.author.name, class: 'author__image'}) %>
+                <figcaption class="author__meta">
+                    <cite class="author__name"><%= item.author.name %></cite>
+                    <time datetime="<%= new Date(item.date).toJSON() %>" class="article-date"><%= item.date.format(config.date_format) %></time>
+                </figcaption>
+            </figure>
+        </div>
+    <% } %>
     <!-- Content -->
     <%- item.excerpt || item.content %>
     <!-- Only display the Read More link if we are displaying an excerpt -->
@@ -30,22 +36,10 @@
             tags.push('<a class="tag" href="' + config.root + tag.path + '">#' + tag.name + '</a>');
         });
     %>
-    <div class="blog-tags-container">
-        <strong>Tags:</strong>
+    <div class="flex">
         <%- tags.join(' ') %>
     </div>
     <% } %>
 
-    <% if (item.categories && item.categories.length){ %>
-    <%
-        var categories = [];
-        item.categories.forEach(function(category){
-            categories.push('<a href="' + config.root + category.path + '">' + category.name + '</a>');
-        });
-    %>
-    <div class="blog-categories-container">
-        <strong>Filed under</strong>
-        <%- categories.join(' / ') %>
-    </div>
-    <% } %>
+    
 </div>

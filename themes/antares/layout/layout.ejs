@@ -1,18 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><% 
+  var language = page.lang
+  if(is_post() && page.language) language = page.language 
+%>
+<html lang="<%- language %>">
 <!-- Head tag -->
 <%- partial('_partial/head') %>
-
 <body>
-  <%- partial('_partial/menu') %>
-  <%- partial('_partial/sidebar') %>
-  <div class="app-body">
-  	<div class="expand">
-      <%- body %>
-    </div>
-  	<%- partial('_partial/footer') %>
-  	<%- partial('_partial/after-footer') %>
-  </div>
+<%- partial('_partial/header') %>
+
+<%- body %>
+<%- partial('_partial/sidebar') %>
+
+<%- partial('_partial/footer') %>
+
+<a href="#top" class="back-to-top"></a>
 </body>
 
 </html>

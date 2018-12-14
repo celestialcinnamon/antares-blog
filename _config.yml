@@ -5,16 +5,16 @@
 # # Site
 title: Antares Programming
 subtitle:
-description:
+description: A blog for Filipinos aspiring to be programmers.
 keywords: programming, filipino, Philippines, web, css, html, js
-author: Francis Rubio
-language:
+author: Francis Rubio <francoisoibur21@gmail.com>
+language: en
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://antaresprogramming.herokuapp.com/
-root: /public/
+url: https://celestialcinnamon.github.io/antares-blog
+root: /antares-blog/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 
@@ -35,7 +35,7 @@ titlecase: false # Transform title into titlecase
 external_link: true # Open external links in new tab
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true
 relative_link: false
 future: true
 highlight:
@@ -62,7 +62,7 @@ tag_map:
 ## Hexo uses Moment.js to parse and display date
 ## You can customize the date format as defined in
 ## http://momentjs.com/docs/#/displaying/format/
-date_format: YYYY-MM-DD
+date_format: MM-DD-YYYY
 time_format: HH:mm:ss
 
 # Pagination

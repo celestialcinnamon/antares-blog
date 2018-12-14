@@ -2,17 +2,24 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+  <%
+    var description = config.description 
+    if(is_post()) description = page.excerpt
+  %>
   <meta
     name="description"
-    content="A blog for Filipinos aspiring to be programmers."
+    content="<%= description %>"
   />
-  <meta name="author" content="Francis Rubio <francoisoibur21@gmail.com" />
+  <meta name="author" content="<%= config.author %>" />
   <link rel="icon" href="favicon/favicon.ico" />
-  <title><%= page.title %></title>
+  <title><%= page.title || config.title %></title>
   <!-- Bootstrap core CSS -->
   <%- css('css/normalize.css') %>
   <%- css('css/index.css') %>
+  <link
+    href="https://fonts.googleapis.com/css?family=Montserrat:400,700,900"
+    rel="stylesheet"
+  />
   <!--
     HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
   -->
