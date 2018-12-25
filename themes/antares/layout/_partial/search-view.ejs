@@ -1,0 +1,23 @@
+<section class="search-view noscript">
+    <article class="search-box">
+        <input placeholder=" " type="search" class="search__input" id="search-input"/>
+        <label for="search-input" class="search__label">Search...</label>
+    </article>
+    <p class="search-results">
+        Search isn't supported for free users yet. Lol. Kidding aside, I am very sorry for this bummer. I'm working on it, and search will be up soon.<br style="display: initial;">        P.S. everyone's a free user here because I love you. xoxo.
+    </p>
+</section>
+<script>
+
+    // for accessibility and usability purposes
+    // will remove the .noscript class if JavaScript is enabled
+    document.querySelector('.noscript')
+        .classList.remove('noscript');
+
+    const closeButton = document.querySelectorAll('.js-close-search');
+    
+    closeButton.forEach(button => button.addEventListener('click', e => {
+        document.querySelector('.search-view')
+            .classList.toggle('open');
+    }))
+</script>

@@ -8,7 +8,7 @@
                 let articleIsFeatured = item.is_featured;
                 if(articleIsFeatured) {
         %>
-            <%- partial('_partial/article-excerpt', {item: item, is_featured: articleIsFeatured}) %>
+            <%- partial('_partial/article-featured', {item: item, is_featured: articleIsFeatured}) %>
         <% }}); %>
         
     </section>
@@ -18,7 +18,6 @@
             <h2>Other Articles</h2>
         </header>
         <% 
-            console.log(page.posts);
             page.posts.each(function(item){ 
         %>
             <%- partial('_partial/article-excerpt', {item: item, is_featured: false}) %>

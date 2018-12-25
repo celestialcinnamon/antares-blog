@@ -1,7 +1,25 @@
 <article class="post <%- (!!is_featured)? 'post--featured':'' %>">
     <!-- Title -->
-    <h3 class="post__title">
+    <% 
+        const topMin = 0;
+        const topMax = 50;
+        const bottomMin = 51;
+        const bottomMax = 100;
+
+        const yPosition_1 = Math.floor(Math.random() * (topMax - topMin + 1)) + topMin;
+        const yPosition_4 = Math.floor(Math.random() * (bottomMax - bottomMin + 1)) + bottomMin;
+
+        const yPosition_2 = Math.floor(Math.random() * (topMax - topMin + 1)) + topMin;
+        const yPosition_3 = Math.floor(Math.random() * (bottomMax - bottomMin + 1)) + bottomMin;
+    %>
+    <h3 class="post__title post__title--with-bg">
         <a href="<%- config.root %><%- item.path %>">
+            <span class="background-decoration" style="clip-path: polygon(
+                0 <%- yPosition_1 %>%,
+                100% <%- yPosition_2 %>%,
+                100% <%- yPosition_3 %>%,
+                0 <%- yPosition_4 %>%)
+            "></span>
             <%- item.title %>
         </a>
     </h3>
@@ -19,15 +37,9 @@
         </div>
     <% } %>
     <!-- Content -->
-    <%- item.excerpt || item.content %>
-    <!-- Only display the Read More link if we are displaying an excerpt -->
-    <% if(item.excerpt) { %>
-        <p>
-            <a href="<%- config.root %><%- item.path %>">
-                <%= theme.excerpt_link %>
-            </a>
-        </p>
-    <% } %>
+    <section class="post__excerpt">
+        <%- item.excerpt || item.content %>
+    </section>
     
 <% if (item.tags && item.tags.length){ %>
     <%

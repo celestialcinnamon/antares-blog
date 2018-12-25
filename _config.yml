@@ -5,8 +5,8 @@
 # # Site
 title: Antares Programming
 subtitle:
-description: A blog for Filipinos aspiring to be programmers.
-keywords: programming, filipino, Philippines, web, css, html, js
+description: Current trends nad best practices for Filipino developers.
+keywords: programming, Filipino, Tagalog, Philippines, web, css, html, js
 author: Francis Rubio <francoisoibur21@gmail.com>
 language: en
 timezone:
@@ -26,7 +26,7 @@ archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
-skip_render:
+skip_render: embeds/**/*
 
 # Writing
 new_post_name: :title.md # File name of new posts

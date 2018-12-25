@@ -2,7 +2,7 @@
 title: Pagso-sort ng Arrays sa JavaScript
 date: 2018-12-14 21:52:53
 tags: [javascript,web]
-category: [Web,Tricks,JavaScript]
+category: JavaScript
 author: 
     name: Francis Rubio
     image: images/francis-rubio.jpg
@@ -28,7 +28,8 @@ let arrayOfNames = [
 Kapag gusto natin silang i-sort, gagamitin lang natin ang sort() function. By default, sino-sort nito ang mga laman ng array alphabetically (according sa kanilang Unicode code point)
 
 ```javascript
-arrayOfNames.sort()console.log(arrayOfNames.join(', '))
+arrayOfNames.sort()
+console.log(arrayOfNames.join(', '))
 // OUTPUTAnnalise Keating, Asher Millstone, Connor Walsh, Laurel Castillo, Michaela Pratt, Wesley Gibbins
 ```
 
@@ -63,7 +64,8 @@ Kaya sa function na ginawa natin, kapag mas matanda si a kaysa kay b (a.age > b.
 Ang magiging output ng program na ito ay ganito:
 
 ```javascript
-arrayofNames.sort(compareAges)console.log(arrayOfNames)
+arrayofNames.sort(compareAges)
+console.log(arrayOfNames)
 // Output[...]0: Object { name: "Annalise Keating", age: 50 },1: Object { name: "Michaela Pratt", age: 27 },2: Object { name: "Laurel Castillo", age: 26 },3: Object { name: "Wesley Gibbins", age: 25},4: Object { name: "Asher Millstone", age: 24},5: Object { name: "Connor Walsh", age: 23}
 ```
 

@@ -3,11 +3,10 @@ title: Array Filters
 date: 2018-12-06 06:46:53
 language: tl
 tags: [web, javascript]
-category: tricks
+category: JavaScript
 author: 
     name: Francis Rubio
     image: images/francis-rubio.jpg
-is_featured: true
 ---
 
 Nang ilabas ang ECMAScript 6 noong 2015, dumami ang features ng JavaScript. Isa sa mga nakatanggap ng maraming improvements ang mga array. Sa artikulong ito, pag-usapan natin ang isa sa mga pangmalakasang functions ng JS Arrays&mdash;ang `Array.prototype.filter()`

@@ -2,7 +2,7 @@
 title: Function Parameters at Return Statements
 date: 2018-12-14 23:43:37
 tags: [javascript, web]
-categories: [JavaScript,Tricks,Web]
+categories: JavaScript
 author: 
     name: Francis Rubio
     image: images/francis-rubio.jpg
@@ -69,4 +69,7 @@ Ganiyan din mangyayari sa mga function na walang return statements. `undefined` 
 
 ## Conclusion
 
-May dahilan kung bakit marami ang nananakot sa atin before na maraming math sa Computer Science at Information Technology (at marami naman talaga), but that is because isa tayong branch ng engineering (na recently ko lang din napagtanto). And isa ‘tong example ng math; galing talaga sa math ang mga functions ng programming. Wala tayong magagawa diyan. Pero since nag-algebra, trigo, at dalawa (punyeta), dalawang calculus ang marami sa atin, gamitin na rin natin iyong mga iyon sa advantage natin para ‘di masayang mga luha natin. Iyan, happy coding. Iyak habang nakangiti, I mean.
+May dahilan kung bakit marami ang nananakot sa atin before na maraming math sa Computer Science at Information Technology (at marami naman talaga), but that is because isa tayong branch ng engineering (na recently ko lang din napagtanto). And isa ‘tong example ng math; galing talaga sa math ang mga functions ng programming. Wala tayong magagawa diyan. Pero since nag-algebra, trigo, at dalawa ($&%#^$@), dalawang calculus ang marami sa atin, gamitin na rin natin iyong mga iyon sa advantage natin para ‘di masayang mga luha natin. Iyan, happy coding. Iyak habang nakangiti, I mean.
+
+---
+<i>Mula sa Facebook Notes ni <a href="https://facebook.com/gregantares"><cite>Johannes Gregory Antares</cite></a>.</i>

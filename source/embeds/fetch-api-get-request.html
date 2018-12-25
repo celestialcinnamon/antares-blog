@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fetch API Example: GET Requests</title>
+</head>
+<body>
+    <button onclick="sendGetRequest()">Send GET Request</button>
+    <table>
+        <thead>
+            <tr>
+                <td>First Name</td>
+                <td>Last Name</td>
+                <td>Email</td>
+            </tr>
+        </thead>
+        <tbody id="table-body"></tbody>
+    </table>
+
+    <script>
+    const serverURL = 'http://jsonplaceholder.typicode.com/users';
+    function sendGetRequest() {
+        const request = fetch( serverURL );
+
+        const jsonPromise = request.then( function ( response ) {
+            return response.json();
+        } )
+
+        jsonPromise.then( function ( jsonObject ) {
+            const people = jsonObject;
+
+            const htmlStrings = jsonObject.map( person => jsonToHtmlString( person ) );
+
+            document.getElementById( "table-body" )
+                .innerHTML = htmlStrings.join( '' );
+        } );
+    }
+
+    function jsonToHtmlString( jsonObject ) {
+        return `
+            <tr>
+                <td>${jsonObject.first_name}</td>
+                <td>${jsonObject.last_name}</td>
+                <td>${jsonObject.email}</td>
+            </tr>
+            `
+    }
+    </script>
+</body>
+</html>

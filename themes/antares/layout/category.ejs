@@ -6,7 +6,7 @@
 
     <div class="card-grid">
         <% posts.forEach(item => { %>
-        <%- partial('_partial/article-excerpt', {item: item, is_featured: false}) %>
+            <%- partial('_partial/article-excerpt', {item: item, is_featured: false}) %>
         <% }) %>
     </div>
 </section>

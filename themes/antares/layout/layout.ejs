@@ -6,11 +6,20 @@
 <!-- Head tag -->
 <%- partial('_partial/head') %>
 <body>
+<noscript tabindex="0">
+  <article lang="en" class="no-script">
+    <header class="no-script__heading">
+      <h3>I see that you stunned the hacker</h3>
+    </header>
+    <div class="no-script__content">
+      <p>Antares respects your privacy and your personal choices; we are ok with that. This is just to let you know that things here might not work very well with JavaScript disabled. You will still be able to read posts, but interactive elements (such as the upcoming search function) may not work.</p>
+    </div>
+  </article>
+</noscript>
 <%- partial('_partial/header') %>
 
 <%- body %>
 <%- partial('_partial/sidebar') %>
-
 <%- partial('_partial/footer') %>
 
 <a href="#top" class="back-to-top"></a>
