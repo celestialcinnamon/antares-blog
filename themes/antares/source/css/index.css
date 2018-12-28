@@ -63,6 +63,10 @@ h4, h5, h6 {
   clear: both;
 }
 
+pre *, code {
+  font-family: 'Roboto Mono', monospace !important;
+}
+
 pre {
   font-size: 1rem;
 }
