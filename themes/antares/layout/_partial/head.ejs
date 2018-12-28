@@ -27,6 +27,27 @@
   <meta name="msapplication-config" content="/antares-blog/images/browserconfig.xml?v=alQq8wbjvL">
   <meta name="theme-color" content="#ffffdd">
 
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" value="<%- strip_html(description) %>">
+
+  <%
+    var postCoverPath = config.root + 'images/Website Cover v3.png';
+    var url = page.path? config.root + page.path : config.root;
+
+    if(is_post()) {
+      if(page.is_featured) {
+        postCoverPath = config.root + page.path + page.cover_image
+      }
+    }
+  %>
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="<%= page.title || config.title %>" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://celestialcinnamon.github.io<%- url %>" />
+  <meta property="og:image" content="http://celestialcinnmaon.github.io/<%- postCoverPath %>" />
+  <meta property="og:description" content="<%- strip_html(description) %>" /> 
+
   <!-- Bootstrap core CSS -->
   <%- css('css/normalize.css') %>
   <%- css('css/index.css') %>
