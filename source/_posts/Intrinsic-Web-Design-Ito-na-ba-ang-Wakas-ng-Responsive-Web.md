@@ -1,9 +1,9 @@
 ---
 title: 'Intrinsic Web Design: Ito na ba ang Wakas ng Responsive Web?'
+lang: tl
 date: 2018-12-23 20:25:15
 tags: [css, web, intrinsic web design]
 categories: CSS
-language: tl
 author: 
     name: Francis Rubio
     image: images/francis-rubio.jpg
@@ -128,7 +128,7 @@ Maaring imbento ko lang ang terminong <i>CSS Epoch</i>, pero marami ang sasang-a
 Dito sa era na ito, nagkaroon ng dalawang magkalabang opinyon sa Web design. May mga nagsasabi na dapat nating gawing fixed-width ang mga layout, gaya sa mga printed materials. Dahil kahit na kakaunti lang ang iba't ibang screen sizes noon, hindi pa rin natin kayang tiyakin kung ano'ng size ng screen ng mga users. Kaya dapat nating gawing naka-fixed ang laki ng layout.
 
 <figure id="fig-62.5674" class="img-wrapper img-wrapper--illustration float-left float--wider">
-    <video controls src="/antares-blog/2018/12/23/Intrinsic-Web-Design:-Ito-na-ba-ang-Wakas-ng-Responsive-Web/fluid-layout.mp4"></video>
+    <video controls src="/antares-blog/tl/Intrinsic-Web-Design-Ito-na-ba-ang-Wakas-ng-Responsive-Web/fluid-layout.mp4"></video>
     <figcaption>
         **Figure 62.5674**: Isang halimbawa ng fluid layout.
     </figcaption>
@@ -138,7 +138,7 @@ May mga nagsasabi naman na "hindi, dapat nag-aadapt sa size ng screen ang layout
 
 
 <figure id="fig-62.5674" class="img-wrapper img-wrapper--illustration float-right float--wider">
-    <video controls src="/antares-blog/2018/12/23/Intrinsic-Web-Design:-Ito-na-ba-ang-Wakas-ng-Responsive-Web/fixed-layout.mp4"></video>
+    <video controls src="/antares-blog/tl/Intrinsic-Web-Design-Ito-na-ba-ang-Wakas-ng-Responsive-Web/fixed-layout.mp4"></video>
     <figcaption>
         **Figure 62.5674**: Isang halimbawa ng fixed layout.
     </figcaption>
@@ -164,7 +164,7 @@ Sa panahong ito rin halos nawala ang "art direction" sa Web. Dahil karamihan ng 
 Hindi rin siguro ito matunog sa mga kakilala ko, pero mga ilang taon pagkatapos sumikat ang Responsive Web Design, lumabas ang Adaptive Web Design. Hindi nito pinalitan ang RWD; sa halip, dinagdagan nito ang RWD ng maraming kakayahan. Sa RWD, lahat ng transformations sa layout at adjustments ay nangyayari sa browser, gamit ang CSS, at kung minsan, JavaScript. Pero nang dumating sa eksena ang Adaptive Web Design, sumama ang server sa pagbibigay ng magadang experience sa mga user.
 
 <figure id="fig-62.5674" class="img-wrapper img-wrapper--illustration float-right float--wider">
-    <video controls src="/antares-blog/2018/12/23/Intrinsic-Web-Design:-Ito-na-ba-ang-Wakas-ng-Responsive-Web/responsive-layout.mp4"></video>
+    <video controls src="/antares-blog/tl/Intrinsic-Web-Design-Ito-na-ba-ang-Wakas-ng-Responsive-Web/responsive-layout.mp4"></video>
     <figcaption>
         **Figure 62.5674**: Isang halimbawa ng isang responsive na layout.
     </figcaption>

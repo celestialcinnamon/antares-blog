@@ -3,6 +3,7 @@
 		<h2><a href="<%- config.root %><%- item.path %>"><%- item.title %></a></h2>
 	</header>
 	<figure class="post__cover">
+        <% console.log(item.path) %>
 		<img style="background-image: <%-item.cover_gradient %>" src="<%- config.root %><%- item.path %><%- item.cover_image %>" alt="">
 	</figure>
 	<section class="post__content">

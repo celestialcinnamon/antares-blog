@@ -1,5 +1,6 @@
 ---
 title: Array Filters
+lang: tl
 date: 2018-12-06 06:46:53
 language: tl
 tags: [web, javascript]

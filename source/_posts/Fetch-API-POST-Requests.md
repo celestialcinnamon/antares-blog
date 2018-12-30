@@ -1,5 +1,6 @@
 ---
 title: 'Fetch API: POST Requests'
+lang: tl
 date: 2018-12-30 12:10:52
 tags: [javascript,web,fetch,ajax]
 category: JavaScript

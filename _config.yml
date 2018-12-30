@@ -8,14 +8,14 @@ subtitle:
 description: Current trends nad best practices for Filipino developers.
 keywords: programming, Filipino, Tagalog, Philippines, web, css, html, js
 author: Francis Rubio <francoisoibur21@gmail.com>
-language: en
+language: tl
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: https://celestialcinnamon.github.io/antares-blog
 root: /antares-blog/
-permalink: :year/:month/:day/:title/
+permalink: :lang/:title/
 permalink_defaults:
 
 # Directory

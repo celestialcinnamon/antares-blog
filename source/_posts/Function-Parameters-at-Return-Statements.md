@@ -1,5 +1,6 @@
 ---
 title: Function Parameters at Return Statements
+lang: tl
 date: 2018-12-14 23:43:37
 tags: [javascript, web]
 categories: JavaScript
