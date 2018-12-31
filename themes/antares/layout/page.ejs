@@ -1,3 +1,10 @@
 <div class="page">
-<%- page.content %>
+    <h1 class="post__title">
+        <a href="<%- config.root %><%- page.path %>">
+            <%- page.title || page.link %>
+        </a>
+    </h1>
+    <section class="post post--full">
+        <%- page.content %>
+    </section>
 </div>
