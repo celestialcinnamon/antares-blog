@@ -56,6 +56,10 @@ body {
   box-shadow: 0 0 0 5px var(--primary);
 }
 
+img {
+  pointer-events: none; /* so they can't right-click > Save as... */
+}
+
 details summary {
   cursor: pointer;
 }
@@ -351,6 +355,9 @@ blockquote {
   opacity: 0.35;
 }
 
+.post-main {
+  display: contents;
+}
 
 .tag {
   padding: 0.5ch 1ch;
