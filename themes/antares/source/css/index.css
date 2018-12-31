@@ -52,6 +52,17 @@ body {
 
 :focus {
   outline: none;
+  box-shadow: 0 0 0 5px #fd0;
+  box-shadow: 0 0 0 5px var(--primary);
+}
+
+details summary {
+  cursor: pointer;
+}
+
+details summary:hover,
+details summary:focus {
+  color: var(--text--dark);
 }
 
 strong {
@@ -78,6 +89,15 @@ code {
 
 pre {
   font-size: 1rem;
+}
+
+a {
+  color: #35f;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
 }
 
 a:-moz-focusring {
@@ -324,7 +344,13 @@ blockquote {
 
 .author__name {
   font-style: normal;
+  font-weight: bolder;
 }
+
+.article-date {
+  opacity: 0.35;
+}
+
 
 .tag {
   padding: 0.5ch 1ch;
@@ -352,6 +378,10 @@ blockquote {
   background-color: var(--footer-bg);
   color: var(--body-bg);
   padding: 1rem;
+
+  --text: #ddd;
+  --text--dark: #fff;
+  --text--darker: #eee;
 }
 
 .footer p {
@@ -360,11 +390,6 @@ blockquote {
 
 .footer a {
   color: var(--primary);
-}
-
-a {
-  color: var(--link-color);
-  text-decoration: none;
 }
 
 a[target=_blank]::after {
@@ -783,16 +808,19 @@ noscript:focus {
   font-size: 2rem;
   font-weight: bold;
   padding: 10px;
+  transition: transform 300ms, opacity 300ms;
+  cursor: text;
 }
 
 .search__input:not(:placeholder-shown) + .search__label {
   opacity: 1 !important;
   transform: scale(0.5) translateX(-50%) translateY(-50%);
-  transition: transform 300ms;
+  transition: transform 300ms, opacity 300ms;
 }
 
 .search__input:focus + .search__label {
   opacity: 0.25;
+  transition: transform 300ms, opacity 300ms;
 }
 
 .post--featured {
