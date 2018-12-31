@@ -81,3 +81,8 @@ deploy:
   type: git
   repo: https://github.com/celestialcinnamon/antares-blog.git
   branch: master
+
+search:
+  path: search.json
+  field: all
+  content: true

@@ -3,7 +3,7 @@ title: 'Fetch API: GET Requests'
 date: 2018-12-16 00:32:56
 tags: [javascript,web,fetch,ajax]
 category: JavaScript
-language: tl
+lang: tl
 author: 
     name: Francis Rubio
     image: images/francis-rubio.jpg
