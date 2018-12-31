@@ -1,21 +1,12 @@
 <aside lang="en" class="sidebar">
-  <div class="sidebar-wrapper" id="search">
-    <%- partial('_partial/search-view') %>
-  </div>
-  <div class="sidebar-wrapper">
-    <h4 class="sidebar__title">See me outside</h4>
-    <ul>
-      <li><a href="https://facebook.com/antaresprogramming" target="_blank">Antares on Facebook</a></li>
-      <li><a href="https://github.com/celestialcinnamon/antares-blog" target="_blank">Antares on Github</a></li>
-    </ul>
   
-    <ul>
-      <li><a href="https://facebook.com/dorkas.rubio" target="_blank">See me on Facebook</a></li>
-      <li><a href="#!" onclick="alert('I told you to not do that')">See me on Twitter</a> (please don't)</li>
-      <li><a href="https://instagram.com/melancholicapoptosis" target="_blank">See me on Instagram</a></li>
-      <li><a href="https://celestialcinnamon.github.io" target="_blank">See my portfolio</a></li>
-      <li><a href="mailto:https:francoisoibur21@gmail.com" target="_blank">Send me an email:</a> francoisoibur21@gmail.com</li>
-    </ul>
-  </div>
+  <section class="sidebar-wrapper">
+    <details>
+      <summary>
+        <h4 class="sidebar__title">In this post...</h4>
+      </summary>
+      <%- toc(page.content) %>
+    </details>
+  </section>
 
 </aside>

@@ -1,1 +1,10 @@
+
+<!-- Title -->
+<h1 class="post__title">
+    <a href="<%- config.root %><%- page.path %>">
+        <%- page.title || page.link %>
+    </a>
+</h1>
+
+<%- partial('_partial/sidebar', {item: page}) %>
 <%- partial('_partial/article', {item: page, index: false}) %>
