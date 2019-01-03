@@ -1,3 +1,14 @@
+<%
+function renderLinkPaths(pathArray = []) {
+  return pathArray
+    .map(path => 
+      path
+        .replace(":root", config.root.substring(0, config.root.length - 1)) //to remove the excess slash at the end of root
+        .replace(":css", "css")
+        .replace(":slug", page.permalink)
+    )
+}
+%>
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -48,13 +59,26 @@
   <meta property="og:image" content="http://celestialcinnmaon.github.io/<%- postCoverPath %>" />
   <meta property="og:description" content="<%- strip_html(description) %>" /> 
 
-  <!-- Bootstrap core CSS -->
   <%- css('css/normalize.css') %>
   <%- css('css/index.css') %>
+
+  <%
+    const links = []
+    if(is_post() && page.custom_css){
+      const paths = renderLinkPaths(page.custom_css)
+      links.push(...paths.map(path => `<link href="${path}" rel="stylesheet" />`))
+    }
+
+    console.log(links)
+  %>
+
+  <%- links.join("\n") %>
+
   <link
     href="https://fonts.googleapis.com/css?family=Montserrat:400,700,900"
     rel="stylesheet"
   />
+  
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700" rel="stylesheet"> 
   <link href="https://fonts.googleapis.com/css?family=Lora:400,400i&amp;subset=latin-ext" rel="stylesheet"> 
   <!--
