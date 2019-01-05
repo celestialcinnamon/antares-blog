@@ -1087,8 +1087,20 @@ li {
   line-height: 2;
 }
 
+.feedback-form {
+  padding: 0.25rem;
+}
+
 .submit-button:disabled {
   opacity: 0.25;
+}
+
+.submit-button:hover {
+  opacity: 0.75;
+}
+
+.submit-button:focus {
+  box-shadow: 0 0 0 5px var(--link-color);
 }
 
 .input-field {
