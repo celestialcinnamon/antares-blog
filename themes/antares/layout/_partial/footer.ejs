@@ -1,5 +1,5 @@
-<footer class="footer">
-  <div class="search-wrapper" id="search">
+<footer class="footer noscript">
+  <div class="search-wrapper">
     <%- partial('_partial/search-view') %>
   </div>
 
@@ -51,59 +51,20 @@
     </ul>
   </section>
 
-  <p>&copy; 2018 Francis Rubio</p>
+  <section class="about">
+    <h3>Ang Antares Programming</h3>
+    <p>Ang Antares Programming ay isang blog tungkol sa mga bagay tungkol sa Web at software development na hindi madalas maituro sa mga university at college. Dahil kinikilala ng Antares Programming ang epekto ng wikang kinalakhan o <i lang="en">mother tongue</i> sa pagkatuto, karamihan ng mga artikulo sa site na ito ay nasa Filipino. Umaasa ang writer nito na darating ang panahon na magkakaroon ng mas maraming materyal sa iba pang mga wika ng Filipinas. Pero sa ngayon, sapat na ang pagsisikap na ito.</p>
+    <p>Nga pala, hindi laging ganito "kalalim" ang Filipino sa site na ito. 😉</p>
+  </section>
+
+  <p>&copy; <%- new Date().getFullYear() %> Francis Rubio</p>
   <p><a href="#">Back to top</a></p>
 </footer>
 <script>
-  const searchDataEndpoint = '<%- config.root %>search.json';
-  const searchData = [];
-
-  fetch(searchDataEndpoint)
-    .then(raw => raw.json())
-    .then(data => searchData.push(...data));
-
-  function searchForContent(wordToMatch, data) {
-    const regex = new RegExp(wordToMatch, 'gi');
-    
-    return data.filter(post => {
-      const titleMatched = post.title.match(regex);
-      const contentMatched = post.content.match(regex);
-      const urlMatched = post.url.match(regex);
-
-      return titleMatched || contentMatched || urlMatched;
-    })
-  }
-
-  function displayResults() {
-    if(this.value === '') {
-      searchResults.innerHTML = '';
-      return;  
-    }
-
-    const matches = searchForContent(this.value, searchData);
-    const html = matches.map(item => {
-      const regex = new RegExp(this.value, 'gi');
-      const title = item.title.replace(regex, `<mark>${this.value}</mark>`);
-      const url = '/' + item.url.replace('<%- config.root %>', '');
-      const content = item.content
-        .replace(regex, `<mark>${this.value}</mark>`)
-        .substring(0, 120) + "&hellip;";
-
-      return `
-      <li>
-        <h3 class="result__header"><a href="${item.url}">${title}</a></h3>
-        <span class="result-link"><%- config.url %>${url}</span>
-        <p class="content-snippet">${content}</p>
-      </li>`;
-    })
-
-    searchResults.innerHTML = html.join('');
-  }
-
-  const searchInput = document.getElementById('search-input');
-  const searchResults = document.querySelector('.search-results');
-
-  searchInput.addEventListener('input', displayResults)
-  searchInput.addEventListener('change', displayResults)
 
 </script>
+
+<article class="toast">
+  <svg class="icon icon--success" viewBox="0 0 40 40"><path d="M20 0C8.95 0 0 8.95 0 20c0 11.04 8.95 20 20 20 11.04 0 20-8.96 20-20C40 8.95 31.04 0 20 0zm-4 30L6 20l2.83-2.83L16 24.34 31.17 9.17 34 12 16 30z"/></svg>
+  <svg class="icon icon--error" viewBox="0 0 40 40"><path d="M20 0C8.96 0 0 8.95 0 20s8.96 20 20 20 20-8.95 20-20S31.04 0 20 0zm2 30h-4v-4h4v4zm0-8h-4V10h4v12z"/></svg>
+</article>

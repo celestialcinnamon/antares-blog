@@ -1,4 +1,4 @@
-<article class="post <%- (!!is_featured)? 'post--featured':'' %>">
+<article class="post <%- (!!is_featured)? 'post--featured':'' %> <%- (is_home())? 'post--hoverable':'' %>">
     <!-- Title -->
     <% 
         const topMin = 0;

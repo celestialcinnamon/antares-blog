@@ -1,11 +1,39 @@
 <aside lang="en" class="sidebar">
   
   <section class="sidebar-wrapper" aria-label="Table of Contents">
-    <details open>
+    <details>
       <summary>
         <h4 class="sidebar__title" id="sidebar-title">In this post...</h4>
       </summary>
       <%- toc(page.content) %>
+    </details>
+  </section>
+
+  <section class="sidebar-wrapper" aria-label="Table of Contents">
+    <details>
+      <summary>
+        <h4 class="sidebar__title" id="sidebar-title">Kumusta ang post na ito?</h4>
+      </summary>
+      <p>Pakisuyong mag-iwan ng feedback.</p>
+      <form class="feedback-form">
+        <input type="hidden" name="post-url" value="<%- page.permalink %>">
+        <div class="input-field">
+          <input type="number" id="age" name="age" required min="5">
+          <label for="age">Edad</label> 
+        </div>
+        <div class="input-field" name="rating">
+          <input type="number" id="rating" min="0" max="10" placeholder="10 ang pinakamataas" required>
+          <label for="rating">Ano ang rating ng post na ito?</label> 
+        </div>
+  
+        <div class="input-field" name="comment">
+          <textarea id="comment"></textarea>
+          <label for="comment">Bakit ito ang rating mo?</label> 
+        </div>
+  
+        <button disabled type="submit" class="submit-button">I-submit</button>
+        <span>*Hindi pa ito functional</span>
+      </form>
     </details>
   </section>
 

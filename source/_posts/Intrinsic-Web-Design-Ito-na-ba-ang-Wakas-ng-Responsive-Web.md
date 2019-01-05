@@ -10,9 +10,11 @@ author:
 is_featured: true
 cover_image: cover.png
 cover_gradient: "linear-gradient(#fff, #f55, #333)"
+custom_css: [:root/:css/kids.css, "https://fonts.googleapis.com/css?family=Righteous", "https://fonts.googleapis.com/css?family=Mali:400,700"]
+custom_scripts: [:root/:js/kids.js]
 ---
 
-Mainit na mainit sa mga Web designers at developers ang RWD o Responsive Web Design. Pero simula noong 2018, may bagong <i lang="en">buzzword</i> na binabato, isang technique na papalit sa Responsive Web Design: ang <em>Intrinsic Web Design</em>. Dapat mo ba itong pag-aralan, o isa lang ito sa mga bagong uso na malalaos din pagkatapos ng dalawang taon? Sulit bang pag-aralan ang Intrinsic Web Design?
+Ma&shy;i&shy;nit na ma&shy;i&shy;nit sa mga Web de&shy;sign&shy;ers at de&shy;ve&shy;lo&shy;pers ang RWD o Res&shy;pon&shy;sive Web De&shy;sign. Pe&shy;ro si&shy;mu&shy;la no&shy;ong 2018, may ba&shy;gong <i lang="en">buzz&shy;word</i> na bi&shy;na&shy;ba&shy;to, i&shy;sang tech&shy;nique na pa&shy;pa&shy;lit sa Res&shy;pon&shy;sive Web De&shy;sign: ang <em>In&shy;trin&shy;sic Web De&shy;sign</em>. Da&shy;pat mo ba i&shy;tong pag-a&shy;ra&shy;lan, o i&shy;sa lang ito sa mga ba&shy;gong u&shy;so na ma&shy;la&shy;la&shy;os din pag&shy;ka&shy;ta&shy;pos ng da&shy;la&shy;wang ta&shy;on? Su&shy;lit bang pag-a&shy;ra&shy;lan ang In&shy;trin&shy;sic Web De&shy;sign?
 
 <!--more-->
 

@@ -1,4 +1,4 @@
-<section class="search-view noscript">
+<section class="search-view noscript"  id="search">
   <button class="close js-close-search"></button>
   <article class="search-box">
     <input
@@ -21,7 +21,12 @@
 
   closeButton.forEach(button =>
     button.addEventListener("click", e => {
-      document.querySelector("body").classList.toggle("search-open");
     })
   );
+
+  document.addEventListener("click", e => {
+    if(e.target.matches(".js-close-search")) {
+      document.querySelector("body").classList.toggle("search-open");
+    }
+  })
 </script>

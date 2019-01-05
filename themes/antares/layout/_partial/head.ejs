@@ -5,6 +5,7 @@ function renderLinkPaths(pathArray = []) {
       path
         .replace(":root", config.root.substring(0, config.root.length - 1)) //to remove the excess slash at the end of root
         .replace(":css", "css")
+        .replace(":js", "js")
         .replace(":slug", page.permalink)
     )
 }
@@ -61,6 +62,7 @@ function renderLinkPaths(pathArray = []) {
 
   <%- css('css/normalize.css') %>
   <%- css('css/index.css') %>
+  <%- js('js/index.js') %>
 
   <%
     const links = []
@@ -69,10 +71,15 @@ function renderLinkPaths(pathArray = []) {
       links.push(...paths.map(path => `<link href="${path}" rel="stylesheet" />`))
     }
 
-    console.log(links)
+    const scripts = []
+    if(is_post() && page.custom_scripts) {
+      const paths = renderLinkPaths(page.custom_scripts)
+      scripts.push(...paths.map(path => `<script src="${path}"></script>`))
+    }
   %>
 
   <%- links.join("\n") %>
+  <%- scripts.join("\n") %>
 
   <link
     href="https://fonts.googleapis.com/css?family=Montserrat:400,700,900"
@@ -96,6 +103,10 @@ function renderLinkPaths(pathArray = []) {
     gtag('js', new Date());
 
     gtag('config', 'UA-131462553-1');
+  </script>
+
+  <script>
+    const searchDataEndpoint = "<%- config.root %>search.json";
   </script>
 
 </head>

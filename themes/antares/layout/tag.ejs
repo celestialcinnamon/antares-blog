@@ -1,12 +1,14 @@
-<section class="section section--meta">
-    <% const posts = (page.posts.data) %>
-    <header class="section__heading">
-        <h1>Posts tagged <span class="tag">#<%- page.tag %></span></h1>
-    </header>
+<main class="index" aria-label="Content">
+    <section class="section section--meta">
+        <% const posts = (page.posts.data) %>
+        <header class="section__heading">
+            <h1>Posts tagged <span class="tag">#<%- page.tag %></span></h1>
+        </header>
 
-    <div class="card-grid">
-        <% posts.forEach(item => { %>
-        <%- partial('_partial/article-excerpt', {item: item, is_featured: false}) %>
-        <% }) %>
-    </div>
-</section>
+        <div class="card-grid">
+            <% posts.forEach(item => { %>
+            <%- partial('_partial/article-excerpt', {item: item, is_featured: false}) %>
+            <% }) %>
+        </div>
+    </section>
+</main>
