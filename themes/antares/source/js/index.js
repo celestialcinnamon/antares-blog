@@ -1,40 +1,53 @@
 const searchData = [];
 let searchInput;
 let searchResults;
+let feedbackForm;
+let db;
 
 document.addEventListener("DOMContentLoaded", e => {
-    searchResults = document.querySelector(".search-results");
-    searchInput = document.getElementById( "search-input" );
+  searchResults = document.querySelector(".search-results");
+  searchInput = document.getElementById("search-input");
 
-    _init();
+  _init();
 });
 
 function _init() {
-    const feedbackForm = document.querySelector( ".feedback-form" );
-    const toast = document.querySelector( ".toast" );
-    const searchWidget = document.querySelector( "#search" );
+  feedbackForm = document.querySelector(".feedback-form");
+  const toast = document.querySelector(".toast");
+  const searchWidget = document.querySelector("#search");
 
-    if(searchResults != null) {
-        window.searchResults
-    }
+  if (searchResults != null) {
+    window.searchResults;
+  }
 
-    if ( feedbackForm != null ) {
-        initializeFeedbackForm( feedbackForm );
-    }
+  if (feedbackForm != null) {
+    initializeFeedbackForm(feedbackForm);
+  }
 
-    if ( toast != null ) {
-        window.toast = toast;
-    }
+  if (toast != null) {
+    window.toast = toast;
+  }
 
-    const noscripts = document.querySelectorAll( ".noscript" );
-    noscripts.forEach( item => item.classList.remove( "noscript" ) );
+  const noscripts = document.querySelectorAll(".noscript");
+  noscripts.forEach(item => item.classList.remove("noscript"));
 
-    fetch( searchDataEndpoint )
-        .then( raw => {console.log(raw); return raw.json()} )
-        .then( data => searchData.push( ...data ) );
+  fetch(searchDataEndpoint)
+    .then(raw => {
+      console.log(raw);
+      return raw.json();
+    })
+    .then(data => searchData.push(...data));
 
-    searchInput.addEventListener( "input", displayResults );
-    searchInput.addEventListener( "change", displayResults );
+  searchInput.addEventListener("input", displayResults);
+  searchInput.addEventListener("change", displayResults);
+
+  //initialize Firebase Cloudstore
+  db = firebase.firestore();
+
+  // Disable deprecated features
+  db.settings({
+    timestampsInSnapshots: true
+  });
 }
 
 function initializeFeedbackForm(feedbackForm) {
@@ -43,24 +56,14 @@ function initializeFeedbackForm(feedbackForm) {
 
 function feedbackFormSubmitListener(event) {
   event.preventDefault();
-  const formSubmittedSuccessfully = submitForm({});
-  console.log(formSubmittedSuccessfully);
+  const arguments = {
+    age: this["age"].value,
+    url: this["post-url"].value,
+    rating: this["rating"].value,
+    feedback: this["feedback"].value
+  };
 
-  if (formSubmittedSuccessfully) {
-    showToast({
-      message: "Thanks for your feedback!",
-      type: "success"
-    });
-  } else {
-    showToast({
-      message: "Something went wrong.",
-      type: "error"
-    });
-  }
-}
-
-function submitForm(feeedback) {
-  return false;
+  sendFeedback(arguments);
 }
 
 function showToast({ message, type }) {
@@ -122,7 +125,21 @@ function displayResults(event) {
       </li>`;
   });
 
-  console.log(html, searchData)
+  console.log(html, searchData);
 
   searchResults.innerHTML = html.join("");
+}
+
+function sendFeedback({ age, url, rating, feedback }) {
+  db.collection("feedback")
+    .add({ age, url, rating, feedback })
+    .then(function(docRef) {
+      showToast({ message: "Thanks for your feedback!", type: "success" });
+    })
+    .catch(function(error) {
+      showToast({
+        message: "Your feedback was not sent. (It's not you, it's me. Sorry.)",
+        type: "error"
+      });
+    });
 }

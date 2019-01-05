@@ -60,8 +60,20 @@
   <p>&copy; <%- new Date().getFullYear() %> Francis Rubio</p>
   <p><a href="#">Back to top</a></p>
 </footer>
-<script>
 
+<%- js('js/index.js') %>
+<script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBLSepyUmzlswAI8E0PxLCrB7IPHNlkekg",
+    authDomain: "antares-blog.firebaseapp.com",
+    databaseURL: "https://antares-blog.firebaseio.com",
+    projectId: "antares-blog",
+    storageBucket: "",
+    messagingSenderId: "1040232049670"
+  };
+  firebase.initializeApp(config);
 </script>
 
 <article class="toast">
