@@ -842,19 +842,19 @@ body:not(.noscript) #search:target {
 
 .search-view:not(.noscript) {
   position: fixed;
-  top: 0;
+  top: -100vh;
   left: 0;
   width: 100%;
   height: 100%;
   background-color: var(--footer-bg);
   z-index: 999;
   grid-template-rows: min-content 1fr;
-  transform: translateY(-120vh);
+  transform: translateY(0);
   transition: transform 300ms;
 }
 
 .search-open .search-view:not(.noscript) {
-  transform: translateY(0);
+  transform: translateY(100%);
   transition: transform 300ms;
 }
 
