@@ -111,16 +111,17 @@ function displayResults(event) {
   const html = matches.map(item => {
     const regex = new RegExp(this.value, "gi");
     const title = item.title.replace(regex, `<mark>${this.value}</mark>`);
-    const url = "/" + item.url.replace("<%- config.root %>", "");
+    const url = item.url//.replace( "<%- config.root %>", CONFIG_ROOT ).replace( "<%- config.url %>", CONFIG_URL );
     const content =
       item.content
         .replace(regex, `<mark>${this.value}</mark>`)
         .substring(0, 120) + "&hellip;";
 
+
     return `
       <li>
         <h3 class="result__header"><a href="${item.url}">${title}</a></h3>
-        <span class="result-link"><%- config.url %>${url}</span>
+        <span class="result-link">${CONFIG_URL}${url}</span>
         <p class="content-snippet">${content}</p>
       </li>`;
   });

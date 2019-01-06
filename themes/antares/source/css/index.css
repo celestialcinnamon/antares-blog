@@ -1186,6 +1186,7 @@ li {
   transition: transform 300ms;
   gap: 10px;
   color: #eee;
+  z-index: 9999;
 }
 
 .toast.shown {
