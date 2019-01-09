@@ -1518,19 +1518,64 @@ li {
 }
 
 .other-featured-articles summary {
-  /* list-style-type: '+'; */
   position: sticky;
   top: 0;
   background-color: var(--body-bg);
   margin-left: 2rem;
 }
 
-.other-featured-articles[open] summary {
-  /* list-style-type: "-"; */
-}
-
 .other-featured-articles summary > * {
   display: inline;
+}
+
+.widget.links-of-the-week {
+  columns: 1;
+}
+
+.link-set li {
+  line-height: 1.25;
+}
+
+.link-title a {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.link-title a:hover {
+  text-decoration: line-through;
+}
+
+.link-title small {
+  font-weight: normal;
+}
+
+.link-author {
+  margin-left: 2rem;
+}
+
+.link-author::before {
+  content: '— ';
+}
+
+.link-excerpt {
+  font-family: var(--serif), serif;
+  font-size: 1rem;
+  position: relative;
+  margin-left: 4rem;
+}
+
+.link-excerpt::before {
+  content: '“';
+  font-size: 10rem;
+  line-height: 1rem;
+  position: absolute;
+  height: 1rem;
+  top: 3.5rem;
+  left: -2rem;
+  z-index: 0;
+  mix-blend-mode: multiply;
+  opacity: 0.2;
+  pointer-events: none;
 }
 
 /* MEDQUERIES_START */

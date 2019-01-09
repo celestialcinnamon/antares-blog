@@ -7,7 +7,6 @@ lang: tl
 date: 2019-01-09 21:44:53
 tags: [announcement]
 category: Meta
-is_featured: true
 ---
 
 Simula January 9, 2019, may dark mode na ang Antares Blog. 
