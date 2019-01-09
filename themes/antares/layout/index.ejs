@@ -4,20 +4,13 @@
             <h2>Featured Article</h2>
         </header>
         <% 
-            let featuredArticleHasBeenFound = false;
-            page.posts.each(function(item){ 
-                if(featuredArticleHasBeenFound) return;
+            const featuredArticles = []
 
-                let articleIsFeatured = item.is_featured;
-                featuredArticleHasBeenFound = articleIsFeatured;
-                if(articleIsFeatured) {
+            page.posts.each(function(item) { if(item.is_featured) featuredArticles.push(item) })
         %>
-            <%- partial('_partial/article-featured', {item: item, is_featured: articleIsFeatured}) %>
-        <% 
-                }
-            }); 
-        %>
+        <%- partial('_partial/article-featured', {item: featuredArticles[0], is_featured: true}) %>
 
+        <% if(featuredArticles.length > 1) { %>
         <details class="other-featured-articles">
             <summary>
                 <h3>Past Featured Articles</h3>
@@ -35,7 +28,9 @@
                     }); 
                 %>
             </section>
-        </details>        
+        </details>
+        <% } %>
+        
     </section>
     
     <section class="section">
