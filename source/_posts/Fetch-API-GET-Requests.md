@@ -13,7 +13,11 @@ Dahil sa pagiging popular ng Ajax (dating acronym para sa *asynchronous JavaScri
 
 <!--more-->
 
-> **DISCLAIMER:** May mahabang intro at history ang article na ito. Puwede ka nang dumiretso sa [mismong tutorial](#Fetch-API-Tutorial)
+<aside class="side-callout">
+    <p>
+        **DISCLAIMER:** May mahabang intro at history ang article na ito. Puwede ka nang dumiretso sa [mismong tutorial](#Fetch-API-Tutorial)
+    </p>
+</aside>
 
 Kung wala kang idea tungkol sa Ajax, isa itong technique sa Web development. So traditionally bago nauso ang Ajax, kapag kailangan mong ma-display sa UI ang mga update sa data, or gusto mong magpasa ng data sa server, kailangang i-reload ang buong page. Pero nang mauso ang Ajax, lahat ng pagkuha at pagpapadala ng data sa server ay nangyayari na sa background; hindi na kailangang i-reload iyong buong page. Dito na nauso iyong mga umiikot na loader GIF para ipakita sa user na pina-process pa ang action nila.
 
@@ -101,7 +105,7 @@ function sendGetRequest() {
 <aside class="card card--suggestion">
     <header class="card__header">
         <span class="card__label">Suggested:</span>
-        <a href="/antares-blog/2018/12/14/Function-Parameters-at-Return-Statements/">Function Parameters at Return Statements</a>
+        {% post_link Function-Parameters-at-Return-Statements "Function Parameters at Return Statements" %}
     </header>
 </aside>
 

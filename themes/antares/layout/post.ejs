@@ -2,11 +2,22 @@
 <main class="post-main" aria-labelledby="post-title">
     <!-- Title -->
     <h1 class="post__title" id="post-title">
-        <a href="<%- config.root %><%- page.path %>">
+        <% if(page.is_featured) { %>
+        <small class="badge badge--featured">Featured</small>
+        <% } %>
+        <span>
             <%- page.title || page.link %>
-        </a>
+        </span>
     </h1>
     
     <%- partial('_partial/sidebar', {item: page}) %>
     <%- partial('_partial/article', {item: page, index: false}) %>
 </main>
+<script>
+    const thisIsAPost = <%- is_post() %>
+    const thisPostIsFeatured = <%- page.is_featured? page.is_featured : false %>
+    if(thisIsAPost && thisPostIsFeatured) {
+        document.documentElement.style.setProperty('--cover-img', `url(<%- url_for(page.path) %><%- page.cover_image %>)`);
+        document.documentElement.style.setProperty('--cover-height', `100px`);
+    }
+</script>

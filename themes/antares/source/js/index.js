@@ -33,7 +33,6 @@ function _init() {
 
   fetch(searchDataEndpoint)
     .then(raw => {
-      console.log(raw);
       return raw.json();
     })
     .then(data => searchData.push(...data));
@@ -41,13 +40,21 @@ function _init() {
   searchInput.addEventListener("input", displayResults);
   searchInput.addEventListener("change", displayResults);
 
+  document.querySelectorAll(".example-container--fixable")
+    .forEach( item => item.addEventListener( 'dblclick', e => item.classList.toggle( 'fixed' )))
+  
   //initialize Firebase Cloudstore
-  db = firebase.firestore();
+  try {
+    firebase.firestore();
+  } catch(e) { return; }
+
+  db = firebase != null ? firebase.firestore() : {};
 
   // Disable deprecated features
   db.settings({
     timestampsInSnapshots: true
   });
+
 }
 
 function initializeFeedbackForm(feedbackForm) {
@@ -144,3 +151,22 @@ function sendFeedback({ age, url, rating, feedback }) {
       });
     });
 }
+
+// POLYFILL FOR Element.remove() [IE9>=]
+
+( function ( arr ) {
+  arr.forEach( function ( item ) {
+    if ( item.hasOwnProperty( 'remove' ) ) {
+      return;
+    }
+    Object.defineProperty( item, 'remove', {
+      configurable: true,
+      enumerable: true,
+      writable: true,
+      value: function remove() {
+        if ( this.parentNode !== null )
+          this.parentNode.removeChild( this );
+      }
+    } );
+  } );
+} )( [ Element.prototype, CharacterData.prototype, DocumentType.prototype ] );

@@ -1,0 +1,128 @@
+---
+title: In­tro­duc­tion to CSS Grid
+author:
+  name: Francis Rubio
+  image: images/francis-rubio.jpg
+date: 2019-01-06 23:08:36
+tags: [css, web, intrinsic web design]
+categories: CSS
+lang: tl
+custom_css: [:root/:css/intrinsic.css]
+custom_scripts: [:root/:js/intrinsic.js]
+is_autoreload: true
+---
+<p class="standfirst">
+  Ang CSS Grid ang pinakamalakas na layout tool na mayroon tayo sa Web ngayon. Sa artikulong ito, tingnan natin ang mga
+  konsepto sa likod ng CSS Grid at kung paano mo ito magagamit bilang pamalit sa UI framework na mayroon ka.
+</p>
+
+<!--more-->
+
+<section class="section section--viewport section--basic-concepts">
+  <h2 id="basic-concepts" class="section__title">Basic Concepts</h2>
+  <p class="standfirst">
+    Dahil sa CSS Grid, nagkaroon ang CSS ng two-dimensional at tunay na grid. Magagamit ang mga ito para mag-layout ng
+    malalaking bahagi ng isang page o ng maliliit na user interface elements.
+  </p>
+  <section class="section section--concept">
+    <article class="concept">
+      <h3 id="ano-ang-grid">Ano ang grid?</h3>
+      <p>
+        Ang isang grid ay set ng mga horizontal at vertical lines na nagtatagpo sa isang point. Dahil sa mga intersections na
+        ito, nagkakaroon ng rows at columns.
+      </p>
+    </article>
+    <article class="concept">
+      <h3 id="ano-ang-grid">Track sizes</h3>
+      <p>
+        Ang mga track ay tumutukoy sa column o sa row. Puwede kang mag-set ng fixed-width na track. Puwede ring flexible,
+        nagre-resize depende sa size ng viewport o sa size ng laman ng track.
+      </p>
+    </article>
+    <article class="concept">
+      <h3 id="ano-ang-grid">Item placement</h3>
+      <p>
+        Puwede mong ilagay sa eksaktong lokasyon ang mga items sa grid gamit ang mga line number o area names. Puwede ring
+        hayaan mong ang browser ang mag-layout para sa iyo.
+      </p>
+    </article>
+    <article class="concept">
+      <h3 id="additional-tracks">Additional tracks</h3>
+      <p>
+        Puwede mong i-set kung ilang columns o rows ang mayroon sa grid. Puwede ring kusang magdagdag ang browser para sa iyo.
+      </p>
+    </article>
+    <article class="concept">
+      <h3 id="alignment">Alignment</h3>
+      <p>
+        Kontrolado mo ang lahat ng alignments sa grid.
+      </p>
+    </article>
+    <article class="concept">
+      <h3 id="item-placement">Item placement</h3>
+      <p>
+        Puwede kang maglagay ng higit sa isang item sa isang grid cell o area, at puwede mo silang pagpatungin gamit ang
+        z-index property.
+      </p>
+    </article>
+  </section>
+</section>
+
+<section class="section section--viewport section--ang-grid">
+  <h2 id="ang-grid-container" class="section__title">Ang Grid Container</h2>
+  <div class="circles">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+  </div>
+  <p class="standfirst">We create a grid container by declaring display: grid or display: inline-grid on an element. As soon as we do this all direct children of that element will become grid items.</p>
+  <pre class="code code">
+    &lt;div class="wrapper">
+      &lt;div>One&lt;/div>
+      &lt;div>Two&lt;/div>
+      &lt;div>Three&lt;/div>
+      &lt;div>Four&lt;/div>
+      &lt;div>Five&lt;/div>
+    &lt;/div>
+  </pre>
+
+  <pre class="code">
+    .wrapper {
+      display: grid;
+    }
+  </pre>
+
+  <article id="example1" class="result-container">
+    <style>
+      #example1 .wrapper {
+        display: grid;
+        margin: auto;
+        width: 50%;
+        min-width: 320px;
+        background-color: #fafafa;
+        border: 1px solid #ddd;
+      }
+
+      #example1 .wrapper div {
+        background-color: #e8e8e8;
+        border: 1px solid #ccc;
+        margin: 3px;
+      }
+    </style>
+      <div class="wrapper">
+        <div>One</div>
+        <div>Two</div>
+        <div>Three</div>
+        <div>Four</div>
+        <div>Five</div>
+      </div>
+  </article>
+
+  <p class="normal-par">All the direct children are now grid items. In a web browser, you won’t see any difference to how these items are
+  displayed before turning them into a grid, as grid has created a single column grid for the items. At this point, you
+  may find it useful to work with the Grid Inspector, available as part of Firefox's Developer Tools. If you view this
+  example in Firefox and inspect the grid, you will see a small icon next to the value grid. Click this and then the grid
+  on this element will be overlaid in the browser window.</p>
+</section>

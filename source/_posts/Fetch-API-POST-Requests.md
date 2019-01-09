@@ -14,9 +14,13 @@ Sa pa­nga­la­wang ba­ha­gi ng Fetch API se­ries, ta­la­ka­yin na­man n
 
 <!--more-->
 
-> Ang post na i­to ay pa­nga­la­wang ba­ha­gi ng Fetch API se­ries. Pa­ra sa u­nang ba­ha­gi, ti­na­la­kay na­tin ang [`GET` re­quests](/antares-blog/2018/12/16/Fetch-API-GET-Requests/).
+<aside class="side-callout">
+    <p>
+        Ang post na i­to ay pa­nga­la­wang ba­ha­gi ng Fetch API se­ries. Pa­ra sa u­nang ba­ha­gi, ti­na­la­kay na­tin ang {% post_link Fetch-API-GET-Requests "<code>GET</code> re­quests" %}.
+    </p>
+</aside>
 
-Kung ma­ta­tan­da­an n'yo, sa [na­ka­ra­ang post a­bout sa `GET` re­quests](/antares-blog/2018/12/16/Fetch-API-GET-Requests/), na­ki­ta na­tin kung pa­ano ku­ku­ha ng da­ta sa ser­ver. Pe­ro pa­a­no kung gus­to na­ting mag-send ng da­ta sa ser­ver? May mga pag­ka­ka­ta­on, ga­ya ng u­ser re­gis­tra­tion, na ka­i­la­ngan na­ting mag-send ng da­ta sa ser­ver. Tra­ba­ho na­man iyan ng `POST` re­quests.
+Kung ma­ta­tan­da­an n'yo, sa {% post_link Fetch-API-GET-Requests "na­ka­ra­ang post a­bout sa <code>GET</code> re­quests" %}, na­ki­ta na­tin kung pa­ano ku­ku­ha ng da­ta sa ser­ver. Pe­ro pa­a­no kung gus­to na­ting mag-send ng da­ta sa ser­ver? May mga pag­ka­ka­ta­on, ga­ya ng u­ser re­gis­tra­tion, na ka­i­la­ngan na­ting mag-send ng da­ta sa ser­ver. Tra­ba­ho na­man iyan ng `POST` re­quests.
 
 ## Setup
 

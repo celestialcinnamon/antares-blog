@@ -5,7 +5,7 @@
 <html lang="<%- language %>">
 <!-- Head tag -->
 <%- partial('_partial/head') %>
-<body class="noscript">
+<body class="noscript <%- is_post()? 'is-post':'' %>">
 <noscript tabindex="0" aria-labelledby="noscript-header">
   <article lang="en" class="no-script">
     <header class="no-script__heading">

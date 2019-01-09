@@ -34,10 +34,10 @@ html {
   --header-shadow: 3px 7px 10px #0005;
 }
 
-body {
-  background-image: url(../images/noise.png);
-  background-blend-mode: soft-light;
+body.is-post {
   grid-template-columns: 3fr 1fr;
+  background-blend-mode: soft-light;
+  --bg-img-texture: url(../images/noise.png);
 }
 
 .sidebar {
