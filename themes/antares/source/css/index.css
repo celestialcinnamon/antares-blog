@@ -717,6 +717,7 @@ a[target="_blank"]::after {
 .post--full > p {
   line-height: 2;
   text-indent: 2rem;
+  font-size: 1.25rem;
 }
 
 .highlight {
