@@ -3,7 +3,7 @@ title: Welcome to Antares Programming Blog
 date: 2018-12-06 01:51:53
 tags: meta
 lang: en
-category: meta
+category: Meta
 author:
     name: Francis Rubio
     image: images/francis-rubio.jpg

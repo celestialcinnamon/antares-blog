@@ -173,11 +173,11 @@ function sendFeedback({ age, url, rating, feedback }) {
 
 function toggleDarkMode() {
   document.documentElement.classList.toggle('dark')
-  localStorage.setItem('is_dark_mode', document.documentElement.classList.contains('dark'))
+  localStorage.setItem('is_dark_mode', document.documentElement.classList.contains('dark')? 1 : 0)
 }
 
 function initDarkMode() {
-  const siteIsOnDarkMode = localStorage.getItem('is_dark_mode');
+  const siteIsOnDarkMode = !!parseInt(localStorage.getItem('is_dark_mode'));
   console.log(siteIsOnDarkMode)
 
   if(siteIsOnDarkMode) {

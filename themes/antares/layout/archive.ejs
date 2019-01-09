@@ -1,7 +1,14 @@
 <%- /*partial('_partial/header', {title: 'Post Archives'})*/ %>
-<main class="main card-grid">
-    <% page.posts.each(function(item){ %>
-        <%- partial('_partial/archive', {item: item}) %>
-    <% }); %>
+<main class="index">
+    <section class="section card-grid">
+        <% page.posts.each(function(item){ %>
+            <%- partial('_partial/archive', {item: item}) %>
+        <% }); %>
+    </section>
+    <section class="section section--categories">
+        <%- partial('_widget/categories.ejs') %>
+        <%- partial('_widget/tags.ejs') %>
+    </section>
 </main>
+
 

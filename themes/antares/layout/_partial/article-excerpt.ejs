@@ -37,9 +37,11 @@
         </div>
     <% } %>
     <!-- Content -->
+    <% if(with_excerpt) { %>
     <section class="post__excerpt">
         <%- item.excerpt || item.content %>
     </section>
+    <% } %>
     
 <% if (item.tags && item.tags.length){ %>
     <%
