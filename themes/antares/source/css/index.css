@@ -23,8 +23,7 @@ html {
   --primary-lighter: hsl(51, 99%, 67%);
   --primary-text: #fb0;
   --accent: hsl(258, 99%, 67%);
-
-  --accent-transparent: hsl(0, 100%, 67%, 50%);
+  --accent-transparent: hsla(258, 99%, 67%, 50%);
   --body-bg: #fafafa;
   --cover-bg: hsl(0, 0%, 20%);
   --cover-bg--hover: hsl(0, 0%, 30%);
@@ -339,6 +338,7 @@ br {
   background-color: var(--cover-bg);
   color: var(--nav-text);
   transition: background-color 300ms;
+  border: 0;
 }
 
 .nav-item:focus,
@@ -363,16 +363,25 @@ br {
 }
 
 .nav-item.search {
-  order: 1;
-  border: none;
-  transition: box-shadow 300ms;
-  background-color: var(--cover-bg--hover);
+	border: none;
+	transition: box-shadow 300ms;
+	background-color: var(--cover-bg--hover);
+	flex: none;
 }
 
 .nav-item.search:focus,
 .nav-item.search:hover {
   box-shadow: 0 0 0 5px var(--primary);
   transition: box-shadow 300ms;
+}
+
+.nav-item.dark-mode {
+  flex: none;
+  width: 56px;
+}
+
+.dark .nav-item.dark-mode svg {
+  fill: var(--accent)
 }
 
 /* index.ejs */
@@ -1451,8 +1460,8 @@ li {
 .badge {
   font-weight: 900;
   text-transform: uppercase;
-  color: var(--text-on-dark);
-  background-color: var(--text--dark);
+  background-color: var(--light-dark--opposite);
+  color: var(--light-dark);
   font-family: var(--sans-serif), sans-serif;
   display: inline-block;
   padding: 0.5ch 1ch;
@@ -1651,6 +1660,9 @@ li {
   .sidebar-wrapper details {
     max-height: calc(100vh - 4rem);
     height: 100%;
+  }
+  
+  details.will-scroll {
     overflow: auto;
   }
 

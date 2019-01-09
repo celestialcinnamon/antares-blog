@@ -170,3 +170,19 @@ function sendFeedback({ age, url, rating, feedback }) {
     } );
   } );
 } )( [ Element.prototype, CharacterData.prototype, DocumentType.prototype ] );
+
+function toggleDarkMode() {
+  document.documentElement.classList.toggle('dark')
+  localStorage.setItem('is_dark_mode', document.documentElement.classList.contains('dark'))
+}
+
+function initDarkMode() {
+  const siteIsOnDarkMode = localStorage.getItem('is_dark_mode');
+  console.log(siteIsOnDarkMode)
+
+  if(siteIsOnDarkMode) {
+    document.documentElement.classList.add('dark');
+  }
+}
+
+initDarkMode();
