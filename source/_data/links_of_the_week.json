@@ -1,1 +1,48 @@
-[]
+[
+    {
+        "date": "2019-01-10T11:44:59.349Z",
+        "links": [
+            {
+                "url": "https://www.smashingmagazine.com/2019/01/how-to-learn-css/",
+                "title": "How To Learn CSS",
+                "author": "Rachel Andrew",
+                "domain": "www.smashingmagazine.com",
+                "excerpt": "You don’t need to commit in memorizing every CSS Property and Value, as there are good places to look them up. There are some fundamental things, however, which will make CSS much easier for you to use. This article aims to guide you along your path of learning CSS."
+            },
+            {
+                "url": "https://www.smashingmagazine.com/2018/12/common-css-issues-front-end-projects/",
+                "domain": "www.smashingmagazine.com",
+                "title": "Common CSS Issues For Front-End Projects",
+                "author": "Ahmad Shadeed",
+                "excerpt": "Rendering and interaction have become a lot more consistent across browsers in recent years. It’s still not perfectly uniform, however, and a lot of small issues can trip you up. Add on top of these issues the variables of different screen sizes, language preferences and plain human error, and we find a lot of small things to trip up a developer."
+            },
+            {
+                "url": "https://www.smashingmagazine.com/2018/12/generic-css-mobile-first/",
+                "domain":"www.smashingmagazine.com",
+                "title": "Generic First CSS: New Thinking On Mobile First",
+                "author": "Alastair Hodgson",
+                "excerpt": "With the advent of responsive web design and the mobile-first approach, it’s been seven wonderful years since any new concepts have compelled us to adapt the way in which we write CSS at the base level. Well, I don’t have anything too groundbreaking to offer you, but I do have a small surprise. Behold: Generic First CSS."
+            }, 
+            {
+                "url": "https://www.smashingmagazine.com/2018/12/voiceover-screen-reader-web-apps/",
+                "domain": "www.smashingmagazine.com",
+                "title": "I Used The Web For A Day Using A Screen Reader",
+                "author": "Chris Ashton",
+                "excerpt": "A sighted user puts himself in the shoes of a non-sighted user. Chris Ashton experiences first-hand difficulties that visually impaired users face and describes what we can do as web developers to help."
+            },
+            {
+                "url": "https://css-tricks.com/new-es2018-features-every-javascript-developer-should-know/",
+                "domain": "css-tricks.com",
+                "author": "Faraz Kelhini",
+                "title": "New ES2018 Features Every JavaScript Developer Should Know",
+                "excerpt": "he ninth edition of the ECMAScript standard, officially known as ECMAScript 2018 (or ES2018 for short), was released in June 2018. Starting with ES2016, new versions of ECMAScript specifications are released yearly rather than every several years and add fewer features than major editions used to."
+            }, 
+            {
+                "url": "https://css-tricks.com/reader-mode-the-button-to-beat/",
+                "title": "Reader Mode: The Button to Beat",
+                "author": "Eric Bailey",
+                "excerpt": "As a young nerd, I loved to immerse myself in digital worlds, learning the ins and outs of the rules someone else had created for me (intentionally or not). But the older and crankier I get, the more I find myself losing patience when navigating these \"delightful\" experiences."
+            }
+        ]
+    }
+]
