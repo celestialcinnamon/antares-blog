@@ -41,6 +41,7 @@ html {
   --definition: #eee;
   --light-dark: #eee;
   --light-dark--opposite: #000;
+  --bg-decoration: var(--primary);
 
   --cover-img: url("../images/Website Cover v3.png");
   --cover-height: 200px;
@@ -80,6 +81,7 @@ html.dark {
   --definition: #333;
   --light-dark: #000;
   --light-dark--opposite: #eee;
+  --bg-decoration: var(--primary-text);
 
   --cover-img: url("../images/Website Cover v3.png");
   --cover-height: 200px;
@@ -169,6 +171,10 @@ strong {
   color: var(--text--darker);
 }
 
+cite {
+  font-style: normal;
+}
+
 mark {
   background-color: var(--primary);
   /* outline: 5px solid var(--primary); */
@@ -203,7 +209,9 @@ a {
 
 a {
   color: var(--link-color);
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-style: dashed;
+  text-decoration-color: #35fa;
 }
 
 a:-moz-focusring {
@@ -213,6 +221,29 @@ a:-moz-focusring {
 .category:focus,
 a:not([class]):focus {
   box-shadow: 0 0 0 3px var(--accent);
+}
+
+del {
+  text-decoration-color: var(--error);
+  color: var(--error);
+}
+
+ins {
+  text-decoration-color: var(--success);
+  color: var(--success);
+}
+
+abbr {
+  cursor: help;
+}
+
+abbr:hover {
+  text-decoration: none;
+}
+
+abbr:focus::after,
+abbr:hover::after {
+  content: " (" attr(title) ")";
 }
 
 :target {
@@ -1758,7 +1789,7 @@ li {
     position: absolute;
     top: 0;
     left: 0;
-    background: var(--primary);
+    background: var(--bg-decoration);
     opacity: 0.75;
     z-index: -1;
     clip-path: polygon(0 40%, 100% 0, 100% 10%, 0 100%);
