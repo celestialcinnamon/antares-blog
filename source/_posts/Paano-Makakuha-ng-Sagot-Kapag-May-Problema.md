@@ -35,8 +35,8 @@ Bago ka magtanong sa mga forum o group discussions, gawin mo muna ito:
 
 - Subukang humanap ng tanong na kapareho ng sa iyo sa forum. Gamitin ang search function (meron nito ang StackOverflow, at ang [Programmers, Developers Facebook Group](https://www.facebook.com/groups/361338743928370) kung kasali ka ro'n.)
 - Mag-search sa Google (or sa DuckDuckGo). Ito rin naman sasabihin nila sa iyo kapag nagtanong ka na, so gawin mo na agad.
-- <abbr tabindex="1" title="Read The F*cking Manual">RTFM</abbr>. Basahin muna ang manual, or documentation, ng language or framework na ginagamit mo. May search function na rin iyan, dahil kadalasan, nandoon ang sagot sa tanong mo.
-- Sa mga group o forums, kadalasan nang mayro'n silang <abbr title="Frequently Asked Questions" tabindex="1">FAQ</abbr> section. Bago mo itanong ang tanong mo, tingnan mo muna iyon dahil baka nandoon ang tanong mo.
+- <abbr tabindex="0" title="Read The F*cking Manual">RTFM</abbr>. Basahin muna ang manual, or documentation, ng language or framework na ginagamit mo. May search function na rin iyan, dahil kadalasan, nandoon ang sagot sa tanong mo.
+- Sa mga group o forums, kadalasan nang mayro'n silang <abbr title="Frequently Asked Questions" tabindex="0">FAQ</abbr> section. Bago mo itanong ang tanong mo, tingnan mo muna iyon dahil baka nandoon ang tanong mo.
 - Siyempre, bago ka humingi ng tulong sa iba, subukan mo munang kalkalin ang problema mo. Kadalasan nang mas marami kang matututunan kapag nag-experiment ka sa program mo bago ka nagtanong. Subukang palitan ang values ng mga variables, gumamit ng ibang construct, palitan ang mga datatypes etc.
 - Puwede bang 'wag ka nang mag-post ng tanong, sa kaibigan mo na lang? Baka kaya nilang sagutin ang tanong mo.
 - Basahin ang source code kung may access ka rito. Magandang practice din 'to (although ako hindi ko 'to ginagawa kasi kadalasan, hindi naman masyadong malala ang problema ko.)

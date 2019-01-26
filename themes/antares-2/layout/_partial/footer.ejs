@@ -1,0 +1,86 @@
+<footer class="footer noscript">
+  <div class="search-wrapper">
+    <%- partial('_partial/search-view') %>
+  </div>
+
+  <section>
+    <h4 class="sidebar__title">See me outside</h4>
+    <ul>
+      <li>
+        <a href="https://facebook.com/antaresprogramming" target="_blank"
+          >Antares on Facebook</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://github.com/celestialcinnamon/antares-blog"
+          target="_blank"
+          >Antares on Github</a
+        >
+      </li>
+    </ul>
+
+    <ul>
+      <li>
+        <a href="https://facebook.com/dorkas.rubio" target="_blank"
+          >See me on Facebook</a
+        >
+      </li>
+      <li>
+        <a href="#!" onclick="alert('I told you to not do that')"
+          >See me on Twitter</a
+        >
+        (please don't)
+      </li>
+      <li>
+        <a href="https://instagram.com/melancholicapoptosis" target="_blank"
+          >See me on Instagram</a
+        >
+      </li>
+      <li>
+        <a href="https://celestialcinnamon.github.io" target="_blank"
+          >See my portfolio</a
+        >
+      </li>
+      <li>
+        <a href="mailto:https:francoisoibur21@gmail.com" target="_blank"
+          >Send me an email:</a
+        >
+        francoisoibur21@gmail.com
+      </li>
+    </ul>
+  </section>
+
+  <section class="about">
+    <h3>Ang Antares Programming</h3>
+    <p>Ang Antares Programming ay isang blog para sa mga Pilipino tungkol sa mga bagay tungkol sa Web at software development na hindi madalas maituro sa mga university at college. Dahil kinikilala ng Antares Programming ang epekto ng wikang kinalakhan o <i lang="en">mother tongue</i> sa pagkatuto, karamihan ng mga artikulo sa site na ito ay nasa Filipino. Umaasa ang writer nito na darating ang panahon na magkakaroon ng mas maraming materyal sa iba pang mga wika ng Filipinas. Pero sa ngayon, sapat na ang pagsisikap na ito.</p>
+    <p>Nga pala, hindi laging ganito "kalalim" (kapormal) ang Filipino sa site na ito. 😉</p>
+  </section>
+
+  <p>&copy; <%- new Date().getFullYear() %> Francis Rubio</p>
+  <p><a href="#">Back to top</a></p>
+</footer>
+
+<%- js('js/index.js') %>
+<script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBLSepyUmzlswAI8E0PxLCrB7IPHNlkekg",
+    authDomain: "antares-blog.firebaseapp.com",
+    databaseURL: "https://antares-blog.firebaseio.com",
+    projectId: "antares-blog",
+    storageBucket: "",
+    messagingSenderId: "1040232049670"
+  };
+  firebase.initializeApp(config);
+</script>
+<script>
+    var CONFIG_ROOT = `<%- config.root %>`;
+    var CONFIG_URL = `<%- config.url %>`.replace('/antares-blog', '');
+</script>
+
+<article class="toast">
+  <svg class="icon icon--success" viewBox="0 0 40 40"><path d="M20 0C8.95 0 0 8.95 0 20c0 11.04 8.95 20 20 20 11.04 0 20-8.96 20-20C40 8.95 31.04 0 20 0zm-4 30L6 20l2.83-2.83L16 24.34 31.17 9.17 34 12 16 30z"/></svg>
+  <svg class="icon icon--error" viewBox="0 0 40 40"><path d="M20 0C8.96 0 0 8.95 0 20s8.96 20 20 20 20-8.95 20-20S31.04 0 20 0zm2 30h-4v-4h4v4zm0-8h-4V10h4v12z"/></svg>
+</article>

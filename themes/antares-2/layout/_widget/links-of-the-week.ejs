@@ -1,0 +1,27 @@
+<% if(site.data.links_of_the_week.length > 0) {%>
+<article class="widget-wrap">
+    <h4 class="widget-title">Mula sa Interwebz</h4>
+    <section class="widget links-of-the-week">
+        <ul class="link-set">
+        <% 
+            const lastIndex = site.data.links_of_the_week.length - 1;
+            const latestLinkset = site.data.links_of_the_week[lastIndex];
+            const links = latestLinkset.links;
+
+            links.forEach(link => { %>
+        <% const linkRootURL = (link.url); %>
+        <li>
+            <h5 class="link-title"><a href="<%- link.url %>"><%- link.title %></a> <small>(<a href="<%- link.domain %>"><%- link.domain %></a>)</small></h5>
+            <cite class="link-author"><%- link.author %></cite>
+            <p class="link-excerpt"><%- link.excerpt %></p>
+            
+        </li>
+
+        <%
+            })
+
+        %>
+        </ul>
+    </section>
+</article>
+<% } %>

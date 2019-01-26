@@ -1,0 +1,47 @@
+<article class="post">
+    <h3>
+        <a class="post__title" href="<%- config.root %><%- item.path %>">
+            <%- item.title %>
+        </a>
+    </h3>
+    <!-- Date and Author -->
+    <% 
+    if(item.author) { %>
+        <div class="meta">
+            <span class="author-name"><%= item.author.name %></span>
+            <time datetime="<%= new Date(item.date).toJSON() %>" class="article-date"><%= item.date.format(config.date_format) %></time>
+        </div>
+    <% } %>
+    <!-- Content -->
+    <% if(with_excerpt) { %>
+    <section class="post__excerpt">
+        <%- item.excerpt || item.content %>
+    </section>
+    <% } %>
+    
+<% if (item.tags && item.tags.length){ %>
+    <%
+        var tags = [];
+        item.tags.forEach(function(tag){
+            tags.push('<a class="tag" href="' + config.root + tag.path + '">#' + tag.name + '</a>');
+        });
+    %>
+    <section class="tags">
+        <%- tags.join(' ') %>
+    </section>
+    <% } %>
+<% 
+    const categories = item.categories.data
+    if(categories && categories.length > 0) { %>
+    <%
+        const categories_html = categories.map(tag => {
+            const styleClass = tag.name.split(' ').map(s => s.toLowerCase()).join('-');
+            return `<a style="padding: 0 0.75ch;" class="category ${styleClass}" href="${config.root}${tag.path}">${tag.name}</a>`
+        })
+    %>
+    <section class="category" style="margin-top: 1rem;">
+        <%- categories_html.join('|');  %>
+    </section>
+<% } %>
+    
+</div>

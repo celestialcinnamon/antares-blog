@@ -1,0 +1,39 @@
+<% const item = post %>
+<article class="post post--full <%- item.categories.data[0].name.split(' ').map(s => s.toLowerCase()).join('-') %>">
+  <% if(post.is_featured) { %>
+  <header class="cover">
+    <div class="post__wrapper">
+      <header class="post__header">
+        <small class="label">Featured</small>
+        <h2><a class="post__title" href="<%- config.root %><%- post.path %>">
+            <%- item.title %></a></h2>
+      </header>
+      <section class="post__meta">
+        <span class="author-name">
+          <%= item.author.name %></span>
+        <time datetime="<%= new Date(item.date).toJSON() %>" class="article-date">
+          <%= item.date.format(config.date_format) %></time>
+      </section>
+    </div>
+    <img src="<%- config.root + item.lang + '/' + item.slug + '/' + item.cover_image %>" alt="" class="cover-display">
+  </header>
+  <% } else { %>
+  <header class="article-header">
+    <%- partial('post/title', {class_name: 'article-title'}) %>
+  </header>
+  <% } %>
+  <div class="post__content">
+    <%- post.content %>  
+  </div>
+  <footer class="article-footer">
+      <!--a data-url="<%- post.permalink %>" data-id="<%= post._id %>" class="article-share-link"><%= __('share') %></a-->
+      <div class="article-footer__meta">
+        <%- partial('post/tag') %>
+        <%- partial('post/category') %>
+      </div>
+    </footer>
+  </div>
+  <% if (!index){ %>
+    <%- partial('post/nav') %>
+  <% } %>
+</article>

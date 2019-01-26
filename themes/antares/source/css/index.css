@@ -29,7 +29,7 @@ html {
   --cover-bg--hover: hsl(0, 0%, 30%);
   --footer-bg: #333;
   --sans-serif: "Montserrat", sans-serif;
-  --serif: "Eczar", serif;
+  --serif: "Rosarivo", serif;
   --link-color: #35f;
   --success: #3c5;
   --error: #c35;
@@ -81,7 +81,7 @@ html.dark {
   --definition: #333;
   --light-dark: #000;
   --light-dark--opposite: #eee;
-  --bg-decoration: var(--primary-text);
+  --bg-decoration: hsl(44, 57%, 53%);
 
   --cover-img: url("../images/Website Cover v3.png");
   --cover-height: 200px;
@@ -696,6 +696,11 @@ a[target="_blank"]::after {
   width: 100%;
   max-width: unset;
   margin: 2rem auto;
+}
+
+.img-wrapper--illustration figcaption {
+  opacity: 0.85;
+  font-size: 0.85rem;
 }
 
 .img-wrapper--illustration img {
@@ -1424,7 +1429,7 @@ li {
   content: "";
   grid-column: 1/2;
   grid-row: 1/2;
-  background-color: var(--primary);
+  background-color: var(--bg-decoration);
   clip-path: polygon(55px 6px, 76.23% 38px, 44.68% 95.84%, 4.61% 77.09%);
   transition: clip-path 200ms, background-color 300ms;
 }
@@ -1438,7 +1443,6 @@ li {
 }
 
 .category-list-item:hover::before {
-  background-color: var(--primary-dark);
   clip-path: polygon(65% 6px, 80.23% 20%, 68% 70.84%, 14.61% 77.09%);
   transition: clip-path 200ms, background-color 300ms;
 }
@@ -1634,6 +1638,10 @@ li {
 }
 
 @media only screen and (min-width: 1024px) {
+  .post--full > p {
+    font-size: 1.15rem;
+  }
+
   .footer {
     display: grid;
     grid-template-columns: 1fr 2fr;

@@ -1,0 +1,9 @@
+<% if (post.tags && post.tags.length){ %>
+  <div class="article-tags-wrapper">
+    <h4>Tags</h4>
+    <%- list_tags(post.tags, {
+      show_count: false,
+      class: 'article-tag'
+    }) %>
+  </div>
+<% } %>

@@ -1,0 +1,13 @@
+<article class="post post--featured">
+    <div class="post__wrapper">
+        <header class="post__header">
+            <small class="label">Featured</small>
+            <h2><a class="post__title" href="<%- config.root %><%- item.path %>"><%- item.title %></a></h2>
+        </header>
+        <section class="post__meta">
+            <span class="author-name"><%= item.author.name %></span>
+            <time datetime="<%= new Date(item.date).toJSON() %>" class="article-date"><%= item.date.format(config.date_format) %></time>
+        </section>
+    </div>
+    <img src="<%- config.root + item.lang + '/' + item.slug + '/' + item.cover_image %>" alt="" class="cover-display">
+</article>
