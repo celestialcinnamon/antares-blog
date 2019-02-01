@@ -65,7 +65,7 @@ Marami kang patterns na makukuha sa site ng [Subtle Patterns](https://www.subtle
 Ang gagawin mo rito, gagawin mo siyang background image sa page mo. 'Tapos ise-set mo lang ang `background-repeat` sa `repeat` gaya ng halimbawa sa baba:
 
 <div class="example-container" style="background-image: url(./roughcloth.png); background-repeat: repeat; background-color: #F4F4F4;">
-  <h1>Example ng pattern background</h1>
+  <h1 style="color: #333;">Example ng pattern background</h1>
 </div>
 
 Huwag mo ring kalimutang i-set ang `background-color` sa kulay ng pattern para hindi ito mag-pure white habang nilo-load pa ang image pattern mo.

@@ -1,7 +1,9 @@
+<!DOCTYPE html>
+<html lang="<%- page.lang %>">
 <%- partial('_partial/head') %>
-<body>
+<body class="dark">
     <%- partial('_partial/header', null, {cache: !config.relative_link}) %>
-    <section id="main"><%- body %></section>
+    <%- body %>
     <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
   </div>
   <%- partial('_partial/after-footer') %>

@@ -15,7 +15,7 @@ Matuto pa lalo mula sa mga blog posts, videos, at iba pa mula sa ibang bahagi ng
 
 Simula sa susunod na linggo, January 14, 2019, may lilitaw nang seksiyon sa footer ng Antares Blog. Ang seksiyon na ito ay tatawaging "Mula sa Interwebz"
 
-Baka maisip mo, <i>ano na namang pakana iyan?</i> Siyempre naman, lahat ng naisusulat ko rito, galing din sa ibang mga posts at videos na gawa ng mga ekspertong gaya nina Chris Coyier, Rachel Andrews, Jen Simmons, Jeffrey Zeldman, at iba pa. Kaya naman, para mas mabilis makarating sa inyo ang impormasyon, puwedeng kayo na mismo ang tumingin mula sa mga blogs at videos nila.
+Baka maisip mo, <i>ano na namang pakana iyan?</i> Siyempre naman, lahat ng naisusulat ko rito, galing din sa ibang mga posts at videos na gawa ng mga ekspertong gaya nina Chris Coyier, Rachel Andrew, Jen Simmons, Jeffrey Zeldman, at iba pa. Kaya naman, para mas mabilis makarating sa inyo ang impormasyon, puwedeng kayo na mismo ang tumingin mula sa mga blogs at videos nila.
 
 Sa Mula sa Interwebz, magkakaroon ng mga links papunta sa mga posts, videos, tweets, graphics, at iba pa na makakatulong nang malaki sa ating lahat. Magkakaroon ng bagong ganito kada dalawang linggo, o mas madalas pa. 
 

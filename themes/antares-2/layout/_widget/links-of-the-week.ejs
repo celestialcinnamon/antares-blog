@@ -1,5 +1,5 @@
 <% if(site.data.links_of_the_week.length > 0) {%>
-<article class="widget-wrap">
+<article class="widget-wrap" id="interwebz">
     <h4 class="widget-title">Mula sa Interwebz</h4>
     <section class="widget links-of-the-week">
         <ul class="link-set">
@@ -11,7 +11,7 @@
             links.forEach(link => { %>
         <% const linkRootURL = (link.url); %>
         <li>
-            <h5 class="link-title"><a href="<%- link.url %>"><%- link.title %></a> <small>(<a href="<%- link.domain %>"><%- link.domain %></a>)</small></h5>
+            <h5 class="link-title"><a href="<%- link.url %>" class="no-new-tab" target="_blank"><%- link.title %></a> <small>(<a href="https://<%- link.domain %>" class="no-new-tab" target="_blank"><%- link.domain %></a>)</small></h5>
             <cite class="link-author"><%- link.author %></cite>
             <p class="link-excerpt"><%- link.excerpt %></p>
             
