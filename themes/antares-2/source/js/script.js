@@ -11,3 +11,19 @@ document.addEventListener("focusin", function(event) {
         });
     }
 });
+
+function toggleDarkMode() {
+    document.documentElement.classList.toggle('dark')
+    localStorage.setItem('is_dark_mode', document.documentElement.classList.contains('dark') ? 1 : 0)
+}
+
+function initDarkMode() {
+    const siteIsOnDarkMode = !!parseInt(localStorage.getItem('is_dark_mode'));
+    console.log(siteIsOnDarkMode)
+
+    if (siteIsOnDarkMode) {
+        document.documentElement.classList.add('dark');
+    }
+}
+
+initDarkMode();

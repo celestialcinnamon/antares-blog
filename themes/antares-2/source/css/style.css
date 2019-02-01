@@ -837,15 +837,15 @@ em {
     font-family: var(--serif);
 }
 
-.article-tag-list-link,
-.tag {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    border-radius: 50px;
-    background-color: var(--accent-lighter);
-    transition: border-radius 300ms, box-shadow 300ms;
-    --focus-color: var(--accent-darker);
-    color: var(--text-on-primary);
+.article-tag-list-link, .tag {
+	display: inline-block;
+	padding: 0.5rem 1rem;
+	border-radius: 50px;
+	background-color: var(--accent-lighter);
+	transition: border-radius 300ms, box-shadow 300ms;
+	--focus-color: var(--accent-darker);
+	color: var(--text-on-primary);
+	margin: 5px;
 }
 
 a.article-category-link,
@@ -1691,4 +1691,12 @@ a.archive-article-date:hover {
         var(--category)
     );
     filter: drop-shadow(0 5px 5px var(--category-o-75));
+}
+
+.dark .dark-mode {
+    color: var(--primary);
+}
+
+.dark .header {
+	border-image: linear-gradient(90deg, #fff0 5%, #fff3, #fff0 85%) 1;
 }
