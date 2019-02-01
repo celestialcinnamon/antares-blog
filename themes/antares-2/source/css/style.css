@@ -1303,7 +1303,6 @@ abbr:focus {
     max-width: 70ch;
     margin: 0.5rem auto;
     background-color: var(--gray);
-    overflow: auto;
     border-radius: 4px;
     position: relative;
     clear: both;
@@ -1328,6 +1327,7 @@ abbr:focus {
     padding: 0 1ch;
     font-family: var(--sans-serif), sans-serif;
     font-weight: normal;
+    z-index: 1;
 }
 
 .highlight table {
@@ -1336,13 +1336,19 @@ abbr:focus {
 
 .highlight figcaption + table {
     margin-top: 1rem;
+    overflow: auto;
+    width: 100%;
+    display: block;
 }
 
 .highlight pre {
-	color: var(--text-on-gray);
+    color: var(--text-on-gray);
 	font-size: 1rem;
 	line-height: 2;
-	max-width: 30ch;
+}
+
+td.code {
+    max-width: 25ch;
 }
 
 .code .line {
@@ -1352,6 +1358,8 @@ abbr:focus {
 .gutter {
     background-color: var(--gray-i1);
     padding: 1ch;
+    position: sticky;
+    left: 0;
 }
 
 code {
