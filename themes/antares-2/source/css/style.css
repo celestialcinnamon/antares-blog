@@ -483,7 +483,6 @@ em {
     position: relative;
     border-bottom: 1px solid var(--bg-d2);
     padding: 2rem;
-    overflow: auto;
 }
 
 .post:nth-child(odd) {
@@ -641,6 +640,7 @@ em {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 
+.article-tag-list-item,
 .tag-list-item {
 	display: inline;
 }
@@ -652,6 +652,7 @@ em {
     transition: border-radius 300ms, box-shadow 300ms;
 }
 
+.article-tag-list-link::before,
 .tag-list .tag-list-link::before {
     content: "#";
 }
@@ -837,7 +838,7 @@ em {
     font-family: var(--serif);
 }
 
-.article-tag-list-link, .tag {
+.article-tag-list-item, .tag {
 	display: inline-block;
 	padding: 0.5rem 1rem;
 	border-radius: 50px;
@@ -1035,15 +1036,17 @@ ol:not([class]) {
 }
 
 .article-header {
-    border-left: 1rem solid var(--category);
-    padding: 1rem;
-    padding-left: 2rem;
+	border-left: 1rem solid var(--category);
+	padding: 1rem;
+	padding-left: 2rem;
+	height: 90vh;
+	display: grid;
 }
 
 .article-title {
     font-size: 6vmax;
     font-weight: normal;
-    margin: 0 !important;
+    margin: auto 0 !important;
     word-wrap: break-word;
     word-wrap: anywhere;
 }
@@ -1266,6 +1269,7 @@ abbr:focus {
     overflow: hidden;
     overflow-x: auto;
     width: auto;
+    display: none;
 }
 
 .img-wrapper img {
@@ -1278,6 +1282,7 @@ abbr:focus {
     width: 100%;
     max-width: unset;
     margin: 2rem auto;
+    display: block;
 }
 
 .img-wrapper--illustration figcaption {
@@ -1334,9 +1339,10 @@ abbr:focus {
 }
 
 .highlight pre {
-    color: var(--text-on-gray);
-    font-size: 1rem;
-    line-height: 2;
+	color: var(--text-on-gray);
+	font-size: 1rem;
+	line-height: 2;
+	max-width: 30ch;
 }
 
 .code .line {
@@ -1393,9 +1399,6 @@ code {
 }
 
 .example-container {
-    /* all: unset; */
-    padding: 1rem;
-    margin: 1rem;
     border: 1px solid #0003;
     background-color: var(--bg);
     color: var(--text-color);
@@ -1457,12 +1460,11 @@ code {
 }
 
 .article-tag-list {
-    display: flex;
     list-style: none;
 }
 
 .article-tag-list-item {
-    padding: 1rem;
+    padding: 0.5rem 1rem;
 }
 
 .article-footer__meta {

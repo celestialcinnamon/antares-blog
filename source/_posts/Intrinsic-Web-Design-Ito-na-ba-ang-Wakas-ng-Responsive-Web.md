@@ -168,7 +168,7 @@ Hindi rin siguro ito matunog sa mga kakilala ko, pero mga ilang taon pagkatapos 
 
 Dahil mobile-first na ang Web, at mabagal ang Internet speeds para sa mga mobile devices, hindi puwedeng mag-send sa mobile devices ng mga high-resolution images gaya ng ginagawa sa mga desktop. Kaya nagde-decide ang server kung aling size ng image ang ipapadala nito sa device depende sa width ng viewport nito. At hindi lang ito natatapos sa width ng mga images, dahil may mga sites na gumagawa ng dalawang magkaibang site para sa desktop at sa mobile para mabawasan ang file size ng CSS nila sa mobile devices.
 
-<figure class="img-wrapper">
+<figure class="img-wrapper--illustration">
     {% asset_img timeline.png "Timeline ng mga Web design era, mula sa slides ni Jen Simmons" %}
 </figure>
 
