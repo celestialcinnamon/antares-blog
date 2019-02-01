@@ -928,14 +928,13 @@ a.article-category-link:focus,
 }
 
 .footer {
-    background-color: var(--bg-invert);
-    color: var(--text-color-invert-i4);
-    padding: 2rem;
-    z-index: 2;
-
-    --text: #ddd;
-    --text--dark: #fff;
-    --text--darker: #eee;
+	background-color: var(--bg);
+	color: var(--text-color-i4);
+	padding: 2rem;
+	z-index: 2;
+	--text: #ddd;
+	--text--dark: #fff;
+	--text--darker: #eee;
 }
 
 .footer p {
