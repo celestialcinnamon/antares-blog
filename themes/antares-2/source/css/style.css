@@ -929,7 +929,7 @@ a.article-category-link:focus,
 
 .footer {
 	background-color: var(--bg);
-	color: var(--text-color-i4);
+	color: var(--text-color);
 	padding: 2rem;
 	z-index: 2;
 	--text: #ddd;
@@ -942,7 +942,7 @@ a.article-category-link:focus,
 }
 
 .footer a {
-    color: var(--accent-on-dark);
+    color: var(--accent-on-light);
 }
 
 .footer .about {
