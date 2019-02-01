@@ -204,6 +204,31 @@ a[target=_blank]:not(.no-new-tab)::after {
     content: " (" var(--opens-in-new-tab) ")";
 }
 
+
+dt:not([class]) {
+  margin-top: 0.5rem;
+  padding: 1rem;
+}
+
+dt:not([class]),
+dt:not([class]) > * {
+  font-weight: 900;
+}
+
+dd:not([class]) {
+  padding-left: 3rem;
+}
+
+dt:not([class]),
+dd:not([class]) {
+  background-color: var(--definition);
+}
+
+dt:not([class]),
+dd:not([class]) {
+  background-color: var(--definition);
+}
+
 del {
     text-decoration-color: var(--error);
 }
@@ -822,8 +847,9 @@ em {
             height: 10vh;
         }
 
+        .article-header,
         .post--featured {
-            height: 90vh;
+            height: 90vh !important;
         }
 
         .sidebar {
@@ -1036,24 +1062,36 @@ ol:not([class]) {
 }
 
 .article-header {
-	border-left: 1rem solid var(--category);
-	padding: 1rem;
+    padding: 1rem;
 	padding-left: 2rem;
-	height: 90vh;
+	height: 80vh;
 	display: grid;
 }
 
 .article-title {
-    font-size: 6vmax;
+    font-size: 4vmax;
     font-weight: normal;
     margin: auto 0 !important;
     word-wrap: break-word;
     word-wrap: anywhere;
+    position: relative;
+}
+
+.article-title::before {
+    content: '';
+    position: absolute;
+    height: 2em;
+    width: 2em;
+    background-color: var(--category);
+    z-index: -1;
+    top: -1em;
+    left: -1em;
 }
 
 .soft-skills {
     --category: #28a388;
     --category-lighter: hsl(167, 60%, 50%);
+    --category-darker: hsl(167, 60%, 30%);
     --category-o-75: #28a3884b;
     --category-o-50: #28a38836;
     --category-o-25: #28a38819;
@@ -1062,6 +1100,7 @@ ol:not([class]) {
 .design {
     --category: #f44;
     --category-lighter: hsl(0, 100%, 73%);
+    --category-darker: hsl(0, 80%, 53%);
     --category-o-75: #ff44444b;
     --category-o-50: #ff444436;
     --category-o-25: #ff444419;
@@ -1070,6 +1109,7 @@ ol:not([class]) {
 .meta {
     --category: #db002b;
     --category-lighter: #ff0f3f;
+    --category-darker: hsl(348, 100%, 33%);
     --category-o-75: #db002b4b;
     --category-o-50: #db002b36;
     --category-o-25: #db002b19;
@@ -1078,6 +1118,7 @@ ol:not([class]) {
 .css {
     --category: #3ac;
     --category-lighter: hsl(193, 60%, 70%);
+    --category-darker: hsl(193, 60%, 30%);
     --category-o-75: #33aacc4b;
     --category-o-50: #33aacc36;
     --category-o-25: #33aacc19;
@@ -1086,6 +1127,7 @@ ol:not([class]) {
 .javascript {
     --category: hsl(50, 100%, 50%);
     --category-lighter: hsl(50, 100%, 60%);
+    --category-darker: hsl(40, 100%, 45%);
     --category-o-75: #ffee334b;
     --category-o-50: #ffee3336;
     --category-o-25: #ffee3319;
@@ -1428,7 +1470,7 @@ code {
 }
 
 .example-container--fixable::before {
-    content: "I-double-click para palakihin";
+    /* content: "I-double-click para palakihin"; */
     position: absolute;
     top: 0;
     background-color: var(--card-bg);
