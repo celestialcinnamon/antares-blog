@@ -68,7 +68,8 @@ function renderLinkPaths(pathArray = []) {
   <meta property="og:description" content="<%- strip_html(description) %>" /> 
 
   <%- css('css/literata-book.css') %>
-  <%- css('css/style.css') %>
+  <link href="/antares-blog/css/style.css" rel="stylesheet" media="screen">
+  <link href="/antares-blog/css/print.css" rel="stylesheet" media="print">
 
   <%
     const links = []

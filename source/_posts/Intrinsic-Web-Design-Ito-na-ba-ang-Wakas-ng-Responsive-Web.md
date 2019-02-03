@@ -124,7 +124,9 @@ Maaring imbento ko lang ang terminong <i>CSS Epoch</i>, pero marami ang sasang-a
 Dito sa era na ito, nagkaroon ng dalawang magkalabang opinyon sa Web design. May mga nagsasabi na dapat nating gawing fixed-width ang mga layout, gaya sa mga printed materials. Dahil kahit na kakaunti lang ang iba't ibang screen sizes noon, hindi pa rin natin kayang tiyakin kung ano'ng size ng screen ng mga users. Kaya dapat nating gawing naka-fixed ang laki ng layout.
 
 <figure id="fig-62.5674" class="img-wrapper img-wrapper--illustration float-left float--wider">
-    <video controls src="/antares-blog/tl/Intrinsic-Web-Design-Ito-na-ba-ang-Wakas-ng-Responsive-Web/fluid-layout.mp4"></video>
+    <video controls src="/antares-blog/tl/Intrinsic-Web-Design-Ito-na-ba-ang-Wakas-ng-Responsive-Web/fluid-layout.mp4">
+        <p class="video-fallback"></p>
+    </video>
     <figcaption>
         **Figure 62.5674**: Isang halimbawa ng fluid layout.
     </figcaption>
@@ -134,7 +136,9 @@ May mga nagsasabi naman na "hindi, dapat nag-aadapt sa size ng screen ang layout
 
 
 <figure id="fig-62.5674" class="img-wrapper img-wrapper--illustration float-right float--wider">
-    <video controls src="/antares-blog/tl/Intrinsic-Web-Design-Ito-na-ba-ang-Wakas-ng-Responsive-Web/fixed-layout.mp4"></video>
+    <video controls src="/antares-blog/tl/Intrinsic-Web-Design-Ito-na-ba-ang-Wakas-ng-Responsive-Web/fixed-layout.mp4">
+        <p class="video-fallback"></p>
+    </video>
     <figcaption>
         **Figure 62.5674**: Isang halimbawa ng fixed layout.
     </figcaption>

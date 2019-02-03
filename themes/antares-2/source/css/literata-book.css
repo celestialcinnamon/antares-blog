@@ -1,0 +1,16 @@
+@font-face {
+    font-family: "Literata Bookset";
+    src: 
+        url(fonts/LiterataBook.otf),
+        url(fonts/LiterataBook-Bold.otf);
+    font-weight: normal bold;
+}
+
+@font-face {
+    font-family: "Literata Bookset";
+    src: 
+        url(fonts/LiterataBook-Italic.otf),
+        url(fonts/LiterataBook-BoldItalic.otf);
+    font-weight: normal bold;
+    font-style: italic;
+}
