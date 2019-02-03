@@ -1,4 +1,20 @@
-document.addEventListener("DOMContentLoaded", function(e) {});
+const i18n = {
+    sectionLink: "Link sa seksiyong ito"
+}
+
+document.addEventListener("DOMContentLoaded", function(e) {
+    document.getElementById("more")
+        .remove();
+
+    document.querySelectorAll(".headerlink")
+        .forEach(element => {
+            const parent = element.parentElement;
+            const thisElement = `<a href="${element.getAttribute("href")}" class="headerlink" aria-label>${i18n.sectionLink}</a>`;
+            element.remove();
+            parent.innerHTML += thisElement;
+        });
+
+});
 
 document.addEventListener("focusin", function(event) {
     if (event.target.matches(".post--full *")) {
