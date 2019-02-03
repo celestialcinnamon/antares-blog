@@ -5,6 +5,7 @@
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
+    font-display: swap;
 }
 
 html {
@@ -66,7 +67,7 @@ html {
 
     --text-on-primary: #000;
 
-    --serif: "Literata Book", serif;
+    --serif: "Literata Bookset", serif;
     --sans-serif: "Montserrat", sans-serif;
     --monospace: "Source Code Pro", monospace;
 
@@ -244,7 +245,7 @@ ins {
 
 pre,
 code {
-    font-family: var(--monospace);
+    font-family: var(--monospace), monospace;
 }
 
 select,
