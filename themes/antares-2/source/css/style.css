@@ -61,6 +61,8 @@ html {
     --gray-i1: #ddd;
     --gray: #e4e4e4;
 
+    --text-on-color: #fffe;
+
     --text-on-gray: #333;
     --text-on-gray-1: #222;
     --text-on-gray-2: #111;
@@ -1851,4 +1853,21 @@ a.archive-article-date:hover {
 	padding: 0.5rem;
 	display: block;
 	height: 100%;
+}
+
+.print-notice {
+    display: none;
+}
+
+.pdf-save {
+    margin-left: auto;
+    text-align: right;
+    padding: 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    background-color: var(--category);
+    color: var(--text-on-color);
+    font-weight: 900;
+    background-image: linear-gradient(135deg, var(--category-lighter), var(--category-darker));
+    box-shadow: 0 3px 15px var(--category-o-50);
 }

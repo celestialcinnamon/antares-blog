@@ -1,0 +1,19 @@
+<% 
+    const filename = 
+        post.title
+            .replace(/ /g, "_")
+            .replace(/:/g, "")
+            .replace(/,/g, "")
+            .replace(/\?/g, "")
+        + ".pdf";
+%>
+
+<a class="pdf-save" href="<%- config.root + post.path %>article.pdf" download="<%- filename %>">
+<% const language = post.lang || post.language || "tl"; %>
+<% if(language === "tl") { %>
+I-save ang artikulong ito bilang PDF
+<% } else if(language === "en") { %>
+Save this article as PDF
+<% } %>
+<% console.log(post.path) %>
+</a>

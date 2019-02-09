@@ -73,7 +73,7 @@ html,
 }
 
 html {
-    font-size: 12pt;
+    font-size: 12pt !important;
 }
 
 body {
@@ -87,8 +87,8 @@ h4, h5, h6 {
     color: #000 !important;
 }
 
+#back-to-top,
 .navbar,
-.footer,
 .article-footer,
 .headerlink,
 #article-nav,
@@ -112,6 +112,7 @@ div.widget-wrap,
     height: auto;
     display: flex;
     flex-direction: column-reverse;
+    page-break-after: always;
 }
 
 .post__wrapper:hover + .cover-display,
@@ -134,9 +135,39 @@ div.widget-wrap,
 }
 
 .post__content {
-    page-break-before: always;
     max-width: none;
     columns: 2;
+}
+
+.footer a::after,
+.post__content a {
+    color: #35f !important;
+}
+
+.print-notice {
+    display: block;
+}
+
+.print-notice::before {
+    column-span: all;
+    font-weight: 900;
+    page-break-after: avoid;
+    margin-bottom: 24pt !important;
+}
+
+.print-notice:lang(en)::before {
+    content: "See the latest version of this article at";
+}
+
+.print-notice:lang(tl)::before {
+    content: "Tingnan ang pinakabagong version ng artikulong ito sa";
+}
+
+.print-notice::after {
+    content: attr(data-permalink);
+    color: #37c !important;
+    font-weight: normal;
+    display: block;
 }
 
 .post__content p:first-of-type {
@@ -145,8 +176,16 @@ div.widget-wrap,
     max-width: none;
 }
 
+em, strong, b, i {
+    font-family: inherit;
+}
+
+strong, b {
+    font-weight: bold;
+}
+
 .post__content p, .post__content ul, .post__content ol, .post__content dl {
-	font-size: 12pt;
+	font-size: 12pt !important;
     font-family: "Literata Bookset", sans-serif;
     line-height: 2;
     widows: 2;
@@ -199,7 +238,7 @@ img {
     max-width: 100%;
 }
 
-ul, img {
+img {
    page-break-inside: avoid;
 }
 
@@ -293,8 +332,12 @@ a.archive-year {
     content: "Isinulat noong ";
 }
 
-.highlight {
-    background-color: rgba(0, 0, 0, 0.25);
+.highlight pre {
+    white-space: pre-wrap !important;       /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap !important;      /* Opera 4-6 */
+    white-space: -o-pre-wrap !important;    /* Opera 7 */
+    word-wrap: break-word !important;  
 }
 
 pre,
@@ -327,4 +370,13 @@ code {
 
 abbr[title]::after {
     content: " (" attr(title) ")";
+}
+
+.article-title {
+    font-size: 36pt;
+    font-weight: 900;
+}
+
+.highlight .gutter {
+    display: none !important;
 }

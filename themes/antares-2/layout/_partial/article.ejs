@@ -25,11 +25,13 @@
   <div class="post__content">
     <%- post.content %>  
   </div>
+  <p class="print-notice" data-permalink="<%- post.permalink %>"></p>
   <footer class="article-footer">
       <!--a data-url="<%- post.permalink %>" data-id="<%= post._id %>" class="article-share-link"><%= __('share') %></a-->
       <div class="article-footer__meta">
         <%- partial('post/tag') %>
         <%- partial('post/category') %>
+        <%- partial('post/pdf') %>
       </div>
     </footer>
   </div>
