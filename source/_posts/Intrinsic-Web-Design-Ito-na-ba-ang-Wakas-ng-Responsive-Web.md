@@ -97,10 +97,10 @@ Dito rin nauso ang proseso tinatawag nating <i>slice and dice</i>. Ang mga desig
 
 **Defining Characteristics:** Paggamit ng Adobe Flash para sa mga Web design.
 
-<figure id="fig-93.6485" class="img-wrapper img-wrapper--illustration float-left">
+<figure id="fig-89.1249" class="img-wrapper img-wrapper--illustration float-left">
     {% asset_img flash.png "Adobe Flash" %}
     <figcaption>
-        **Figure 93.6485**
+        **Figure 89.1249**
     </figcaption>
 </figure>
 
@@ -108,10 +108,10 @@ Sa panahong ito, lumayo ang Web mula sa pinanggalingan nitong HTML at nakakita n
 
 ### Ang Simula ng CSS Epoch
 
-<figure id="fig-93.6485" class="img-wrapper img-wrapper--illustration float-left">
+<figure id="fig-60.4817" class="img-wrapper img-wrapper--illustration float-left">
     {% asset_img css.png "Image ng aklat na Designing with Web Standards ni Jeffrey Zeldman" %}
     <figcaption>
-        **Figure 93.6485**: Kapansin-pansing dahil sa CSS, nanumbalik ang tamang kahulugan ng mga HTML tags. (<cite>Mula sa 2003 aklat ni Jeffrey Zeldman, Designing with Web Standards</cite>)
+        **Figure 60.4817**: Kapansin-pansing dahil sa CSS, nanumbalik ang tamang kahulugan ng mga HTML tags. (<cite>Mula sa 2003 aklat ni Jeffrey Zeldman, Designing with Web Standards</cite>)
     </figcaption>
 </figure>
 
@@ -135,12 +135,12 @@ Dito sa era na ito, nagkaroon ng dalawang magkalabang opinyon sa Web design. May
 May mga nagsasabi naman na "hindi, dapat nag-aadapt sa size ng screen ang layout." Dapat na nagre-resize din ito depende sa viewport. Hindi ako eksperto sa kasaysayan ng Web design, pero sa tingin ko, ang fluid layout ang naging <i lang="en">precursor</i> ng Responsive Web Design.
 
 
-<figure id="fig-62.5674" class="img-wrapper img-wrapper--illustration float-right float--wider">
+<figure id="fig-43.9855" class="img-wrapper img-wrapper--illustration float-right float--wider">
     <video controls src="/antares-blog/tl/Intrinsic-Web-Design-Ito-na-ba-ang-Wakas-ng-Responsive-Web/fixed-layout.mp4">
         <p class="video-fallback"></p>
     </video>
     <figcaption>
-        **Figure 62.5674**: Isang halimbawa ng fixed layout.
+        **Figure 43.9855**: Isang halimbawa ng fixed layout.
     </figcaption>
 </figure>
 
@@ -163,10 +163,10 @@ Sa panahong ito rin halos nawala ang "art direction" sa Web. Dahil karamihan ng 
 
 Hindi rin siguro ito matunog sa mga kakilala ko, pero mga ilang taon pagkatapos sumikat ang Responsive Web Design, lumabas ang Adaptive Web Design. Hindi nito pinalitan ang RWD; sa halip, dinagdagan nito ang RWD ng maraming kakayahan. Sa RWD, lahat ng transformations sa layout at adjustments ay nangyayari sa browser, gamit ang CSS, at kung minsan, JavaScript. Pero nang dumating sa eksena ang Adaptive Web Design, sumama ang server sa pagbibigay ng magadang experience sa mga user.
 
-<figure id="fig-62.5674" class="img-wrapper img-wrapper--illustration float-right float--wider">
+<figure id="fig-73.0292" class="img-wrapper img-wrapper--illustration float-right float--wider">
     <video controls src="/antares-blog/tl/Intrinsic-Web-Design-Ito-na-ba-ang-Wakas-ng-Responsive-Web/responsive-layout.mp4"></video>
     <figcaption>
-        **Figure 62.5674**: Isang halimbawa ng isang responsive na layout.
+        **Figure 73.0292**: Isang halimbawa ng isang responsive na layout.
     </figcaption>
 </figure>
 
