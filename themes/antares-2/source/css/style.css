@@ -131,13 +131,13 @@ body {
     --bg-invert: #eee;
     --bg-invert-d1: #ebebeb;
     --bg-invert-d2: #d4d4d4;
-    --bg-invert-d3: #bbb;
+    --bg-d3: #bbb;
     --bg-invert-d4: #aaa;
     --bg-invert-l1: #fff;
     --bg: #212121;
     --bg-d1: #2a2a2a;
     --bg-d2: #333;
-    --bg-d3: #3a3a3a;
+    --bg-invert-d3: #3a3a3a;
     --bg-d4: #444;
     --bg-l1: #111;
 
