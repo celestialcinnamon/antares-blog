@@ -1590,6 +1590,7 @@ code {
 
 .article-footer__meta {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     padding: 1rem;
 }
