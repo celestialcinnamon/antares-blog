@@ -9,7 +9,7 @@
             <%- item.title %></a></h2>
       </section>
       <div class="post__meta">
-        <address class="author-name">
+        <address rel="author" class="author-name">
           <%= item.author.name %>
         </address>
         <time pubdate datetime="<%= new Date(item.date).toJSON() %>" class="article-date">
@@ -32,7 +32,9 @@
       <div class="article-footer__meta">
         <%- partial('post/tag') %>
         <%- partial('post/category') %>
-        <%- partial('post/pdf') %>
+        <% if(!!post.pdf_enabled) { %>
+          <%- partial('post/pdf') %>
+        <% } %>
       </div>
     </footer>
   </div>

@@ -8,7 +8,7 @@
     <% 
     if(item.author) { %>
         <div class="meta">
-            <address class="author-name"><%= item.author.name %></address>
+            <address rel="author" class="author-name"><%= item.author.name %></address>
             <time pubdate datetime="<%= new Date(item.date).toJSON() %>" class="article-date"><%= item.date.format(config.date_format) %></time>
         </div>
     <% } %>
