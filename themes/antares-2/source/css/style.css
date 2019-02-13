@@ -129,7 +129,7 @@ body {
     min-height: 100vh;
     font-family: var(--sans-serif), "Noto Emoji", sans-serif;
     border: 2vmin solid var(--bg-d3);
-    border-image: linear-gradient(to bottom, var(--primary-lighter), var(--primary-darker)) 1;
+    /* border-image: linear-gradient(to bottom, var(--primary-lighter), var(--primary-darker)) 1; */
 }
 
 .dark {
@@ -715,10 +715,8 @@ em {
 @media screen and (min-width: 768px) {
     .post__content dl:not([class]) {
         float: left;
-        margin-left: -3rem;
         margin-right: 1rem;
         text-align: right;
-
         max-width: calc(var(--max-width) / 2);
     }
 
@@ -812,7 +810,7 @@ em {
         flex-direction: row-reverse;
         text-align: left;
     }
-    
+
     .side-callout:nth-of-type(even) p {
         text-indent: 0;
     }
@@ -822,7 +820,7 @@ em {
         padding-left: 0;
         padding-right: 1rem;
     }
-/*-------------------*/
+    /*-------------------*/
     .cover .post__title,
     .post--featured .post__title {
         font-size: 2.75rem;
@@ -1352,15 +1350,15 @@ aside.side-note dl {
     font-family: var(--sans-serif);
 }
 
-dl:not([class]) dt,
-.side-note dt {
-    font-weight: 900;
-    font-size: 6vmin;
-    text-align: var(--text-align);
-    background-image: linear-gradient(var(--category), var(--category));
-    background-size: 50% 1vmax;
-    background-repeat: no-repeat;
-    background-position: bottom var(--text-align) 1rem;
+dl:not([class]) dt, .side-note dt {
+	font-weight: 900;
+	font-size: 6vmin;
+	text-align: var(--text-align);
+	background-image: linear-gradient(var(--category), var(--category));
+	background-size: 50% 1vmax;
+	background-repeat: no-repeat;
+	background-position: bottom var(--text-align) 1rem;
+	margin-left: -2rem;
 }
 
 dl:not([class]) dd,
@@ -1485,8 +1483,6 @@ code {
 .highlight br {
     display: initial;
 }
-
-
 
 .example-container {
     border: 1px solid #0003;
@@ -1866,7 +1862,6 @@ a.archive-article-date:hover {
     box-shadow: 0 3px 15px var(--category-o-50);
 }
 
-
 .twitter-tweet {
     --twitter-blue: #1ea1f2;
 
@@ -1875,7 +1870,6 @@ a.archive-article-date:hover {
     background-position: top right;
     background-repeat: no-repeat;
     background-size: 5px 50%;
-    
 }
 
 .twitter-tweet cite {
@@ -1899,8 +1893,8 @@ samp kbd {
     font-size: 1rem;
 }
 
-samp>kbd:first-child::before {
-    content: '$ ';
+samp > kbd:first-child::before {
+    content: "$ ";
     color: var(--console-color);
 }
 
@@ -1934,10 +1928,10 @@ pre samp kbd {
 }
 
 .highlight {
-	background-color: var(--bg-d1);
-	border: 1px solid var(--bg-d2);
-	display: block;
-	width: 90%;
+    background-color: var(--bg-d1);
+    border: 1px solid var(--bg-d2);
+    display: block;
+    width: 90%;
 }
 
 .highlight code {
