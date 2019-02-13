@@ -85,3 +85,46 @@ Sa mga posts ko sa personal Facebook account ko at pati na rin sa Antares, pauli
 - `small`, `sup`, at `sub`
 
 At pakisuyo lang din, gamitin ang HTML para bigyan ng meaning ang content, at hindi para baguhin kung ano ang hitsura ng page. Kung gusto mong baguhin ang presentation ng content, gumamit ng CSS.
+
+### CSS
+
+2018 na yata ang pinakamalaking taon para sa CSS simula nang i-release ang CSS3. Napakarami kasing nadagdag sa CSS last year, at basically para na itong Photoshop o Illustrator sa sobrang lakas nito.
+
+<aside class="side-callout">
+  <header>
+    <h3>Fun Fact</h3>
+  </header>
+  <div>
+    <p>Ang HTML5 at CSS3 na ang huling versions. Hindi na magkakaroon ng HTML 6 at CSS 4 dahil ginawa na silang mga <i>Living Documents</i>. Patuluyang updates na lang ang magkakaroon, kung saan magdaragdag ng bagong features sa mga languages na ito.</p>
+</aside>
+
+Kaya naman para makasabay sa kasalukuyang agos ng industriya pagdating sa design at Web layouts, puwede mong simulan nang aralin ang mga ito:
+
+- CSS Grid at Flexbox
+- Box Alignment
+- Mix Blend Modes
+- CSS Shapes
+- `@supports` o Feature Queries
+- `box-sizing: border-box;`
+
+### JavaScript
+
+Habang isinusulat ko ito, ang kasalukuyang version ng JavaScript ay ECMAScript 2019 o ES9. Pero nagsimula ang napakaraming pagbabago nang lumabas ang ES6 o ES2015. Matagal kasi ang inabot bago ito nai-release dahil mula nang ilabas ang ES5, parang wala nang masyadong pumansin sa JavaScript dahil sa pagpasok ng [Flash Era](/antares-blog/tl/Intrinsic-Web-Design-Ito-na-ba-ang-Wakas-ng-Responsive-Web/#flash). Pero noong 2015, nailabas ang ES5 (salamat sa mga bathala) dahil unti-unting nawala ang appeal sa tao ng Flash. Kaya heto ang mga dapat mong aralin para makasabay:
+
+- `const` at `let` variable declarations.
+- Ternary IF (`isTrue ? valueIfTrue : valueIfFalse`)
+- Fat Arrow Functions
+- `querySelector` at `querySelectorAll` functions (galing ito sa jQuery dahil palagi itong ginagamit ng mga developers)
+- Workers (na ginagamit para mag-execute ng program sa background)
+- Service Workers (para gumana pa rin ang site mo kahit offline ang user)
+- Web Components (para makagawa ka ng sarili mong HTML elements)
+- Geolocation API (para sa mga location-based experience)
+- Web Payments API (para sa mga e-commerce sites at transactions na may involved na pera)
+- Media Capture API (para makapag-stream ang user sa site mo ng kung ano ang nakikita ng camera nila)
+- Web Push Notifications API (para makapag-notify ka sa users mo, at sana 'wag mo itong abusuhin)
+- Houdini (para makagawa ka ng sarili mong CSS properties)
+- Web Assembly (isang anyo ng Assembly language para sa Web, ibig sabihin makakapag-run ka na rin ng kahit anong programs sa browser)
+
+## Conclusion
+
+Kung titingnan baka sobrang dami nito para pag-aralan. Parang ang hirap makasabay. Baka hindi ka umabot. Pero hindi naman ito ganoon kahirap. Mukha lang itong marami pero makakahabol ka rin. At hindi mo rin kailangang malaman lahat. Kadalasan sapat nang alam mo na may ganitong features para alam mo na meron kang puwedeng gamitin kapag kailangan mo na sila.
