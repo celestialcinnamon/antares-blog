@@ -1157,9 +1157,9 @@ ol:not([class]) {
 }
 
 .article-header {
-    padding: 1rem;
-    padding-left: 2rem;
-    height: 80vh;
+    /* padding: 1rem; */
+    /* padding-left: 2rem; */
+    height: 75vh;
     display: grid;
     position: relative;
     overflow: hidden;
@@ -1171,7 +1171,7 @@ ol:not([class]) {
 }
 
 .article-header::after {
-    content: "";
+    /* content: ""; */
     position: absolute;
     bottom: 1rem;
     right: -1rem;
@@ -1185,16 +1185,23 @@ ol:not([class]) {
     font-size: 4vmax;
     font-weight: 900;
     margin: auto;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
     word-wrap: anywhere;
     position: relative;
-    color: transparent;
+    /* color: transparent;
     background-clip: text;
     background-image: linear-gradient(
         135deg,
         var(--category-lighter),
         var(--category)
     );
-    text-shadow: 0 2px 3px var(--category-o-75);
+    text-shadow: 0 2px 3px var(--category-o-75); */
+    border-radius: 0 15px;
+    border: 5px solid transparent;
+    border-left-color: var(--category);
+    border-bottom-color: var(--category);
+    padding: 5%;
 }
 
 .soft-skills {
@@ -1249,6 +1256,12 @@ ol:not([class]) {
     --category-o-75: #ffee334b;
     --category-o-50: #ffee3336;
     --category-o-25: #ffee3319;
+}
+
+html:not(.dark) .javascript {
+    --category: hsl(40, 100%, 50%);
+    --category-lighter: hsl(40, 100%, 60%);
+    --category-darker: hsl(30, 100%, 50%);
 }
 
 .post__content {
@@ -1514,6 +1527,48 @@ code {
 
 .highlight br {
     display: initial;
+}
+
+.highlight {
+    position: relative;
+}
+
+.highlight > code::before {
+    background-color: var(--bg-d2);
+    padding: 0.5rem;
+    font-family: var(--sans-serif);
+    border-radius: 3px 3px 0 0 ;
+    display: block;
+    margin: -1rem;
+    margin-bottom: 1rem;
+    position: sticky;
+    top: -1rem;
+    left: -1rem;
+}
+
+.highlight > .csharp::before {
+    content: "C#";
+}
+
+.highlight > .html::before {
+    content: "HTML";
+}
+
+.highlight > .json::before {
+    content: "JSON";
+}
+
+.highlight > .http::before {
+    content: "HTTP";
+}
+
+.highlight > .css::before {
+    content: "CSS";
+}
+
+.highlight > .js::before,
+.highlight > .JavaScript::before {
+    content: "JavaScript";
 }
 
 .example-container {
@@ -2002,8 +2057,16 @@ pre samp kbd {
     color: hsl(40, 100%, 43%);
 }
 
+.hljs-title {
+    color: hsl(273, 100%, 50%);
+}
+
 .number {
     color: hsl(120, 100%, 33%);
+}
+
+.dark .hljs-title {
+    color: hsl(273, 100%, 80%);
 }
 
 .dark .hljs-name,
