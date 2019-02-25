@@ -146,24 +146,24 @@ Siyempre bukod sa anim na alam na natin ngayon, may iba pang length units sa CSS
 
 Kapag sinabing "relative", nangangahulugan ito na hindi naka-fix ang laki nila. Nakadepende ito sa iba pang sizes sa loob ng document. Kasama rito ang `em`, `rem`, at ang viewport units dahil hindi absolute ang values nila; nagbabago ito depende sa font size o sa viewport. Bukod sa kanila, may iba pang puwedeng magamit. In practice, wala akong masyadong nakikitang gumagamit nitong mga 'to (posibleng may mga gumagamit nito, hindi ko lang nakikita; hindi naman ako laging nangangalkal ng source code). Pero mas magandang pamilyar tayo para alam natin kung ano'ng puwedeng gamitin kapag kinailangan.
 
-<dl>
-  <dt>`cap` <span class="badge">Experimental</span></dt>
-  <dd>Kagaya ito ng `em` na nakadepende sa font at font size na gamit mo. Pero sa halip na letter "m", nakadepende ang `cap` sa height ng capital letters.</dd>
+<dl class="no-style">
+  <dt class="no-style"><code>cap</code> <span class="badge">Experimental</span></dt>
+  <dd class="no-style">Kagaya ito ng <code>em</code> na nakadepende sa font at font size na gamit mo. Pero sa halip na letter "m", nakadepende ang <code>cap</code> sa height ng capital letters.</dd>
 
-  <dt>`ch`</dt>
-  <dd>Nakadepende rin ito sa font size ng element. Ang `1ch` ay kasinlaki ng width ng character na `0`</dd>
+  <dt class="no-style"><code>ch</code></dt>
+  <dd class="no-style">Nakadepende rin ito sa font size ng element. Ang <code>1ch</code> ay kasinlaki ng width ng character na <code>0</code></dd>
 
-  <dt>`ex`</dt>
-  <dd>Nakadepende naman ang size nito sa height ng lowercase letters. Kinuha ito mula sa konsepto ng x-height sa typography, sa height ng letter "x" ng isang font. Karaniwan na, `1ex ≈ 0.5em`. Hindi eksaktong `0.5em` ang laki pero malapit doon.</dd>
+  <dt class="no-style"><code>ex</code></dt>
+  <dd class="no-style">Nakadepende naman ang size nito sa height ng lowercase letters. Kinuha ito mula sa konsepto ng x-height sa typography, sa height ng letter "x" ng isang font. Karaniwan na, <code>1ex ≈ 0.5em</code>. Hindi eksaktong <code>0.5em</code> ang laki pero malapit doon.</dd>
 
-  <dt>`ic` <span class="badge">Experimental</span></dt>
-  <dd>Nakadepende ang size nito sa width ng "水". To be honest, hindi natin 'to magagamit unless gagawa tayo ng website na may Chinese/Japanese/Korean version.</dd>
+  <dt class="no-style"><code>ic</code> <span class="badge">Experimental</span></dt>
+  <dd class="no-style">Nakadepende ang size nito sa width ng "水". To be honest, hindi natin 'to magagamit unless gagawa tayo ng website na may Chinese/Japanese/Korean version.</dd>
 
-  <dt>`lh` <span class="badge">Experimental</span></dt>
-  <dd>Nakadepende ang size nito sa `line-height` property ng element. Kung estudyante ka at gumagawa ka ng documentation at thesis documents, ang `line-height` ay ang height ng bawat line (weh?); sa <i>Microsoft Word&trade;</i>, ito ang "double spacing" na tinatawag.</dd>
+  <dt class="no-style"><code>lh</code> <span class="badge">Experimental</span></dt>
+  <dd class="no-style">Nakadepende ang size nito sa <code>line-height</code> property ng element. Kung estudyante ka at gumagawa ka ng documentation at thesis documents, ang <code>line-height</code> ay ang height ng bawat line (weh?); sa <i>Microsoft Word&trade;</i>, ito ang "double spacing" na tinatawag.</dd>
 
-  <dt>`rlh` <span class="badge">Experimental</span></dt>
-  <dd>Gaya sa `rem`, ang `rlh` ay nakadepende sa `line-height` ng `<html>` element.</dd>
+  <dt class="no-style"><code>rlh</code> <span class="badge">Experimental</span></dt>
+  <dd class="no-style">Gaya sa <code>rem</code>, ang <code>rlh</code> ay nakadepende sa <code>line-height</code> ng <code>&lt;html></code> element.</dd>
 </dl>
 
 ### Absolute Length Units
@@ -175,29 +175,32 @@ Sa mga low-dpi devices (mga screens, mapa-mobile o desktop pa man iyan), kinakat
 Sa mga high-dpi devices na gaya ng printers, eksaktong-eksakto ang length ng `px` sa diwa na 1 inch talaga ang `1in`, 1 centimeter ang `1cm`, at 1 milimeter ang `1mm`. Sa mga kasong ito, `1px` = 1/96 inch.
 
 <aside class="side-callout">
+  <header>
+    <h3>Note</h3>
+  </header>
   <p>
-    **NOTE:** May mga users na nag-a-adjust ng font size ng browser para mas madaling magbasa. Dahil hindi ito sinusunod ng absolute length units, magkakaproblema ka sa accessibility kung ginagamit mo ang mga ito para sa mga size ng text. Kaya naman mas maganda kung relative length units ang gagamitin mo.
+    May mga users na nag-a-adjust ng font size ng browser para mas madaling magbasa. Dahil hindi ito sinusunod ng absolute length units, magkakaproblema ka sa accessibility kung ginagamit mo ang mga ito para sa mga size ng text. Kaya naman mas maganda kung relative length units ang gagamitin mo.
   </p>
 </aside>
 
-<dl>
-  <dt>`cm`</dt>
-  <dd>One centimeter. `1cm = 96px ÷ 2.54`</dd>
+<dl class="no-style">
+  <dt class="no-style"><code>cm</code></dt>
+  <dd class="no-style">One centimeter. <code>1cm = 96px ÷ 2.54</code></dd>
 
-  <dt>`mm`</dt>
-  <dd>One millimeter. `1mm` = 1/10th ng `1cm`</dd>
+  <dt class="no-style"><code>mm</code></dt>
+  <dd class="no-style">One millimeter. <code>1mm</code> = 1/10th ng <code>1cm</code></dd>
 
-  <dt>`Q` <span class="badge">Experimental</span></dt>
-  <dd>One quarter ng millimeter. `1Q` = 1/40th ng `1cm` or 1/4th ng `1mm`</dd>
+  <dt class="no-style"><code>Q</code> <span class="badge">Experimental</span></dt>
+  <dd class="no-style">One quarter ng millimeter. <code>1Q</code> = 1/40th ng <code>1cm</code> or 1/4th ng <code>1mm</code></dd>
 
-  <dt>`in`</dt>
-  <dd>One inch. `1in` = `2.54cm` = `96px`</dd>
+  <dt class="no-style"><code>in</code></dt>
+  <dd class="no-style">One inch. <code>1in</code> = <code>2.54cm</code> = <code>96px</code></dd>
 
-  <dt>`pt`</dt>
-  <dd>One point. `1pt` = 1/72nd ng `1in`</dd>
+  <dt class="no-style"><code>pt</code></dt>
+  <dd class="no-style">One point. <code>1pt</code> = 1/72nd ng <code>1in</code></dd>
 
-  <dt>`pc`</dt>
-  <dd>One pica. `1pc` = `12pt` = 1/6th ng `1in`</dd>
+  <dt class="no-style"><code>pc</code></dt>
+  <dd class="no-style">One pica. <code>1pc</code> = <code>12pt</code> = 1/6th ng <code>1in</code></dd>
 </dl>
 
 ## Browser compatibility

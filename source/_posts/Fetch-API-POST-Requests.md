@@ -16,7 +16,7 @@ Sa pa­nga­la­wang ba­ha­gi ng Fetch API se­ries, ta­la­ka­yin na­man n
 
 <aside class="side-callout">
     <p>
-        Ang post na i­to ay pa­nga­la­wang ba­ha­gi ng Fetch API se­ries. Pa­ra sa u­nang ba­ha­gi, ti­na­la­kay na­tin ang {% post_link Fetch-API-GET-Requests "<code>GET</code> re­quests" %}.
+        Ang post na i­to ay pa­nga­la­wang ba­ha­gi ng Fetch API se­ries. Pa­ra sa u­nang ba­ha­gi, ti­na­la­kay na­tin ang {% post_link Fetch-API-GET-Requests "GET re­quests" %}.
     </p>
 </aside>
 
@@ -176,7 +176,7 @@ fetch(endpoint, {
 })
 ```
 
-Sa example na ito, nadagdagan ng arguments ang `fetch()` function. Sa [nakaraang example](/antares-blog/2018/12/16/Fetch-API-GET-Requests/) natin, nagpapasa lang tayo ng URL sa `fetch()` function. Pero dahil gusto nating mag-send ng data, magpapasa tayo ng isa pang parameter: ang `options` parameter. Maraming laman ang `options` parameter, pero dalawa lang muna ang gagamitin natin. Kung hindi natin ise-specify ang values ng ibang mga properties ng `options` parameter, may defaults naman.
+Sa example na ito, nadagdagan ng arguments ang `fetch()` function. Sa {% post_link Fetch-API-GET-Requests "nakaraang example" %} natin, nagpapasa lang tayo ng URL sa `fetch()` function. Pero dahil gusto nating mag-send ng data, magpapasa tayo ng isa pang parameter: ang `options` parameter. Maraming laman ang `options` parameter, pero dalawa lang muna ang gagamitin natin. Kung hindi natin ise-specify ang values ng ibang mga properties ng `options` parameter, may defaults naman.
 
 Sa example na ito, ginamit natin ang dalawang properties na ito:
 

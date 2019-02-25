@@ -52,7 +52,7 @@ Ito rin ang panahon kung kailan `<hr>` lang ang pinaka-design na mayroon sa Web.
 <figure id="fig-20.5827" class="img-wrapper img-wrapper--illustration float-right">
     {% asset_img flow-layout-1.png "Image ng halimbawa ng flow layout" %}
     <figcaption>
-       **Figure 20.5827**
+       <b>Figure 20.5827</b>
     </figcaption>
 </figure>
 
@@ -61,7 +61,7 @@ Gaya ng makikita sa [figure 20.5827](#fig-20.5827), nag-exist noon ang mga cente
 <figure id="fig-60.7538" class="img-wrapper img-wrapper--illustration float-left">
     {% asset_img flow-layout-3.png "Image ng halimbawa ng flow layout" %}
     <figcaption>
-        **Figure 60.7538**: Gumamit din ng tables para sa layout noong Flow Layout Era, pero hindi kasingdalas gaya ng sa Table Layout Era.
+        <b>Figure 60.7538</b>: Gumamit din ng tables para sa layout noong Flow Layout Era, pero hindi kasingdalas gaya ng sa Table Layout Era.
     </figcaption>
 </figure>
 
@@ -72,7 +72,7 @@ Gaya ng makikita sa [figure 20.5827](#fig-20.5827), nag-exist noon ang mga cente
 <figure id="fig-86.6879" class="img-wrapper img-wrapper--illustration float-left">
     {% asset_img table-layout.png "Image ng halimbawa ng table layout" %}
     <figcaption>
-        **Figure 86.6879**: Mula sa 1996 na aklat ni <cite>David Siegel, Creating Killer Websites</cite>
+        <b>Figure 86.6879</b>: Mula sa 1996 na aklat ni <cite>David Siegel, Creating Killer Websites</cite>
     </figcaption>
 </figure>
 
@@ -87,7 +87,7 @@ Sa era na ito ng Web design, pumasok na tayo sa isang panahon kung kailan unti-u
         {% asset_img table-layout-5.png "Image ng halimbawa ng table layout" %}
     </div>
     <figcaption>
-        **Figure 73.1475**: Mapapansing nagsisimula nang maging mas moderno ang artistic approach sa Web. Malayong-malayo sa orihinal na daang tatahakin sana ng Web design.
+        <b>Figure 73.1475</b>: Mapapansing nagsisimula nang maging mas moderno ang artistic approach sa Web. Malayong-malayo sa orihinal na daang tatahakin sana ng Web design.
     </figcaption>
 </figure>
 
@@ -100,7 +100,7 @@ Dito rin nauso ang proseso tinatawag nating <i>slice and dice</i>. Ang mga desig
 <figure id="fig-89.1249" class="img-wrapper img-wrapper--illustration float-left">
     {% asset_img flash.png "Adobe Flash" %}
     <figcaption>
-        **Figure 89.1249**
+        <b>Figure 89.1249</b>
     </figcaption>
 </figure>
 
@@ -111,7 +111,7 @@ Sa panahong ito, lumayo ang Web mula sa pinanggalingan nitong HTML at nakakita n
 <figure id="fig-60.4817" class="img-wrapper img-wrapper--illustration float-left">
     {% asset_img css.png "Image ng aklat na Designing with Web Standards ni Jeffrey Zeldman" %}
     <figcaption>
-        **Figure 60.4817**: Kapansin-pansing dahil sa CSS, nanumbalik ang tamang kahulugan ng mga HTML tags. (<cite>Mula sa 2003 aklat ni Jeffrey Zeldman, Designing with Web Standards</cite>)
+        <b>Figure 60.4817</b>: Kapansin-pansing dahil sa CSS, nanumbalik ang tamang kahulugan ng mga HTML tags. (<cite>Mula sa 2003 aklat ni Jeffrey Zeldman, Designing with Web Standards</cite>)
     </figcaption>
 </figure>
 
@@ -128,7 +128,7 @@ Dito sa era na ito, nagkaroon ng dalawang magkalabang opinyon sa Web design. May
         <p class="video-fallback"></p>
     </video>
     <figcaption>
-        **Figure 62.5674**: Isang halimbawa ng fluid layout.
+        <b>Figure 62.5674</b>: Isang halimbawa ng fluid layout.
     </figcaption>
 </figure>
 
@@ -140,7 +140,7 @@ May mga nagsasabi naman na "hindi, dapat nag-aadapt sa size ng screen ang layout
         <p class="video-fallback"></p>
     </video>
     <figcaption>
-        **Figure 43.9855**: Isang halimbawa ng fixed layout.
+        <b>Figure 43.9855</b>: Isang halimbawa ng fixed layout.
     </figcaption>
 </figure>
 
@@ -153,7 +153,7 @@ Dalawang naglalabang opinyon, pero parehas na may punto. Sa era na ito, nagkaroo
 <figure id="fig-93.6485" class="img-wrapper img-wrapper--illustration float-left">
     {% asset_img responsive-web-design.png "Responsive Web Design is a flexible grid (with flexible images) that incorporates media queries to create a responsive, adaptive layout." %}
     <figcaption> 
-        **Figure 93.6485**: Ang Responsive Web Design ay isang flexible grid (kasama ang mga flexible na image) na gumagamit ng mga media query para makagawa ng isang layout na nagbabago sa iba't ibang kalagayan. (<cite>Mula sa slides ni Ethan Marcotte para sa kaniyang pahayag sa An Event Apart 2010</cite>)
+        <b>Figure 93.6485</b>: Ang Responsive Web Design ay isang flexible grid (kasama ang mga flexible na image) na gumagamit ng mga media query para makagawa ng isang layout na nagbabago sa iba't ibang kalagayan. (<cite>Mula sa slides ni Ethan Marcotte para sa kaniyang pahayag sa An Event Apart 2010</cite>)
     </figcaption>
 </figure>
 
@@ -166,7 +166,7 @@ Hindi rin siguro ito matunog sa mga kakilala ko, pero mga ilang taon pagkatapos 
 <figure id="fig-73.0292" class="img-wrapper img-wrapper--illustration float-right float--wider">
     <video controls src="/antares-blog/tl/Intrinsic-Web-Design-Ito-na-ba-ang-Wakas-ng-Responsive-Web/responsive-layout.mp4"></video>
     <figcaption>
-        **Figure 73.0292**: Isang halimbawa ng isang responsive na layout.
+        <b>Figure 73.0292</b>: Isang halimbawa ng isang responsive na layout.
     </figcaption>
 </figure>
 

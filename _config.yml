@@ -90,7 +90,7 @@ search:
 markdown_it_plus:
     highlight: true
     html: true
-    xhtmlOut: true
+    xhtmlOut: false
     breaks: false
     langPrefix:
     linkify: false

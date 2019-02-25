@@ -9,5 +9,5 @@
             <time pubdate datetime="<%= new Date(item.date).toJSON() %>" class="article-date"><%= item.date.format(config.date_format) %></time>
         </section>
     </div>
-    <img src="<%- config.root + item.lang + '/' + item.slug + '/' + item.cover_image %>" alt="" class="cover-display">
+    <div style="background-image: url(<%- config.root + item.lang + '/' + item.slug + '/' + item.cover_image %>);" class="cover-display"></div>
 </article>

@@ -128,7 +128,6 @@ body {
     color: var(--text-color);
     min-height: 100vh;
     font-family: var(--sans-serif), "Noto Emoji", sans-serif;
-    border: 2vmin solid var(--bg-d3);
     /* border-image: linear-gradient(to bottom, var(--primary-lighter), var(--primary-darker)) 1; */
 }
 
@@ -214,9 +213,14 @@ a[target="_blank"] {
     position: relative;
 }
 
-a[target="_blank"]:not(.no-new-tab)::after,
 a[target="_blank"]:not(.no-new-tab)::after {
     content: " (" var(--opens-in-new-tab) ")";
+    opacity: 0.5;
+}
+
+a[target="_blank"]:not(.no-new-tab):hover::after,
+a[target="_blank"]:not(.no-new-tab):focus::after {
+    opacity: 1;
 }
 
 dt:not([class]) {
@@ -344,7 +348,7 @@ em {
     background-size: 0 2px;
     background-repeat: no-repeat;
     background-position: bottom left;
-    padding: 0.5rem;
+    padding: 1rem;
     transition: background-size 300ms;
     display: flex;
     align-items: center;
@@ -434,10 +438,15 @@ em {
     width: 100%;
     grid-column: 1/3;
     grid-row: 1/3;
+    background-size: cover;
+    background-position: center;
     object-fit: cover;
     object-position: center;
     filter: saturate(0) brightness(0.3);
     transition: filter 1s, transform 1s;
+    pointer-events: none;
+    user-select: none;
+    display: block;
 }
 
 .post__wrapper {
@@ -479,7 +488,6 @@ em {
     max-width: 30ch;
     display: block;
     line-height: 1.75;
-    padding: 0;
 }
 
 .post__title:hover,
@@ -732,10 +740,15 @@ em {
         columns: 2;
     }
 
-    .headerlink {
+    .headerlink,
+    .markdownIt-Anchor {
         bottom: initial !important;
         top: 0;
         visibility: hidden;
+    }
+
+    .markdownIt-Anchor::before {
+        content: var(--copy-header-link);
     }
 
     h6:hover .headerlink,
@@ -743,7 +756,13 @@ em {
     h4:hover .headerlink,
     h3:hover .headerlink,
     h2:hover .headerlink,
-    h1:hover .headerlink {
+    h1:hover .headerlink,
+    h6:hover .markdownIt-Anchor,
+    h5:hover .markdownIt-Anchor,
+    h4:hover .markdownIt-Anchor,
+    h3:hover .markdownIt-Anchor,
+    h2:hover .markdownIt-Anchor,
+    h1:hover .markdownIt-Anchor {
         visibility: visible;
     }
 
@@ -1142,34 +1161,40 @@ ol:not([class]) {
     padding-left: 2rem;
     height: 80vh;
     display: grid;
+    position: relative;
+    overflow: hidden;
+    background-image: url(/antares-blog/images/roughcloth.png);
+}
 
-    background-image: linear-gradient(var(--category), var(--category));
-    background-repeat: no-repeat;
-    background-size: 50% 10px;
-    background-position: bottom 5px right;
-    margin-bottom: 3rem;
+.dark .article-header {
+    background-image: url(/antares-blog/images/prism.png);
+}
+
+.article-header::after {
+    content: "";
+    position: absolute;
+    bottom: 1rem;
+    right: -1rem;
+    background-color: var(--category);
+    width: 50%;
+    height: 1rem;
+    border-radius: 1rem;
 }
 
 .article-title {
     font-size: 4vmax;
-    font-weight: normal;
+    font-weight: 900;
     margin: auto;
-    margin-left: 4vmax;
-    word-wrap: break-word;
     word-wrap: anywhere;
     position: relative;
-    color: var(--text-color-i4);
-}
-
-.article-title::before {
-    content: "";
-    position: absolute;
-    height: 2em;
-    width: 2em;
-    background-color: var(--category-lighter);
-    z-index: -1;
-    top: -1em;
-    left: -1em;
+    color: transparent;
+    background-clip: text;
+    background-image: linear-gradient(
+        135deg,
+        var(--category-lighter),
+        var(--category)
+    );
+    text-shadow: 0 2px 3px var(--category-o-75);
 }
 
 .soft-skills {
@@ -1350,15 +1375,20 @@ aside.side-note dl {
     font-family: var(--sans-serif);
 }
 
-dl:not([class]) dt, .side-note dt {
-	font-weight: 900;
-	font-size: 6vmin;
-	text-align: var(--text-align);
-	background-image: linear-gradient(var(--category), var(--category));
-	background-size: 50% 1vmax;
-	background-repeat: no-repeat;
-	background-position: bottom var(--text-align) 1rem;
-	margin-left: -2rem;
+dl:not([class]) dt,
+.side-note dt {
+    font-weight: 900;
+    font-size: 6vmin;
+    text-align: var(--text-align);
+    background-image: linear-gradient(var(--category), var(--category));
+    background-size: 50% 1vmax;
+    background-repeat: no-repeat;
+    background-position: bottom var(--text-align) 1rem;
+    margin-left: -2rem;
+}
+
+dl:not([class]) dt::before {
+    content: none;
 }
 
 dl:not([class]) dd,
@@ -1460,6 +1490,8 @@ abbr:focus {
 .img-wrapper--illustration figcaption {
     opacity: 0.85;
     font-size: 0.85rem;
+    font-family: var(--sans-serif);
+    padding-top: 1rem;
 }
 
 .img-wrapper--illustration img {
@@ -1491,6 +1523,7 @@ code {
     box-shadow: inset 1px 1px 3px #0002;
     position: relative;
     min-height: 10rem;
+    margin: 1rem auto;
 }
 
 .post .example-container *,
@@ -1540,6 +1573,8 @@ code {
     font-family: var(--sans-serif);
     text-align: right;
     display: flex;
+    background-image: linear-gradient(to var(--text-align), #0001, #0000);
+    padding: 1rem;
 }
 
 @supports (writing-mode: vertical-rl) {
@@ -1672,7 +1707,8 @@ code {
     grid-column: 2/3;
 }
 
-.headerlink {
+.headerlink,
+.markdownIt-Anchor {
     position: absolute;
     align-self: center;
     margin-left: 1rem;
@@ -1932,6 +1968,7 @@ pre samp kbd {
     border: 1px solid var(--bg-d2);
     display: block;
     width: 90%;
+    margin: 1rem auto;
 }
 
 .highlight code {
@@ -1943,17 +1980,23 @@ pre samp kbd {
     width: 100vw;
 }
 
+.hljs-comment {
+    opacity: 0.5;
+}
+
 .hljs-name,
 .hljs-keyword,
 .keyword {
     color: hsl(330, 100%, 50%);
 }
 
+.hljs-attribute,
 .hljs-attr,
 .attr {
     color: hsl(240, 100%, 70%);
 }
 
+.hljs-selector-class,
 .hljs-string,
 .string {
     color: hsl(40, 100%, 43%);
@@ -1969,6 +2012,7 @@ pre samp kbd {
     color: #ff99cc;
 }
 
+.dark .hljs-attribute,
 .dark .hljs-attr,
 .dark .attr {
     color: #ccf;
@@ -1989,4 +2033,54 @@ pre samp kbd {
 
 .hljs-params {
     color: #3a3;
+}
+
+.post__content table:not([class]) {
+    table-layout: fixed;
+    border-collapse: collapse;
+    margin: 1rem auto;
+}
+
+.post__content table:not([class]) th,
+.post__content table:not([class]) td {
+    padding: 1rem 0.5rem;
+    border: 1px solid;
+    text-align: center;
+}
+
+.post__content table:not([class]) th:empty,
+.post__content table:not([class]) td:empty {
+    all: unset;
+}
+
+.badge {
+    font-weight: 900;
+    text-transform: uppercase;
+    background-color: var(--bg-d2);
+    color: var(--text-color-i4);
+    font-family: var(--sans-serif), sans-serif;
+    display: inline-block;
+    padding: 0.5ch 1ch;
+    font-size: 0.5em;
+    border: 1px solid var(--bg-d4);
+}
+
+dl {
+   margin: 1rem auto;
+   clear: both;
+}
+
+dd {
+    margin-left: 40px;
+    margin-bottom: 2rem;
+}
+
+dt::before {
+    content: '';
+    display: inline-block;
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: var(--text-color);
+    vertical-align: middle;
+    margin-right: 1rem;
 }
