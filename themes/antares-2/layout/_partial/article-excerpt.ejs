@@ -1,4 +1,20 @@
-<article class="post">
+<%
+
+var categoryForCSSClasses = 
+    item.categories.map(category => {
+        return  category.name
+            .split(' ')
+            .map(s => s.toLowerCase())
+            .join("-")
+    })
+
+console.log(categoryForCSSClasses);
+%>
+
+<article class="post <%- item.is_featured? 'post-card--featured' : '' %> <%- categoryForCSSClasses %>">
+    <% if(item.is_featured) { %>
+    <small class="label">Featured</small>
+    <% } %>
     <h3>
         <a class="post__title" href="<%- config.root %><%- item.path %>">
             <%- item.title %>

@@ -22,6 +22,7 @@ html {
     --bg-invert-d4: #444;
     --bg-invert-l1: #111;
 
+    --bg-invert-o-95: hsla(0, 0%, 13%, 95%);
     --bg-invert-o-75: #2121214b;
     --bg-invert-o-50: #21212136;
     --bg-invert-o-25: #21212119;
@@ -449,6 +450,15 @@ em {
     display: block;
 }
 
+.post-card--featured .label {
+    top: 0;
+}
+
+.post-card--featured:nth-of-type(odd) .label {
+	left: 1rem;
+	right: unset;
+}
+
 .post__wrapper {
     grid-column: 2/3;
     grid-row: 2/3;
@@ -457,7 +467,7 @@ em {
     min-width: 35vw;
     padding: 2rem;
     padding-left: 1rem;
-    background-color: var(--bg-invert-o-50);
+    background-color: var(--bg-invert-o-95);
     color: var(--white-i1);
     text-align: end;
     position: relative;
@@ -532,6 +542,10 @@ em {
     position: relative;
     border-bottom: 1px solid var(--bg-d2);
     padding: 2rem;
+}
+
+.post-card--featured:first-of-type    {
+    border-top: 1px solid var(--bg-d2);
 }
 
 .post:nth-child(odd) {
