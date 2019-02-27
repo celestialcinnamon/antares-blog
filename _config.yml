@@ -95,3 +95,5 @@ markdown_it_plus:
     langPrefix:
     linkify: false
     typographer:
+
+all_minifier: true
