@@ -1,2 +1,4 @@
-<h1 class="archive-title">Posts in <span class="hashtag category-title <%- page.category.toLowerCase().split(' ').join('-') %>"><%- page.category %></span></h1>
-<%- partial('_partial/archive', {pagination: config.category, index: true}) %>
+<div class="categories-archive">
+    <h1 class="archive-title">Posts in <span class="hashtag category-title <%- page.category.toLowerCase().split(' ').join('-') %>"><%- page.category %></span></h1>
+    <%- partial('_partial/archive', {pagination: config.category, index: true}) %>
+</div>
