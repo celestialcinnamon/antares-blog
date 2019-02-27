@@ -273,7 +273,7 @@ swapValues(a, b);
 // Variable B = 10
 ```
 
-So ang ginagawa natin dito, gumagamit tayo ng `temp` variable para ipahawak muna ang value ng isa sa mga variable para mapagpalit sila. Mahaba-haba rin 'to, mga 3 lines of code. Pero tingnan kung paano ito magiging mas maikli gamit ang array destructuring:
+So ang ginagawa natin dito, gumagamit tayo ng `temp` variable para ipahawak muna ang value ng isa sa mga variable para mapagpalit sila. Then saka natin ipapasa iyong value ng `varB` sa `varA`. Pagkatapos, iyong `varB`, ia-assign natin sa kaniya ang value na pinahawak natin kay `temp`. Mahaba-haba rin 'to, mga 3 lines of code. Pero tingnan kung paano ito magiging mas maikli gamit ang array destructuring:
 
 ```js
 let a = 10;
