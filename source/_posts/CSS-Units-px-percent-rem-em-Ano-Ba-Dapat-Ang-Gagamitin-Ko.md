@@ -25,11 +25,11 @@ Ano ang pagkakaiba ng `em` at `rem`? Karaniwan na, ang value ng `rem` ay naka-de
 
 Bilang halimbawa, tingnan natin ito:
 
-```html index.html
+```html
 <div class="container"></div>
 ```
 
-```css style.css
+```css
 .container {
   width: 3rem;
 }
@@ -41,12 +41,12 @@ Bilang halimbawa, tingnan natin ito:
 
 Hindi ito madaling mapansin, pero nakasunod ang width ng `.container` sa font size ng `<html>` element. Tingnan naman natin ang `em`. Sa kasong ito, ise-set natin ang `font-size` ng `.container` para makita natin ang pagkakaiba.
 
-```html index.html
+```html
 <div class="container"></div>
 <div class="container-lg"></div>
 ```
 
-```css style.css
+```css
 .container,
 .container-lg {
   width: 3em;
@@ -70,7 +70,7 @@ Makikita mo ang pagkakaiba sa mga halimbawa ngayon. Parehas silang `3em` ang wid
 
 Puwede naman ding i-override ang size ng isang `rem`. Kailangan mo lang i-set ang font size ng `<html>` element:
 
-```css styles.css
+```css
 html {
   font-size: 20px;
 }
@@ -90,12 +90,12 @@ Katulad lang din ng `vw` ang `vh`, pero tumutukoy naman ito sa "viewport height"
 
 Sa halimbawang ito, pansinin kung paanong naapektuhan ng width ng viewport ang unang box, at height naman ang nakakaapekto sa ikalawa. Pansinin din na walang pakialam ang mga box sa size ng parent element nito at lumalagpas ito sa boundaries ng box dahil nakasunod ito sa size ng viewport. Subukan mong i-resize ang browser window mo at tingnan kung ano ang mangyayari:
 
-```html index.html
+```html
 <div class="container-vw">50vw</div>
 <div class="container-vh">50vh</div>
 ```
 
-```css style.css
+```css
 .container-vw {
   width: 50vw;
 }
@@ -118,12 +118,12 @@ Kapag ginamit mo ang `vmin`, pagkukumparahin ng browser ang height at width ng s
 
 Eksaktong kabaligtaran naman ang sa `vmax`. Ibibigay nito sa iyo ang percentage ng mas malaking dimension. Kung landscape ang orientation ng viewport, percentage ng width ang ibabalik ng `vmax`, at kung naka-portrait naman, percentage ng height ang makukuha mo.
 
-```html index.html
+```html
 <div class="container-vmin">50vmin</div>
 <div class="container-vmax">50vmax</div>
 ```
 
-```css style.css
+```css
 .container-vmin {
   width: 50vmin;
 }
