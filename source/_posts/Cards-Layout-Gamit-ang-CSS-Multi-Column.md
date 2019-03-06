@@ -355,7 +355,7 @@ Dahil din dito kaya nakuha natin ang gusto nating mangyari na magkakarugtong ang
   </div>
 </div>
 
-Sa example na ito, naka-set ang `columns` property sa `200px`. Kaya naman naging two columns ang paragraph na may tig-`200px` na lapad. Ganito rin mismo ang nangyari sa cards layout natin.
+Sa example na ito, naka-set ang `columns` property sa `200px`. Kaya naman naging two columns (sa desktop) ang paragraph na may tig-`200px` na lapad. Ganito rin mismo ang nangyari sa cards layout natin.
 
 ## Pero...
 
