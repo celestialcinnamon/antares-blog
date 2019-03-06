@@ -38,11 +38,6 @@ render_drafts: false
 post_asset_folder: true
 relative_link: false
 future: true
-highlight:
-  enable: false
-  line_number: true
-  auto_detect: false
-  tab_replace:
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
@@ -87,13 +82,24 @@ search:
   field: all
   content: true
 
-markdown_it_plus:
-    highlight: true
-    html: true
-    xhtmlOut: false
-    breaks: false
-    langPrefix:
-    linkify: false
-    typographer:
+marked:
+  gfm: true
+  pedantic: false
+  sanitize: false
+  tables: true
+  breaks: false
+  smartLists: true
+  smartypants: true
+  modifyAnchors: ''
+  autolink: true
 
 all_minifier: true
+
+prism_plugin:
+  mode: 'preprocess'    # realtime/preprocess
+  theme: 'a11y-dark'
+  line_number: true    # default false
+  custom_css: ''     # optional
+
+highlight:
+  enable: false

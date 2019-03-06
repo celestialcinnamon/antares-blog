@@ -2185,3 +2185,8 @@ dt::before {
 .categories-archive .archive-title {
     line-height: 2;
 }
+
+code[class*="language-"] {
+    all: unset;
+    font-family: var(--monospace) !important;
+}
