@@ -372,6 +372,10 @@ em {
     color: var(--text-color-invert);
 }
 
+.nav.dark-mode {
+    display: table-cell;
+}
+
 .nav-active {
     background-size: 100% 2px;
     background-image: linear-gradient(var(--bg-d4), var(--bg-d4));
@@ -576,7 +580,7 @@ em {
     /* color: var(--text-color-i4); */
     font-size: 2rem;
     padding: 1rem;
-    text-decoration-style: dashed;
+    text-decoration: none;
     margin-left: -1rem;
     display: block;
     background-image: linear-gradient(
