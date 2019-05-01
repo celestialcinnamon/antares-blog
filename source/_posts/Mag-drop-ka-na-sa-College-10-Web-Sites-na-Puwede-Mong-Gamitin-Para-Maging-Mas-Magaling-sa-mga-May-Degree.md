@@ -1,10 +1,10 @@
 ---
 title: >-
-  Mag-drop ka na sa College: 10 Web Sites na Puwede Mong Gamitin Para Maging Mas
-  Magaling sa mga May Degree
+    Mag-drop ka na sa College: 10 Web Sites na Puwede Mong Gamitin Para Maging Mas
+    Magaling sa mga May Degree
 author:
-  name: Francis Rubio
-  image: images/francis-rubio.jpg
+    name: Francis Rubio
+    image: images/francis-rubio.jpg
 lang: tl
 date: 2019-04-27 22:45:39
 tags: [general]
@@ -171,3 +171,116 @@ Since kaunti lang ang mga technical na sites sa Filipino, lahat dito ay nasa Eng
 
 # Podcasts
 
+Kung gusto mo namang may mapakinggan tungkol sa Web development kahit may ginagawa ka, tingnan ang mga podcast na ito:
+
+<table class="table photo-table">
+  <tbody>
+    <tr>
+      <td>
+        <img src="syntax.png" style="background: transparent" class="maxify">
+      </td>
+      <td>
+        <strong class="cell-heading">
+          <a href="https://syntax.fm" target="_blank">Syntax.FM</a>
+        </strong>
+        <p><q lang="en">A Tasty Treats Podcast for Web Developers.</q></p>
+        <p>Sa podcast na ito, pinag-uusapan nina Wes Bos at Scott Tolinski ang mga pinakabagong balita sa mundo ng Web Development. Marami rin silang episodes tungkol sa ReactJS, VueJS, Node.JS, interviewing kapag naghahanap ng trabaho, portfolio tips, freelancing, at iba pa.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <img src="thewebahead.png" class="maxify">
+      </td>
+      <td>
+        <strong class="cell-heading">
+          <a href="https://thewebahead.net/" target="_blank">The Web Ahead</a>
+        </strong>
+        <p><q lang="en">Jen Simmons speaks with world experts on changing technologies and the future of the web.</q></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+## People
+
+Sa table naman na ito, nakalagay ang ilan sa mga taong dapat mong i-stalk para mas matuto lalo. Karamihan sa kanila ay mga Web developers.
+
+<table class="table photo-table">
+  <tbody>
+    <tr>
+      <td>
+        <img src="csswg.png" class="maxify">
+      </td>
+      <td>
+        <strong class="cell-heading">
+          <a href="https://twitter.com/csswg" target="_blank">CSS Working Group</a>  
+        </strong>
+        <p>
+          Official Twitter account ng CSS Working Group, ang group na gumagawa ng mga standards para sa mga bagong features ng CSS.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td><img src="vlh.jpg" class="maxify"></td>
+      <td>
+        <strong class="cell-heading">
+          <a href="twitter.com/vlh" target="_blank">Val Head</a>
+        </strong>
+        <p>
+          Author ng aklat na <cite>Designing Interface Animation</cite>. Design advocate sa Adobe.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td><img src="rachelandrew.jpg" alt="" class="maxify"></td>
+      <td>
+        <strong class="cell-heading"><a href="https://twitter.com/rachelandrew" target="_blank">Rachel Andrew</a></strong>
+        <p>Web Developer at member ng CSS Working Group. Isa sa mga sumulat ng standards para sa CSS Grid, Flexbox, at kasalukuyang gumagawa ng bagong standards para sa CSS Multi-column Layout.</p>
+      </td>
+    </tr>
+    <tr>
+      <td><img src="chriscoyier.jpg" alt="" class="maxify"></td>
+      <td>
+        <strong class="cell-heading"><a href="https://twitter.com/chriscoyier" target="_blank">Chris Coyier</a></strong>
+        <p>Co-founder ng CodePen. Isa sa mga pangunahing writers ng CSS Tricks</p>
+      </td>
+    </tr>
+    <tr>
+      <td><img src="bradfrost.jpg" class="maxify"></td>
+      <td>
+        <strong class="cell-heading"><a href="https://twitter.com/brad_frost" target="_blank">Brad Frost</a></strong>
+        <p>Web designer, speaker, writer, at consultant. Author ng aklat na <cite>Atomic Design</cite>.</p>
+      </td>
+    </tr>
+    <tr>
+      <td><img src="steveschoger.jpg" alt="" class="maxify"></td>
+      <td>
+        <strong class="cell-heading">
+          <a href="https://twitter.com/steveschoger" target="_blank">Steve Schoger</a>
+        </strong>
+        <p>Author ng <cite>Refactoring UI</cite>. Sa mga tweet niya, matututo ka ng best practices sa user interface design, lalo na kung hindi ka marunong mag-design.</p>
+      </td>
+    </tr>
+    <tr>
+      <td><img src="timbernerslee.jpg" alt="" class="maxify"></td>
+      <td>
+        <strong class="cell-heading"><a href="https://twitter.com/timberners_lee" target="_blank">Tim Berners-Lee</a></strong>
+        <p>Director ng W3C at ang nag-imbento ng World Wide Web.</p>
+      </td>
+    </tr>
+    <tr>
+      <td><img src="jensimmons.jpg" alt="" class="maxify"></td>
+      <td>
+        <strong class="cell-heading"><a href="https://twitter.com/jensimmons" target="_blank">Jen Simmons</a></strong>
+        <p>Design advocate ng Mozilla, member ng CSS Working Group. Pangunahin niyang tinatalakay kung paano binabago ng CSS Grid ang graphics design sa Web. Siya rin ang nag-imbento ng katawagang <i>Intrinsic Web Design</i>.</p>
+      </td>
+    </tr>
+    <tr>
+      <td><img src="wesbos.jpg" alt="" class="maxify"></td>
+      <td>
+        <strong class="cell-heading"><a href="https://twitter.com/wesbos" target="_blank">Wes Bos</a></strong>
+        <p>Fullstack developer, at binansagang <i>King of Javascript Challenges</i> dahil sa course na ginawa niya (Javascript30).</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
