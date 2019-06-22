@@ -7,8 +7,6 @@ var categoryForCSSClasses =
             .map(s => s.toLowerCase())
             .join("-")
     })
-
-console.log(categoryForCSSClasses);
 %>
 
 <article class="post <%- item.is_featured? 'post-card--featured' : '' %> <%- categoryForCSSClasses %>">

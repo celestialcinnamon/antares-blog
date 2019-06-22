@@ -3,8 +3,6 @@ const i18n = {
 }
 
 document.addEventListener("DOMContentLoaded", function(e) {
-    document.getElementById("more")
-        .remove();
 
     document.querySelectorAll(".headerlink")
         .forEach(element => {
@@ -18,8 +16,6 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
 document.addEventListener("focusin", function(event) {
     if (event.target.matches(".post--full *")) {
-        console.log(event.target.offsetTop + 200);
-
         document.body.scrollTo({
             top: event.target.offsetTop - 200,
             left: 0,
@@ -35,7 +31,6 @@ function toggleDarkMode() {
 
 function initDarkMode() {
     const siteIsOnDarkMode = !!parseInt(localStorage.getItem('is_dark_mode'));
-    console.log(siteIsOnDarkMode)
 
     if (siteIsOnDarkMode) {
         document.documentElement.classList.add('dark');

@@ -1,8 +1,4 @@
 <footer class="footer noscript" role="contentinfo">
-  <div class="search-wrapper">
-    <%- partial('_partial/search-view') %>
-  </div>
-
   <section>
     <h4 class="sidebar__title">See me outside</h4>
     <ul>
@@ -61,20 +57,7 @@
   <p id="back-to-top"><a href="#top">Back to top</a></p>
 </footer>
 
-<%- js('js/index.js') %>
-<script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyBLSepyUmzlswAI8E0PxLCrB7IPHNlkekg",
-    authDomain: "antares-blog.firebaseapp.com",
-    databaseURL: "https://antares-blog.firebaseio.com",
-    projectId: "antares-blog",
-    storageBucket: "",
-    messagingSenderId: "1040232049670"
-  };
-  firebase.initializeApp(config);
-</script>
+<!-- <%- js('js/index.js') %> -->
 <script>
     var CONFIG_ROOT = `<%- config.root %>`;
     var CONFIG_URL = `<%- config.url %>`.replace('/antares-blog', '');
