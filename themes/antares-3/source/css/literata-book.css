@@ -1,0 +1,32 @@
+@font-face {
+    font-family: "Literata Bookset";
+    src: url("./fonts/LiterataBook.otf");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Literata Bookset";
+    src: url("./fonts/LiterataBook-Bold.otf");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "Literata Bookset";
+    src: url("./fonts/LiterataBook-Italic.otf");
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Literata Bookset";
+    src: url("./fonts/LiterataBook-BoldItalic.otf");
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Noto Emoji";
+    src: url("./fonts/NotoColorEmoji.ttf");
+    font-weight: bold;
+    font-style: italic;
+}
