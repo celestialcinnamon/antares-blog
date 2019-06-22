@@ -13,7 +13,7 @@ sidebar: right
 widgets:
 - category
 - tag
-- links-of-the-week
+# - links-of-the-week
 
 # display widgets at the bottom of index pages (pagination == 2)
 index_widgets:

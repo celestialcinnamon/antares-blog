@@ -12,6 +12,5 @@
     %>
         <%- partial('_partial/article-excerpt', {item: item, is_featured: false, with_excerpt: true}) %>
     <% }); %>
-    <%- partial('_partial/sidebar', null, {cache: !config.relative_link}) %>
-
 </main>
+<%- partial('_partial/sidebar', null, {cache: !config.relative_link}) %>
