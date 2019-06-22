@@ -39,7 +39,6 @@ body {
     padding: 0;
     display: grid;
     grid-template-columns: minmax(0, 1fr) 1fr 2fr;
-    grid-template-rows: auto min-content 1fr;
 }
 
 .header[role="banner"] {
@@ -99,11 +98,6 @@ main {
 
 .post--featured .post__title {
     font-size: 3rem;
-}
-
-.sidebar {
-    grid-column: 1/2;
-    grid-row: 3/4;
 }
 
 .footer {
