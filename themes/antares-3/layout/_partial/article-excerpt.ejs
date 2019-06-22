@@ -6,10 +6,10 @@
             <% } %>
             <a href="<%- config.root %><%- item.path %>" class="post__title"><%- item.title %></a>
         </h2>
-        <p class="post__meta">
+        <div class="post__meta">
             <address rel="author" class="author-name"><%= item.author.name %></address>
             <time pubdate datetime="<%= new Date(item.date).toJSON() %>" class="article-date"><%= item.date.format(config.date_format) %></time>
-        </p>
+        </div>
     </header>
     <% if(with_excerpt) { %>
     <section class="post__excerpt">
@@ -19,7 +19,7 @@
     <footer>
         <% if (item.tags && item.tags.length) { %>
             <%
-            var tags = item.tags.map(tag => `<li><a class="tag" href="${config.root + tag.path}">#${tag.name}</a></li>`);
+            var tags = item.tags.map(tag => `<li><a class="article-tag" href="${config.root + tag.path}">#${tag.name}</a></li>`);
             %>
         <ul class="post__tags">
             <%- tags.join("\n") %>

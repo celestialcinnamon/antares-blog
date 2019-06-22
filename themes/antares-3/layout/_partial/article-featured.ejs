@@ -5,8 +5,9 @@
             <a href="<%- config.root %><%- item.path %>" class="post__title"><%- item.title %></a>
         </h2>
     </header>
-    <p class="post__meta">
+    <div class="post__meta">
         <address class="author-name" rel="author"><%= item.author.name %></address>
         <time class="article-date" datetime="<%= new Date(item.date).toJSON() %>" pubdate><%= item.date.format(config.date_format) %></time>
-    </p>
+    </div>
+    <%- item.excerpt || "" %>
 </article>
