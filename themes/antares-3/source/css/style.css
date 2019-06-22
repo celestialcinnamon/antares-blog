@@ -5,3 +5,7 @@
     scroll-behavior: smooth;
     font-display: swap;
 }
+
+.h {
+    display: none;
+}
