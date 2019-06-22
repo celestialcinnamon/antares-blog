@@ -7,19 +7,11 @@
     %>
     <%- partial('_partial/article-featured', {item: featuredArticles[0], is_featured: true}) %>
 
-    <div class="main-body">
-        <section class="section section--main">
-            <header class="section__heading">
-                <h2>Recent Articles</h2>
-            </header>
-            <% 
-                page.posts.each(function(item){ 
-            %>
-            <%- partial('_partial/article-excerpt', {item: item, is_featured: false, with_excerpt: true}) %>
-            <% }); %>
-            
-        </section>
-        <%- partial('_partial/sidebar', null, {cache: !config.relative_link}) %>
-    </div>
+    <% 
+        page.posts.each(function(item){ 
+    %>
+        <%- partial('_partial/article-excerpt', {item: item, is_featured: false, with_excerpt: true}) %>
+    <% }); %>
+    <%- partial('_partial/sidebar', null, {cache: !config.relative_link}) %>
 
 </main>
