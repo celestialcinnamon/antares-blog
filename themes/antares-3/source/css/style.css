@@ -34,11 +34,16 @@ img {
     max-width: 100%;
 }
 
+address {
+    font-style: normal;
+}
+
 body {
     margin: 0;
     padding: 0;
     display: grid;
     grid-template-columns: minmax(0, 1fr) 1fr 2fr;
+    grid-gap: 1rem;
 }
 
 .header[role="banner"] {
@@ -103,4 +108,19 @@ main {
 .footer {
     grid-row: 4/5;
     grid-column: 1/4;
+}
+
+.author-sidebar {
+    padding: 1rem;
+    font-family: var(--serif);
+    text-align: right;
+}
+
+.author-photo {
+    width: 100px;
+    text-align: right;
+}
+
+.author-name {
+    font-style: italic;
 }
