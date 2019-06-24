@@ -27,7 +27,6 @@
         <% } %>
         <%
             const postCategory = item.categories.data
-            console.log(postCategory[0].name)
         %>
         <a href="<%- config.root + postCategory[0].path %>" class="post-category"><%- postCategory[0].name %></a>
     </footer>
