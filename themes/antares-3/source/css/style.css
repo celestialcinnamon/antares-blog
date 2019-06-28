@@ -16,28 +16,51 @@
 }
 
 html {
+    font-family: "Libre Baskerville", serif;
     font-size: 16px;
-    background-color: #10130F;
+    background-color: #111;
     color: #aaa;
 
-    --primary-color: #fd0;
-    --accent-blue: #4080FF;
-    --accent-black: #000;
-    --spare-color: #777;
+    --background: #111;
+
+    --primary-dark: #d9c126;
+    --primary: #fd0;
+    --primary-light: #e8da7d;
+
+    --accent-green-dark: #98d926;
+    --accent-green: #a2ff00;
+    --accent-green-light: #c1e87d;
+
+    --accent-orange-dark: #d96826;
+    --accent-orange: #ff5e00;
+    --accent-orange-light: #e8a47d;
+
+    --secondary-color: #aaa;
     --text-color: #ddd;
     --heading-color: #fff;
 
-    --link-color: var(--primary-color);
+    --link-color: var(--accent-orange-light);
 
-    --serif: "Libre Baskerville", serif;
-    --sans-serif: "Montserrat", sans-serif;
-    --monospace: "Source Sans Pro", monospace;
+    --heading-font: "Vidaloka", serif;
+    --body-font: "Libre Baskerville", serif;
+    --ui-font: "Montserrat", sans-serif;
+    --code-font: "Source Sans Pro", monospace;
 }
 
 a {
     color: var(--link-color);
     text-decoration: none;
     border-bottom: 1px dashed var(--link-color);
+}
+
+a:not([class]):hover {
+    opacity: 0.5;
+}
+
+a:not([class]):focus {
+    background-color: var(--accent-orange-light);
+    color: var(--background);
+    box-shadow: 0 0 0 3px var(--accent-orange-light);
 }
 
 /*
@@ -124,4 +147,55 @@ address {
 body {
     margin: 0;
     padding: 0;
+}
+
+.banner {
+    text-align: center;
+    padding: 1rem;
+}
+
+.nav-list {
+    list-style: none;
+    padding: 0;
+}
+
+.nav-item {
+    display: inline;
+}
+
+.nav {
+    display: inline-block;
+    padding: 0.5rem;
+    border: none;
+    font-family: var(--ui-font);
+    color: var(--heading-color);
+    text-transform: uppercase;
+    letter-spacing: calc(1em * 0.25);
+}
+
+.nav:hover {
+    color: var(--accent-orange-light);
+}
+
+.nav:focus {
+    color: var(--background);
+    background-color: var(--accent-green-light);
+}
+
+.site-logo {
+    border: none;
+    display: inline-block;
+    padding: 1rem;
+}
+
+.site-logo:hover {
+    opacity: 0.5;
+}
+
+.site-logo:focus {
+    background-color: var(--accent-green-dark);
+}
+
+.site-logo:focus img {
+    filter: grayscale(1);
 }
