@@ -133,6 +133,14 @@ a:not([class]):focus {
 	white-space: normal !important;
 }
 
+
+a.skiplink {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+}
+
+
 a:not([class]):hover {
     opacity: 0.75;
     border-bottom-style: solid;
