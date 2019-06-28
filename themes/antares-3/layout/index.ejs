@@ -5,12 +5,14 @@
         if(item.is_featured) featuredArticles.push(item) })
 %>
 <%- partial('_partial/article-featured', {item: featuredArticles[0], is_featured: true}) %>
-<main>
-
-    <% 
-        page.posts.each(function(item){ 
-    %>
-        <%- partial('_partial/article-excerpt', {item: item, is_featured: false, with_excerpt: true}) %>
-    <% }); %>
-</main>
-<%- partial('_partial/sidebar', null, {cache: !config.relative_link}) %>
+<div class="posts-wrapper">
+    <main>
+    
+        <% 
+            page.posts.each(function(item){ 
+        %>
+            <%- partial('_partial/article-excerpt', {item: item, is_featured: false, with_excerpt: true}) %>
+        <% }); %>
+    </main>
+    <%- partial('_partial/sidebar', null, {cache: !config.relative_link}) %>
+</div>
