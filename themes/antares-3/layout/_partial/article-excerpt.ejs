@@ -1,13 +1,10 @@
 <article class="post">
     <header class="post__header">
         <h2>
-            <% if(item.is_featured) { %>
-            <small class="label">Featured</small>
-            <% } %>
             <a href="<%- config.root %><%- item.path %>" class="post__title"><%- item.title %></a>
         </h2>
         <div class="post__meta">
-            <address rel="author" class="author-name"><%= item.author.name %></address>
+            <address rel="author" class="author-name sr-only"><%= item.author.name %></address>
             <time pubdate datetime="<%= new Date(item.date).toJSON() %>" class="article-date"><%= item.date.format(config.date_format) %></time>
         </div>
     </header>
@@ -16,18 +13,4 @@
         <%- item.excerpt || "" %>
     </section>
     <% } %>
-    <footer>
-        <% if (item.tags && item.tags.length) { %>
-            <%
-            var tags = item.tags.map(tag => `<li><a class="article-tag" href="${config.root + tag.path}">#${tag.name}</a></li>`);
-            %>
-        <ul class="post__tags">
-            <%- tags.join("\n") %>
-        </ul>
-        <% } %>
-        <%
-            const postCategory = item.categories.data
-        %>
-        <a href="<%- config.root + postCategory[0].path %>" class="post-category"><%- postCategory[0].name %></a>
-    </footer>
 </article>

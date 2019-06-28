@@ -20,6 +20,7 @@ html {
     font-size: 16px;
     background-color: #111;
     color: #aaa;
+    line-height: 2;
 
     --background: #111;
 
@@ -45,6 +46,11 @@ html {
     --body-font: "Libre Baskerville", serif;
     --ui-font: "Montserrat", sans-serif;
     --code-font: "Source Sans Pro", monospace;
+}
+
+h1, h2, h3,
+h4, h5, h6 {
+    line-height: 1.25;
 }
 
 a {
@@ -198,4 +204,64 @@ body {
 
 .site-logo:focus img {
     filter: grayscale(1);
+}
+
+.post {
+    max-width: 80%;
+    width: auto;
+    margin: auto;
+    padding: 1rem;
+}
+
+@media (min-width: 350px) {
+    .post:nth-child(even) {
+        margin-left: auto;
+        text-align: right;
+    }
+
+    .post {
+        margin: 1rem;
+    }
+
+    .post__excerpt {
+        width: 60%;
+        margin-left: auto;
+    }
+
+    .post:nth-child(even) .post__excerpt {
+        margin: initial;
+        margin-right: auto;
+        text-align: left;
+    }
+}
+
+.post__header h2 {
+    font-size: 12px;
+}
+
+.post__title {
+    color: var(--heading-color);
+    font-family: var(--heading-font);
+    border: none;
+    letter-spacing: normal;
+    font-size: 3em;
+    font-weight: normal;
+
+    text-overflow: clip;
+    overflow-wrap: break-word;
+}
+
+.post__title:hover {
+    color: var(--accent-orange);
+}
+
+.post__title:focus {
+    color: var(--background);
+    background-color: var(--primary);
+    box-shadow: 0 0 0 3px var(--primary);
+}
+
+.post__excerpt {
+    min-width: 100px;
+    text-indent: 2rem;
 }

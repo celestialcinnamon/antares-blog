@@ -1,13 +1,6 @@
 <h1 class="sr-only">Antares Programming</h1>
-<% 
-    const featuredArticles = [];
-    page.posts.each(function(item) {
-        if(item.is_featured) featuredArticles.push(item) })
-%>
-<%- partial('_partial/article-featured', {item: featuredArticles[0], is_featured: true}) %>
 <div class="posts-wrapper">
     <main>
-    
         <% 
             page.posts.each(function(item){ 
         %>
