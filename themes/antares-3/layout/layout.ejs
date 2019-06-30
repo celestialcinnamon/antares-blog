@@ -3,7 +3,29 @@
 <%- partial('_partial/head') %>
 <body>
     <%- partial('_partial/header', null, {cache: !config.relative_link}) %>
+    <div data-scroll data-scroll-showCallback="expandNavbar()"  data-scroll-hideCallback="collapseNavbar()"></div>
     <%- body %>
     <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
+
+    <%- js('js/ScrollTrigger.min.js') %>
+    <script>
+        var scope = { expandNavbar, collapseNavbar };
+        var trigger = new ScrollTrigger();
+        trigger.callScope = scope;
+
+        function expandNavbar() {
+            document
+                .querySelector('.banner')
+                .classList
+                .remove('collapsed')
+        }
+
+        function collapseNavbar() {
+            document
+                .querySelector('.banner')
+                .classList
+                .add('collapsed')
+        }
+    </script>
 </body>
 </html>
