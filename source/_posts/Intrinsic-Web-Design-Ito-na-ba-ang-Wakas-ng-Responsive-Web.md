@@ -28,7 +28,7 @@ Pero hindi hawak ng designers at developers ang lahat ng tools na magagamit para
 
 **Defining Characteristic:** Puro text ang mga Web page at walang images.
 
-<figure class="img-wrapper img-wrapper--illustration float-right">
+<figure class="img-wrapper ">
     {% asset_img simple-html.png "Imahe ng halimbawa ng simpleng HTML" %}<figcaption>
         Kuha mula sa <cite>slides ni Jen Simmons para sa An Event Apart 2018</cite>
     </figcaption></figure>
@@ -40,7 +40,7 @@ Nang mag­si­mu­la ang Web, i­sa lang ang lang­uage ni­to: Hy­per­text Ma
 
 **Defining Characteristic:** Gaya sa Simple HTML era, pero ngayon ay may images na, at nababago na rin ang mga background color at text color. Mas makulay na ang buhay.
 
-<figure class="img-wrapper img-wrapper--illustration float-left">
+<figure class="img-wrapper">
     {% asset_img flow-layout.png "Image ng halimbawa ng flow layout" %}
     <figcaption></figcaption>
 </figure>
@@ -49,7 +49,7 @@ Nagsimula ang design sa Web nang magsimulang magkaroon ng images sa Web (salamat
 
 Ito rin ang panahon kung kailan `<hr>` lang ang pinaka-design na mayroon sa Web. Kung design lang din ang pag-uusapan, walang gano'n sa Web sa panahon ng flow layout era. At tama lang dahil sa progreso ng teknolohiya sa panahong iyon, napakabagal ng Internet, kaya naman mas praktikal kung text lang talaga ang Web. At bukod pa riyan, karamihan ng users ng Web sa panahong ito ng Web design ay puro mga teknikal at propesyunal.
 
-<figure id="fig-20.5827" class="img-wrapper img-wrapper--illustration float-right">
+<figure id="fig-20.5827" class="img-wrapper ">
     {% asset_img flow-layout-1.png "Image ng halimbawa ng flow layout" %}
     <figcaption>
        <b>Figure 20.5827</b>
@@ -58,7 +58,7 @@ Ito rin ang panahon kung kailan `<hr>` lang ang pinaka-design na mayroon sa Web.
 
 Gaya ng makikita sa [figure 20.5827](#fig-20.5827), nag-exist noon ang mga center-aligned na pages (gamit ang lumang HTML tags na `<center></center>` na sana wala nang gumagamit ngayon).
 
-<figure id="fig-60.7538" class="img-wrapper img-wrapper--illustration float-left">
+<figure id="fig-60.7538" class="img-wrapper">
     {% asset_img flow-layout-3.png "Image ng halimbawa ng flow layout" %}
     <figcaption>
         <b>Figure 60.7538</b>: Gumamit din ng tables para sa layout noong Flow Layout Era, pero hindi kasingdalas gaya ng sa Table Layout Era.
@@ -69,7 +69,7 @@ Gaya ng makikita sa [figure 20.5827](#fig-20.5827), nag-exist noon ang mga cente
 
 **Defining Characteristic:** Malawakang paggamit ng `<table></table>` tags. Bagaman ginagamit ito sa panahon ng flow layout, mas malawakang ginagamit ngayon ang HTML tables, at kadalasan, para lang sa layout sa halip na mga data na nasa table.
 
-<figure id="fig-86.6879" class="img-wrapper img-wrapper--illustration float-left">
+<figure id="fig-86.6879" class="img-wrapper">
     {% asset_img table-layout.png "Image ng halimbawa ng table layout" %}
     <figcaption>
         <b>Figure 86.6879</b>: Mula sa 1996 na aklat ni <cite>David Siegel, Creating Killer Websites</cite>
@@ -78,7 +78,7 @@ Gaya ng makikita sa [figure 20.5827](#fig-20.5827), nag-exist noon ang mga cente
 
 Sa era na ito ng Web design, pumasok na tayo sa isang panahon kung kailan unti-unti nang dumarami ang users ng Web. Masasabing dito rin nagsimula ang "design" sa Web, as in design na gaya ng alam natin sa ngayon. Gumamit ang mga Web developers ng `<table>` tags para gumawa ng mga layout sa mga Web page nila. Gumamit din sila ng mga tinatawag na <i>spacer GIFs</i>, i.e., mga GIF images na 1px&times;1px ang laki para lang magkaroon ng laman ang mga table cells at maging maayos ang mga layout ng Web pages.
 
-<figure id="fig-73.1475" class="img-wrapper img-wrapper--illustration">
+<figure id="fig-73.1475" class="img-wrapper">
     <div class="flex flex--images">
         {% asset_img table-layout-1.png "Image ng halimbawa ng table layout" %}
         {% asset_img table-layout-2.png "Image ng halimbawa ng table layout" %}
@@ -97,7 +97,7 @@ Dito rin nauso ang proseso tinatawag nating <i>slice and dice</i>. Ang mga desig
 
 **Defining Characteristics:** Paggamit ng Adobe Flash para sa mga Web design.
 
-<figure id="fig-89.1249" class="img-wrapper img-wrapper--illustration float-left">
+<figure id="fig-89.1249" class="img-wrapper">
     {% asset_img flash.png "Adobe Flash" %}
     <figcaption>
         <b>Figure 89.1249</b>
@@ -108,7 +108,7 @@ Sa panahong ito, lumayo ang Web mula sa pinanggalingan nitong HTML at nakakita n
 
 ### Ang Simula ng CSS Epoch
 
-<figure id="fig-60.4817" class="img-wrapper img-wrapper--illustration float-left">
+<figure id="fig-60.4817" class="img-wrapper">
     {% asset_img css.png "Image ng aklat na Designing with Web Standards ni Jeffrey Zeldman" %}
     <figcaption>
         <b>Figure 60.4817</b>: Kapansin-pansing dahil sa CSS, nanumbalik ang tamang kahulugan ng mga HTML tags. (<cite>Mula sa 2003 aklat ni Jeffrey Zeldman, Designing with Web Standards</cite>)
@@ -123,7 +123,7 @@ Maaring imbento ko lang ang terminong <i>CSS Epoch</i>, pero marami ang sasang-a
 
 Dito sa era na ito, nagkaroon ng dalawang magkalabang opinyon sa Web design. May mga nagsasabi na dapat nating gawing fixed-width ang mga layout, gaya sa mga printed materials. Dahil kahit na kakaunti lang ang iba't ibang screen sizes noon, hindi pa rin natin kayang tiyakin kung ano'ng size ng screen ng mga users. Kaya dapat nating gawing naka-fixed ang laki ng layout.
 
-<figure id="fig-62.5674" class="img-wrapper img-wrapper--illustration float-left float--wider">
+<figure id="fig-62.5674" class="img-wrapper float--wider">
     <video controls src="/antares-blog/tl/Intrinsic-Web-Design-Ito-na-ba-ang-Wakas-ng-Responsive-Web/fluid-layout.mp4">
         <p class="video-fallback"></p>
     </video>
@@ -135,7 +135,7 @@ Dito sa era na ito, nagkaroon ng dalawang magkalabang opinyon sa Web design. May
 May mga nagsasabi naman na "hindi, dapat nag-aadapt sa size ng screen ang layout." Dapat na nagre-resize din ito depende sa viewport. Hindi ako eksperto sa kasaysayan ng Web design, pero sa tingin ko, ang fluid layout ang naging <i lang="en">precursor</i> ng Responsive Web Design.
 
 
-<figure id="fig-43.9855" class="img-wrapper img-wrapper--illustration float-right float--wider">
+<figure id="fig-43.9855" class="img-wrapper  float--wider">
     <video controls src="/antares-blog/tl/Intrinsic-Web-Design-Ito-na-ba-ang-Wakas-ng-Responsive-Web/fixed-layout.mp4">
         <p class="video-fallback"></p>
     </video>
@@ -150,7 +150,7 @@ Dalawang naglalabang opinyon, pero parehas na may punto. Sa era na ito, nagkaroo
 
 **Defining Characteristic:** Iba't ibang layout depende sa screen size. Malawakang paggamit ng mga image na nagre-resize kasama ng viewport, mga media queries, at float elements.
 
-<figure id="fig-93.6485" class="img-wrapper img-wrapper--illustration float-left">
+<figure id="fig-93.6485" class="img-wrapper">
     {% asset_img responsive-web-design.png "Responsive Web Design is a flexible grid (with flexible images) that incorporates media queries to create a responsive, adaptive layout." %}
     <figcaption> 
         <b>Figure 93.6485</b>: Ang Responsive Web Design ay isang flexible grid (kasama ang mga flexible na image) na gumagamit ng mga media query para makagawa ng isang layout na nagbabago sa iba't ibang kalagayan. (<cite>Mula sa slides ni Ethan Marcotte para sa kaniyang pahayag sa An Event Apart 2010</cite>)
@@ -163,7 +163,7 @@ Sa panahong ito rin halos nawala ang "art direction" sa Web. Dahil karamihan ng 
 
 Hindi rin siguro ito matunog sa mga kakilala ko, pero mga ilang taon pagkatapos sumikat ang Responsive Web Design, lumabas ang Adaptive Web Design. Hindi nito pinalitan ang RWD; sa halip, dinagdagan nito ang RWD ng maraming kakayahan. Sa RWD, lahat ng transformations sa layout at adjustments ay nangyayari sa browser, gamit ang CSS, at kung minsan, JavaScript. Pero nang dumating sa eksena ang Adaptive Web Design, sumama ang server sa pagbibigay ng magadang experience sa mga user.
 
-<figure id="fig-73.0292" class="img-wrapper img-wrapper--illustration float-right float--wider">
+<figure id="fig-73.0292" class="img-wrapper  float--wider">
     <video controls src="/antares-blog/tl/Intrinsic-Web-Design-Ito-na-ba-ang-Wakas-ng-Responsive-Web/responsive-layout.mp4"></video>
     <figcaption>
         <b>Figure 73.0292</b>: Isang halimbawa ng isang responsive na layout.

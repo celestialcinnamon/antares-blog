@@ -53,7 +53,7 @@ Ang Web standards ay may mahabang shelf life. Ibig sabihin, ang mga Web site na 
   }
 </style>
 
-<figure id="space-jam" class="img-wrapper--illustration float-left img-wrapper">
+<figure class="img-wrapper">
   {% asset_img space-jam.png "Ang Space Jam website" %}
   <figcaption>Ang <a href="https://www.warnerbros.com/archive/spacejam/movie/jam.htm">Space Jam website</a> ay ginawa noong 1996, at gumagana pa rin ito ngayon.</figcaption>
 </figure>

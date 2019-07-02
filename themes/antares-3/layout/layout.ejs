@@ -8,24 +8,6 @@
     <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
 
     <%- js('js/ScrollTrigger.min.js') %>
-    <script>
-        var scope = { expandNavbar, collapseNavbar };
-        var trigger = new ScrollTrigger();
-        trigger.callScope = scope;
-
-        function expandNavbar() {
-            document
-                .querySelector('.banner')
-                .classList
-                .remove('collapsed')
-        }
-
-        function collapseNavbar() {
-            document
-                .querySelector('.banner')
-                .classList
-                .add('collapsed')
-        }
-    </script>
+    <%- js('js/script.js') %>
 </body>
 </html>

@@ -1,11 +1,11 @@
 <article class="archive-article archive-type-<%= post.layout %>">
-  <div class="archive-article-inner">
     <header class="archive-article-header">
-      <%- partial('post/title', {class_name: 'archive-article-title'}) %>
+        <h2>
+          <a class="post__title" href="<%- url_for(post.path) %>"><%= post.title %></a>
+        </h2>
       <div class="meta">
         <%- post.author.name %>
       </div>
     </header>
     <%- partial('post/date', {class_name: 'archive-article-date', date_format: 'MMM D'}) %>
-  </div>
 </article>

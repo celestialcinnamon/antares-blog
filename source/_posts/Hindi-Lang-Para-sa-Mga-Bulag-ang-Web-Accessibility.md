@@ -17,7 +17,6 @@ Primarily, mga differently abled people, mga may kapansanan, at mga may edad na 
 
 Regardless kung sino ang target audience ng software na dine-develop natin, responsibility natin bilang mga software engineers, developers, and programmers na gumawa ng mga software na magagamit ng pinakamaraming tao hangga't posible. Kasama rito ang mga may kapansanan sa paningin (either bulag o malabo ang paningin), sa pandinig, mobility disorders, at iba pang physical conditions na dahilan kung bakit nahihirapang gumamit ng devices ang iba sa ating mga users.
 
-<aside class="side-note">
   <blockquote>
     <p lang="en">
       Web accessibility means that websites, tools, and technologies are designed and developed so that people with disabilities can use them.
@@ -26,7 +25,6 @@ Regardless kung sino ang target audience ng software na dine-develop natin, resp
       <a href="https://www.w3.org/WAI/fundamentals/accessibility-intro/">Introduction to Web Accessibility</a>
     </cite>
   </blockquote>
-</aside>
 
 Sa isang [Twitter thread](https://mobile.twitter.com/feather/status/1077027857207984128), naikuwento ni [Derek Featherstone](https://mobile.twitter.com/feather) ang isa sa mga karanasan niya sa accessibility. Pansinin na walang kahit anong kapansanan si Featherstone, at pangunahin siyang nagtuturo tungkol sa kahalagahan ng accessibility sa mga Web sites.
 

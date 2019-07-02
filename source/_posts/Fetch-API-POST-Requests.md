@@ -71,7 +71,7 @@ Sa article na ito, hindi natin iha-handle ang errors na iyan, idi-display lang n
 
 So gusto nating makapag-input ang user ng information niya. Tandaan, kailangan natin ng apat na data: first name, middle name, surname, at email address. Kaya gagawa tayo ng HTML form na magsa-submit ng data sa server.
 
-```html index.html
+```html
 <form method="POST" action="/actions/submit_data" id="form_ajax">
     <label for="first_name">First Name</label>
     <input type="text" id="first_name" name="first_name" required />
@@ -103,7 +103,7 @@ May paragraph din tayo, `.status`. Dito natin idi-display ang magiging status ng
 
 Sa user interface, may button tayo na magsa-submit ng form kapag na-click ito. Kapag na-submit ang form, magre-reload ang buong page, kaya dapat nating pigilan iyon. Mag-a-attach tayo ng event handler sa form para sa `submit` event:
 
-```js index.js
+```js
 const form = document.getElementById('form_ajax');
 
 form.addEventListener('submit', function(event) {
@@ -115,7 +115,7 @@ Ang `event.preventDefault()` ang pipigil sa page na mag-reload. Kaya hindi magse
 
 Next, kailangan nating makuha ang data na ise-send natin. Kung babalikan natin ang `index.html`, mapapansin mong lahat ng `<input />` tags ay may `name` attribute. Ito ang gagamitin natin para makuha ang data.
 
-```js index.js
+```js
 
 const form = document.getElementById('form_ajax');
 
@@ -135,7 +135,7 @@ Kapag ginagamit natin ang `form`, puwede itong maging array ng mga `<input />` e
 
 Matatandaan na may kailangan tayong sunding format:
 
-```json Format ng Data
+```json
 {
     "name" : {
         "first": "First name ng user. Required.",
@@ -148,7 +148,7 @@ Matatandaan na may kailangan tayong sunding format:
 
 Kailangan nating i-format sa ganiyang paraan ang data. Hindi naman ito mahirap.
 
-```js index.js
+```js
 form.addEventListener('submit', function(event) {
     ...
 
@@ -167,7 +167,7 @@ form.addEventListener('submit', function(event) {
 
 Ngayon kailangan na nating i-send ang data. Tandaan, ang endpoint natin ay `https://www.example.com/api/users/`.
 
-```js index.js
+```js
 const endpoint = 'https://www.example.com/api/users/';
 
 fetch(endpoint, {
