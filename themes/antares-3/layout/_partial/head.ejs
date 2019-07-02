@@ -67,10 +67,11 @@ function renderLinkPaths(pathArray = []) {
   <meta property="og:image" content="http://celestialcinnamon.github.io/<%- postCoverPath %>" />
   <meta property="og:description" content="<%- strip_html(description) %>" /> 
 
-  <%- css('css/literata-book.css') %>
-  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-  <link href="/antares-blog/css/style.css" rel="stylesheet" media="screen">
-  <link href="/antares-blog/css/print.css" rel="stylesheet" media="print">
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" media="screen">
+  <link href="/antares-blog/css/baseline.css" rel="stylesheet" media="screen">
+  <link href="/antares-blog/css/mobile.css" rel="stylesheet" media="screen">
+  <link href="/antares-blog/css/desktop.css" rel="stylesheet" media="screen and (min-width: 750px)">
+  <!-- <link href="/antares-blog/css/print.css" rel="stylesheet" media="print"> -->
 
   <%
     const links = []
@@ -90,9 +91,9 @@ function renderLinkPaths(pathArray = []) {
   <%- scripts.join("\n") %>
 
   <!-- TODO: Uncomment these links -->
-  <link href="https://fonts.googleapis.com/css?family=Vidaloka&display=swap" rel="stylesheet"> 
-  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700&display=swap" rel="stylesheet"> 
-  <link href="https://fonts.googleapis.com/css?family=B612+Mono&display=swap" rel="stylesheet">
+  <link media="screen" href="https://fonts.googleapis.com/css?family=Vidaloka&display=swap" rel="stylesheet"> 
+  <link media="screen" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700&display=swap" rel="stylesheet"> 
+  <link media="screen" href="https://fonts.googleapis.com/css?family=B612+Mono&display=swap" rel="stylesheet">
 
   <!--
     HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
