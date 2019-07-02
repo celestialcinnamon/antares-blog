@@ -1,0 +1,60 @@
+.post:nth-child(even) {
+    margin-left: auto;
+    text-align: right;
+}
+
+.post {
+    margin: 1rem;
+    padding: 5rem;
+}
+
+.post__excerpt {
+    width: 60%;
+    margin-left: auto;
+}
+
+.post:nth-child(even) .post__excerpt {
+    margin: initial;
+    margin-right: auto;
+    text-align: left;
+}.post:nth-child(even) {
+    margin-left: auto;
+    text-align: right;
+}
+
+.post {
+    margin: 1rem;
+    padding: 5rem;
+}
+
+.post__excerpt {
+    width: 60%;
+    margin-left: auto;
+}
+
+.post:nth-child(even) .post__excerpt {
+    margin: initial;
+    margin-right: auto;
+    text-align: left;
+}
+
+.post__title {
+    font-size: 5rem;
+}
+
+.side-callout,
+.side-note {
+    margin: 2rem;
+}
+
+.archive-article {
+    padding: 5rem;
+}
+
+.archive-year {
+    font-size: 7rem;
+}
+
+.page {
+    margin: 5rem;
+}

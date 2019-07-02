@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="tl" class="dark">
+
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Array Filters</title>
+  
+  <meta name="description" content="Nang ilabas ang ECMAScript 6 noong 2015, dumami ang features ng JavaScript. Isa sa mga nakatanggap ng maraming improvements ang mga array. Sa artikulong ito, pag-usapan natin ang isa sa mga pangmalakasang functions ng JS Arrays&mdash;ang Array.prototype.filter()">
+  <meta name="author" content="Francis Rubio &lt;francoisoibur21@gmail.com&gt;">
+  
+  <!-- Favicon and PWA theme -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/antares-blog/images/apple-touch-icon.png?v=yyL3E0AWom">
+  <link rel="icon" type="image/png" sizes="32x32" href="/antares-blog/images/favicon-32x32.png?v=yyL3E0AWom">
+  <link rel="icon" type="image/png" sizes="194x194" href="/antares-blog/images/favicon-194x194.png?v=yyL3E0AWom">
+  <link rel="icon" type="image/png" sizes="192x192" href="/antares-blog/images/android-chrome-192x192.png?v=yyL3E0AWom">
+  <link rel="icon" type="image/png" sizes="16x16" href="/antares-blog/images/favicon-16x16.png?v=yyL3E0AWom">
+  <link rel="manifest" href="/antares-blog/images/site.webmanifest?v=yyL3E0AWom">
+  <link rel="mask-icon" href="/antares-blog/images/safari-pinned-tab.svg?v=yyL3E0AWom" color="#efaa00">
+  <link rel="shortcut icon" href="/antares-blog/images/favicon.ico?v=yyL3E0AWom">
+  <meta name="apple-mobile-web-app-title" content="Antares">
+  <meta name="application-name" content="Antares">
+  <meta name="msapplication-TileColor" content="#ffc40d">
+  <meta name="msapplication-TileImage" content="/antares-blog/images/mstile-144x144.png?v=yyL3E0AWom">
+  <meta name="msapplication-config" content="/antares-blog/images/browserconfig.xml?v=yyL3E0AWom">
+  <meta name="theme-color" content="#bbbbbb">
+
+
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="Nang ilabas ang ECMAScript 6 noong 2015, dumami ang features ng JavaScript. Isa sa mga nakatanggap ng maraming improvements ang mga array. Sa artikulong ito, pag-usapan natin ang isa sa mga pangmalakasang functions ng JS Arrays&mdash;ang Array.prototype.filter()">
+
+  
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="Array Filters">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://celestialcinnamon.github.io/antares-blog/tl/Array-Filters/">
+  <meta property="og:image" content="http://celestialcinnamon.github.io//antares-blog/images/favicon-194x194.png">
+  <meta property="og:description" content="Nang ilabas ang ECMAScript 6 noong 2015, dumami ang features ng JavaScript. Isa sa mga nakatanggap ng maraming improvements ang mga array. Sa artikulong ito, pag-usapan natin ang isa sa mga pangmalakasang functions ng JS Arrays&mdash;ang Array.prototype.filter()"> 
+
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" media="screen">
+  <link href="/antares-blog/css/baseline.css" rel="stylesheet" media="screen">
+  <link href="/antares-blog/css/mobile.css" rel="stylesheet" media="screen">
+  <link href="/antares-blog/css/desktop.css" rel="stylesheet" media="screen and (min-width: 750px)">
+  <!-- <link href="/antares-blog/css/print.css" rel="stylesheet" media="print"> -->
+
+  
+
+  
+  
+
+  <!-- TODO: Uncomment these links -->
+  <link media="screen" href="https://fonts.googleapis.com/css?family=Vidaloka&display=swap" rel="stylesheet"> 
+  <link media="screen" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700&display=swap" rel="stylesheet"> 
+  <link media="screen" href="https://fonts.googleapis.com/css?family=B612+Mono&display=swap" rel="stylesheet">
+
+  <!--
+    HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
+  -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+<link rel="stylesheet" href="/antares-blog/css/prism-a11y-dark.css" type="text/css">
+<link rel="stylesheet" href="/antares-blog/css/prism-line-numbers.css" type="text/css"></head>
+
+<body>
+    <div class="banner">
+  <a href="#main-content" class="nav skiplink sr-only sr-only-focusable">Skip to content</a>
+  <header class="header" role="banner">
+    <a href="/antares-blog/" class="site-logo" aria-label="Go to home">
+      <img src="/antares-blog/images/logo_v4.png" alt="Antares Programming logo">
+    </a>
+  </header>
+  <nav class="navbar">
+    <ul class="nav-list">
+      <li class="nav-item"><a class="nav" href="/antares-blog/archives">Archives</a></li>
+      <li class="nav-item"><a class="nav" href="/antares-blog/downloads">Downloads</a></li>
+    </ul>
+  </nav>
+</div>
+
+    <div data-scroll data-scroll-showCallback="expandNavbar()"  data-scroll-hideCallback="collapseNavbar()"></div>
+    <main class="page--post">
+
+<article class="post--article">
+  <header>
+    <h1>
+      <a class="post__title" href="/antares-blog/tl/Array-Filters/">Array Filters</a>
+    </h1>
+  </header>
+  <p>Nang ilabas ang ECMAScript 6 noong 2015, dumami ang features ng JavaScript. Isa sa mga nakatanggap ng maraming improvements ang mga array. Sa artikulong ito, pag-usapan natin ang isa sa mga pangmalakasang functions ng JS Arrays&mdash;ang <code>Array.prototype.filter()</code></p>
+<a id="more"></a>
+<p>May mga times kung kailan kailangan natin na makuha lang iyong mga items ng isang array na papasa sa isang condition. Kadalasan itong ginagamit sa mga database queries, gaya halimbawa ng mga price range sa mga eCommerce web sites; iyon bang lahat lang ng ididispley mo ay iyong mga mas mura sa P400.00. Dati, no’ng nag-aaral pa lang ako ng Visual Basic, kapag ganito ang case, ipo-for loop ko muna tapos isa-isa kong itse-check kung papasa sa condition. Pero sa JavaScript, may built-in nang function para dito.</p>
+<h2 id="Array-Filters-JavaScript"><a href="#Array-Filters-JavaScript" class="headerlink" title="Array Filters (JavaScript)"></a>Array Filters (JavaScript)</h2><p>For example, may array tayo ng objects, at bawat item ng array na ‘to ay may name, age, location, at gender.</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">const</span> people <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">"Francis Rubio"</span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token number">19</span><span class="token punctuation">,</span> location<span class="token punctuation">:</span> <span class="token string">"Caloocan City"</span><span class="token punctuation">,</span> gender<span class="token punctuation">:</span> <span class="token string">"male"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">"Annalise Keating"</span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token number">50</span><span class="token punctuation">,</span> location<span class="token punctuation">:</span> <span class="token string">"Philadelphia"</span><span class="token punctuation">,</span> gender<span class="token punctuation">:</span> <span class="token string">"female"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">"Wesley Gibbins"</span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token number">25</span><span class="token punctuation">,</span> location<span class="token punctuation">:</span> <span class="token string">"England"</span><span class="token punctuation">,</span> gender<span class="token punctuation">:</span> <span class="token string">"male"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">"Asher Millstone"</span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token number">24</span><span class="token punctuation">,</span> location<span class="token punctuation">:</span> <span class="token string">"Manila"</span><span class="token punctuation">,</span> gender<span class="token punctuation">:</span> <span class="token string">"male"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">"Michaela Pratt"</span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token number">25</span><span class="token punctuation">,</span> location<span class="token punctuation">:</span> <span class="token string">"Cebu City"</span><span class="token punctuation">,</span> gender<span class="token punctuation">:</span> <span class="token string">"female"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">"Laurel Castillo"</span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token number">26</span><span class="token punctuation">,</span> location<span class="token punctuation">:</span> <span class="token string">"Mexico"</span><span class="token punctuation">,</span> gender<span class="token punctuation">:</span> <span class="token string">"female"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">"Connor Walsh"</span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token number">24</span><span class="token punctuation">,</span> location<span class="token punctuation">:</span> <span class="token string">"Davao"</span><span class="token punctuation">,</span> gender<span class="token punctuation">:</span> <span class="token string">"male"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">"Oliver Hampton"</span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token number">24</span><span class="token punctuation">,</span> location<span class="token punctuation">:</span> <span class="token string">"Tagaytay"</span><span class="token punctuation">,</span> gender<span class="token punctuation">:</span> <span class="token string">"male"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">"Francis Delfino"</span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token number">43</span><span class="token punctuation">,</span> location<span class="token punctuation">:</span> <span class="token string">"Coalport"</span><span class="token punctuation">,</span> gender<span class="token punctuation">:</span> <span class="token string">"male"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">"Bonnie Winterbottom"</span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token number">43</span><span class="token punctuation">,</span> location<span class="token punctuation">:</span> <span class="token string">"Makati"</span><span class="token punctuation">,</span> gender<span class="token punctuation">:</span> <span class="token string">"female"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">"Nathaniel Lahey"</span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token number">53</span><span class="token punctuation">,</span> location<span class="token punctuation">:</span> <span class="token string">"Taiwan"</span><span class="token punctuation">,</span> gender<span class="token punctuation">:</span> <span class="token string">"male"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">"Rebecca Sutter"</span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token number">26</span><span class="token punctuation">,</span> location<span class="token punctuation">:</span> <span class="token string">"Rwanda"</span><span class="token punctuation">,</span> gender<span class="token punctuation">:</span> <span class="token string">"female"</span> <span class="token punctuation">}</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Then sinabi sa atin ng client natin na gusto niyang malaman kung sino sa mga taong ‘to ang mas matanda sa 25 years old. Paano natin gagawin iyon?</p>
+<h2 id="For-loop-good-way"><a href="#For-loop-good-way" class="headerlink" title="For-loop (good way)"></a>For-loop (good way)</h2><p>Ang unang papasok sa isip natin mga bessywap bilang mga mabubuting programmer ay ang paggamit ng for loop. Maglu-loop tayo sa bawat item, itse-check natin kung mas matanda sila sa 25, then ilalagay natin sila sa array.</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">let</span> peopleOlderThan25 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> people<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">let</span> person <span class="token operator">=</span> people<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>person<span class="token punctuation">.</span>age <span class="token operator">></span> <span class="token number">25</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        peopleOlderThan25<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>person<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Ayos. Kapag ni-run ang program natin, ito ang output:</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token punctuation">[</span>
+    <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">'Annalise Keating'</span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token number">50</span><span class="token punctuation">,</span> location<span class="token punctuation">:</span> <span class="token string">'Philadelphia'</span><span class="token punctuation">,</span> gender<span class="token punctuation">:</span> <span class="token string">'female'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">'Laurel Castillo'</span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token number">26</span><span class="token punctuation">,</span> location<span class="token punctuation">:</span> <span class="token string">'Mexico'</span><span class="token punctuation">,</span> gender<span class="token punctuation">:</span> <span class="token string">'female'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">'Francis Delfino'</span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token number">43</span><span class="token punctuation">,</span> location<span class="token punctuation">:</span> <span class="token string">'Coalport'</span><span class="token punctuation">,</span> gender<span class="token punctuation">:</span> <span class="token string">'male'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">'Bonnie Winterbottom'</span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token number">43</span><span class="token punctuation">,</span> location<span class="token punctuation">:</span> <span class="token string">'Makati'</span><span class="token punctuation">,</span> gender<span class="token punctuation">:</span> <span class="token string">'female'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">'Nathaniel Lahey'</span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token number">53</span><span class="token punctuation">,</span> location<span class="token punctuation">:</span> <span class="token string">'Taiwan'</span><span class="token punctuation">,</span> gender<span class="token punctuation">:</span> <span class="token string">'male'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">'Rebecca Sutter'</span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token number">26</span><span class="token punctuation">,</span> location<span class="token punctuation">:</span> <span class="token string">'Rwanda'</span><span class="token punctuation">,</span> gender<span class="token punctuation">:</span> <span class="token string">'female'</span> <span class="token punctuation">}</span>
+<span class="token punctuation">]</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Tama ang output, lahat ng age ay larger than 25. Lookin’ good. 👍👍👍👍👍</p>
+<p>Pero may mas maganda at mas madaling way pa para gawin ‘to (good news sa mga haters ng for loop.)</p>
+<h2 id="Array-filter"><a href="#Array-filter" class="headerlink" title="Array.filter()"></a>Array.filter()</h2><p>Gagamitin natin ang built-in function na filter() sa paggawa ng task natin. Ang kailangan natin ay magpasa ng isang function sa filter() na magde-decide kung papasa ba sa condition natin iyong item na iyon.
+Para mas maintindihan natin, isa-isahin natin ang mga problema natin.</p>
+<p>So meron tayong array kung saan manggagaling ang lahat ng gagamitin nating items (input).
+Kailangan nating piliin lang kung sino sa mga item na ‘to ang may age na mas malaki sa 25 (process).
+Then lahat ng papasa sa condition natin ay iso-store natin sa isang array (output).</p>
+<p>Let’s see. Paano ba ginagamit ang <code>filter()</code>?</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">let</span> peopleOlderThan25 <span class="token operator">=</span> people<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>Pero hindi pa iyan gagana. Kailangan nating i-describe kay <code>filter()</code> kung ano ang gusto nating makuha. Kailangan niya ng function, kaya magpapasa tayo ng function sa <code>filter()</code>.</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">let</span> peopleOlderThan25 <span class="token operator">=</span> people<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>pangfilterNaFunction<span class="token punctuation">)</span>
+​
+
+<span class="token keyword">function</span> <span class="token function">pangfilterNaFunction</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>As you can see, nag-declare tayo ng function at ipinasa natin ito kay <code>filter()</code>.</p>
+<blockquote>
+<p>NOTE: kapag nagpapasa ka ng function sa <code>filter()</code>, wala dapat parentheses (see example). Kapag meron kasi, hindi mapapasa iyong function dahil mag-e-execute agad siya.</p>
+</blockquote>
+<p>So ano’ng kailangan nating gawin sa <code>pangfilterNaFunction()</code>? Sabi ni <code>filter()</code>, kailangang mag-return ng boolean iyong function na pinasa natin sa kaniya.</p>
+<p>Kung gusto nating makapasa sa condition natin iyong item ng array, magre-return tayo ng <code>true</code>
+Kung hindi naman, <code>false</code> ang ire-return ng function natin.</p>
+<p>So pa’no iyon? Una muna, kailangan nating makuha iyong items.</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">pangfilterNaFunction</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>Woah, wait. Sa’n galing iyong item? Ang mangyayari kasi rito, sa code ng <code>filter()</code>, tatawagin niya iyong function na pinasa natin. So for example, kung iyong array natin ay may 15 items, 15 times na matatawag iyong <code>pangfilterNaFunction()</code>, at ilalagay ni <code>filter()</code> sa item iyong current item na iyon. So parang for loop din, except mas maikli, mas madaling basahin, at mas mabilis in terms of performance.</p>
+<p>So ngayon, i-try nating gawin iyong <code>true</code> or <code>false</code> na pagre-return:</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">let</span> peopleOlderThan25 <span class="token operator">=</span> people<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>pangfilterNaFunction<span class="token punctuation">)</span>
+​
+<span class="token keyword">function</span> <span class="token function">pangfilterNaFunction</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>item<span class="token punctuation">.</span>age <span class="token operator">></span> <span class="token number">25</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">true</span>
+    <span class="token keyword">else</span> <span class="token keyword">return</span> <span class="token boolean">false</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Iyan. Kapag ni-run iyong program, same lang din ang magiging output kagaya no’ng sa for loop. Pero baka itanong mo naman, ‘akala ko ba mas maganda, mas madaling basahin, mas maikli, e ang daming proseso niyan e, saka ang daming lines of code. Lokomoko.’ Kaya ganiyan kahaba para makita natin iyong step by step na process kung paano tayo makakarating sa pinakamaikling code na madaling basahin. Ito na iyon.</p>
+<p>Nakita niyo ba iyong condition sa if-else statement natin?</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">if</span><span class="token punctuation">(</span>item<span class="token punctuation">.</span>age <span class="token operator">></span> <span class="token number">25</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token operator">...</span><span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>Iyong <code>item.age &gt; 25</code>, ‘di ba <code>true</code> or <code>false</code> lang din naman ang magiging value niyan? So bakit di na lang natin tanggalin iyong if-else, at iyan na lang ang i-return natin?</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">let</span> peopleOlderThan25 <span class="token operator">=</span> people<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>pangfilterNaFunction<span class="token punctuation">)</span>
+​
+<span class="token keyword">function</span> <span class="token function">pangfilterNaFunction</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> item<span class="token punctuation">.</span>age <span class="token operator">></span> <span class="token number">25</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>See? Nabawasan ng isang line iyong code! xD Anyway, iyang bagong function na iyan, same lang din iyan sa kanina. Pero tinanggal natin iyong if-else since redundant na siya. Next, paikliin pa ulit natin.</p>
+<p>Iyong <code>pangfilterNaFunction()</code>, isang beses lang natin nagamit, tama? Malamang sa malamang, hindi na natin iyan gagamitin ulit, tama? Tanggalan na lang kaya natin siya ng pangalan, since isang beses lang naman siyang matatawag?</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">let</span> peopleOlderThan25 <span class="token operator">=</span> people<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> item<span class="token punctuation">.</span>age <span class="token operator">></span> <span class="token number">25</span>  
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>See? Three lines na lang. TAGUMPAY! xD Kidding aside, ang ginawa lang natin dito ay nilipat natin iyong declaration ng function sa loob mismo ng filter(). Yes, you can do that sa JavaScript. 😄</p>
+<p>PERO… may way pa ulit para lalo pang mapaikli iyan! Gagamit tayo ng tinatawag na mga arrow function.</p>
+<p>Sa arrow functions, puwede na nating tanggalin ang function na keyword para parenthesis na lang ang matira. It looks like this:</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">let</span> peopleOlderThan25 <span class="token operator">=</span> people<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">></span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> item<span class="token punctuation">.</span>age <span class="token operator">></span> <span class="token number">25</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>Okay, ‘wag kayong malito. Pinalitan lang natin iyong way ng pagde-declare natin. May iba pang benefits ang paggamit ng arrow functions, pero hindi ko muna isasama rito. Anyway, nagtanggal lang tayo ng keyword. Umikli siya kahit paano. BUT WAIT! There’s more.</p>
+<p>Sa arrow functions, may tinatawag na implicit return. “Implicit”, kabaligtaran ng explicit, given na gano’n siya. ‘Return’, as in return na keyword. Ibig sabihin, puwede na nating tanggalin ang return keyword. Pati ang curly braces. Yesmalu. Shocking, ‘di ba?</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">let</span> peopleOlderThan25 <span class="token operator">=</span> people<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> item<span class="token punctuation">.</span>age <span class="token operator">></span> <span class="token number">25</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>Okay ganito siya gumagana. Ie-execute niya iyong arrow function, gaya lang din kanina. Then makikita niya, “Uy, may value. Hindi naka-assign sa variable. Walang curly brac… implicit return ‘to.” Then, titingnan niya iyong value ng condition, makikita niya ulit, “Boolean ‘to. Ay true… Ay false… false ‘to, itong isang item dito true” hanggang sa maubos ang lahat ng items sa array.</p>
+<p>Iyan. One. Line. Program. Be proud of yourself! Na-compress mo ang program na may 7 lines into a one-liner na walang error, walang bug, madaling basahin, at mas mabilis kaysa sa dati. Ikaw na magaling. Ikaw na talaga. xD</p>
+
+  <footer class="article-footer">
+      
+  <div class="article-tags-wrapper">
+    <h4>Tags</h4>
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/antares-blog/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/antares-blog/tags/web/">web</a></li></ul>
+  </div>
+
+      
+  <div class="article-category">
+    <h4>Category</h4>
+    <a class="article-category-link" href="/antares-blog/categories/JavaScript/">JavaScript</a>
+  </div>
+
+  </footer>
+</article>
+</main>
+    <footer class="footer" role="contentinfo">
+  <div>
+    <p>&copy; 2019 Antares Programming</p>
+    <p>Reserbado ang lahat ng karapatan.</p>
+  </div>
+  <div><a href="/antares-blog/tungkol-sa-amin">Tungkol sa Antares Programming</a>
+  <a href="https://www.facebook.com/antaresprogramming"><i>Antares Programming</i> sa Facebook</a>
+  <p id="back-to-top"><a href="#top">Back to top</a></p></div>
+</footer>
+<script>
+    var CONFIG_ROOT = `/antares-blog/`;
+    var CONFIG_URL = `https://celestialcinnamon.github.io/antares-blog`.replace('/antares-blog', '');
+</script>
+
+    <script src="/antares-blog/js/ScrollTrigger.min.js"></script>
+    <script src="/antares-blog/js/script.js"></script>
+</body>
+</html>

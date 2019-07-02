@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="tl" class="dark">
+
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Destructuring sa JavaScript</title>
+  
+  <meta name="description" content="Ang destructuring ay isa sa mga bagong feature ng JavaScript na dumatng kasama ng ECMAScript 2015.">
+  <meta name="author" content="Francis Rubio &lt;francoisoibur21@gmail.com&gt;">
+  
+  <!-- Favicon and PWA theme -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/antares-blog/images/apple-touch-icon.png?v=yyL3E0AWom">
+  <link rel="icon" type="image/png" sizes="32x32" href="/antares-blog/images/favicon-32x32.png?v=yyL3E0AWom">
+  <link rel="icon" type="image/png" sizes="194x194" href="/antares-blog/images/favicon-194x194.png?v=yyL3E0AWom">
+  <link rel="icon" type="image/png" sizes="192x192" href="/antares-blog/images/android-chrome-192x192.png?v=yyL3E0AWom">
+  <link rel="icon" type="image/png" sizes="16x16" href="/antares-blog/images/favicon-16x16.png?v=yyL3E0AWom">
+  <link rel="manifest" href="/antares-blog/images/site.webmanifest?v=yyL3E0AWom">
+  <link rel="mask-icon" href="/antares-blog/images/safari-pinned-tab.svg?v=yyL3E0AWom" color="#efaa00">
+  <link rel="shortcut icon" href="/antares-blog/images/favicon.ico?v=yyL3E0AWom">
+  <meta name="apple-mobile-web-app-title" content="Antares">
+  <meta name="application-name" content="Antares">
+  <meta name="msapplication-TileColor" content="#ffc40d">
+  <meta name="msapplication-TileImage" content="/antares-blog/images/mstile-144x144.png?v=yyL3E0AWom">
+  <meta name="msapplication-config" content="/antares-blog/images/browserconfig.xml?v=yyL3E0AWom">
+  <meta name="theme-color" content="#bbbbbb">
+
+
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="Ang destructuring ay isa sa mga bagong feature ng JavaScript na dumatng kasama ng ECMAScript 2015.">
+
+  
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="Destructuring sa JavaScript">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://celestialcinnamon.github.io/antares-blog/tl/Destructuring-sa-JavaScript/">
+  <meta property="og:image" content="http://celestialcinnamon.github.io//antares-blog/tl/Destructuring-sa-JavaScript/cover.png">
+  <meta property="og:description" content="Ang destructuring ay isa sa mga bagong feature ng JavaScript na dumatng kasama ng ECMAScript 2015."> 
+
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" media="screen">
+  <link href="/antares-blog/css/baseline.css" rel="stylesheet" media="screen">
+  <link href="/antares-blog/css/mobile.css" rel="stylesheet" media="screen">
+  <link href="/antares-blog/css/desktop.css" rel="stylesheet" media="screen and (min-width: 750px)">
+  <!-- <link href="/antares-blog/css/print.css" rel="stylesheet" media="print"> -->
+
+  
+
+  
+  
+
+  <!-- TODO: Uncomment these links -->
+  <link media="screen" href="https://fonts.googleapis.com/css?family=Vidaloka&display=swap" rel="stylesheet"> 
+  <link media="screen" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700&display=swap" rel="stylesheet"> 
+  <link media="screen" href="https://fonts.googleapis.com/css?family=B612+Mono&display=swap" rel="stylesheet">
+
+  <!--
+    HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
+  -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+<link rel="stylesheet" href="/antares-blog/css/prism-a11y-dark.css" type="text/css">
+<link rel="stylesheet" href="/antares-blog/css/prism-line-numbers.css" type="text/css"></head>
+
+<body>
+    <div class="banner">
+  <a href="#main-content" class="nav skiplink sr-only sr-only-focusable">Skip to content</a>
+  <header class="header" role="banner">
+    <a href="/antares-blog/" class="site-logo" aria-label="Go to home">
+      <img src="/antares-blog/images/logo_v4.png" alt="Antares Programming logo">
+    </a>
+  </header>
+  <nav class="navbar">
+    <ul class="nav-list">
+      <li class="nav-item"><a class="nav" href="/antares-blog/archives">Archives</a></li>
+      <li class="nav-item"><a class="nav" href="/antares-blog/downloads">Downloads</a></li>
+    </ul>
+  </nav>
+</div>
+
+    <div data-scroll data-scroll-showCallback="expandNavbar()"  data-scroll-hideCallback="collapseNavbar()"></div>
+    <main class="page--post">
+
+<article class="post--article">
+  <header>
+    <h1>
+      <a class="post__title" href="/antares-blog/tl/Destructuring-sa-JavaScript/">Destructuring sa JavaScript</a>
+    </h1>
+  </header>
+  <p>Ang destructuring ay isa sa mga bagong feature ng JavaScript na dumatng kasama ng ECMAScript 2015.</p>
+<a id="more"></a>
+<style>
+  .spoiler {
+    filter: blur(5px);
+    transition: filter 0.3s;
+  }
+
+  .spoiler:focus {
+    filter: none;
+    transition: filter 0.3s;
+  }
+</style>
+
+<p>Ang destructuring, ay isang pattern matching technique sa JavaScript. Sa destructuring, puwede mong i-map ang isang grupo ng variables sa isa pang grupo ng values. Puwede itong gawin sa mga objects pati na rin sa mga array.</p>
+<h2 id="Destructuring-sa-Objects"><a href="#Destructuring-sa-Objects" class="headerlink" title="Destructuring sa Objects"></a>Destructuring sa Objects</h2><p>Kadalasan, kapag may properties ang isang object na gusto nating i-assign sa mga variable, ganito ang ginagawa natin:</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">const</span> person <span class="token operator">=</span> <span class="token punctuation">{</span>
+    name<span class="token punctuation">:</span> <span class="token string">"Greg Antares"</span><span class="token punctuation">,</span>
+    age<span class="token punctuation">:</span> <span class="token number">20</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> name <span class="token operator">=</span> person<span class="token punctuation">.</span>name<span class="token punctuation">;</span>
+<span class="token keyword">let</span> age <span class="token operator">=</span> person<span class="token punctuation">.</span>age<span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Pero dahil sa object destructuring, puwede pa nating paikliin iyan:</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">const</span> person <span class="token operator">=</span> <span class="token punctuation">{</span>
+    name<span class="token punctuation">:</span> <span class="token string">"Greg Antares"</span><span class="token punctuation">,</span>
+    age<span class="token punctuation">:</span> <span class="token number">20</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> <span class="token punctuation">{</span> name<span class="token punctuation">,</span> age <span class="token punctuation">}</span> <span class="token operator">=</span> person<span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Ang mahalaga rito ay magkapareho ang pangalan ng variables at ang mga properties ng objects. Ang <code>name</code> property ay mapupunta sa <code>name</code> variable, ganito rin ang mangyayari sa <code>age</code> variable.</p>
+<p>Minsan din gusto natin na ibahin ang pangalan ng variables:</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">const</span> person <span class="token operator">=</span> <span class="token punctuation">{</span>
+    name<span class="token punctuation">:</span> <span class="token string">"Greg Antares"</span><span class="token punctuation">,</span>
+    age<span class="token punctuation">:</span> <span class="token number">20</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> personName <span class="token operator">=</span> person<span class="token punctuation">.</span>name<span class="token punctuation">;</span>
+<span class="token keyword">let</span> personAge <span class="token operator">=</span> person<span class="token punctuation">.</span>age<span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Sa destructuring, puwede mo ring ibahin ang pangalan ng variables:</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">const</span> person <span class="token operator">=</span> <span class="token punctuation">{</span>
+    name<span class="token punctuation">:</span> <span class="token string">"Greg Antares"</span><span class="token punctuation">,</span>
+    age<span class="token punctuation">:</span> <span class="token number">20</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> <span class="token punctuation">{</span> name<span class="token punctuation">:</span> personName<span class="token punctuation">,</span> age<span class="token punctuation">:</span> personAge <span class="token punctuation">}</span> <span class="token operator">=</span> person<span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Mapapansing kagaya ito ng JSON syntax. Makukuha mo ang <code>name</code> property, pero mare-rename ang <code>name</code> papunta sa <code>personName</code>. Mare-rename ang <code>age</code> at magiging <code>personAge</code>.</p>
+<p>Pero paano naman kung nagkakaroon ng null values sa mga properties? Puwede rin tayong maglagay ng default values sa mga variable.</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">const</span> person <span class="token operator">=</span> <span class="token punctuation">{</span>
+    name<span class="token punctuation">:</span> <span class="token string">"Greg Antares"</span><span class="token punctuation">,</span>
+    age<span class="token punctuation">:</span> <span class="token number">20</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> name <span class="token operator">=</span> person<span class="token punctuation">.</span>name<span class="token punctuation">;</span>
+<span class="token keyword">let</span> age <span class="token operator">=</span> person<span class="token punctuation">.</span>age<span class="token punctuation">;</span>
+<span class="token keyword">let</span> phoneNumber <span class="token operator">=</span> person<span class="token punctuation">.</span><span class="token function">hasOwnProperty</span><span class="token punctuation">(</span><span class="token string">"phoneNumber"</span><span class="token punctuation">)</span>
+    <span class="token operator">?</span> person<span class="token punctuation">.</span>phoneNumber
+    <span class="token punctuation">:</span> <span class="token string">"0912 345 6789"</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Ang <code>hasOwnProperty()</code> ay isang function na built-in sa lahat ng JavaScript objects. Titingnan nito kung may property ang object na <code>phoneNumber</code>. At gumamit din tayo ng ternary <code>if</code>. Kapag true ang value ng <code>hasOwnProperty()</code>, ang magiging value ng <code>phoneNumber</code> ay ang <code>person.phoneNumber</code>. Pero kung false ito, ang string ang magiging value nito.</p>
+<p>Before ES6, ganito natin ginagawa ang mga default values. Pero sa destructuring mas maikling syntax na ang ginagamit natin:</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">const</span> person <span class="token operator">=</span> <span class="token punctuation">{</span>
+    name<span class="token punctuation">:</span> <span class="token string">"Greg Antares"</span><span class="token punctuation">,</span>
+    age<span class="token punctuation">:</span> <span class="token number">20</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> <span class="token punctuation">{</span> name<span class="token punctuation">,</span> age<span class="token punctuation">,</span> phoneNumber <span class="token operator">=</span> <span class="token string">"0912 345 6789"</span> <span class="token punctuation">}</span> <span class="token operator">=</span> person<span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Kapag walang <code>phoneNumber</code> property ang <code>person</code>, magde-default ito sa string na ‘nilagay natin.</p>
+<p>Puwede mo rin itong i-rename at lagyan ng default value <em>nang sabay</em>.</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">let</span> <span class="token punctuation">{</span> phoneNumber<span class="token punctuation">:</span> mobile <span class="token operator">=</span> <span class="token string">"0912 345 6789"</span> <span class="token punctuation">}</span> <span class="token operator">=</span> person<span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="Destructuring-sa-mga-Function"><a href="#Destructuring-sa-mga-Function" class="headerlink" title="Destructuring sa mga Function"></a>Destructuring sa mga Function</h2><p>Makikita na agad na magagamit mo rin ito sa iba pang mga programming constructs. Kung nanggaling ka sa C# programming, malamang narinig mo na ang <i lang="en">named parameters</i>. Although sa JavaScript walang gano’n, puwede nating magaya ang named parameters gamit ang destructuring.</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">greeting</span><span class="token punctuation">(</span><span class="token punctuation">{</span> name<span class="token punctuation">,</span> profession <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`Hello, </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> the </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>profession<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> person <span class="token operator">=</span> <span class="token punctuation">{</span>
+    name<span class="token punctuation">:</span> <span class="token string">"Greg Antares"</span><span class="token punctuation">,</span>
+    profession<span class="token punctuation">:</span> <span class="token string">"writer"</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token function">greeting</span><span class="token punctuation">(</span>person<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// Hello, Greg Antares the writer</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="Nested-Destructuring"><a href="#Nested-Destructuring" class="headerlink" title="Nested Destructuring"></a>Nested Destructuring</h2><p>Sa tunay na mundo, gumagamit tayo ng API sa Web. Sa ngayon, marami sa mga ito, kung hindi man lahat, JSON ang binabalik na format. Sa isa sa mga na-try ko na dating API, ganito ang format ng binabalik na data:</p>
+<pre class="line-numbers language-json"><code class="language-json"><span class="token punctuation">{</span>
+    <span class="token property">"name"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">"first"</span><span class="token operator">:</span> <span class="token string">"Gregory"</span><span class="token punctuation">,</span>
+        <span class="token property">"middle"</span><span class="token operator">:</span> <span class="token null">null</span><span class="token punctuation">,</span>
+        <span class="token property">"last"</span><span class="token operator">:</span> <span class="token string">"Antares"</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">"contact"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">"mobile"</span><span class="token operator">:</span> <span class="token string">"0912-345-6789"</span><span class="token punctuation">,</span>
+        <span class="token property">"email"</span><span class="token operator">:</span> <span class="token string">"gregantares@testema.il"</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Medyo komplikado ang format ng data in a sense na nested ito. Bad design bang matatawag ito? Not necessarily. Ito lang kasi talaga ang format na may sense para sa kung sinumang nag-design ng API. Pero bago pa ako magtuloy-tuloy <i lang="en">down the rabbit hole</i>, bumalik tayo sa destructuring. Sa unang tingin baka malito-lito pa tayo, pero ia-apply lang natin iyong basic principles na na-establish na natin kanina:</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">const</span> dataFromAPIServer <span class="token operator">=</span> <span class="token punctuation">{</span>
+    name<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        first<span class="token punctuation">:</span> <span class="token string">"Gregory"</span><span class="token punctuation">,</span>
+        middle<span class="token punctuation">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+        last<span class="token punctuation">:</span> <span class="token string">"Antares"</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    contact<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        mobile<span class="token punctuation">:</span> <span class="token string">"0912-345-6789"</span><span class="token punctuation">,</span>
+        email<span class="token punctuation">:</span> <span class="token string">"gregantares@testema.il"</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token punctuation">{</span>
+    name<span class="token punctuation">:</span> <span class="token punctuation">{</span> first<span class="token punctuation">,</span> last <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    contact<span class="token punctuation">:</span> <span class="token punctuation">{</span> email <span class="token punctuation">}</span>
+<span class="token punctuation">}</span> <span class="token operator">=</span> dataFromAPIServer<span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Bago ko ipaliwanag, gusto ko na i-challenge mo ang sarili mo. Ilang variables ang na-declare sa destructuring expression natin? Kung ready ka na i-click mo lang ang next paragraph. Kapag nag-blur ulit, click mo lang din ulit.</p>
+<div class="spoiler" tabindex="1">
+<p>
+  Nagkaroon lang tayo ng tatlong variable declarations sa destructuring na ito, ang <code>first</code>, <code>last</code>, <code>email</code>. Paano nangyari iyon? Hindi made-declare ang <code>name</code> at <code>contact</code> dahil mga key sila ng properties. Kung ang gusto nating ma-declare ay <code>name</code> at <code>contact</code>, hindi na tayo maglalagay ng <code>first</code>, <code>last</code>, at <code>contact</code>.
+</p>
+</div>
+
+<h2 id="Array-Destructuring"><a href="#Array-Destructuring" class="headerlink" title="Array Destructuring"></a>Array Destructuring</h2><p>Akalain mo bang puwede rin pala ito sa mga array? Simple lang din ito. Pero ‘di gaya sa objects, sequential ang array destructuring, kaya mahalaga ang pagkakasunod-sunod ng mga variable names.</p>
+<p>Halimbawa, tingnan ang example natin kanina:</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">const</span> person <span class="token operator">=</span> <span class="token punctuation">{</span>
+    name<span class="token punctuation">:</span> <span class="token string">"Greg Antares"</span><span class="token punctuation">,</span>
+    age<span class="token punctuation">:</span> <span class="token number">20</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> <span class="token punctuation">{</span> name<span class="token punctuation">,</span> age <span class="token punctuation">}</span> <span class="token operator">=</span> person<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// ------ OR PUWEDE RING GANITO --------</span>
+<span class="token keyword">let</span> <span class="token punctuation">{</span> age<span class="token punctuation">,</span> name <span class="token punctuation">}</span> <span class="token operator">=</span> person<span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Kahit magkabaligtad ang positioning ng <code>age</code> at <code>name</code> variables, nga dahil nakadepende ito sa keys ng mga property, hindi magkakagulo. Pansinin naman kung paano gumagana ang array destructuring.</p>
+<p>Halimbawa, ginawa nating array ang first, middle, at last name. For the sake of example lang, kasi hindi ko nire-recommend na gawin mong array iyan, dapat kasi talaga naka-object sila para may label pero sige ikaw bahala kaniya-kaniya tayo ng trip sa buhay:</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">const</span> name <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Johannes"</span><span class="token punctuation">,</span> <span class="token string">"Gregory"</span><span class="token punctuation">,</span> <span class="token string">"Antares"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>Kung magkakaroon ka ng pagkakataong humawak ng mga <i lang="en">legacy applications</i>, or iyong mga lumang applications na mine-maintain na lang, siguro may ganitong types ng data structures. So ang task sa atin ngayon eh gawin itong malinaw. So ita-transform natin siya into different variables. Useful ulit dito ang destructuring:</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">const</span> name <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Johannes"</span><span class="token punctuation">,</span> <span class="token string">"Gregory"</span><span class="token punctuation">,</span> <span class="token string">"Antares"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token punctuation">[</span>first<span class="token punctuation">,</span> middle<span class="token punctuation">,</span> last<span class="token punctuation">]</span> <span class="token operator">=</span> name<span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>first<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// Johannes</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>middle<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// Gregory</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>last<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// Antares</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Pansinin na mahalaga ang order o pagkakasunod-sunod ng <code>first</code>, <code>middle</code>, at <code>last</code>. Pansinin din na sa halip na curly braces, square brackets na ang gamit natin dahil array nga ito. Tingnan sa susunod na example ang mangyayari kapag napagbali-baligtad ang mga variables.</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">const</span> name <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Johannes"</span><span class="token punctuation">,</span> <span class="token string">"Gregory"</span><span class="token punctuation">,</span> <span class="token string">"Antares"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token punctuation">[</span>middle<span class="token punctuation">,</span> last<span class="token punctuation">,</span> first<span class="token punctuation">]</span> <span class="token operator">=</span> name<span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>first<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// Antares</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>middle<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// Johannes</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>last<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// Gregory</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Pero paano kapag multidimensional ang array natin? Baka ang una mong instinct ay gawin ito:</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">const</span> array <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token punctuation">[</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">,</span> d<span class="token punctuation">,</span> e<span class="token punctuation">]</span> <span class="token operator">=</span> array<span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>Kapag ginawa mo iyan at tiningnan isa-isa ang values ng mga variables, mapapansin mong <code>undefined</code> ang value ng <code>e</code>, samantalang array naman ng <code>3</code> at <code>4</code> ang laman ng <code>c</code>. Dahil array ang nakalagay sa 3rd item ng <code>array</code>, ito ang ma-assign sa <code>c</code>. At dahil mayro’n lang apat na items, ang panglimang variable na <code>e</code> ay hindi mabibigyan ng value.</p>
+<p>Kaya paano ang tamang way para gawin ito? Tingnan ang halimbawang ito:</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">const</span> array <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token punctuation">[</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> <span class="token punctuation">[</span>c<span class="token punctuation">,</span> d<span class="token punctuation">]</span><span class="token punctuation">,</span> e<span class="token punctuation">]</span> <span class="token operator">=</span> array<span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="Destructuring-Trick"><a href="#Destructuring-Trick" class="headerlink" title="Destructuring Trick"></a>Destructuring Trick</h2><p>Puwede rin itong maging useful kapag gusto mong pagpalitin ng values ang dalawang variables! Kung walang destructuring ganito natin ginagawa ang pag-swap (alalahanin ang mga functions na ginawa mo sa C++ noon para makapagpasa ng bubble sort or merge sort sa professor mo):</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> b <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">swapValues</span><span class="token punctuation">(</span>varA<span class="token punctuation">,</span> varB<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> temp <span class="token operator">=</span> varA<span class="token punctuation">;</span>
+    varA <span class="token operator">=</span> varB<span class="token punctuation">;</span>
+    varB <span class="token operator">=</span> temp<span class="token punctuation">;</span>
+
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Variable A = "</span> <span class="token operator">+</span> varA<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Variable B = "</span> <span class="token operator">+</span> varB<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">swapValues</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// OUTPUT:</span>
+<span class="token comment" spellcheck="true">// Variable A = 20</span>
+<span class="token comment" spellcheck="true">// Variable B = 10</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>So ang ginagawa natin dito, gumagamit tayo ng <code>temp</code> variable para ipahawak muna ang value ng isa sa mga variable para mapagpalit sila. Then saka natin ipapasa iyong value ng <code>varB</code> sa <code>varA</code>. Pagkatapos, iyong <code>varB</code>, ia-assign natin sa kaniya ang value na pinahawak natin kay <code>temp</code>. Mahaba-haba rin ‘to, mga 3 lines of code. Pero tingnan kung paano ito magiging mas maikli gamit ang array destructuring:</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> b <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">swapValues</span><span class="token punctuation">(</span>varA<span class="token punctuation">,</span> varB<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">[</span>varA<span class="token punctuation">,</span> varB<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>varB<span class="token punctuation">,</span> varA<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Variable A = "</span> <span class="token operator">+</span> varA<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Variable B = "</span> <span class="token operator">+</span> varB<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">swapValues</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// OUTPUT:</span>
+<span class="token comment" spellcheck="true">// Variable A = 20</span>
+<span class="token comment" spellcheck="true">// Variable B = 10</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Ano ang nangyayari dito? Para gumana ang array destructuring, kailangan natin muna silang gawing array. At iyon ang ginawa natin sa right side ng expression na <code>[ varB, varA ]</code>. Dahil sa part na iyan, pansamantala silang naging array. Pagkatapos saka natin ito in-assign sa left hand side ng expressiion gaya kapag nagde-declare tayo ng variables. Pero dahil naka-declare na sila parehas, hindi na natin sila puwedeng i-declare ulit. Tandaan na mahalagang-mahalaga rito ang order ng mga variables sa loob ng square brackets.</p>
+<p>Same result, pero nabawasan tayo ng dalawang lines of code. Ang drawback nga lang nito mas mahirap siyang basahin. Nasa sa iyo kung gusto mo itong gamitin for ease of use, or magsi-stick ka pa rin sa dati nang nakasanayan. Wala namang masamang manatili sa luma kahit may bago na. Sabi nga ng isang guest sa <cite>Kapuso Mo, Jessica Soho</cite>, <q>Buntot mo, hila mo.</q></p>
+<h2 id="Conclusion-a-k-a-Kuwento-ng-Aking-Buhay"><a href="#Conclusion-a-k-a-Kuwento-ng-Aking-Buhay" class="headerlink" title="Conclusion (a.k.a Kuwento ng Aking Buhay)"></a>Conclusion (a.k.a Kuwento ng Aking Buhay)</h2><p>Nagsimula akong mag-JavaScript no’ng 2016. At noon kamukhang-kamukha pa ng Java ang JavaScript. Pero simula nang malawakan nang na-adopt ang ECMAScript 6 (or ES2015 depende kung sino kausap mo), sobrang magkaiba na ang JavaScript noon saka ngayon. Parang kapag pinagtabi mo ang JavaScript ngayon saka JavaScript no’ng 2009, para na silang dalawang magkaibang language.</p>
+<p>Pero hindi ba mas masaya nga ito? Mas marami na tayong puwedeng magawa. Mas marami pa tayong puwedeng matutuhan. At ebidensiya ito na <em lang="en">Web is the way to go; the Web is the way forward.</em> Sa future, dahil natapos na akong magbabad sa CSS, nagbabalak din akong magsulat pa ng ilan pang articles tungkol sa mga bagong features ng JavaScript. And don’t worry, hindi rin natin pababayaan ang HTML.</p>
+
+  <footer class="article-footer">
+      
+  <div class="article-tags-wrapper">
+    <h4>Tags</h4>
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/antares-blog/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/antares-blog/tags/programming/">programming</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/antares-blog/tags/web/">web</a></li></ul>
+  </div>
+
+      
+  <div class="article-category">
+    <h4>Category</h4>
+    <a class="article-category-link" href="/antares-blog/categories/JavaScript/">JavaScript</a>
+  </div>
+
+  </footer>
+</article>
+</main>
+    <footer class="footer" role="contentinfo">
+  <div>
+    <p>&copy; 2019 Antares Programming</p>
+    <p>Reserbado ang lahat ng karapatan.</p>
+  </div>
+  <div><a href="/antares-blog/tungkol-sa-amin">Tungkol sa Antares Programming</a>
+  <a href="https://www.facebook.com/antaresprogramming"><i>Antares Programming</i> sa Facebook</a>
+  <p id="back-to-top"><a href="#top">Back to top</a></p></div>
+</footer>
+<script>
+    var CONFIG_ROOT = `/antares-blog/`;
+    var CONFIG_URL = `https://celestialcinnamon.github.io/antares-blog`.replace('/antares-blog', '');
+</script>
+
+    <script src="/antares-blog/js/ScrollTrigger.min.js"></script>
+    <script src="/antares-blog/js/script.js"></script>
+</body>
+</html>

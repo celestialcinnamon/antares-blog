@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="tl" class="dark">
+
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CSS Units: px, percent, rem, em... Ano Ba Dapat Ang Gagamitin Ko?</title>
+  
+  <meta name="description" content="Alin sa mga length units ng CSS ang dapat gamitin, at kailan?">
+  <meta name="author" content="Francis Rubio &lt;francoisoibur21@gmail.com&gt;">
+  
+  <!-- Favicon and PWA theme -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/antares-blog/images/apple-touch-icon.png?v=yyL3E0AWom">
+  <link rel="icon" type="image/png" sizes="32x32" href="/antares-blog/images/favicon-32x32.png?v=yyL3E0AWom">
+  <link rel="icon" type="image/png" sizes="194x194" href="/antares-blog/images/favicon-194x194.png?v=yyL3E0AWom">
+  <link rel="icon" type="image/png" sizes="192x192" href="/antares-blog/images/android-chrome-192x192.png?v=yyL3E0AWom">
+  <link rel="icon" type="image/png" sizes="16x16" href="/antares-blog/images/favicon-16x16.png?v=yyL3E0AWom">
+  <link rel="manifest" href="/antares-blog/images/site.webmanifest?v=yyL3E0AWom">
+  <link rel="mask-icon" href="/antares-blog/images/safari-pinned-tab.svg?v=yyL3E0AWom" color="#efaa00">
+  <link rel="shortcut icon" href="/antares-blog/images/favicon.ico?v=yyL3E0AWom">
+  <meta name="apple-mobile-web-app-title" content="Antares">
+  <meta name="application-name" content="Antares">
+  <meta name="msapplication-TileColor" content="#ffc40d">
+  <meta name="msapplication-TileImage" content="/antares-blog/images/mstile-144x144.png?v=yyL3E0AWom">
+  <meta name="msapplication-config" content="/antares-blog/images/browserconfig.xml?v=yyL3E0AWom">
+  <meta name="theme-color" content="#bbbbbb">
+
+
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="Alin sa mga length units ng CSS ang dapat gamitin, at kailan?">
+
+  
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="CSS Units: px, percent, rem, em... Ano Ba Dapat Ang Gagamitin Ko?">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://celestialcinnamon.github.io/antares-blog/tl/CSS-Units-px-percent-rem-em-Ano-Ba-Dapat-Ang-Gagamitin-Ko/">
+  <meta property="og:image" content="http://celestialcinnamon.github.io//antares-blog/images/favicon-194x194.png">
+  <meta property="og:description" content="Alin sa mga length units ng CSS ang dapat gamitin, at kailan?"> 
+
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" media="screen">
+  <link href="/antares-blog/css/baseline.css" rel="stylesheet" media="screen">
+  <link href="/antares-blog/css/mobile.css" rel="stylesheet" media="screen">
+  <link href="/antares-blog/css/desktop.css" rel="stylesheet" media="screen and (min-width: 750px)">
+  <!-- <link href="/antares-blog/css/print.css" rel="stylesheet" media="print"> -->
+
+  
+
+  
+  
+
+  <!-- TODO: Uncomment these links -->
+  <link media="screen" href="https://fonts.googleapis.com/css?family=Vidaloka&display=swap" rel="stylesheet"> 
+  <link media="screen" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700&display=swap" rel="stylesheet"> 
+  <link media="screen" href="https://fonts.googleapis.com/css?family=B612+Mono&display=swap" rel="stylesheet">
+
+  <!--
+    HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
+  -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+<link rel="stylesheet" href="/antares-blog/css/prism-a11y-dark.css" type="text/css">
+<link rel="stylesheet" href="/antares-blog/css/prism-line-numbers.css" type="text/css"></head>
+
+<body>
+    <div class="banner">
+  <a href="#main-content" class="nav skiplink sr-only sr-only-focusable">Skip to content</a>
+  <header class="header" role="banner">
+    <a href="/antares-blog/" class="site-logo" aria-label="Go to home">
+      <img src="/antares-blog/images/logo_v4.png" alt="Antares Programming logo">
+    </a>
+  </header>
+  <nav class="navbar">
+    <ul class="nav-list">
+      <li class="nav-item"><a class="nav" href="/antares-blog/archives">Archives</a></li>
+      <li class="nav-item"><a class="nav" href="/antares-blog/downloads">Downloads</a></li>
+    </ul>
+  </nav>
+</div>
+
+    <div data-scroll data-scroll-showCallback="expandNavbar()"  data-scroll-hideCallback="collapseNavbar()"></div>
+    <main class="page--post">
+
+<article class="post--article">
+  <header>
+    <h1>
+      <a class="post__title" href="/antares-blog/tl/CSS-Units-px-percent-rem-em-Ano-Ba-Dapat-Ang-Gagamitin-Ko/">CSS Units: px, percent, rem, em... Ano Ba Dapat Ang Gagamitin Ko?</a>
+    </h1>
+  </header>
+  <p>Alin sa mga length units ng CSS ang dapat gamitin, at kailan?</p>
+<a id="more"></a>
+<p>Pamilyar tayong lahat sa mga percent-based na sizes, lalo na kung naabutan mo ang Responsive Web Design era. Pero hindi mo rin makakaligtaan ang pixel sizes (<code>px</code>). Pero para makuha ang tamang responsiveness, gumagamit din tayo ng iba pang mga length units. Kasama rito ang kamakailan lang ay lalong sumikat na <code>em</code> at <code>rem</code> units.</p>
+<p>Sa artikulong ito, iisa-isahin natin ang mga length units ng CSS, kapuwa ang mga gumagana sa lahat ng browsers, at ang mga paparating pa lang sa CSS sa hinaharap (dahil hindi pa rin sapat ang mga units natin, may hinihintay pa tayong mga bago).</p>
+<h2 id="Una-sa-lahat-anong-pinagkaiba-ng-em-sa-rem"><a href="#Una-sa-lahat-anong-pinagkaiba-ng-em-sa-rem" class="headerlink" title="Una sa lahat, anong pinagkaiba ng em sa rem?"></a>Una sa lahat, anong pinagkaiba ng <code>em</code> sa <code>rem</code>?</h2><p>Ayon sa MDN Docs, ang <code>em</code> ay <q>kumakatawan sa <i>calculated <code>font-size</code></i> ng isang element.</q> Samantala, ang <code>rem</code> naman ay <q>kumakatawan sa <i>calculated <code>font-size</code></i> ng root element, ang <code>&lt;html&gt;</code> sa kaso nating mga Web developer.</q> Kaya maliwanag na halos magkapareho ang dalawang ito; nakabase sila sa <code>font-size</code> ng isang element. In particular, sa laki ng letrang “m” sa font-size ng font na gamit mo. <sup>[citation needed]</sup></p>
+<p>Ano ang pagkakaiba ng <code>em</code> at <code>rem</code>? Karaniwan na, ang value ng <code>rem</code> ay naka-depende sa default font size ng browser (karaniwan nang <code>16px</code>), o sa isinet na value ng user. Samantala, ang <code>em</code> naman ay nakadepende sa <code>font-size</code> ng <em>mismong element</em>.</p>
+<p>Bilang halimbawa, tingnan natin ito:</p>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>container<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-css"><code class="language-css"><span class="token selector"><span class="token class">.container</span> </span><span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">3</span>rem<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<div class="example-container">
+  <div class="container" style="width: 3rem; height: 5rem; background-color: crimson;"></div>
+</div>
+
+<p>Hindi ito madaling mapansin, pero nakasunod ang width ng <code>.container</code> sa font size ng <code>&lt;html&gt;</code> element. Tingnan naman natin ang <code>em</code>. Sa kasong ito, ise-set natin ang <code>font-size</code> ng <code>.container</code> para makita natin ang pagkakaiba.</p>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>container<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>container-lg<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-css"><code class="language-css"><span class="token selector"><span class="token class">.container</span>,
+<span class="token class">.container-lg</span> </span><span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">3</span>em<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector"><span class="token class">.container</span> </span><span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token number">50</span>px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector"><span class="token class">.container-lg</span> </span><span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token number">100</span>px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<div class="example-container">
+  <div class="container" style="margin: 10px; font-size: 50px; width: 3em; height: 5rem; background-color: crimson;"></div>
+  <div class="container" style="margin: 10px; font-size: 100px; width: 3em; height: 5rem; background-color: crimson;"></div>
+</div>
+
+<p>Makikita mo ang pagkakaiba sa mga halimbawa ngayon. Parehas silang <code>3em</code> ang width, pero dahil magkaiba ang <code>font-size</code> ng dalawang ito, magkaiba rin ang naging width nila. Sinundan ng <code>em</code> ang <code>font-size</code> ng <code>.container</code>. Kung gagawan natin ito ng formula, makikita nating 3em = 3 * font-size. Ganito rin sa <code>rem</code>, ang pinagkaiba lang naka-depende ito sa <code>font-size</code> ng <code>&lt;html&gt;</code> element.</p>
+<p>Puwede naman ding i-override ang size ng isang <code>rem</code>. Kailangan mo lang i-set ang font size ng <code>&lt;html&gt;</code> element:</p>
+<pre class="line-numbers language-css"><code class="language-css"><span class="token selector">html </span><span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token number">20</span>px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="Gusto-kong-maging-responsive-ang-page-ko-Percent-lang-ba-ang-puwede-kong-gamitin"><a href="#Gusto-kong-maging-responsive-ang-page-ko-Percent-lang-ba-ang-puwede-kong-gamitin" class="headerlink" title="Gusto kong maging responsive ang page ko. Percent lang ba ang puwede kong gamitin?"></a>Gusto kong maging responsive ang page ko. Percent lang ba ang puwede kong gamitin?</h2><p>Salamat sa <a href="https://drafts.csswg.org/css-values-4/#lengths" target="_blank" rel="noopener">CSS Values and Units Module Level 4</a>, hindi na lang tayo restricted sa percent ngayon. Nadagdagan na tayo ng apat&mdash;oo, apat&mdash;na length units: ang mga tinatawag na <i>viewport units</i>, <code>vw</code>, <code>vh</code>, <code>vmin</code>, at <code>vmax</code>.</p>
+<h3 id="Ang-vw-at-vh"><a href="#Ang-vw-at-vh" class="headerlink" title="Ang vw at vh"></a>Ang <code>vw</code> at <code>vh</code></h3><p>Ang ibig sabihin ng <code>vw</code> ay “viewport width”. Para din itong percentage, pero lagi lang itong nakadepende sa width ng browser window o screen ng phone/tablet (na tinatawag ding viewport). Kung paano ka gumamit ng percent, gano’n din ang paggamit ng <code>vw</code>. </p>
+<p>Halimbawa, kapag ginamit mo ang <code>50vw</code>, makukuha mo ang 50% ng <em>width ng viewport</em>. Kung matatandaan mo, sa <code>50%</code> makukuha mo ang kalahat ng width ng parent element, hindi ng screen.</p>
+<p>Katulad lang din ng <code>vw</code> ang <code>vh</code>, pero tumutukoy naman ito sa “viewport height”. Makukuha mo rito ang percentage ng height ng viewport.</p>
+<p>Sa halimbawang ito, pansinin kung paanong naapektuhan ng width ng viewport ang unang box, at height naman ang nakakaapekto sa ikalawa. Pansinin din na walang pakialam ang mga box sa size ng parent element nito at lumalagpas ito sa boundaries ng box dahil nakasunod ito sa size ng viewport. Subukan mong i-resize ang browser window mo at tingnan kung ano ang mangyayari:</p>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>container-vw<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>50vw<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>container-vh<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>50vh<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-css"><code class="language-css"><span class="token selector"><span class="token class">.container-vw</span> </span><span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">50</span>vw<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector"><span class="token class">.container-vh</span> </span><span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">50</span>vh<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<div class="example-container example-container--fixable">
+  <div style="color: #fff; font-size: 3rem; user-select: none; height: 100px; margin: 0.5rem auto; width: 50vw; background-color: #fd0;">50vw</div>
+  <div style="color: #fff; font-size: 3rem; user-select: none; height: 100px; margin: 0.5rem auto; width: 50vh; background-color: crimson;">50vh</div>
+</div>
+
+<h3 id="Ang-vmin-at-vmax"><a href="#Ang-vmin-at-vmax" class="headerlink" title="Ang vmin at vmax"></a>Ang <code>vmin</code> at <code>vmax</code></h3><p>Dito nagiging interesante ang mga viewport units. Puwede mong gamitin nang halos-sabay ang <code>vw</code> at <code>vh</code></p>
+<p>Kapag ginamit mo ang <code>vmin</code>, pagkukumparahin ng browser ang height at width ng screen at ibibigay sa iyo ang percentage ng mas maliit na dimension. Halimbawa, kung pa-landscape ang viewport at ginamit mo ang <code>20vmin</code>, makukuha mo ang 20% ng height ng screen dahil mas maliit iyon sa width. Pero kung naka-portrait ang viewport, 20% ng width ang makukuha mo dahil mas maliit na iyon sa width.</p>
+<p>Eksaktong kabaligtaran naman ang sa <code>vmax</code>. Ibibigay nito sa iyo ang percentage ng mas malaking dimension. Kung landscape ang orientation ng viewport, percentage ng width ang ibabalik ng <code>vmax</code>, at kung naka-portrait naman, percentage ng height ang makukuha mo.</p>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>container-vmin<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>50vmin<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>container-vmax<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>50vmax<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-css"><code class="language-css"><span class="token selector"><span class="token class">.container-vmin</span> </span><span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">50</span>vmin<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector"><span class="token class">.container-vmax</span> </span><span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">50</span>vmax<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<div class="example-container example-container--fixable">
+  <div style="color: #fff; font-size: 3rem; user-select: none; height: 100px; margin: 0.5rem auto; width: 50vmin; background-color: #fd0;">50vmin</div>
+  <div style="color: #fff; font-size: 3rem; user-select: none; height: 100px; margin: 0.5rem auto; width: 50vmax; background-color: crimson;">50vmax</div>
+</div>
+
+<h2 id="Ang-iba-pang-mga-length-units"><a href="#Ang-iba-pang-mga-length-units" class="headerlink" title="Ang iba pang mga length units"></a>Ang iba pang mga length units</h2><p>Siyempre bukod sa anim na alam na natin ngayon, may iba pang length units sa CSS.</p>
+<h3 id="Relative-Length-units"><a href="#Relative-Length-units" class="headerlink" title="Relative Length units"></a>Relative Length units</h3><p>Kapag sinabing “relative”, nangangahulugan ito na hindi naka-fix ang laki nila. Nakadepende ito sa iba pang sizes sa loob ng document. Kasama rito ang <code>em</code>, <code>rem</code>, at ang viewport units dahil hindi absolute ang values nila; nagbabago ito depende sa font size o sa viewport. Bukod sa kanila, may iba pang puwedeng magamit. In practice, wala akong masyadong nakikitang gumagamit nitong mga ‘to (posibleng may mga gumagamit nito, hindi ko lang nakikita; hindi naman ako laging nangangalkal ng source code). Pero mas magandang pamilyar tayo para alam natin kung ano’ng puwedeng gamitin kapag kinailangan.</p>
+<dl class="no-style">
+  <dt class="no-style"><code>cap</code> <span class="badge">Experimental</span></dt>
+  <dd class="no-style">Kagaya ito ng <code>em</code> na nakadepende sa font at font size na gamit mo. Pero sa halip na letter “m”, nakadepende ang <code>cap</code> sa height ng capital letters.</dd>
+
+  <dt class="no-style"><code>ch</code></dt>
+  <dd class="no-style">Nakadepende rin ito sa font size ng element. Ang <code>1ch</code> ay kasinlaki ng width ng character na <code>0</code></dd>
+
+  <dt class="no-style"><code>ex</code></dt>
+  <dd class="no-style">Nakadepende naman ang size nito sa height ng lowercase letters. Kinuha ito mula sa konsepto ng x-height sa typography, sa height ng letter “x” ng isang font. Karaniwan na, <code>1ex ≈ 0.5em</code>. Hindi eksaktong <code>0.5em</code> ang laki pero malapit doon.</dd>
+
+  <dt class="no-style"><code>ic</code> <span class="badge">Experimental</span></dt>
+  <dd class="no-style">Nakadepende ang size nito sa width ng “水”. To be honest, hindi natin ‘to magagamit unless gagawa tayo ng website na may Chinese/Japanese/Korean version.</dd>
+
+  <dt class="no-style"><code>lh</code> <span class="badge">Experimental</span></dt>
+  <dd class="no-style">Nakadepende ang size nito sa <code>line-height</code> property ng element. Kung estudyante ka at gumagawa ka ng documentation at thesis documents, ang <code>line-height</code> ay ang height ng bawat line (weh?); sa <i>Microsoft Word&trade;</i>, ito ang “double spacing” na tinatawag.</dd>
+
+  <dt class="no-style"><code>rlh</code> <span class="badge">Experimental</span></dt>
+  <dd class="no-style">Gaya sa <code>rem</code>, ang <code>rlh</code> ay nakadepende sa <code>line-height</code> ng <code>&lt;html&gt;</code> element.</dd>
+</dl>
+
+<h3 id="Absolute-Length-Units"><a href="#Absolute-Length-Units" class="headerlink" title="Absolute Length Units"></a>Absolute Length Units</h3><p>Nire-represent naman ng absolute length units ang pisikal na mga sukat sa pisikal na mundo, kagaya lang din sa printed materials. Pero kahit absolute ang mga ito, nakadepende pa rin ito sa isa pang unit: ang <code>px</code>. Nakadepende ang <code>px</code> sa computation ng device, at hindi ito puwedeng kontrolin ng user o ng CSS. Dahil dito kaya tinawag itong “absolute”.</p>
+<p>Sa mga low-dpi devices (mga screens, mapa-mobile o desktop pa man iyan), kinakatawan ng <code>px</code> ang tinatawag na <i>physical reference pixel</i>. Halimbawa, ang <code>1in</code>  ay <code>96px</code>, na katumbas din ng <code>72pt</code>. Kaya lang bilang resulta nito, hindi talaga eksakto ang mga length na gumagamit ng <code>in</code>, <code>cm</code>, at <code>mm</code>.</p>
+<p>Sa mga high-dpi devices na gaya ng printers, eksaktong-eksakto ang length ng <code>px</code> sa diwa na 1 inch talaga ang <code>1in</code>, 1 centimeter ang <code>1cm</code>, at 1 milimeter ang <code>1mm</code>. Sa mga kasong ito, <code>1px</code> = 1/96 inch.</p>
+<aside class="side-callout">
+  <header>
+    <h3>Note</h3>
+  </header>
+  <p>
+    May mga users na nag-a-adjust ng font size ng browser para mas madaling magbasa. Dahil hindi ito sinusunod ng absolute length units, magkakaproblema ka sa accessibility kung ginagamit mo ang mga ito para sa mga size ng text. Kaya naman mas maganda kung relative length units ang gagamitin mo.
+  </p>
+</aside>
+
+<dl class="no-style">
+  <dt class="no-style"><code>cm</code></dt>
+  <dd class="no-style">One centimeter. <code>1cm = 96px ÷ 2.54</code></dd>
+
+  <dt class="no-style"><code>mm</code></dt>
+  <dd class="no-style">One millimeter. <code>1mm</code> = 1/10th ng <code>1cm</code></dd>
+
+  <dt class="no-style"><code>Q</code> <span class="badge">Experimental</span></dt>
+  <dd class="no-style">One quarter ng millimeter. <code>1Q</code> = 1/40th ng <code>1cm</code> or 1/4th ng <code>1mm</code></dd>
+
+  <dt class="no-style"><code>in</code></dt>
+  <dd class="no-style">One inch. <code>1in</code> = <code>2.54cm</code> = <code>96px</code></dd>
+
+  <dt class="no-style"><code>pt</code></dt>
+  <dd class="no-style">One point. <code>1pt</code> = 1/72nd ng <code>1in</code></dd>
+
+  <dt class="no-style"><code>pc</code></dt>
+  <dd class="no-style">One pica. <code>1pc</code> = <code>12pt</code> = 1/6th ng <code>1in</code></dd>
+</dl>
+
+<h2 id="Browser-compatibility"><a href="#Browser-compatibility" class="headerlink" title="Browser compatibility"></a>Browser compatibility</h2><p>Napansin mo siguro na may mga units tayong “experimental”. Pag-usapan muna natin ang Web standards. Ginagawa ito ng W3C at WHATWG. At simula nang lumabas ang “CSS3” kung tawagin, nahati na ang CSS sa iba’t ibang modules na may sari-sariling version (na dahilan din kung bakit hindi na magkakaroon ng CSS4, dahil hiwa-hiwalay nang nagpo-progress ang mga modules ng CSS). Ang mga length units na ginagamit natin ay nasa ilalim ng <i>CSS Values and Units Module</i>, na ang latest version ay Level 3. Habang sinusulat ko ito, may ginagawa nang Level 4.</p>
+<p>Ang mga units na “experimental” ay either nasa Level 4, o nasa Level 3 na pero hindi pa ini-implement ng lahat ng browsers. Kaya ang mga “experimental” ay hindi siguradong gagana sa lahat ng browsers, lalo na ang mga galing sa Level 4. Sa ngayon, nasa <i>editor’s draft</i> status pa ang Level 4 ng Values and Units module kaya kahit kailan puwede itong mabago.</p>
+<p>Kasama sa mga units na na-define sa Level 3 na sigurado nang ii-implement ng browsers sa hinaharap ay ang <code>ch</code>, <code>rem</code>, viewport units, at ang <code>Q</code> unit, although hindi pa lahat ng browsers ay nai-implement ang <code>Q</code> unit, gaya ng Edge, Edge Mobile, Safari, Safari iOS, at Samsung Internet.</p>
+<p>Ang <code>lh</code> at <code>rlh</code> naman ay kasama sa Level 4. At habang isinusulat ko ito, wala pang browser na nag-i-implement ng mga ito, maliban sa <code>rlh</code> na mayro’n na sa Edge browser at Edge Mobile.</p>
+<p>Sa kahit anong feature ng Web platform na hindi mo sure kung naka-implement na sa mga browser, makakatulong sa iyo ang <a href="https://caniuse.com" target="_blank" rel="noopener">Can I Use?</a> I-search mo lang sa site na ito ang feature ng Web na gusto mong makita at ibibigay nito sa iyo ang browsers na nag-implement na noon, at kung ilang percent ng users ang makakakita ng feature na iyon kapag ginamit mo na. (Hindi ito sponsored ng Can I Use, talagang useful lang siya sa akin kaya nire-recommend ko)</p>
+<h2 id="Alin-sa-mga-ito-ang-dapat-kong-gamitin"><a href="#Alin-sa-mga-ito-ang-dapat-kong-gamitin" class="headerlink" title="Alin sa mga ito ang dapat kong gamitin?"></a>Alin sa mga ito ang dapat kong gamitin?</h2><p>Kung habol mo ang responsiveness, laging effective pa rin ang percentage units. Pero hindi ito laging praktikal. Puwede mo ring gamitin ang viewport units dahil supported na ito ng karamihan sa mga browser. Ingat lang sa <code>vmin</code> at <code>vmax</code> dahil hindi pa ito supported ng Edge browser (pero malapit na rin dahil sa paglipat ng Edge sa Chromium backend). Pero mas maganda kung pag-aaralan mo ang Intrinsic Web Design tools na gaya ng CSS Grid at Flexbox dahil ginawa talaga ang mga ito para sa responsive web pages.</p>
+<p>Sa accessibility naman, mas preferable na gumamit ng relative units kaysa sa absolute units. Sa susunod, puwede bang gamitin mo ang <code>rem</code> at <code>em</code> sa pagse-set mo ng <code>font-size</code> bilang respeto sa mga gagamit ng size mo? Tandaan na hindi lahat ng users sa Web ay walang problema; may mga users na differently abled gaya ng mga bulag at malabo ang paningin, at may mga users din na hindi kumpleto ang device (e.g. walang mouse, kaya keyboard lang ang gamit). Kaya bilang pagpapakita na may pakialam din tayo sa kanila, mas mabuting maglaan ng space para sa accessibility, at nagsisimula ito sa paggamit ng relative length units.</p>
+<p>Pero may mga times pa rin na useful ang absolute length units. Halimbawa, masyadong malaki ang <code>rem</code> at <code>em</code> para sa <code>border</code> at <code>border-radius</code> sa mga card UI, kaya mas mainam gamitin ang <code>px</code>. At kung publisher ka naman at ginagamit mo ang CSS para gumawa ng aklat (oo, puwedeng gamitin ang CSS para gumawa ng mga libro; tingnan ang CSS Paged Media sa kahit na anong blog), makakatulong nang malaki ang <code>in</code>, <code>cm</code>, <code>mm</code>, <code>pc</code>, at <code>pt</code> (at alam niyo ba na <code>pt</code> ang gamit na unit sa font size ng mga word processor gaya ng MS Word at WPS?).</p>
+<p>At the end of the day, nakadepende pa rin sa iyo kung alin ang mga gagamitin mo. Matututuhan mo kung kailan gagamitin ang mga ito kung susubukan mo silang gamitin sa susunod mong experiment sa mga Web page. Kaya laging mag-practice sa paggawa ng mga Web page.</p>
+
+  <footer class="article-footer">
+      
+  <div class="article-tags-wrapper">
+    <h4>Tags</h4>
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/antares-blog/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/antares-blog/tags/front-end/">front end</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/antares-blog/tags/ui/">ui</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/antares-blog/tags/web/">web</a></li></ul>
+  </div>
+
+      
+  <div class="article-category">
+    <h4>Category</h4>
+    <a class="article-category-link" href="/antares-blog/categories/CSS/">CSS</a>
+  </div>
+
+  </footer>
+</article>
+</main>
+    <footer class="footer" role="contentinfo">
+  <div>
+    <p>&copy; 2019 Antares Programming</p>
+    <p>Reserbado ang lahat ng karapatan.</p>
+  </div>
+  <div><a href="/antares-blog/tungkol-sa-amin">Tungkol sa Antares Programming</a>
+  <a href="https://www.facebook.com/antaresprogramming"><i>Antares Programming</i> sa Facebook</a>
+  <p id="back-to-top"><a href="#top">Back to top</a></p></div>
+</footer>
+<script>
+    var CONFIG_ROOT = `/antares-blog/`;
+    var CONFIG_URL = `https://celestialcinnamon.github.io/antares-blog`.replace('/antares-blog', '');
+</script>
+
+    <script src="/antares-blog/js/ScrollTrigger.min.js"></script>
+    <script src="/antares-blog/js/script.js"></script>
+</body>
+</html>

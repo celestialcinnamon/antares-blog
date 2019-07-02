@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="tl" class="dark">
+
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fetch API: POST Requests</title>
+  
+  <meta name="description" content="Sa pa­nga­la­wang ba­ha­gi ng Fetch API se­ries, ta­la­ka­yin na­man na­tin ang pag­se-send ng POST re­quests sa ser­ver ga­mit ang Fetch API.">
+  <meta name="author" content="Francis Rubio &lt;francoisoibur21@gmail.com&gt;">
+  
+  <!-- Favicon and PWA theme -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/antares-blog/images/apple-touch-icon.png?v=yyL3E0AWom">
+  <link rel="icon" type="image/png" sizes="32x32" href="/antares-blog/images/favicon-32x32.png?v=yyL3E0AWom">
+  <link rel="icon" type="image/png" sizes="194x194" href="/antares-blog/images/favicon-194x194.png?v=yyL3E0AWom">
+  <link rel="icon" type="image/png" sizes="192x192" href="/antares-blog/images/android-chrome-192x192.png?v=yyL3E0AWom">
+  <link rel="icon" type="image/png" sizes="16x16" href="/antares-blog/images/favicon-16x16.png?v=yyL3E0AWom">
+  <link rel="manifest" href="/antares-blog/images/site.webmanifest?v=yyL3E0AWom">
+  <link rel="mask-icon" href="/antares-blog/images/safari-pinned-tab.svg?v=yyL3E0AWom" color="#efaa00">
+  <link rel="shortcut icon" href="/antares-blog/images/favicon.ico?v=yyL3E0AWom">
+  <meta name="apple-mobile-web-app-title" content="Antares">
+  <meta name="application-name" content="Antares">
+  <meta name="msapplication-TileColor" content="#ffc40d">
+  <meta name="msapplication-TileImage" content="/antares-blog/images/mstile-144x144.png?v=yyL3E0AWom">
+  <meta name="msapplication-config" content="/antares-blog/images/browserconfig.xml?v=yyL3E0AWom">
+  <meta name="theme-color" content="#bbbbbb">
+
+
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="Sa pa­nga­la­wang ba­ha­gi ng Fetch API se­ries, ta­la­ka­yin na­man na­tin ang pag­se-send ng POST re­quests sa ser­ver ga­mit ang Fetch API.">
+
+  
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="Fetch API: POST Requests">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://celestialcinnamon.github.io/antares-blog/tl/Fetch-API-POST-Requests/">
+  <meta property="og:image" content="http://celestialcinnamon.github.io//antares-blog/images/favicon-194x194.png">
+  <meta property="og:description" content="Sa pa­nga­la­wang ba­ha­gi ng Fetch API se­ries, ta­la­ka­yin na­man na­tin ang pag­se-send ng POST re­quests sa ser­ver ga­mit ang Fetch API."> 
+
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" media="screen">
+  <link href="/antares-blog/css/baseline.css" rel="stylesheet" media="screen">
+  <link href="/antares-blog/css/mobile.css" rel="stylesheet" media="screen">
+  <link href="/antares-blog/css/desktop.css" rel="stylesheet" media="screen and (min-width: 750px)">
+  <!-- <link href="/antares-blog/css/print.css" rel="stylesheet" media="print"> -->
+
+  
+
+  
+  
+
+  <!-- TODO: Uncomment these links -->
+  <link media="screen" href="https://fonts.googleapis.com/css?family=Vidaloka&display=swap" rel="stylesheet"> 
+  <link media="screen" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700&display=swap" rel="stylesheet"> 
+  <link media="screen" href="https://fonts.googleapis.com/css?family=B612+Mono&display=swap" rel="stylesheet">
+
+  <!--
+    HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
+  -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+<link rel="stylesheet" href="/antares-blog/css/prism-a11y-dark.css" type="text/css">
+<link rel="stylesheet" href="/antares-blog/css/prism-line-numbers.css" type="text/css"></head>
+
+<body>
+    <div class="banner">
+  <a href="#main-content" class="nav skiplink sr-only sr-only-focusable">Skip to content</a>
+  <header class="header" role="banner">
+    <a href="/antares-blog/" class="site-logo" aria-label="Go to home">
+      <img src="/antares-blog/images/logo_v4.png" alt="Antares Programming logo">
+    </a>
+  </header>
+  <nav class="navbar">
+    <ul class="nav-list">
+      <li class="nav-item"><a class="nav" href="/antares-blog/archives">Archives</a></li>
+      <li class="nav-item"><a class="nav" href="/antares-blog/downloads">Downloads</a></li>
+    </ul>
+  </nav>
+</div>
+
+    <div data-scroll data-scroll-showCallback="expandNavbar()"  data-scroll-hideCallback="collapseNavbar()"></div>
+    <main class="page--post">
+
+<article class="post--article">
+  <header>
+    <h1>
+      <a class="post__title" href="/antares-blog/tl/Fetch-API-POST-Requests/">Fetch API: POST Requests</a>
+    </h1>
+  </header>
+  <p>Sa pa­nga­la­wang ba­ha­gi ng Fetch API se­ries, ta­la­ka­yin na­man na­tin ang pag­se-send ng <code>POST</code> re­quests sa ser­ver ga­mit ang Fetch API.</p>
+<a id="more"></a>
+<aside class="side-callout">
+    <p>
+        Ang post na i­to ay pa­nga­la­wang ba­ha­gi ng Fetch API se­ries. Pa­ra sa u­nang ba­ha­gi, ti­na­la­kay na­tin ang <a href="/antares-blog/tl/Fetch-API-GET-Requests/" title="GET re­quests">GET re­quests</a>.
+    </p>
+</aside>
+
+<p>Kung ma­ta­tan­da­an n’yo, sa <a href="/antares-blog/tl/Fetch-API-GET-Requests/" title="na­ka­ra­ang post a­bout sa <code>GET</code> re­quests">na­ka­ra­ang post a­bout sa <code>GET</code> re­quests</a>, na­ki­ta na­tin kung pa­ano ku­ku­ha ng da­ta sa ser­ver. Pe­ro pa­a­no kung gus­to na­ting mag-send ng da­ta sa ser­ver? May mga pag­ka­ka­ta­on, ga­ya ng u­ser re­gis­tra­tion, na ka­i­la­ngan na­ting mag-send ng da­ta sa ser­ver. Tra­ba­ho na­man iyan ng <code>POST</code> re­quests.</p>
+<h2 id="Setup"><a href="#Setup" class="headerlink" title="Setup"></a>Setup</h2><p>Sa e­xample na ito, may e­xample ta­yong ser­ver sa end­point na ito:</p>
+<pre class="line-numbers language-http"><code class="language-http"><span class="token header-name keyword">https:</span>//www.example.com/api/user/
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>Kadalasan sa mga REST API, iisa lang ang endpoint para sa isang collection ng data. Halimbawa, para sa isang table sa database, <code>tbl_users</code>, may isang endpoint na nakalaan, <code>/api/user/</code>. Lahat ng actions sa <code>tbl_users</code> ay mangyayari lang sa <code>/api/users/</code> na URL. Kung gusto mong kumuha ng data sa <code>tbl_users</code>, magse-send ka ng <code>GET</code> request sa <code>/api/users/</code>. Kung gusto mo namang mag-send ng data, <code>POST</code> request ang ise-send mo. Nag-iiba ang function ng bawat endpoint depende sa type ng request mo, depende sa HTTP verb na ginamit mo sa request.</p>
+<aside class="side-note">
+    <dl>
+        <dt>REST API</dt>
+        <dd>
+            Representational State Transfer. Isa itong service na nagpo-provide ng access sa isang dataset o database gamit ang HTTP.
+        </dd>
+    </dl>
+</aside>
+
+<p>Sabihin nating iyong REST API na ginagamit natin, <code>www.example.com/api/</code>, ay tumatanggap ng <code>POST</code> requests. Ganito ang tinatanggap niyang format ng data:</p>
+<pre class="line-numbers language-json"><code class="language-json"><span class="token punctuation">{</span>
+    <span class="token property">"name"</span> <span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">"first"</span><span class="token operator">:</span> <span class="token string">"First name ng user. Required."</span><span class="token punctuation">,</span>
+        <span class="token property">"middle"</span><span class="token operator">:</span> <span class="token string">"Middle name ng user. Optional."</span><span class="token punctuation">,</span>
+        <span class="token property">"last"</span><span class="token operator">:</span> <span class="token string">"Surname ng user. Required."</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">"email"</span><span class="token operator">:</span> <span class="token string">"E-mail address ng user. Required."</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Sa data na ise-send natin sa server, kailangan na sumusunod sa format na iyan ang data natin.</p>
+<p>After natin mag-send ng data, magse-send sa atin pabalik ang server ng response. Sa response na ito, makikita natin kung successful ba o hindi ang data natin. Sa example API natin, kapag successful ang request natin, magse-send sa atin ang server ng response na <code>200 OK</code>. Kung hindi naman, magse-send ito ng response na may error code na alinman sa mga ito:</p>
+<ul>
+<li><code>400 Bad Request</code> Kapag ganito, ibig sabihin nagkaroon ng error na hindi alam kung saan galing.</li>
+<li><code>401 Unauhorized</code> Ibig sabihin, kailangan munang mag-log in bago makapag-send ng request.</li>
+<li><code>403 Forbidden</code> Ibig sabihin, hindi ka puwedeng mag-send ng request.</li>
+<li><code>408 Request timeout</code> Masyadong matagal ang inabot ng request, either mabagal ang Internet connection, o may problema sa data na sinend mo dahil masyadong malaki</li>
+<li><code>409 Conflict</code> May isa pang client na nag-send ng data na kaparehas ng sa iyo.</li>
+<li><code>429 Too many requests</code> Sobra na sa limit ang request mo. Nangyayari ito sa mga free trial ng API na may bayad, o kaya kapag sobrang dami mong sinend na request sa isang period of time. Karamihan sa mga API ay may requests per hour na limit.</li>
+</ul>
+<p>Sa article na ito, hindi natin iha-handle ang errors na iyan, idi-display lang natin sa <code>.status</code>. Pero in real life, kailangan nating i-handle ang mga errors na iyan.</p>
+<h2 id="User-Interface"><a href="#User-Interface" class="headerlink" title="User Interface"></a>User Interface</h2><p>So gusto nating makapag-input ang user ng information niya. Tandaan, kailangan natin ng apat na data: first name, middle name, surname, at email address. Kaya gagawa tayo ng HTML form na magsa-submit ng data sa server.</p>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>POST<span class="token punctuation">"</span></span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/actions/submit_data<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>form_ajax<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>first_name<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>First Name<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>first_name<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>first_name<span class="token punctuation">"</span></span> <span class="token attr-name">required</span> <span class="token punctuation">/></span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>middle_name<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Middle Name<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>middle_name<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>middle_name<span class="token punctuation">"</span></span> <span class="token attr-name">required</span> <span class="token punctuation">/></span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>last_name<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Last Name<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>last_name<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>last_name<span class="token punctuation">"</span></span> <span class="token attr-name">required</span> <span class="token punctuation">/></span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>email_address<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Email Address<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>email<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>email_address<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>email_address<span class="token punctuation">"</span></span> <span class="token attr-name">required</span> <span class="token punctuation">/></span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Submit Data<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>status<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>May form tayo rito na may ID na <code>form_ajax</code>. Nilagyan natin ng ID para magkaroon tayo ng reference sa JavaScript mamaya. Pansinin ang mga attributes ng form. Ang attribute na <code>method=&quot;POST&quot;</code> ang magsasabi na POST request ang ise-send natin, at ang <code>action</code> attribute naman ang magsasabi kung saan natin ipapadala ang data na makukuha sa form. Pansinin na magkaiba ang nakalagay na URL sa <code>action</code> at ang API endpoint na gagamitin natin (<code>http://www.example.com/api/user/</code>).</p>
+<p>Actually, itong mga attribute na ito, ang <code>method</code> at <code>action</code> ay ginagamit natin bilang fallback features. Noong wala pang JavaScript, ito talaga ang ginagamit, pero nire-reload kasi nito ang buong page, na ayaw natin kaya tayo gumagamit ng Ajax. Pero kailangan pa rin nating lagyan ng ganitong features ang form natin para sa kapakanan ng mga users na naka-disable ang JavaScript dahil sa kung anumang dahilan. Mahalaga rin ito kasi minsan nagkaka-error sa script natin. May mga times na kapag nagka-error, hindi na gumagana lahat, kaya mahalaga na may fallback features sa form para masigurong mase-send pa rin ang data ng user kahit may error sa scripts.</p>
+<p>Ang URL na nakalagay sa <code>action</code> attribute ay isang page. Itong page na ito ang magse-send ng data sa <code>www.example.com</code> just in case hindi gumana iyong ajax. Kaya ikaw ang gagawa ng <code>/actions/submit_data</code> page. Hindi natin iyan tatalakayin dito, sorry. Pero kung marunong kang gumawa ng back-end features, madali lang para sa iyo na i-figure out kung paano iyan gagawin. After all, hindi mo naman aaralin ang ajax kung wala kang kahit kaunting alam sa back end.</p>
+<p>May paragraph din tayo, <code>.status</code>. Dito natin idi-display ang magiging status ng request, kasama na ang errors at success notifications.</p>
+<h2 id="Retrieval-ng-Data"><a href="#Retrieval-ng-Data" class="headerlink" title="Retrieval ng Data"></a>Retrieval ng Data</h2><p>Sa user interface, may button tayo na magsa-submit ng form kapag na-click ito. Kapag na-submit ang form, magre-reload ang buong page, kaya dapat nating pigilan iyon. Mag-a-attach tayo ng event handler sa form para sa <code>submit</code> event:</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">const</span> form <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'form_ajax'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+form<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'submit'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>event<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    event<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Ang <code>event.preventDefault()</code> ang pipigil sa page na mag-reload. Kaya hindi magse-send ang data. Pero pansinin na kapag naka-disable ang JavaScript, o may kung anumang mali sa scripts natin, hindi mag-e-execute ang part na ito kaya magre-reload ang page at magse-send pa rin ang data.</p>
+<p>Next, kailangan nating makuha ang data na ise-send natin. Kung babalikan natin ang <code>index.html</code>, mapapansin mong lahat ng <code>&lt;input /&gt;</code> tags ay may <code>name</code> attribute. Ito ang gagamitin natin para makuha ang data.</p>
+<pre class="line-numbers language-js"><code class="language-js">
+<span class="token keyword">const</span> form <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'form_ajax'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+form<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'submit'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>event<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    event<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">const</span> first_name <span class="token operator">=</span> form<span class="token punctuation">[</span><span class="token string">'first_name'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>value<span class="token punctuation">;</span>
+    <span class="token keyword">const</span> middle_name <span class="token operator">=</span> form<span class="token punctuation">[</span><span class="token string">'middle_name'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>value<span class="token punctuation">;</span>
+    <span class="token keyword">const</span> last_name <span class="token operator">=</span> form<span class="token punctuation">[</span><span class="token string">'last_name'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>value<span class="token punctuation">;</span>
+    <span class="token keyword">const</span> email_address <span class="token operator">=</span> form<span class="token punctuation">[</span><span class="token string">'email_address'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>value<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Kapag ginagamit natin ang <code>form</code>, puwede itong maging array ng mga <code>&lt;input /&gt;</code> elements. Kapag ginamit natin ang <code>form[&#39;first_name&#39;]</code>, makukuha natin ang textbox na may hawak ng data, hindi ang mismong data. Kaya kailangan nating kunin ang <code>value</code> property ng textbox para makuha iyong mismong input ng user.</p>
+<h2 id="Format-ng-Data"><a href="#Format-ng-Data" class="headerlink" title="Format ng Data"></a>Format ng Data</h2><p>Matatandaan na may kailangan tayong sunding format:</p>
+<pre class="line-numbers language-json"><code class="language-json"><span class="token punctuation">{</span>
+    <span class="token property">"name"</span> <span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">"first"</span><span class="token operator">:</span> <span class="token string">"First name ng user. Required."</span><span class="token punctuation">,</span>
+        <span class="token property">"middle"</span><span class="token operator">:</span> <span class="token string">"Middle name ng user. Optional."</span><span class="token punctuation">,</span>
+        <span class="token property">"last"</span><span class="token operator">:</span> <span class="token string">"Surname ng user. Required."</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">"email"</span><span class="token operator">:</span> <span class="token string">"E-mail address ng user. Required."</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Kailangan nating i-format sa ganiyang paraan ang data. Hindi naman ito mahirap.</p>
+<pre class="line-numbers language-js"><code class="language-js">form<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'submit'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>event<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token operator">...</span>
+
+    <span class="token keyword">const</span> formattedData <span class="token operator">=</span> <span class="token punctuation">{</span>
+        name<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            first<span class="token punctuation">:</span> first_name<span class="token punctuation">,</span>
+            middle<span class="token punctuation">:</span> middle_name<span class="token punctuation">,</span>
+            last<span class="token punctuation">:</span> last_name
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        email<span class="token punctuation">:</span> email_address
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="Pagse-send-ng-Request"><a href="#Pagse-send-ng-Request" class="headerlink" title="Pagse-send ng Request"></a>Pagse-send ng Request</h2><p>Ngayon kailangan na nating i-send ang data. Tandaan, ang endpoint natin ay <code>https://www.example.com/api/users/</code>.</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">const</span> endpoint <span class="token operator">=</span> <span class="token string">'https://www.example.com/api/users/'</span><span class="token punctuation">;</span>
+
+<span class="token function">fetch</span><span class="token punctuation">(</span>endpoint<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    method<span class="token punctuation">:</span> <span class="token string">"POST"</span><span class="token punctuation">,</span>
+    body<span class="token punctuation">:</span> JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>formattedData<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Sa example na ito, nadagdagan ng arguments ang <code>fetch()</code> function. Sa <a href="/antares-blog/tl/Fetch-API-GET-Requests/" title="nakaraang example">nakaraang example</a> natin, nagpapasa lang tayo ng URL sa <code>fetch()</code> function. Pero dahil gusto nating mag-send ng data, magpapasa tayo ng isa pang parameter: ang <code>options</code> parameter. Maraming laman ang <code>options</code> parameter, pero dalawa lang muna ang gagamitin natin. Kung hindi natin ise-specify ang values ng ibang mga properties ng <code>options</code> parameter, may defaults naman.</p>
+<p>Sa example na ito, ginamit natin ang dalawang properties na ito:</p>
+<ul>
+<li><code>method</code> Ito ang HTTP verb na gagamitin natin. Sa kasong ito, dahil gusto nating mag-send ng data, <code>POST</code> ang ginamit nating verb.</li>
+<li><code>body</code> Ito ang data na ise-send natin sa server.</li>
+</ul>
+<p>May isang limitation sa <code>fetch()</code> function. Kinakailangang <code>FormData</code> object ang ipasa natin sa <code>body</code> property. Pero naka-JSON ang data natin, kaya paano iyon? Bukod sa <code>FormData</code>, tumatanggap din ng JSON ang <code>body</code>, pero kailangang naka-string ito, kaya naman natin tinawag ang <code>JSON.stringify()</code> method. Gagawin nitong string ang data na nasa <code>formattedData</code>.</p>
+<h2 id="Challenge"><a href="#Challenge" class="headerlink" title="Challenge"></a>Challenge</h2><p>Itutuloy ko pa sana ang tutorial na ito hanggang sa dulo, pero naisip ko kaparehas na lang naman iyon ng sa <a href="/antares-blog/2018/12/16/Fetch-API-GET-Requests/">unang part ng tutorial na ito</a>. Kaya kunin natin itong magandang chance para makapag-practice na rin. Nagawa na natin ang unang part nito, ang pagse-send ng data. Bakit hindi mo subukang ituloy ang natitirang parts ng tutorial na ito? Ito lang ang kailangan mong gawin:</p>
+<ul>
+<li>Gamit ang <code>then()</code> method sa <code>Promise</code> object na nire-return ng <code>fetch()</code>, i-display ang success status ng ajax sa <code>&lt;p class=&quot;status&quot;&gt;&lt;/p&gt;</code></li>
+<li>Gamit ang <code>catch()</code> method sa <code>Promise</code> object, i-display ang error ng ajax sa <code>&lt;p class=&quot;status&quot;&gt;&lt;/p&gt;</code></li>
+</ul>
+<p>Ano ang magiging premyo kapag nagawa mo? Validation at self-satisfaction. Salamat sa pagbabasa ng article na ito at sa pagsuporta sa Antares Programming. Magkita ulit tayo sa susunod na artikulo.</p>
+
+  <footer class="article-footer">
+      
+  <div class="article-tags-wrapper">
+    <h4>Tags</h4>
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/antares-blog/tags/ajax/">ajax</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/antares-blog/tags/fetch/">fetch</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/antares-blog/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/antares-blog/tags/web/">web</a></li></ul>
+  </div>
+
+      
+  <div class="article-category">
+    <h4>Category</h4>
+    <a class="article-category-link" href="/antares-blog/categories/JavaScript/">JavaScript</a>
+  </div>
+
+  </footer>
+</article>
+</main>
+    <footer class="footer" role="contentinfo">
+  <div>
+    <p>&copy; 2019 Antares Programming</p>
+    <p>Reserbado ang lahat ng karapatan.</p>
+  </div>
+  <div><a href="/antares-blog/tungkol-sa-amin">Tungkol sa Antares Programming</a>
+  <a href="https://www.facebook.com/antaresprogramming"><i>Antares Programming</i> sa Facebook</a>
+  <p id="back-to-top"><a href="#top">Back to top</a></p></div>
+</footer>
+<script>
+    var CONFIG_ROOT = `/antares-blog/`;
+    var CONFIG_URL = `https://celestialcinnamon.github.io/antares-blog`.replace('/antares-blog', '');
+</script>
+
+    <script src="/antares-blog/js/ScrollTrigger.min.js"></script>
+    <script src="/antares-blog/js/script.js"></script>
+</body>
+</html>

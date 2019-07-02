@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="tl" class="dark">
+
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Intrinsic Web Design: Ito na ba ang Wakas ng Responsive Web?</title>
+  
+  <meta name="description" content="Ma&shy;i&shy;nit na ma&shy;i&shy;nit sa mga Web de&shy;sign&shy;ers at de&shy;ve&shy;lo&shy;pers ang RWD o Res&shy;pon&shy;sive Web De&shy;sign. Pe&shy;ro si&shy;mu&shy;la no&shy;ong 2018, may ba&shy;gong buzz&shy;word na bi&shy;na&shy;ba&shy;to, i&shy;sang tech&shy;nique na pa&shy;pa&shy;lit sa Res&shy;pon&shy;sive Web De&shy;sign: ang In&shy;trin&shy;sic Web De&shy;sign. Da&shy;pat mo ba i&shy;tong pag-a&shy;ra&shy;lan, o i&shy;sa lang ito sa mga ba&shy;gong u&shy;so na ma&shy;la&shy;la&shy;os din pag&shy;ka&shy;ta&shy;pos ng da&shy;la&shy;wang ta&shy;on? Su&shy;lit bang pag-a&shy;ra&shy;lan ang In&shy;trin&shy;sic Web De&shy;sign?">
+  <meta name="author" content="Francis Rubio &lt;francoisoibur21@gmail.com&gt;">
+  
+  <!-- Favicon and PWA theme -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/antares-blog/images/apple-touch-icon.png?v=yyL3E0AWom">
+  <link rel="icon" type="image/png" sizes="32x32" href="/antares-blog/images/favicon-32x32.png?v=yyL3E0AWom">
+  <link rel="icon" type="image/png" sizes="194x194" href="/antares-blog/images/favicon-194x194.png?v=yyL3E0AWom">
+  <link rel="icon" type="image/png" sizes="192x192" href="/antares-blog/images/android-chrome-192x192.png?v=yyL3E0AWom">
+  <link rel="icon" type="image/png" sizes="16x16" href="/antares-blog/images/favicon-16x16.png?v=yyL3E0AWom">
+  <link rel="manifest" href="/antares-blog/images/site.webmanifest?v=yyL3E0AWom">
+  <link rel="mask-icon" href="/antares-blog/images/safari-pinned-tab.svg?v=yyL3E0AWom" color="#efaa00">
+  <link rel="shortcut icon" href="/antares-blog/images/favicon.ico?v=yyL3E0AWom">
+  <meta name="apple-mobile-web-app-title" content="Antares">
+  <meta name="application-name" content="Antares">
+  <meta name="msapplication-TileColor" content="#ffc40d">
+  <meta name="msapplication-TileImage" content="/antares-blog/images/mstile-144x144.png?v=yyL3E0AWom">
+  <meta name="msapplication-config" content="/antares-blog/images/browserconfig.xml?v=yyL3E0AWom">
+  <meta name="theme-color" content="#bbbbbb">
+
+
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="Ma&shy;i&shy;nit na ma&shy;i&shy;nit sa mga Web de&shy;sign&shy;ers at de&shy;ve&shy;lo&shy;pers ang RWD o Res&shy;pon&shy;sive Web De&shy;sign. Pe&shy;ro si&shy;mu&shy;la no&shy;ong 2018, may ba&shy;gong buzz&shy;word na bi&shy;na&shy;ba&shy;to, i&shy;sang tech&shy;nique na pa&shy;pa&shy;lit sa Res&shy;pon&shy;sive Web De&shy;sign: ang In&shy;trin&shy;sic Web De&shy;sign. Da&shy;pat mo ba i&shy;tong pag-a&shy;ra&shy;lan, o i&shy;sa lang ito sa mga ba&shy;gong u&shy;so na ma&shy;la&shy;la&shy;os din pag&shy;ka&shy;ta&shy;pos ng da&shy;la&shy;wang ta&shy;on? Su&shy;lit bang pag-a&shy;ra&shy;lan ang In&shy;trin&shy;sic Web De&shy;sign?">
+
+  
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="Intrinsic Web Design: Ito na ba ang Wakas ng Responsive Web?">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://celestialcinnamon.github.io/antares-blog/tl/Intrinsic-Web-Design-Ito-na-ba-ang-Wakas-ng-Responsive-Web/">
+  <meta property="og:image" content="http://celestialcinnamon.github.io//antares-blog/tl/Intrinsic-Web-Design-Ito-na-ba-ang-Wakas-ng-Responsive-Web/cover.png">
+  <meta property="og:description" content="Ma&shy;i&shy;nit na ma&shy;i&shy;nit sa mga Web de&shy;sign&shy;ers at de&shy;ve&shy;lo&shy;pers ang RWD o Res&shy;pon&shy;sive Web De&shy;sign. Pe&shy;ro si&shy;mu&shy;la no&shy;ong 2018, may ba&shy;gong buzz&shy;word na bi&shy;na&shy;ba&shy;to, i&shy;sang tech&shy;nique na pa&shy;pa&shy;lit sa Res&shy;pon&shy;sive Web De&shy;sign: ang In&shy;trin&shy;sic Web De&shy;sign. Da&shy;pat mo ba i&shy;tong pag-a&shy;ra&shy;lan, o i&shy;sa lang ito sa mga ba&shy;gong u&shy;so na ma&shy;la&shy;la&shy;os din pag&shy;ka&shy;ta&shy;pos ng da&shy;la&shy;wang ta&shy;on? Su&shy;lit bang pag-a&shy;ra&shy;lan ang In&shy;trin&shy;sic Web De&shy;sign?"> 
+
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" media="screen">
+  <link href="/antares-blog/css/baseline.css" rel="stylesheet" media="screen">
+  <link href="/antares-blog/css/mobile.css" rel="stylesheet" media="screen">
+  <link href="/antares-blog/css/desktop.css" rel="stylesheet" media="screen and (min-width: 750px)">
+  <!-- <link href="/antares-blog/css/print.css" rel="stylesheet" media="print"> -->
+
+  
+
+  
+  
+
+  <!-- TODO: Uncomment these links -->
+  <link media="screen" href="https://fonts.googleapis.com/css?family=Vidaloka&display=swap" rel="stylesheet"> 
+  <link media="screen" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700&display=swap" rel="stylesheet"> 
+  <link media="screen" href="https://fonts.googleapis.com/css?family=B612+Mono&display=swap" rel="stylesheet">
+
+  <!--
+    HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
+  -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+<link rel="stylesheet" href="/antares-blog/css/prism-a11y-dark.css" type="text/css">
+<link rel="stylesheet" href="/antares-blog/css/prism-line-numbers.css" type="text/css"></head>
+
+<body>
+    <div class="banner">
+  <a href="#main-content" class="nav skiplink sr-only sr-only-focusable">Skip to content</a>
+  <header class="header" role="banner">
+    <a href="/antares-blog/" class="site-logo" aria-label="Go to home">
+      <img src="/antares-blog/images/logo_v4.png" alt="Antares Programming logo">
+    </a>
+  </header>
+  <nav class="navbar">
+    <ul class="nav-list">
+      <li class="nav-item"><a class="nav" href="/antares-blog/archives">Archives</a></li>
+      <li class="nav-item"><a class="nav" href="/antares-blog/downloads">Downloads</a></li>
+    </ul>
+  </nav>
+</div>
+
+    <div data-scroll data-scroll-showCallback="expandNavbar()"  data-scroll-hideCallback="collapseNavbar()"></div>
+    <main class="page--post">
+
+<article class="post--article">
+  <header>
+    <h1>
+      <a class="post__title" href="/antares-blog/tl/Intrinsic-Web-Design-Ito-na-ba-ang-Wakas-ng-Responsive-Web/">Intrinsic Web Design: Ito na ba ang Wakas ng Responsive Web?</a>
+    </h1>
+  </header>
+  <p>Ma&shy;i&shy;nit na ma&shy;i&shy;nit sa mga Web de&shy;sign&shy;ers at de&shy;ve&shy;lo&shy;pers ang RWD o Res&shy;pon&shy;sive Web De&shy;sign. Pe&shy;ro si&shy;mu&shy;la no&shy;ong 2018, may ba&shy;gong <i lang="en">buzz&shy;word</i> na bi&shy;na&shy;ba&shy;to, i&shy;sang tech&shy;nique na pa&shy;pa&shy;lit sa Res&shy;pon&shy;sive Web De&shy;sign: ang <em>In&shy;trin&shy;sic Web De&shy;sign</em>. Da&shy;pat mo ba i&shy;tong pag-a&shy;ra&shy;lan, o i&shy;sa lang ito sa mga ba&shy;gong u&shy;so na ma&shy;la&shy;la&shy;os din pag&shy;ka&shy;ta&shy;pos ng da&shy;la&shy;wang ta&shy;on? Su&shy;lit bang pag-a&shy;ra&shy;lan ang In&shy;trin&shy;sic Web De&shy;sign?</p>
+<a id="more"></a>
+<p>Isang taon na mula nang unang marinig ng mundo ang terminong <i>Intrinsic Web Design</i> galing kay Jen Simmons sa An Event Apart, pero sa hindi pa ito gaanong matunog sa Pilipinas (or at least sa mga kakilala ko). Ito, ayon kay Jen Simmons, ang papalit sa nakasanayan nating Responsive Web Design. Sabi pa niya, isa itong bagong <i>era</i> ng Web design. Ano ang ibig niyang sabihin?</p>
+<h2 id="Ang-Iba’t-Ibang-Era-ng-Web-Design"><a href="#Ang-Iba’t-Ibang-Era-ng-Web-Design" class="headerlink" title="Ang Iba’t Ibang Era ng Web Design"></a>Ang Iba’t Ibang Era ng Web Design</h2><p>Matagal nang umiiral ang World Wide Web, at malayo na ang narating nito simula <span id="ref-1">nang maimbento ito ni Tim Berners-Lee noong 1990.</span><sup><a href="#foot-1">1</a></sup> Naging platform din ito para sa mga artist na nagnanais maglabas ng mga gawa nila sa mundo, o sa mga kompanyang nagnanais gawing artistic ang Web sites nila para umayon sa branding ng kompanya.</p>
+<p>Pero hindi hawak ng designers at developers ang lahat ng tools na magagamit para makagawa ng perpektong design. Kaya naman pumasok tayo sa iba’t ibang era ng Web design. Bawat isang era ay may natatanging technique o hack na ginagamit para magawa ang design.</p>
+<h3 id="Simpleng-HTML"><a href="#Simpleng-HTML" class="headerlink" title="Simpleng HTML"></a>Simpleng HTML</h3><p><strong>Defining Characteristic:</strong> Puro text ang mga Web page at walang images.</p>
+<figure class="img-wrapper ">
+    <img src="/antares-blog/tl/Intrinsic-Web-Design-Ito-na-ba-ang-Wakas-ng-Responsive-Web/simple-html.png" title="Imahe ng halimbawa ng simpleng HTML"><figcaption>
+        Kuha mula sa <cite>slides ni Jen Simmons para sa An Event Apart 2018</cite>
+    </figcaption></figure>
+
+<p>Nang mag­si­mu­la ang Web, i­sa lang ang lang­uage ni­to: Hy­per­text Mark­up Lang­uage. Ma­sa­sa­bing hin­di ito pa­ra sa mga de­sig­ners. Sa i­sip ng cre­a­tor ng Web na si Tim Ber­ners-Lee, hin­di mga auth­or, kun­di mga u­ser ang may ka­pang­ya­ri­han sa kung ano ang ma­gi­ging hit­sura ng mga Web page. Ka­ya na­man hin­di no­on ki­na­i­la­ngan ng anumang design tools sa Web. Lahat ay text. At dahil isang <i>markup language</i> ang HTML, ipinapakita lang nito ang struc­ture ng i­sang Web page, mea­ning ng ba­wat ba­ha­gi ng i­sang Web page. Pa­ra kay Tim Ber­ners-Lee, da­pat kon­tro­la­do ng u­sers kung ano ang ma­gi­ging hit­su­ra ng Web pa­ges sa pa­ma­ma­gi­tan ng cus­to­mi­za­tions.</p>
+<h3 id="Flow-Layout"><a href="#Flow-Layout" class="headerlink" title="Flow Layout"></a>Flow Layout</h3><p><strong>Defining Characteristic:</strong> Gaya sa Simple HTML era, pero ngayon ay may images na, at nababago na rin ang mga background color at text color. Mas makulay na ang buhay.</p>
+<figure class="img-wrapper">
+    <img src="/antares-blog/tl/Intrinsic-Web-Design-Ito-na-ba-ang-Wakas-ng-Responsive-Web/flow-layout.png" title="Image ng halimbawa ng flow layout">
+    <figcaption></figcaption>
+</figure>
+
+<p>Nagsimula ang design sa Web nang magsimulang magkaroon ng images sa Web (salamat sa Netscape Navigator). Sa panahong ito kung kailan lahat ay text at HTML lang ang mayroon tayo, iisa lang ang uri ng layout&mdash;ang tinatawag nating flow layout. Dumadaloy ang text mula kaliwa pakanan, at kapag wala nang space, ang susunod na character ay magsisimula sa susunod na line.</p>
+<p>Ito rin ang panahon kung kailan <code>&lt;hr&gt;</code> lang ang pinaka-design na mayroon sa Web. Kung design lang din ang pag-uusapan, walang gano’n sa Web sa panahon ng flow layout era. At tama lang dahil sa progreso ng teknolohiya sa panahong iyon, napakabagal ng Internet, kaya naman mas praktikal kung text lang talaga ang Web. At bukod pa riyan, karamihan ng users ng Web sa panahong ito ng Web design ay puro mga teknikal at propesyunal.</p>
+<figure id="fig-20.5827" class="img-wrapper ">
+    <img src="/antares-blog/tl/Intrinsic-Web-Design-Ito-na-ba-ang-Wakas-ng-Responsive-Web/flow-layout-1.png" title="Image ng halimbawa ng flow layout">
+    <figcaption>
+       <b>Figure 20.5827</b>
+    </figcaption>
+</figure>
+
+<p>Gaya ng makikita sa <a href="#fig-20.5827">figure 20.5827</a>, nag-exist noon ang mga center-aligned na pages (gamit ang lumang HTML tags na <code>&lt;center&gt;&lt;/center&gt;</code> na sana wala nang gumagamit ngayon).</p>
+<figure id="fig-60.7538" class="img-wrapper">
+    <img src="/antares-blog/tl/Intrinsic-Web-Design-Ito-na-ba-ang-Wakas-ng-Responsive-Web/flow-layout-3.png" title="Image ng halimbawa ng flow layout">
+    <figcaption>
+        <b>Figure 60.7538</b>: Gumamit din ng tables para sa layout noong Flow Layout Era, pero hindi kasingdalas gaya ng sa Table Layout Era.
+    </figcaption>
+</figure>
+
+<h3 id="Table-Layout"><a href="#Table-Layout" class="headerlink" title="Table Layout"></a>Table Layout</h3><p><strong>Defining Characteristic:</strong> Malawakang paggamit ng <code>&lt;table&gt;&lt;/table&gt;</code> tags. Bagaman ginagamit ito sa panahon ng flow layout, mas malawakang ginagamit ngayon ang HTML tables, at kadalasan, para lang sa layout sa halip na mga data na nasa table.</p>
+<figure id="fig-86.6879" class="img-wrapper">
+    <img src="/antares-blog/tl/Intrinsic-Web-Design-Ito-na-ba-ang-Wakas-ng-Responsive-Web/table-layout.png" title="Image ng halimbawa ng table layout">
+    <figcaption>
+        <b>Figure 86.6879</b>: Mula sa 1996 na aklat ni <cite>David Siegel, Creating Killer Websites</cite>
+    </figcaption>
+</figure>
+
+<p>Sa era na ito ng Web design, pumasok na tayo sa isang panahon kung kailan unti-unti nang dumarami ang users ng Web. Masasabing dito rin nagsimula ang “design” sa Web, as in design na gaya ng alam natin sa ngayon. Gumamit ang mga Web developers ng <code>&lt;table&gt;</code> tags para gumawa ng mga layout sa mga Web page nila. Gumamit din sila ng mga tinatawag na <i>spacer GIFs</i>, i.e., mga GIF images na 1px&times;1px ang laki para lang magkaroon ng laman ang mga table cells at maging maayos ang mga layout ng Web pages.</p>
+<figure id="fig-73.1475" class="img-wrapper">
+    <div class="flex flex--images">
+        <img src="/antares-blog/tl/Intrinsic-Web-Design-Ito-na-ba-ang-Wakas-ng-Responsive-Web/table-layout-1.png" title="Image ng halimbawa ng table layout">
+        <img src="/antares-blog/tl/Intrinsic-Web-Design-Ito-na-ba-ang-Wakas-ng-Responsive-Web/table-layout-2.png" title="Image ng halimbawa ng table layout">
+        <img src="/antares-blog/tl/Intrinsic-Web-Design-Ito-na-ba-ang-Wakas-ng-Responsive-Web/table-layout-3.png" title="Image ng halimbawa ng table layout">
+        <img src="/antares-blog/tl/Intrinsic-Web-Design-Ito-na-ba-ang-Wakas-ng-Responsive-Web/table-layout-4.png" title="Image ng halimbawa ng table layout">
+        <img src="/antares-blog/tl/Intrinsic-Web-Design-Ito-na-ba-ang-Wakas-ng-Responsive-Web/table-layout-5.png" title="Image ng halimbawa ng table layout">
+    </div>
+    <figcaption>
+        <b>Figure 73.1475</b>: Mapapansing nagsisimula nang maging mas moderno ang artistic approach sa Web. Malayong-malayo sa orihinal na daang tatahakin sana ng Web design.
+    </figcaption>
+</figure>
+
+<p>Dito rin nauso ang proseso tinatawag nating <i>slice and dice</i>. Ang mga design ay ginagawa sa photo-editing software gaya ng Photoshop. Pagkatapos, ang mga design, o kung minsan ay mga background image, ay kina-crop at pinaghihiwa-hiwalay. Bawat isang piraso o <i lang="en">slice</i> ay mapupunta sa isang table cell hanggang sa mabuo ang Web page.</p>
+<h3 id="Flash"><a href="#Flash" class="headerlink" title="Flash"></a>Flash</h3><p><strong>Defining Characteristics:</strong> Paggamit ng Adobe Flash para sa mga Web design.</p>
+<figure id="fig-89.1249" class="img-wrapper">
+    <img src="/antares-blog/tl/Intrinsic-Web-Design-Ito-na-ba-ang-Wakas-ng-Responsive-Web/flash.png" title="Adobe Flash">
+    <figcaption>
+        <b>Figure 89.1249</b>
+    </figcaption>
+</figure>
+
+<p>Sa panahong ito, lumayo ang Web mula sa pinanggalingan nitong HTML at nakakita ng bagong tahanan sa Adobe Flash. Kumpara sa HTML tables, mas flexible nang di-hamak ang Flash, lalo na kung isasama rito ang animations. Para sa mga designers, ito na ang sagot sa ilang dekadang paghihirap na makagawa ng mga design. Pero gaya ng alam mo siguro, sa paglipas ng panahon nilayuan ito ng mga tao dahil bukod sa mabagal ito, kinakailangan ng nga users na mag-install ng plugin sa browsers nila para lang makita ang mga Web page. Hindi rin ito accessible, kaya nahirapan ang mga may kapansanan na gamitin ang marami sa mga Web site. At bukod pa riyan, napakalaking problema nito sa security ng users. Kaya naman papatayin na ng Adobe ang Flash sa 2020.</p>
+<h3 id="Ang-Simula-ng-CSS-Epoch"><a href="#Ang-Simula-ng-CSS-Epoch" class="headerlink" title="Ang Simula ng CSS Epoch"></a>Ang Simula ng CSS Epoch</h3><figure id="fig-60.4817" class="img-wrapper">
+    <img src="/antares-blog/tl/Intrinsic-Web-Design-Ito-na-ba-ang-Wakas-ng-Responsive-Web/css.png" title="Image ng aklat na Designing with Web Standards ni Jeffrey Zeldman">
+    <figcaption>
+        <b>Figure 60.4817</b>: Kapansin-pansing dahil sa CSS, nanumbalik ang tamang kahulugan ng mga HTML tags. (<cite>Mula sa 2003 aklat ni Jeffrey Zeldman, Designing with Web Standards</cite>)
+    </figcaption>
+</figure>
+
+<p>Maaring imbento ko lang ang terminong <i>CSS Epoch</i>, pero marami ang sasang-ayon na nagsimula ang isang bagong panahon para sa Web platform nang dumating ang Cascading Style Sheets o CSS. Ito ang nagsalba sa Web design. Dahil sa CSS, mas maraming posiblidad ang nabuksan, kasama na ang accessibility at semantics ng Web sites. Ang mga sumunod na era pagkatapos ng simula CSS epoch ay mas mabuti kaysa sa mga naunang era dahil lang sa mga posibilidad na nabuksan.</p>
+<h3 id="Fixed-Width-vs-Fluid-Layout"><a href="#Fixed-Width-vs-Fluid-Layout" class="headerlink" title="Fixed-Width vs. Fluid Layout"></a>Fixed-Width vs. Fluid Layout</h3><p><strong>Defining Characteristic:</strong> Dalawang magkalabang opinyon: fixed na width at percent-based layouts.</p>
+<p>Dito sa era na ito, nagkaroon ng dalawang magkalabang opinyon sa Web design. May mga nagsasabi na dapat nating gawing fixed-width ang mga layout, gaya sa mga printed materials. Dahil kahit na kakaunti lang ang iba’t ibang screen sizes noon, hindi pa rin natin kayang tiyakin kung ano’ng size ng screen ng mga users. Kaya dapat nating gawing naka-fixed ang laki ng layout.</p>
+<figure id="fig-62.5674" class="img-wrapper float--wider">
+    <video controls src="/antares-blog/tl/Intrinsic-Web-Design-Ito-na-ba-ang-Wakas-ng-Responsive-Web/fluid-layout.mp4">
+        <p class="video-fallback"></p>
+    </video>
+    <figcaption>
+        <b>Figure 62.5674</b>: Isang halimbawa ng fluid layout.
+    </figcaption>
+</figure>
+
+<p>May mga nagsasabi naman na “hindi, dapat nag-aadapt sa size ng screen ang layout.” Dapat na nagre-resize din ito depende sa viewport. Hindi ako eksperto sa kasaysayan ng Web design, pero sa tingin ko, ang fluid layout ang naging <i lang="en">precursor</i> ng Responsive Web Design.</p>
+<figure id="fig-43.9855" class="img-wrapper  float--wider">
+    <video controls src="/antares-blog/tl/Intrinsic-Web-Design-Ito-na-ba-ang-Wakas-ng-Responsive-Web/fixed-layout.mp4">
+        <p class="video-fallback"></p>
+    </video>
+    <figcaption>
+        <b>Figure 43.9855</b>: Isang halimbawa ng fixed layout.
+    </figcaption>
+</figure>
+
+<p>Dalawang naglalabang opinyon, pero parehas na may punto. Sa era na ito, nagkaroon ng kritikal na desisyon kung aling direksyon sa sining ang tatahakin ng bawat designer, at kung paano ito ie-execute ng mga developer.</p>
+<h3 id="Responsive-Web-Design"><a href="#Responsive-Web-Design" class="headerlink" title="Responsive Web Design"></a>Responsive Web Design</h3><p><strong>Defining Characteristic:</strong> Iba’t ibang layout depende sa screen size. Malawakang paggamit ng mga image na nagre-resize kasama ng viewport, mga media queries, at float elements.</p>
+<figure id="fig-93.6485" class="img-wrapper">
+    <img src="/antares-blog/tl/Intrinsic-Web-Design-Ito-na-ba-ang-Wakas-ng-Responsive-Web/responsive-web-design.png" title="Responsive Web Design is a flexible grid (with flexible images) that incorporates media queries to create a responsive, adaptive layout.">
+    <figcaption> 
+        <b>Figure 93.6485</b>: Ang Responsive Web Design ay isang flexible grid (kasama ang mga flexible na image) na gumagamit ng mga media query para makagawa ng isang layout na nagbabago sa iba’t ibang kalagayan. (<cite>Mula sa slides ni Ethan Marcotte para sa kaniyang pahayag sa An Event Apart 2010</cite>)
+    </figcaption>
+</figure>
+
+<p>Ang era na ito ang pinakakilala ng marami sa atin sa ngayon. Ito ang era ng <i>float-based layouts</i>. Sandamakmak na <code>float: left</code> at mga <i>clearfix</i> ang ginamit natin sa mga design para makagawa ng mga layout. Ito ang era ng 12-column layouts. Dito rin sumikat ang mga frameworks na gaya ng Bootstrap, Foundation, 960 grid, at iba pa.</p>
+<p>Sa panahong ito rin halos nawala ang “art direction” sa Web. Dahil karamihan ng Web sites ay gumagamit ng iyon at iyon ding frameworks na may 12-columns, naging magkakamukha silang lahat. Nalimitahan ang pagkamalikhain sa Web. Pero ang maganda naman dito, lumitaw ang <i>mobile-first designs</i> at gumagana sa lahat ng device ang mga Web site.</p>
+<p>Hindi rin siguro ito matunog sa mga kakilala ko, pero mga ilang taon pagkatapos sumikat ang Responsive Web Design, lumabas ang Adaptive Web Design. Hindi nito pinalitan ang RWD; sa halip, dinagdagan nito ang RWD ng maraming kakayahan. Sa RWD, lahat ng transformations sa layout at adjustments ay nangyayari sa browser, gamit ang CSS, at kung minsan, JavaScript. Pero nang dumating sa eksena ang Adaptive Web Design, sumama ang server sa pagbibigay ng magadang experience sa mga user.</p>
+<figure id="fig-73.0292" class="img-wrapper  float--wider">
+    <video controls src="/antares-blog/tl/Intrinsic-Web-Design-Ito-na-ba-ang-Wakas-ng-Responsive-Web/responsive-layout.mp4"></video>
+    <figcaption>
+        <b>Figure 73.0292</b>: Isang halimbawa ng isang responsive na layout.
+    </figcaption>
+</figure>
+
+<p>Dahil mobile-first na ang Web, at mabagal ang Internet speeds para sa mga mobile devices, hindi puwedeng mag-send sa mobile devices ng mga high-resolution images gaya ng ginagawa sa mga desktop. Kaya nagde-decide ang server kung aling size ng image ang ipapadala nito sa device depende sa width ng viewport nito. At hindi lang ito natatapos sa width ng mga images, dahil may mga sites na gumagawa ng dalawang magkaibang site para sa desktop at sa mobile para mabawasan ang file size ng CSS nila sa mobile devices.</p>
+<figure class="img-wrapper--illustration">
+    <img src="/antares-blog/tl/Intrinsic-Web-Design-Ito-na-ba-ang-Wakas-ng-Responsive-Web/timeline.png" title="Timeline ng mga Web design era, mula sa slides ni Jen Simmons">
+</figure>
+
+<p>Ito ang mga era ng Web design na alam natin sa ngayon. Posibleng may mga overlaps at mga hindi ako nabanggit, pero sa pangkalahatan, ang punto nito ay maraming pinagdaanan ang Web para makarating sa kung nasaan man ito sa ngayon.</p>
+<h2 id="Ang-Pagpasok-ng-Intrinsic-Web-Design"><a href="#Ang-Pagpasok-ng-Intrinsic-Web-Design" class="headerlink" title="Ang Pagpasok ng Intrinsic Web Design"></a>Ang Pagpasok ng Intrinsic Web Design</h2><aside class="side-note" id="intrinsic">
+    <dl>
+        <dt lang="en">intrinsic</dt>
+        <dd lang="en">
+            (adj.) belonging to a thing by its very nature. Inherent. Innate
+        </dd>
+    </dl>
+</aside>
+
+<p>Ang pangako ng Intrinsic Web Design ay nasa pangalan na mismo nito: <em>intrinsic</em>. Hindi na natin kailangan ng frameworks para makagawa ng mga komplikadong layouts. Hindi na natin kailangang gumamit ng mga CSS properties na ginawa para sa ibang dahilan para lang magawa ang gusto nating design. <strong>Ang Intrinsic Web Design ay isang improvement sa Responsive Web design; samakatuwid nga, Responsive Web Design +</strong>.</p>
+<p>Isang halimbawa nito ang <code>float</code> property sa CSS. Simula noong Table Layout era, nakabase na ang mga design ng Web pages sa mga grid. At kahit sa paintings at ibang artworks, malawakang ginagamit ang mga grid. Pero dahil sa kakulangan ng features ng CSS, hindi natin ito ma-replicate nang maayos. Kaya gumamit tayo noon ng <code>&lt;table&gt;</code> tags, at nang magtagal, ginamit natin ang <code>float</code> property para gumawa ng mga “column”. Matrabaho ito, oo, pero mas mabuti na ito kaysa sa paggamit ng <code>&lt;table&gt;</code> o ng <code>&lt;frameset&gt;</code>, na parehong nagpapahaba ng markup.</p>
+<p>Pero dumating sa mga browser ang <code>display: flex</code> at <code>display: grid</code> features ng CSS, at sa wakas, nagkaroon ng tunay na grid system sa Web. Kaya naman hindi na natin kailangang gumamit ng <code>float</code> (na ginawa para sa ibang mga bagay) para gumawa ng mga columns. At ang maganda pa rito, dahil sa CSS Grid, hindi na tayo naka-focus sa columns; kaya na rin nating manipulahin ang rows. Ang CSS Grid ang pinaka-powerful na feature ng CSS sa ngayon.</p>
+<h2 id="Talaga-Bang-Papalitan-na-ng-Intrinsic-Web-Design-ang-Responsive-Web-Design"><a href="#Talaga-Bang-Papalitan-na-ng-Intrinsic-Web-Design-ang-Responsive-Web-Design" class="headerlink" title="Talaga Bang Papalitan na ng Intrinsic Web Design ang Responsive Web Design?"></a>Talaga Bang Papalitan na ng Intrinsic Web Design ang Responsive Web Design?</h2><p>Kung titingnan, nalalaos lang naman ang isang technology kapag wala nang gumagamit nito. Sa ngayon, talamak pa rin ang RWD sa mga website design. Kaya parang mahirap isipin na malalaos ang RWD; kung sa bagay, napakaraming magagandang dulot ang RWD sa mga user. Pero tingnan natin ang mga pagkakaiba ng IWD at RWD&mdash;mga dahilan kung bakit naisip ni Jen Simmons (at kung bakit sinasang-ayunan ko) na Intrinsic Web Design ang future ng Web design.</p>
+<h3 id="Images"><a href="#Images" class="headerlink" title="Images"></a>Images</h3><p><strong>Responsive:</strong> sa Responsive Web Design, lahat ng images ay flexible at nagre-respond sa lapad ng viewport. Samakatuwid nga, lahat ng image ay percent-based.</p>
+<p><strong>Intrinsic:</strong> Sa Intrinsic Web Design, itinataguyod ni Jen Simmons na gumamit ang mga Web designer at developer ng flexible images kasama ng mga fixed-width images. Hindi na kailangang lahat ay flexible; puwede ka nang mag-set ng width, height, o iyong dalawang iyon sa mga image. At ang maganda pa rito, puwede ka na ring gumamit ng mga image na flexible pero magiging fixed depende sa size (hindi lang width) ng viewport.</p>
+<h3 id="Grids"><a href="#Grids" class="headerlink" title="Grids"></a>Grids</h3><p><strong>Responsive:</strong> sa RWD, gumamit tayo ng pseudo-grid; pero sa totoo lang, hindi naman ito grid dahil columns lang ang ginamit natin. At sa totoo lang din, hindi rin ito mga columns kundi mga pseudo-columns dahil hindi naman iyon mga tunay na column. Ginawa sila gamit ang <code>float</code> property sa CSS, na hindi naman ginawa para sa mga columns. Sa madaling sabi, nagtagpi-tagpi lang tayo ng features para mapunan ang gusto nating gawin na wala sa CSS.</p>
+<p><strong>Intrinsic:</strong> sa IWD, lahat ay tunay: ang grid na gamit natin ay totoong grid dahil may rows at columns na ito. At hindi tulad sa RWD, ang mga rows at columns ay puwedeng fixed-width, o nakadepende sa size ng laman nito, sa halip na flexible lang at percent-based. Katunayan, hindi na lang percent ang puwedeng gamitin; puwede na rin tayong gumawa ng ratio-based columns at rows sa tulong ng <code>fr</code> units.</p>
+<h3 id="Media-Queries"><a href="#Media-Queries" class="headerlink" title="Media Queries"></a>Media Queries</h3><p><strong>Responsive:</strong> sa RWD, kailangan ang media queries sa lahat ng panahon para makagawa ng mga layouts na nagre-respond sa width ng viewport.</p>
+<p><strong>Intrinsic:</strong> sa IWD, hindi kailangan ng media queries sa lahat ng pagkakataon. Dahil sa kapangyarihan ng CSS Grid, makakapag-adjust sa width ng viewport ang width ng layout.</p>
+<h3 id="Flexibility"><a href="#Flexibility" class="headerlink" title="Flexibility"></a>Flexibility</h3><p><strong>Responsive:</strong> sa RWD, flexible ang layout sa diwa na may iba’t ibang hiwa-hiwalay na layout para sa iba’t ibang screen.</p>
+<p><strong>Intrinsic:</strong> sa IWD, flexible ang layout sa diwa na hindi kailangan ng hiwalay na layout para sa ibang content. Sa Intrinsic Web Design, hawak mo kung paano mo ipe-present ang content at kung paano gagawin ang layout.</p>
+<h2 id="Ang-Pagbabalik-ng-Art-Direction-sa-Web-Design"><a href="#Ang-Pagbabalik-ng-Art-Direction-sa-Web-Design" class="headerlink" title="Ang Pagbabalik ng Art Direction sa Web Design"></a>Ang Pagbabalik ng Art Direction sa Web Design</h2><p>Siguro kanina mo pa napapansin na paulit-ulit kong sinasabi itong “art direction”. Nawala kasi ang art sa Web design noong Responsive Web Design era. Pero sa Intrinsic Web Design, napakarami na nating tools na magagamit para sa kahit anong design at layout na maisip natin. Puwede na tayo ulit kumuha ng inspirasyon sa mga layout ng magazines, printed materials, at sa mga gawa ng mga artists na gaya ni Jan Tsichold.</p>
+<p>Kasama sa mga layunin ng Intrinsic Web Design ay ang pagbabalik ng design sa Web. <em>Kahit ano, puwede.</em> Sa tulong ng mga bagong tools na built-in na sa CSS, makakagawa tayo ng eleganteng mga design. Kaya naman pinasisigla ang lahat, kapuwa mga designers at developers, na pag-aralan ang lahat ng options na mayroon para maging buhay muli ang Web, sa diwa na hindi na magkakamukha ang mga Web site.</p>
+<p>Napakaraming halimbawa rito si Jen Simmons sa kaniyang <a href="https://labs.jensimmons.com/" target="_blank" rel="noopener">experimental lab</a> (at inoobliga kitang tingnan ito para sa kapakanan mo 😉). Makikita mo sa Web site niya ang iba’t ibang artworks sa tunay na mundo na ni-recreate niya gamit ang HTML at CSS. Pinatutunayan lang nito na marami tayong puwedeng gawin gamit ang mga tools na available na sa atin.</p>
+<h2 id="Ang-Mga-Tools-ng-Intrinsic-Web-Design"><a href="#Ang-Mga-Tools-ng-Intrinsic-Web-Design" class="headerlink" title="Ang Mga Tools ng Intrinsic Web Design"></a>Ang Mga Tools ng Intrinsic Web Design</h2><p>Dahil nga ang pangako ng IWD ay built-in na sa CSS ang mga tools na gagamitin natin, at na hindi na natin kailangang gumamit ng mga “hack” o gumamit ng mga properties na ginawa para sa ibang mga bagay, dumami ang mga tools na magagamit natin.</p>
+<ul>
+<li>Flexbox</li>
+<li>Grid</li>
+<li>CSS Shapes</li>
+<li>Clip Path</li>
+<li><code>object-fit</code> et. al</li>
+<li>Variable fonts</li>
+<li><code>@supports</code></li>
+<li>Bagong dagdag sa Writing Modes</li>
+<li>Viewport units (<code>vh</code> at <code>vw</code>)</li>
+</ul>
+<p>Ang lahat ng ito ay built-in na sa CSS, at <strong>hindi na natin kailangan ng frameworks</strong>. Ang article na ito ang una sa series ng mga articles tungkol sa Intrinsic Web Design. Sa mga susunod pang articles, susubukan nating talakayin ang iba’t ibang tools na ito at kung paano sila gagamitin sa mga Web sites natin. Kaya laging i-check ang tag na <a href="/antares-blog/tags/intrinsic-web-design/" class="tag">#intrinsic web design</a> sa Antares Blog.</p>
+<h2 id="Mga-Tanong-Tungkol-sa-Intrinsic-Web-Design"><a href="#Mga-Tanong-Tungkol-sa-Intrinsic-Web-Design" class="headerlink" title="Mga Tanong Tungkol sa Intrinsic Web Design"></a>Mga Tanong Tungkol sa Intrinsic Web Design</h2><h3 id="Ibig-bang-sabihin-nito-hindi-na-tayo-gumagamit-ng-float"><a href="#Ibig-bang-sabihin-nito-hindi-na-tayo-gumagamit-ng-float" class="headerlink" title="Ibig bang sabihin nito, hindi na tayo gumagamit ng float?"></a>Ibig bang sabihin nito, hindi na tayo gumagamit ng <code>float</code>?</h3><p>Siyempre hindi! Tandaan, ang <code>float</code> property ay ginawa na kagaya ng text wrapping sa Microsoft Word. May silbi pa rin ito. Sa katunayan, ang isang bagong feature ng CSS, ang CSS Shapes, ay nakasentro sa paggamit ng floated elements. At mismo sa site na ito, malawakang ginagamit <em>sa tamang paraan</em> ang mga float, gaya nitong <a href="#intrinsic">definition ng salitang “intrinsic”</a>.</p>
+<h3 id="Hindi-natin-puwedeng-gamitin-iyang-bagong-features-ng-CSS-kasi-may-mga-lumang-browser-pa-rin-na-ginagamit-sa-mga-kompanya-like-iyong-Internet-Explorer"><a href="#Hindi-natin-puwedeng-gamitin-iyang-bagong-features-ng-CSS-kasi-may-mga-lumang-browser-pa-rin-na-ginagamit-sa-mga-kompanya-like-iyong-Internet-Explorer" class="headerlink" title="Hindi natin puwedeng gamitin iyang bagong features ng CSS kasi may mga lumang browser pa rin na ginagamit sa mga kompanya, like iyong Internet Explorer."></a>Hindi natin puwedeng gamitin iyang bagong features ng CSS kasi may mga lumang browser pa rin na ginagamit sa mga kompanya, like iyong Internet Explorer.</h3><p>Hindi ito valid reason para iwasan ang mga bagong features ng CSS. Kung isasantabi mo ang pag-aaral ng mga bago sa CSS, inilalagay mo sa peligro ang career mo, dahil lahat ng iba pang developer inaaral na iyon. Ang CSS Grid ay supported na sa mahigit 88% ng mga Web users worldwide. At bukod pa riyan, mayroon tayong tinatawag na <i>progressive enhancement</i>. Kaya kung ang target users mo ay mga users ng IE at iba pang lumang browsers, puwede mong i-develop ang site mo gamit ang mga features na gumagana sa mga iyon, at saka mo idagdag ang mga bagong features na ginagamit na ng marami ngayon.</p>
+<h3 id="Eh-‘di-say-no-to-Bootstrap-etc-na-Hindi-na-namin-sila-pag-aaralan"><a href="#Eh-‘di-say-no-to-Bootstrap-etc-na-Hindi-na-namin-sila-pag-aaralan" class="headerlink" title="Eh ‘di say no to Bootstrap etc. na? Hindi na namin sila pag-aaralan?"></a>Eh ‘di say no to Bootstrap etc. na? Hindi na namin sila pag-aaralan?</h3><p>Nope, depende pa rin sa inyo iyon. Marami pa rin ang gumagamit ng Bootstrap at Foundation, pati ang ibang mga framework. Kaya dapat alam pa rin natin kung paano sila gumagana para makahanap tayo ng trabaho. Ganoon naman lagi sa mundo ng technology; kahit na may bago nang lumabas, hangga’t may gumagamit ng luma, kailangang alam natin kung paano gawin ang luma.</p>
+<h3 id="Paano-kung-ni-require-kami-na-huwag-gumamit-ng-mga-bagong-features-ng-CSS"><a href="#Paano-kung-ni-require-kami-na-huwag-gumamit-ng-mga-bagong-features-ng-CSS" class="headerlink" title="Paano kung ni-require kami na huwag gumamit ng mga bagong features ng CSS?"></a>Paano kung ni-require kami na huwag gumamit ng mga bagong features ng CSS?</h3><p>Again, walang masama kung gagamitin natin iyong mga nakasanayan na natin. Kung kailangan mong mag-stick sa mga frameworks, walang problema. Kung gusto mong iwasan ang flexbox at CSS grid para gumamit ng float-based layout, nasa sa iyo ang desisyon. Ang mahalaga naman lagi rito ay kung ano ang magiging experience ng mga user ng site mo. At bukod pa diyan, ang experience ng mga developers sa paggawa ng Web sites. Mas madali kung tutuusin para sa atin na gamitin ang mga bagong tools na ito, pero wala rin namang masama kung gagamit tayo ng kutsilyo pambukas ng lata sa halip na gumamit ng can opener. Gagana iyon, pero mas madali kung may can opener.</p>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>Ano’t anuman, nagbabago ang Web nang patuluyan. Para itong tren na patungo sa isang destinasyon: ang balanse sa pagitan ng developer experience at user experience. Bawat feature na nadadagdag sa Web platform ay para sa ikadadali ng buhay ng mga user, developer, at designers. Nasa sa iyo ang desisyon kung sasakay ka sa tren na ito. At isa pa, ang Intrinsic Web Design ay hindi isang bagong uso na malalaos pagkatapos ng ilang taon; at kahit malaos pa ito, ang mga technique nito ay nandito nang pangmatagalan.</p>
+<hr>
+<h2 id="Footnotes"><a href="#Footnotes" class="headerlink" title="Footnotes"></a>Footnotes</h2><ol>
+<li><span id="foot-1"><a href="#ref-1">^</a> Wikipedia: <a href="https://en.wikipedia.org/wiki/Tim_Berners_lee" target="_blank" rel="noopener">Tim Berners-Lee</a>.</span></li>
+<li><span id="foot-2">Malibang binanggit sa mismong imahe, lahat ng illustrations sa article na ito ay kuha mula sa slides na ginawa ni Jen Simmons para sa An Event Apart 2018</span></li>
+</ol>
+
+  <footer class="article-footer">
+      
+  <div class="article-tags-wrapper">
+    <h4>Tags</h4>
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/antares-blog/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/antares-blog/tags/intrinsic-web-design/">intrinsic web design</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/antares-blog/tags/web/">web</a></li></ul>
+  </div>
+
+      
+  <div class="article-category">
+    <h4>Category</h4>
+    <a class="article-category-link" href="/antares-blog/categories/CSS/">CSS</a>
+  </div>
+
+  </footer>
+</article>
+</main>
+    <footer class="footer" role="contentinfo">
+  <div>
+    <p>&copy; 2019 Antares Programming</p>
+    <p>Reserbado ang lahat ng karapatan.</p>
+  </div>
+  <div><a href="/antares-blog/tungkol-sa-amin">Tungkol sa Antares Programming</a>
+  <a href="https://www.facebook.com/antaresprogramming"><i>Antares Programming</i> sa Facebook</a>
+  <p id="back-to-top"><a href="#top">Back to top</a></p></div>
+</footer>
+<script>
+    var CONFIG_ROOT = `/antares-blog/`;
+    var CONFIG_URL = `https://celestialcinnamon.github.io/antares-blog`.replace('/antares-blog', '');
+</script>
+
+    <script src="/antares-blog/js/ScrollTrigger.min.js"></script>
+    <script src="/antares-blog/js/script.js"></script>
+</body>
+</html>

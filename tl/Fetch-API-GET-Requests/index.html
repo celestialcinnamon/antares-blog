@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="tl" class="dark">
+
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fetch API: GET Requests</title>
+  
+  <meta name="description" content="Dahil sa pagiging popular ng Ajax (dating acronym para sa asynchronous JavaScript and XML, pero hindi na ngayon kasi wala nang masyadong gumagamit ng XML sa Web platform, hindi gaya dati), napasama sa ECMAScript 2015 standard ang Fetch API, isang API na nagpapadali sa Ajax. Sa article na ito, tingnan natin kung paano natin magagamit ang Fetch API para magpadala ng GET request sa server.">
+  <meta name="author" content="Francis Rubio &lt;francoisoibur21@gmail.com&gt;">
+  
+  <!-- Favicon and PWA theme -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/antares-blog/images/apple-touch-icon.png?v=yyL3E0AWom">
+  <link rel="icon" type="image/png" sizes="32x32" href="/antares-blog/images/favicon-32x32.png?v=yyL3E0AWom">
+  <link rel="icon" type="image/png" sizes="194x194" href="/antares-blog/images/favicon-194x194.png?v=yyL3E0AWom">
+  <link rel="icon" type="image/png" sizes="192x192" href="/antares-blog/images/android-chrome-192x192.png?v=yyL3E0AWom">
+  <link rel="icon" type="image/png" sizes="16x16" href="/antares-blog/images/favicon-16x16.png?v=yyL3E0AWom">
+  <link rel="manifest" href="/antares-blog/images/site.webmanifest?v=yyL3E0AWom">
+  <link rel="mask-icon" href="/antares-blog/images/safari-pinned-tab.svg?v=yyL3E0AWom" color="#efaa00">
+  <link rel="shortcut icon" href="/antares-blog/images/favicon.ico?v=yyL3E0AWom">
+  <meta name="apple-mobile-web-app-title" content="Antares">
+  <meta name="application-name" content="Antares">
+  <meta name="msapplication-TileColor" content="#ffc40d">
+  <meta name="msapplication-TileImage" content="/antares-blog/images/mstile-144x144.png?v=yyL3E0AWom">
+  <meta name="msapplication-config" content="/antares-blog/images/browserconfig.xml?v=yyL3E0AWom">
+  <meta name="theme-color" content="#bbbbbb">
+
+
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="Dahil sa pagiging popular ng Ajax (dating acronym para sa asynchronous JavaScript and XML, pero hindi na ngayon kasi wala nang masyadong gumagamit ng XML sa Web platform, hindi gaya dati), napasama sa ECMAScript 2015 standard ang Fetch API, isang API na nagpapadali sa Ajax. Sa article na ito, tingnan natin kung paano natin magagamit ang Fetch API para magpadala ng GET request sa server.">
+
+  
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="Fetch API: GET Requests">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://celestialcinnamon.github.io/antares-blog/tl/Fetch-API-GET-Requests/">
+  <meta property="og:image" content="http://celestialcinnamon.github.io//antares-blog/images/favicon-194x194.png">
+  <meta property="og:description" content="Dahil sa pagiging popular ng Ajax (dating acronym para sa asynchronous JavaScript and XML, pero hindi na ngayon kasi wala nang masyadong gumagamit ng XML sa Web platform, hindi gaya dati), napasama sa ECMAScript 2015 standard ang Fetch API, isang API na nagpapadali sa Ajax. Sa article na ito, tingnan natin kung paano natin magagamit ang Fetch API para magpadala ng GET request sa server."> 
+
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" media="screen">
+  <link href="/antares-blog/css/baseline.css" rel="stylesheet" media="screen">
+  <link href="/antares-blog/css/mobile.css" rel="stylesheet" media="screen">
+  <link href="/antares-blog/css/desktop.css" rel="stylesheet" media="screen and (min-width: 750px)">
+  <!-- <link href="/antares-blog/css/print.css" rel="stylesheet" media="print"> -->
+
+  
+
+  
+  
+
+  <!-- TODO: Uncomment these links -->
+  <link media="screen" href="https://fonts.googleapis.com/css?family=Vidaloka&display=swap" rel="stylesheet"> 
+  <link media="screen" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700&display=swap" rel="stylesheet"> 
+  <link media="screen" href="https://fonts.googleapis.com/css?family=B612+Mono&display=swap" rel="stylesheet">
+
+  <!--
+    HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
+  -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+<link rel="stylesheet" href="/antares-blog/css/prism-a11y-dark.css" type="text/css">
+<link rel="stylesheet" href="/antares-blog/css/prism-line-numbers.css" type="text/css"></head>
+
+<body>
+    <div class="banner">
+  <a href="#main-content" class="nav skiplink sr-only sr-only-focusable">Skip to content</a>
+  <header class="header" role="banner">
+    <a href="/antares-blog/" class="site-logo" aria-label="Go to home">
+      <img src="/antares-blog/images/logo_v4.png" alt="Antares Programming logo">
+    </a>
+  </header>
+  <nav class="navbar">
+    <ul class="nav-list">
+      <li class="nav-item"><a class="nav" href="/antares-blog/archives">Archives</a></li>
+      <li class="nav-item"><a class="nav" href="/antares-blog/downloads">Downloads</a></li>
+    </ul>
+  </nav>
+</div>
+
+    <div data-scroll data-scroll-showCallback="expandNavbar()"  data-scroll-hideCallback="collapseNavbar()"></div>
+    <main class="page--post">
+
+<article class="post--article">
+  <header>
+    <h1>
+      <a class="post__title" href="/antares-blog/tl/Fetch-API-GET-Requests/">Fetch API: GET Requests</a>
+    </h1>
+  </header>
+  <p>Dahil sa pagiging popular ng Ajax (dating acronym para sa <em>asynchronous JavaScript and XML</em>, pero hindi na ngayon kasi wala nang masyadong gumagamit ng XML sa Web platform, hindi gaya dati), napasama sa ECMAScript 2015 standard ang Fetch API, isang API na nagpapadali sa Ajax. Sa article na ito, tingnan natin kung paano natin magagamit ang Fetch API para magpadala ng <code>GET</code> request sa server.</p>
+<a id="more"></a>
+<aside class="side-callout">
+    <header>
+    <h4> Disclaimer </h4>
+    </header>
+    <p>
+        May mahabang intro at history ang article na ito. Puwede ka nang dumiretso sa <a href="#Fetch-API-Tutorial">mismong tutorial</a>.
+    </p>
+</aside>
+
+<p>Kung wala kang idea tungkol sa Ajax, isa itong technique sa Web development. So traditionally bago nauso ang Ajax, kapag kailangan mong ma-display sa UI ang mga update sa data, or gusto mong magpasa ng data sa server, kailangang i-reload ang buong page. Pero nang mauso ang Ajax, lahat ng pagkuha at pagpapadala ng data sa server ay nangyayari na sa background; hindi na kailangang i-reload iyong buong page. Dito na nauso iyong mga umiikot na loader GIF para ipakita sa user na pina-process pa ang action nila.</p>
+<p>So for years, ginagawa ito ng mga Web developers gamit ang <code>XMLHttpRequest</code>. Noon, sobrang makabago itong technique na ito. Pero sobrang komplikado rin nito. Napakaraming kailangang i-setup na <strong>boilerplate code</strong>.</p>
+<aside class="side-note"><dl><dt>Boilerplate Code</dt><dd>Isang set ng code na kailangan mong isama sa program para i-setup ang isang feature or technique. Kadalasan nang kina-copy-paste ito dahil bukod sa pagse-setup ng mga kailangan mo, wala na itong ibang ginagawa. May mga pagkakataon na maiisip mong kalat din ito sa code, pero wala kang magagawa dahil kailangan mong gamitin.</dd></dl></aside>
+
+<p>Then, dumating ang <em>jQuery</em> at pinadali ang buhay ng lahat. Bukod sa kapangyarihan nitong gawing consistent sa lahat ng browsers ang mga features ng Web platform, may feature din ang jQuery para sa Ajax. Gamit ang function nitong <code>ajax()</code>, hindi na kailangan ng mga Web developer na paulit-ulit na pakisamahan ang boilerplate code na minsan nilang sinulat.</p>
+<p>Pero tapos na ang panahon ng inconsistencies sa Web platform. Namamayagpag na ngayon ang Web standards sa tulong ng W3C at WHATWG. Sa halos lahat ng pagkakataon, consistent na ang features ng Web sa lahat ng major browsers (i.e, Chrome, Firefox, Safari, Edge, UC Browser, etc.). At unti-unti na ring bumababa ang bilang ng mga gumagamit ng jQuery. Nang ilabas ang ECMAScript 2015 standard (bagong version ng JavaScript), isinama nito ang mga features na galing sa jQuery, kasama na ang <code>ajax()</code> function, na ngayon ay buhay sa katauhan ng Fetch API.</p>
+<h2 id="HTTP-Requests"><a href="#HTTP-Requests" class="headerlink" title="HTTP Requests"></a>HTTP Requests</h2><p>Kapag nagse-send tayo ng requests sa server, meron tayong tinatawag na <strong>HTTP Verbs</strong>. Basically, sinasabi nito kung ano ang gusto nating gawin ng server; verbs, ibig sabihin action words sila, gusto natin na gawin ng server iyong action na pinadala natin sa request. So may pitong HTTP verbs:</p>
+<ul>
+<li><code>GET</code> - “Pakikuha itong specific na data”</li>
+<li><code>POST</code> - “Pakilagay itong data na ito sa database”</li>
+<li><code>PUT</code> - “Paki-update nitong data na ito; kung wala pang ganito sa database, gumawa ka ng bago”</li>
+<li><code>PATCH</code> - “Paki-update nitong data na ito, pero itong specific part lang na ito. ‘Wag mong baguhin lahat”</li>
+<li><code>DELETE</code> - “Pakitanggal na nitong data na ito”</li>
+<li><code>HEAD</code> - Kagaya ito ng <code>GET</code> requests, pero hindi mo makukuha iyong data. Instead, makukuha mo lang ay iyong HTTP headers, i.e., iyong data na sine-send ng server pabalik para malaman mo kung anong nangyari sa server habang ine-execute n’ya iyong action na ni-send mo. Dito nakikita sa HTTP headers kung anong code ang binalik ng server (200 OK, 404 Not Found, etc.) kasama na ang iba pang data na useful for debugging.</li>
+<li><code>OPTIONS</code> - <span id="ref-1">Para naman itong <code>--help</code> sa mga program. Kapag nag-send ka ng <code>OPTIONS</code> request sa server, ibabalik nito sa iyo ang mga available na actions sa <code>GET</code>, <code>POST</code>, <code>PUT</code>, <code>PATCH</code>, <code>DELETE</code>, at <code>HEAD</code>. Kaya lang, bihira lang daw ang mga nag-i-implement ng ganitong action sa mga API nila.</span><sup><a href="#foot-1">1</a></sup></li>
+</ul>
+<p>Ideally, magagamit natin lahat ito, kasi gano’n naman talaga dapat. Kaya lang, malupit ang mundo, at sa totoong buhay, <code>GET</code> at <code>POST</code> lang ang madalas na ginagamit. May iba na gumagamit din ng <code>PUT</code> at <code>DELETE</code>. Pero wala pa akong nakitang gumamit ng <code>PATCH</code>, <code>HEAD</code>, at <code>OPTIONS</code>. Nagulat pa nga ako no’ng nalaman kong may ganiyan pa pala; ang akala ko apat lang.</p>
+<p>Sa susunod na tutorial (yes, nasa intro pa lang po tayo), tingnan natin kung paano natin gagamitin ang <code>GET</code> requests para kumuha ng data sa server.</p>
+<h2 id="Fetch-API-Tutorial"><a href="#Fetch-API-Tutorial" class="headerlink" title="Fetch API Tutorial"></a>Fetch API Tutorial</h2><p>Sa tutorial na ito, gagawa tayo ng simpleng program: kapag na-click iyong button, magse-send tayo ng request sa server para kumuha ng data, then idi-display natin iyon sa isang HTML table.</p>
+<h3 id="Data-Format"><a href="#Data-Format" class="headerlink" title="Data Format"></a>Data Format</h3><p>Para sa tutorial na ito, gagamitin natin ang <a href="https://jsonplaceholder.typicode.com" target="_blank" rel="noopener">JSON Placeholder API</a> para hindi na tayo magse-setup ng sarili nating server. Kaya siguraduhing may Internet connection kapag ita-try na itong tutorial na ito.</p>
+<p>Kapag nag-send tayo ng <code>GET</code> request sa JSON Placeholder API, ganito ang format ng data na <em>gusto</em> nating makuha natin pabalik:</p>
+<pre><code>[
+{
+&quot;first_name&quot;: &quot;Annalise&quot;,
+&quot;last_name&quot;: &quot;Keating&quot;,
+&quot;email&quot;: &quot;ak@murd.er&quot;
+}
+]</code></pre>
+<p>Marami pang ibang sample data na binibigay ang JSON Placeholder API, pero iyan lang ang kailangan natin.</p>
+<h3 id="User-Interface"><a href="#User-Interface" class="headerlink" title="User Interface"></a>User Interface</h3><p>So kailangan natin ng user interface. Simple lang ang gagawin natin; isang button lang saka table.</p>
+<aside>‘Wag na muna po tayong mag-design ngayon, pakiusap lang. Hindi tayo matatapos.</aside>
+
+<pre><code>&lt;button onclick=&quot;sendGetRequest()&quot;&gt;Send GET Request&lt;&#x2F;button&gt;
+
+&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;First Name&lt;&#x2F;th&gt;
+            &lt;th&gt;Last Name&lt;&#x2F;th&gt;
+            &lt;th&gt;E-Mail&lt;&#x2F;th&gt;
+        &lt;&#x2F;tr&gt;
+    &lt;&#x2F;thead&gt;
+    &lt;tbody id=&quot;table-body&quot;&gt;&lt;&#x2F;tbody&gt;
+&lt;&#x2F;table&gt;</code></pre>
+<p>sa <code>&lt;tbody&gt;</code> natin ilalagay iyong data mamaya. Pansinin din iyong <code>onclick</code> attribute sa button. Mamaya, ide-declare natin iyang function na iyan.</p>
+<h3 id="Ang-sendGetRequest-Function"><a href="#Ang-sendGetRequest-Function" class="headerlink" title="Ang sendGetRequest() Function"></a>Ang <code>sendGetRequest()</code> Function</h3><p>I-declare na natin ang <code>sendGetRequest</code> function sa JavaScript. Sa loob ng function na ito, dito natin ilalagay ang <code>fetch()</code>:</p>
+<pre><code>const serverURL = &#39;http:&#x2F;&#x2F;jsonplaceholder.typicode.com&#x2F;users&#39;;
+function sendGetRequest() {
+const request = fetch(serverURL);
+}</code></pre>
+<aside class="card card--suggestion">
+    <header class="card__header">
+        <span class="card__label">Suggested:</span>
+        <a href="/antares-blog/tl/Function-Parameters-at-Return-Statements/" title="Function Parameters at Return Statements">Function Parameters at Return Statements</a>
+    </header>
+</aside>
+
+<p>Sa example na ito, tinawag natin ang <code>fetch()</code> function at binigyan ito ng URL para sa server kung saan siya magse-send ng request. Kapag tinawag natin ang <code>fetch</code> function, magre-return ito ng isang <code>Promise</code> object.</p>
+<p>Sa JavaScript, ang mga <code>Promise</code> object ang ginagamit para mag-execute ng code sa “background”.</p>
+<blockquote>
+<p>Technically, hindi talaga nag-e-execute sa background ang mga <code>Promise</code> kasi hindi gano’n gumagana ang JavaScript kasi single-threaded ito, hindi gaya ng ibang languages. Pero para sa example natin, sabihin na nating nag-e-execute ito sa “background”.</p>
+</blockquote>
+<h4 id="JavaScript-Promise"><a href="#JavaScript-Promise" class="headerlink" title="JavaScript Promise"></a>JavaScript <code>Promise</code></h4><p>May mga methods ang <code>Promise</code> objects na magagamit natin para makapagdagdag tayo ng actions sa mga operation na nagra-run sa “background”.</p>
+<aside class="side-note">
+    <dl>
+        <dt><code>Promise</code></dt>
+        <dd lang="en">
+        The Promise object represents the <em>eventual</em> completion (or failure) of an asynchronous operation, and its resulting value.<cite class="citation">Mozilla Developer Docs</cite>
+        </dd>
+    </dl>
+</aside>
+
+<ul>
+<li><code>then()</code> - isa itong method na gagawa ng action kapag natapos na ang operation na nagra-run sa “background”.</li>
+<li><code>catch()</code> - isa itong method na gagawa ng action kapag natapos na ang operation sa “background” dahil <strong>nagkaroon ng error.</strong></li>
+<li><code>finally()</code> - isa itong method na mag-e-execute kapag natapos na ang lahat ng operations ng <code>Promise</code> object, kasama na ang <code>then()</code> at <code>catch()</code>.</li>
+</ul>
+<p>Gusto ko ring banggitin sa inyo saglit na itong mga method na ito ay mga example ng tinatawag nating <em>higher-order functions</em>. Sa normal na functions, nagpapasa tayo ng parameters na either number, string, object, or array. Pero sa mga higher-order functions, sa halip na normal na data structures ang tanggapin nila bilang parameters, tumatanggap sila ng functions. Ibig sabihin puwede tayong magpasa ng functions sa mga functions. <em>mindf\$ck&trade;</em></p>
+<p>Sa mga methods ng <code>Promise</code>, kapag nagpasa tayo ng mga function, ie-execute nila ang mga function na iyon sa mga specific na phase ng promise execution. Kapag nagpasa tayo ng function sa <code>then()</code>, ie-execute nito ang pinasa nating function pagkatapos na ma-execute ang promise. Kapag nagpasa naman tayo ng function sa <code>catch()</code>, ie-execute nito ang function natin kapag nagkaroon ng error. At kapag nagpasa naman tayo ng function sa <code>finally()</code>, ie-execute nito ang function natin kapag natapos na ang operation sa <code>Promise</code> object, ang <code>then()</code> function, at ang <code>catch()</code> function.</p>
+<h3 id="Pagre-retrieve-ng-data"><a href="#Pagre-retrieve-ng-data" class="headerlink" title="Pagre-retrieve ng data"></a>Pagre-retrieve ng data</h3><p>Matatandaang naka-store sa variable na <code>request</code> ang request natin sa server:</p>
+<pre><code>const serverURL = &#39;http:&#x2F;&#x2F;jsonplaceholder.typicode.com&#x2F;users&#39;;
+function sendGetRequest() {
+const request = fetch(serverURL);
+}</code></pre>
+<p>Kapag tinawag natin ang <code>fetch()</code>, agad-agad itong magpapadala ng request sa server URL, at ang ire-return nito ay isang <code>Promise</code> na magiging pangakong panghahawakan natin, isang pangako na matatapos ang operation sa takdang panahon. Pero dahil hindi natin alam kung kailan ito matatapos, kailangan nating pagbilinan ang <code>request</code> variable kung ano ang gagawin niya kapag natanggap na natin ang response ng server.</p>
+<p>Dahil lahat ng natatanggap natin galing sa server ay naka-string, at JSON ang kailangan natin, kailangan nating i-parse ang string papuntang JSON. Para magawa ito, kailangan nating hingin ang tulong ng <code>then()</code> at magpasa rito ng function na magpa-parse ng string:</p>
+<pre><code>const serverURL = &#39;http:&#x2F;&#x2F;jsonplaceholder.typicode.com&#x2F;users&#39;;
+function sendGetRequest() {
+const request = fetch(serverURL);
+
+    const jsonPromise = request.then(function(response) {
+        return response.json();
+    })
+
+}</code></pre>
+<p>Isa-isahin natin kung ano ang nangyayari dito:</p>
+<ul>
+<li>Para makuha ang response ng server, nagpasa tayo ng function sa <code>then()</code>. Kapag in-execute ng <code>then()</code> ang function natin, ibibigay nito ang response ng server sa function natin, at iso-store ito sa <code>response</code> argument.</li>
+<li>Ang <code>response</code> variable ay isang object sa JavaScript na may mga methods na kasama. Built-in dito ang <code>json()</code> function na magko-convert ng response ng server into JSON object.</li>
+<li>Pagkatapos na ma-execute ang function na pinasa natin, magre-return ang <code>request.then()</code> ng isa pang Promise object, kaya nilagay natin ito sa <code>jsonPromise</code>. Nasa loob ng <code>jsonPromise</code> ang JSON object na nakuha natin galing sa server.</li>
+</ul>
+<p>Medyo may pagka-komplikado ang mga Promise sa JavaScript. Pero isang technique na ginamit ko dati, hanggang ngayon, para hindi ako malito ay ganito: iniisip ko na parang time capsule ang mga Promise object. Kung may result tayo na gustong makuha sa mga operation sa background, ang makukuha lang natin ay Promise objects, at iyong result na gusto nating makuha ay nasa loob noon. Ang tanging paraan para makuha kung anuman ang nasa loob ng time capsule na iyon ay kung gagamitin natin ang <code>then()</code> function; iyon lang iyong tanging opening na mayro’n ang mga Promise object.</p>
+<p>Kaya para ma-display natin iyong data, kailangan muna nating makuha iyon sa loob ng <code>jsonPromise</code>. At paano natin gagawin iyon? Tatawagin natin ulit ang <code>then()</code> function.</p>
+<pre><code>jsonPromise.then(function(jsonObject){
+console.log(jsonObject);
+})</code></pre>
+<p>Matatandaan na nasa loob ito ng <code>sendGetRequest()</code> function na mag-e-execute kapag napindot ang button. Kapag na-click iyong button na iyon, makikita mo sa console (Chrome DevTools or F12 Developer Tools sa Firefox) ang JSON object na natanggap natin mula sa server.</p>
+<!-- // TODO: add console output here -->
+<p>Ang kailangan lang natin ay tatlong pieces of information: first name, last name, at email address. Gagawa tayo ngayon ng function na magko-convert ng JSON object na iyan into HTML table rows. Generally, ganito ang format na susundin natin per row:</p>
+<pre><code>
+&lt;tr&gt;
+    &lt;td&gt;&lt;!--First Name--&gt;&lt;&#x2F;td&gt;
+    &lt;td&gt;&lt;!--Last Name--&gt;&lt;&#x2F;td&gt;
+    &lt;td&gt;&lt;!--Email--&gt;&lt;&#x2F;td&gt;
+&lt;&#x2F;tr&gt;</code></pre>
+<p>Kaya gagawa tayo ng function na gagawa nito. Tawagin natin itong <code>jsonToHtmlString()</code>:</p>
+<pre><code>function jsonToHtmlString(jsonObject) {
+return `&lt;tr&gt; &lt;td&gt;${jsonObject.first_name}&lt;&#x2F;td&gt; &lt;td&gt;${jsonObject.last_name}&lt;&#x2F;td&gt; &lt;td&gt;${jsonObject.email}&lt;&#x2F;td&gt; &lt;&#x2F;tr&gt;`
+}</code></pre>
+<p>Sa function na ito, gumamit din tayo ng tinatawag nating <em>template strings</em>. Kasama ito sa mga bagong features ng JavaScript sa ES2015. Sa halip na gumawa tayo ng maraming string concatenation (<code>&quot;string1 &quot; + variable + &quot; string2&quot;</code>), puwede nating gamitin ang template string para gawin ang tinatawag nating <strong>string interpolation</strong>.</p>
+<aside class="side-note">
+    <dl>
+        <dt>String Interpolation</dt>
+        <dd lang="en">
+        In computer programming, string interpolation (or variable interpolation, variable substitution, or variable expansion) is the process of evaluating a string literal containing one or more placeholders, yielding a result in which the placeholders are replaced with their corresponding values… String interpolation allows easier and more intuitive string formatting and content-specification compared with string concatenation.<cite class="citation"><a href="https://en.m.wikipedia.org/wiki/String_interpolation" target="_blank" rel="noopener">Wikipedia</a></cite>
+        </dd>
+        <dd>Basically, sa string interpolation, kukunin ng compiler or interpreter lahat ng variable na nasa string at isa-substitute ang value ng variable doon.</dd>
+    </dl>
+</aside>
+
+<p>Sa halip na double quotes (<code>&quot;&quot;</code>) or single quotes (<code>&#39;&#39;</code>), sa template literals, gumagamit tayo ng backticks (`) or iyong nasa left side ng <code>1</code> sa keyboard. Lahat naman ng nasa loob ng <code>${}</code> ay mai-interpret bilang JavaScript code.</p>
+<p>Ngayong nagawa na natin ang <code>jsonToHtml()</code> function, puwede na natin itong magamit sa loob ng <code>sendGetRequest()</code>.</p>
+<h3 id="Pagdi-display-ng-Data"><a href="#Pagdi-display-ng-Data" class="headerlink" title="Pagdi-display ng Data"></a>Pagdi-display ng Data</h3><p>Sa ngayon, ito ang laman ng <code>sendGetRequest()</code> function:</p>
+<pre><code>const serverURL = &#39;http:&#x2F;&#x2F;jsonplaceholder.typicode.com&#x2F;users&#39;;
+function sendGetRequest() {
+const request = fetch(serverURL);
+
+    const jsonPromise = request.then(function(response) {
+        return response.json();
+    })
+
+}</code></pre>
+<p>Tatawagin natin nang isang beses pa ang <code>then()</code> method sa <code>jsonPromise</code> para makuha ang mismong JSON object at mai-display ito.</p>
+<pre><code>jsonPromise.then(function(jsonObject){
+const people = jsonObject;
+});</code></pre>
+<p>Kung matatandaan ninyo, array ang laman ng JSON object; array ito ng mga object na may first name, last name, at email. So ang kailangan natin ay i-transform ang bawat item sa array na ito into HTML string. Kaya gagawin natin ito gamit ang ni-declare natin kaninang <code>jsonToHtmlString()</code>.</p>
+<pre><code>jsonPromise.then(function(jsonObject){
+const people = jsonObject;
+
+    const htmlStrings = jsonObject.map(person =&gt; jsonToHtmlString(person))
+
+});</code></pre>
+<p>Ang <code>map()</code> method ay isang higher-order function na makikita sa mga array sa JavaScript. Bale ang gagawin nito, iisa-isahin niya iyong mga items ng array, pagkatapos papalitan niya iyong value. Sa case na ‘to, nagpasa tayo ng function sa <code>map()</code>; kung anuman ang i-return ng function na pinasa natin, iyon ang magiging value ng item natin.</p>
+<blockquote>
+<p>Ang <code>map()</code> method ay <em>non-mutative</em>; ibig sabihin, hindi niya binabago ang laman ng variable. Gumagawa siya ng bagong object. Kaya naman, kahit ilang beses mong tawagin ang <code>map()</code>, hindi magbabago ang laman ng <code>jsonObject</code>. Mai-store lang ang result ng <code>map()</code> sa <code>htmlStrings</code>.</p>
+</blockquote>
+<p>I-try nating i-output sa console ang value ng <code>htmlStrings</code>:</p>
+<pre><code>[
+&quot;&lt;tr&gt;\
+ &lt;td&gt;Annalise&lt;&#x2F;td&gt;\
+ &lt;td&gt;Keating&lt;&#x2F;td&gt;\
+ &lt;td&gt;ak@murd.er&lt;&#x2F;td&gt;\
+ &lt;&#x2F;tr&gt;&quot;,
+&quot;&lt;tr&gt;\
+ &lt;td&gt;Wesley&lt;&#x2F;td&gt;\
+ &lt;td&gt;Gibbins&lt;&#x2F;td&gt;\
+ &lt;td&gt;wes@murd.er&lt;&#x2F;td&gt;\
+ &lt;&#x2F;tr&gt;&quot;,
+...
+]</code></pre>
+<p>Dahil kino-convert ng <code>jsonToHtmlString()</code> ang JSON objects into HTML, makikita natin na nagkaroon na tayo ng array ng strings galing sa array ng JSON objects. Puwede na natin itong gamitin para i-output sa front end ang data:</p>
+<pre><code>document.getElementById(&quot;table-body&quot;)
+.innerHTML = htmlStrings.join(&#39;&#39;);</code></pre>
+<p>Sa code na ito, pagdudugtung-dugtungin lang natin lahat ng items ng <code>htmlStrings</code> gamit ang <code>join()</code> function. Pagkatapos, ilalagay natin ito sa table gamit ang <code>innerHTML</code> property. Once na malagyan ng value ang <code>innerHTML</code>, mag-a-appear na sa screen ang output natin.</p>
+<hr>
+<p><strong>Footnotes</strong></p>
+<ol>
+<li><span id="foot-1"><a href="#ref-1">^</a> Galing ito sa <em>Zalando RESTful API and Event Scheme Guidelines</em>.</span></li>
+</ol>
+
+  <footer class="article-footer">
+      
+  <div class="article-tags-wrapper">
+    <h4>Tags</h4>
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/antares-blog/tags/ajax/">ajax</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/antares-blog/tags/fetch/">fetch</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/antares-blog/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/antares-blog/tags/web/">web</a></li></ul>
+  </div>
+
+      
+  <div class="article-category">
+    <h4>Category</h4>
+    <a class="article-category-link" href="/antares-blog/categories/JavaScript/">JavaScript</a>
+  </div>
+
+  </footer>
+</article>
+</main>
+    <footer class="footer" role="contentinfo">
+  <div>
+    <p>&copy; 2019 Antares Programming</p>
+    <p>Reserbado ang lahat ng karapatan.</p>
+  </div>
+  <div><a href="/antares-blog/tungkol-sa-amin">Tungkol sa Antares Programming</a>
+  <a href="https://www.facebook.com/antaresprogramming"><i>Antares Programming</i> sa Facebook</a>
+  <p id="back-to-top"><a href="#top">Back to top</a></p></div>
+</footer>
+<script>
+    var CONFIG_ROOT = `/antares-blog/`;
+    var CONFIG_URL = `https://celestialcinnamon.github.io/antares-blog`.replace('/antares-blog', '');
+</script>
+
+    <script src="/antares-blog/js/ScrollTrigger.min.js"></script>
+    <script src="/antares-blog/js/script.js"></script>
+</body>
+</html>

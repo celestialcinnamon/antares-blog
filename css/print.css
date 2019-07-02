@@ -1,0 +1,382 @@
+/* Setup page for printing */
+@page :first {
+    margin-bottom: 100pt;
+}
+
+html,
+.dark {
+    --bg: #eee;
+    --bg-d1: #ebebeb;
+    --bg-d2: #d4d4d4;
+    --bg-d3: #bbb;
+    --bg-d4: #aaa;
+    --bg-l1: #fff;
+    --bg-invert: #212121;
+    --bg-invert-d1: #2a2a2a;
+    --bg-invert-d2: #333;
+    --bg-invert-d3: #3a3a3a;
+    --bg-invert-d4: #444;
+    --bg-invert-l1: #111;
+
+    --bg-invert-o-75: #2121214b;
+    --bg-invert-o-50: #21212136;
+    --bg-invert-o-25: #21212119;
+
+    --text-color: #555;
+    --text-color-i1: #333;
+    --text-color-i2: #212121;
+    --text-color-i3: #111;
+    --text-color-i4: #000;
+    --text-color-invert: #bbb;
+    --text-color-invert-i1: #ccc;
+    --text-color-invert-i2: #ddd;
+    --text-color-invert-i3: #eee;
+    --text-color-invert-i4: #fff;
+
+    --white: var(--text-color-invert-i4);
+    --white-i1: var(--text-color-invert);
+
+    --primary: #fd0;
+    --primary-darker: #ffa100;
+    --primary-lighter: #fe4;
+    --primary-o-75: #ffdd004b;
+    --primary-o-50: #ffdd0036;
+    --primary-o-25: #ffdd0019;
+
+    --primary-l-75: hsl(52, 100%, 60%);
+    --primary-l-50: hsl(52, 100%, 70%);
+    --primary-l-25: hsl(52, 100%, 80%);
+
+    --accent: #add;
+    --accent-darker: #5ad;
+    --accent-lighter: #cdf;
+    --accent-on-dark: var(--accent-lighter);
+    --accent-on-light: var(--accent-darker);
+
+    --gray-i2: #ccc;
+    --gray-i1: #ddd;
+    --gray: #e4e4e4;
+
+    --text-on-gray: #333;
+    --text-on-gray-1: #222;
+    --text-on-gray-2: #111;
+
+    --text-on-primary: #000;
+
+    --serif: "Literata Bookset", serif;
+    --sans-serif: "Montserrat", sans-serif;
+    --monospace: "Source Code Pro", monospace;
+
+    --error: #e33;
+    --success: #adb;
+    --focus-color: var(--accent-darker);
+}
+
+html {
+    font-size: 12pt !important;
+}
+
+body {
+    border: none;
+    background: transparent;
+}
+
+h1, h2, h3,
+h4, h5, h6 {
+    font-family: "Montserrat", sans-serif !important;
+    color: #000 !important;
+}
+
+#back-to-top,
+.navbar,
+.article-footer,
+.headerlink,
+#article-nav,
+div.widget-wrap,
+.link-title small,
+.toast {
+    display: none;
+}
+
+.header {
+    position: unset;
+    display: block;
+}
+
+.site-logo svg {
+    width: 100%;
+}
+
+.post.post--featured,
+.cover {
+    height: auto;
+    display: flex;
+    flex-direction: column-reverse;
+    page-break-after: always;
+}
+
+.post__wrapper:hover + .cover-display,
+.cover-display {
+    all: unset;
+    height: auto;
+    width: 100%;
+    filter: none;
+}
+
+.post__wrapper {
+    background: transparent;
+    color: var(--text-color);
+}
+
+.post__header,
+.post__title,
+.post__header * {
+    color: var(--text-color) !important;
+}
+
+.post__content {
+    max-width: none;
+    columns: 2;
+}
+
+.footer a::after,
+.post__content a {
+    color: #35f !important;
+}
+
+.print-notice {
+    display: block;
+}
+
+.print-notice::before {
+    column-span: all;
+    font-weight: 900;
+    page-break-after: avoid;
+    margin-bottom: 24pt !important;
+}
+
+.print-notice:lang(en)::before {
+    content: "See the latest version of this article at";
+}
+
+.print-notice:lang(tl)::before {
+    content: "Tingnan ang pinakabagong version ng artikulong ito sa";
+}
+
+.print-notice::after {
+    content: attr(data-permalink);
+    color: #37c !important;
+    font-weight: normal;
+    display: block;
+}
+
+.post__content p:first-of-type {
+    float: none;
+    margin: initial;
+    max-width: none;
+}
+
+em, strong, b, i {
+    font-family: inherit;
+}
+
+strong, b {
+    font-weight: bold;
+}
+
+.post__content p, .post__content ul, .post__content ol, .post__content dl {
+	font-size: 12pt !important;
+    font-family: "Literata Bookset", sans-serif;
+    line-height: 2;
+    widows: 2;
+    orphans: 2;
+}
+
+.post__content h1, .post__content h2, .post__content h3, .post__content h4, .post__content h5, .post__content h6 {
+	margin-left: initial;
+	display: inline-block;
+    width: 100%;
+    break-before: column;
+    break-after: avoid-page;
+    page-break-after: avoid;
+    margin: 5pt !important;
+    font-weight: 900;
+    font-family: "Montserrat", sans-serif;
+}
+
+.post__content > p:first-of-type {
+	column-span: all;
+}
+
+.post__content hr ~ * {
+    column-span: all;
+    font-size: 11pt;
+}
+
+.float-left, .float-right {
+    float: none;
+    margin: auto !important;
+}
+
+video ~ figcaption:lang(en)::before {
+    content: "Video won't move in print, sorry!"
+}
+
+video ~ figcaption:lang(tl)::before {
+    content: "Pasensya na, hindi mapapanood ang videos sa papel!";
+}
+
+video ~ figcaption strong::after {
+    content: " (video)";
+}
+
+video {
+    display: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+img {
+   page-break-inside: avoid;
+}
+
+.side-note dd {
+    font-family: "Montserrat", sans-serif;
+}
+
+.side-note dt {
+    font-size: 2rem;
+    font-weight: 900;
+    font-family: "Montserrat", sans-serif;
+}
+
+a {
+    color: var(--text-color) !important;
+    text-decoration: none;
+}
+
+a[href^="http"]:not([href*="celestialcinnamon.github.io/"]):after,
+a[href^="http"]:not([href*="/antares-blog/"]):after {
+  content: " (" attr(href) ")";
+}
+
+.post__title {
+    text-decoration: none;
+}
+
+.archive-article-title a::after,
+.post__title::after {
+  content: "https://celestialcinnamon.github.io" attr(href);
+  font-size: 10pt;
+  display: block;
+  font-weight: normal;
+}
+
+.post__excerpt {
+    font-family: "Literata Bookset";
+    color: #333;
+}
+
+.tags::before {
+    content: "Tags: ";
+}
+
+section.category::before {
+    content: "Category: ";
+}
+
+
+.link-title a::after {
+    content: attr(href) !important;
+    display: block;
+    font-weight: normal;
+}
+
+.link-author::before {
+	content: "— ";
+}
+
+.link-excerpt {
+	font-family: "Literata Bookset";
+	margin-left: 2rem;
+	line-height: 1.5;
+	margin-top: 1rem;
+}
+
+a.archive-year {
+    font-size: 45pt;
+    font-weight: 900;
+    margin-top: 24pt;
+}
+
+.archive-article-date,
+.archives .meta {
+    font-family: "Literata Bookset", serif;
+}
+
+.archives .meta:lang(en)::before {
+    content: "Written by "
+}
+
+.archives .meta:lang(tl)::before {
+    content: "Isinulat ni "
+}
+
+.archive-article-date:lang(en)::before {
+    content: "Written on ";
+}
+
+.archive-article-date:lang(tl)::before {
+    content: "Isinulat noong ";
+}
+
+.highlight pre {
+    white-space: pre-wrap !important;       /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap !important;      /* Opera 4-6 */
+    white-space: -o-pre-wrap !important;    /* Opera 7 */
+    word-wrap: break-word !important;  
+}
+
+pre,
+code {
+    font-family: "Source Code Pro", monospace;
+}
+
+.example-container > * {
+    display: none;
+}
+
+.example-container::before {
+    color: #ddd;
+}
+
+.example-container:lang(en)::before {
+    content: "Live examples have been provided at the site.";
+}
+
+.example-container:lang(tl)::before {
+    content: "May live examples sa site.";
+}
+
+.badge {
+    font-family: "Monsterrat", sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 10pt;
+}
+
+abbr[title]::after {
+    content: " (" attr(title) ")";
+}
+
+.article-title {
+    font-size: 36pt;
+    font-weight: 900;
+}
+
+.highlight .gutter {
+    display: none !important;
+}

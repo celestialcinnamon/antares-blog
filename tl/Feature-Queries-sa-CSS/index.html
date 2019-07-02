@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="tl" class="dark">
+
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Feature Queries sa CSS</title>
+  
+  <meta name="description" content="Paano mo masisigurong gagana sa lahat ng browsers ang design ng Web site mo? Kasama sa isang set ng techniques na kung tawagin ay progressive enhancement ang bagong feature ng CSS, ang Feature Queries.">
+  <meta name="author" content="Francis Rubio &lt;francoisoibur21@gmail.com&gt;">
+  
+  <!-- Favicon and PWA theme -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/antares-blog/images/apple-touch-icon.png?v=yyL3E0AWom">
+  <link rel="icon" type="image/png" sizes="32x32" href="/antares-blog/images/favicon-32x32.png?v=yyL3E0AWom">
+  <link rel="icon" type="image/png" sizes="194x194" href="/antares-blog/images/favicon-194x194.png?v=yyL3E0AWom">
+  <link rel="icon" type="image/png" sizes="192x192" href="/antares-blog/images/android-chrome-192x192.png?v=yyL3E0AWom">
+  <link rel="icon" type="image/png" sizes="16x16" href="/antares-blog/images/favicon-16x16.png?v=yyL3E0AWom">
+  <link rel="manifest" href="/antares-blog/images/site.webmanifest?v=yyL3E0AWom">
+  <link rel="mask-icon" href="/antares-blog/images/safari-pinned-tab.svg?v=yyL3E0AWom" color="#efaa00">
+  <link rel="shortcut icon" href="/antares-blog/images/favicon.ico?v=yyL3E0AWom">
+  <meta name="apple-mobile-web-app-title" content="Antares">
+  <meta name="application-name" content="Antares">
+  <meta name="msapplication-TileColor" content="#ffc40d">
+  <meta name="msapplication-TileImage" content="/antares-blog/images/mstile-144x144.png?v=yyL3E0AWom">
+  <meta name="msapplication-config" content="/antares-blog/images/browserconfig.xml?v=yyL3E0AWom">
+  <meta name="theme-color" content="#bbbbbb">
+
+
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="Paano mo masisigurong gagana sa lahat ng browsers ang design ng Web site mo? Kasama sa isang set ng techniques na kung tawagin ay progressive enhancement ang bagong feature ng CSS, ang Feature Queries.">
+
+  
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="Feature Queries sa CSS">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://celestialcinnamon.github.io/antares-blog/tl/Feature-Queries-sa-CSS/">
+  <meta property="og:image" content="http://celestialcinnamon.github.io//antares-blog/tl/Feature-Queries-sa-CSS/cover.png">
+  <meta property="og:description" content="Paano mo masisigurong gagana sa lahat ng browsers ang design ng Web site mo? Kasama sa isang set ng techniques na kung tawagin ay progressive enhancement ang bagong feature ng CSS, ang Feature Queries."> 
+
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" media="screen">
+  <link href="/antares-blog/css/baseline.css" rel="stylesheet" media="screen">
+  <link href="/antares-blog/css/mobile.css" rel="stylesheet" media="screen">
+  <link href="/antares-blog/css/desktop.css" rel="stylesheet" media="screen and (min-width: 750px)">
+  <!-- <link href="/antares-blog/css/print.css" rel="stylesheet" media="print"> -->
+
+  
+
+  
+  
+
+  <!-- TODO: Uncomment these links -->
+  <link media="screen" href="https://fonts.googleapis.com/css?family=Vidaloka&display=swap" rel="stylesheet"> 
+  <link media="screen" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700&display=swap" rel="stylesheet"> 
+  <link media="screen" href="https://fonts.googleapis.com/css?family=B612+Mono&display=swap" rel="stylesheet">
+
+  <!--
+    HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
+  -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+<link rel="stylesheet" href="/antares-blog/css/prism-a11y-dark.css" type="text/css">
+<link rel="stylesheet" href="/antares-blog/css/prism-line-numbers.css" type="text/css"></head>
+
+<body>
+    <div class="banner">
+  <a href="#main-content" class="nav skiplink sr-only sr-only-focusable">Skip to content</a>
+  <header class="header" role="banner">
+    <a href="/antares-blog/" class="site-logo" aria-label="Go to home">
+      <img src="/antares-blog/images/logo_v4.png" alt="Antares Programming logo">
+    </a>
+  </header>
+  <nav class="navbar">
+    <ul class="nav-list">
+      <li class="nav-item"><a class="nav" href="/antares-blog/archives">Archives</a></li>
+      <li class="nav-item"><a class="nav" href="/antares-blog/downloads">Downloads</a></li>
+    </ul>
+  </nav>
+</div>
+
+    <div data-scroll data-scroll-showCallback="expandNavbar()"  data-scroll-hideCallback="collapseNavbar()"></div>
+    <main class="page--post">
+
+<article class="post--article">
+  <header>
+    <h1>
+      <a class="post__title" href="/antares-blog/tl/Feature-Queries-sa-CSS/">Feature Queries sa CSS</a>
+    </h1>
+  </header>
+  <p>Paano mo masisigurong gagana sa lahat ng browsers ang design ng Web site mo? Kasama sa isang set ng techniques na kung tawagin ay <i>progressive enhancement</i> ang bagong feature ng CSS, ang Feature Queries.</p>
+<a id="more"></a>
+<p>Kilala rin ang Feature Queries bilang <code>@supports</code> rule. Gaya rin ito ng Media Queries, pero sa halip na type ng device, width or height ng viewport, atbp., tinitingnan nito kung supported ba ng browser ang isang feature na gusto mong gamitin. Para itong <code>if</code> statement sa CSS.</p>
+<p>Kaya ito idinagdag sa CSS para makagawa tayo ng mga styles gamit ang pinakabagong CSS at magkaroon ng <i>graceful degradation</i> sa mga browsers na hindi sinu-support ang feature na gusto nating gamitin. Totoo, bago pa man lumabas ang Feature Queries, nasa dugo na ng CSS na mag-degrade gracefully; kapag hindi supported ng browser ang ginamit na style, ini-ignore lang ito. Sa paraang ito, hindi nasisira o naaapektuhan ang ibang styles na supported naman ng browser. Pero gaya ng makikita sa karanasan ng maraming Web developers, at dahil na rin sa bilis ng mga pagbabago sa Web platform, kailangan natin ng higit pa sa basta pag-ignore lang sa mga unsupported properties.</p>
+<aside class="side-note"><dl><dt>Graceful Degradation</dt><dd>Isang phenomenon sa Web platform kung saan binibigyan ng Web developer ang mga users ng pinakabagong browsers ng pinakamagandang experience gamit ang mga bagong features ng Web platform (hindi lang CSS) at binibigyan naman ng isang experience na may mas kaunting features ang mga users ng mga browsers na mas luma.</dd><dd>Halimbawa, puwedeng makakuha ang isang user ng pinakabagong Firefox ng isang site na gumagamit ng CSS Grid, pero para sa mga users ng Internet Explorer, makakakuha sila ng isang single-column layout na walang Grid. Nag-degrade ang experience sa Internet Explorer dahil walang CSS Grid, pero gumagana pa rin ito nang maayos.</dd></dl></aside>
+
+<p>Sa mga browsers, Opera ang pinakaunang nag-implement ng Feature Queries noong November 2012. Samantala, humabol naman ang Chrome at Firefox noong May 2013. Kaya kung mapapansin may halos limang taon na ang lumipas mula nang ilabas ito, pero hanggang ngayon parang kakaunti pa lang ang nakakaalam na may ganito pala. Noong December 2017, supported na ng 91.68% ng mga browsers ang Feature Queries. At tanging Internet Explorer na lang at Blackberry Mobile ang hindi nakakahabol, at, sa kaso ng IE, hindi na hahabol pa.</p>
+<p>Siguro kung nasa industry ka na, baka kailangang i-support mo pa rin ang Internet Explorer dahil hanggang ngayon may mga companies na mandatory na gamitin ang IE, kahit na unti-unti nang inaabandona at dini-discourage ng Microsoft ang paggamit nito. Pero ‘wag kang mag-alala, dahil ito mismo ang tatalakayin natin: kung paano gagawa ng sites na gagana sa lahat ng browsers.</p>
+<h2 id="Browser-Support-Matrix"><a href="#Browser-Support-Matrix" class="headerlink" title="Browser Support Matrix"></a>Browser Support Matrix</h2><p>Sa isang artikulo ni Jen Simmons, ang <cite>Using Feature Queries in CSS</cite>, gumawa siya ng isang matrix o table ng mga situwasyong puwedeng mangyari kapag gumagamit tayo ng Feature Queries. Sa matrix na ito, mayroon tayong dalawang axis:</p>
+<ul>
+<li>Supported ba ng browser ang Feature Queries o hindi?</li>
+<li>Supported ba ng browser ang condition sa loob ng <code>@supports</code>?</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>May <code>@supports</code></th>
+<th>Walang <code>@supports</code></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. not ok</td>
+<td>2. ok</td>
+<td>Supported ang feature</td>
+</tr>
+<tr>
+<td>3. ok</td>
+<td>4. ok</td>
+<td>Hindi supported ang feature</td>
+</tr>
+</tbody>
+</table>
+<p>Sa matrix na ito, makikita natin na mayroong apat na scenario na puwedeng mangyari. Para mapadali ang pag-intindi natin, gamitin nating halimbawa ang Flexbox. Gusto natin kunwari na malaman kung anong mga browser ang nagsu-support sa Flexbox. Magkakaroon tayo ng apat na scenario:</p>
+<ol>
+<li><b>NOT OK:</b> Walang Feature Query ang browser, pero supported ang flexbox.</li>
+<li><b>OK:</b> May Feature Query ang browser, at supported din ang flexbox.</li>
+<li><b>OK:</b> May Feature Query ang browser, at pero hindi ang flexbox. Ayos lang ito dahil puwede kang gumawa ng backup, or <i>fallback</i> na design kung sakaling walang flexbox support.</li>
+<li><b>OK:</b> Walang Feature Query ang browser, at hindi rin supported ang flexbox. Same pa rin sa #2. Puwede kang gumawa ng fallback na layout in case na hindi gumana ang flexbox.</li>
+</ol>
+<p>Sa unang kaso, hindi ito maganda. Wala tayong way para mapagana ang flexbox sa kahit na anong paraan. Lahat ng code sa loob ng Feature Query hindi gagana dahil hindi ito recognized ng browser. Kaya kahit na may mga code sa loob ng Feature Query na gumagana naman sa browser, gaya ng flexbox, hindi ito makikita ng browser. Kaya itong unang kasong ito ang dapat nating gawan ng paraan.</p>
+<h2 id="Ang-Basics-ng-Feature-Queries"><a href="#Ang-Basics-ng-Feature-Queries" class="headerlink" title="Ang Basics ng Feature Queries"></a>Ang Basics ng Feature Queries</h2><p>Gaya sa kahit na anong conditional structures ng CSS, gumagamit ng boolean logic ang Feature Queries. Kapag naging <code>true</code> ang result ng query, mag-a-apply ang code sa loob ng Feature Query. Otherwise, hindi na ito papansinin altogether.</p>
+<pre class="line-numbers language-css"><code class="language-css"><span class="token selector"><span class="token class">.selector</span> </span><span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">/* Mga styles na gagana sa lahat ng browsers */</span>
+<span class="token punctuation">}</span>
+
+<span class="token atrule"><span class="token rule">@supports</span> <span class="token punctuation">(</span><span class="token property">property</span><span class="token punctuation">:</span>value<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+  <span class="token selector"><span class="token class">.selector</span> </span><span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">/* Mga styles na gagana lang sa mga browser na sinu-support ang property */</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Pansinin na required ang parenthesis sa palibot ng <code>property: value</code>. At bukod pa riyan, dapat laging mauna ang mga styles na gagana sa mga lumang browser, kasama na ang mga fallback styles. Pagkatapos nito, saka mo pa lang puwedeng ilagay iyong mga bagong properties sa loob ng <code>@supports</code> block. Dahil sa <i>cascade</i> ng CSS, unang maa-apply ang mga fallback style, at kapag supported ng browser ang bagong properties, saka lang nito io-override ang code.</p>
+<p>Halimbawa, pansinin ang code na ito:</p>
+<pre class="line-numbers language-css"><code class="language-css"><span class="token selector"><span class="token class">.element</span> </span><span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token atrule"><span class="token rule">@supports</span> <span class="token punctuation">(</span><span class="token property">display</span><span class="token punctuation">:</span> grid<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+  <span class="token selector"><span class="token class">.element</span> </span><span class="token punctuation">{</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Una munang maa-apply ang red na background color sa <code>.element</code>. Kung supported ng browser mo ang CSS grid, magiging kulay green ang box sa ibaba. Kung kulay red pa rin ito, hindi supported ng browser mo ang CSS grid (at sign iyon na dapat mag-update ka na; <i lang="en">you’re missing half of your life.</i>)</p>
+<div id="example-480452" class="example-container">
+<style>
+  #example-480452 .element {
+    height: 100px;
+    width: 100px;
+    background-color: red;
+    margin: 1rem;
+  }
+  @supports (display:grid) {
+    #example-480452 .element {
+      background-color: green;
+    }
+  }
+</style>
+<div class="element"></div>
+</div>
+
+<h2 id="More-Feature-Queries"><a href="#More-Feature-Queries" class="headerlink" title="More Feature Queries"></a>More Feature Queries</h2><p>Dahil hindi ko kini-claim na expert ako sa CSS, gusto kong i-direct ang lahat ng nagbabasa nito sa napakahusay na article na ito ni Chen Hui Jing: <a href="https://24ways.org/2017/cascading-web-design/" target="_blank" rel="noopener">Cascading Web Design with Feature Queries</a>. Sa article na iyan, tinalakay niya kung sa paanong iba pang mga paraan natin puwedeng magamit ang mga Feature Queries, at ang iba pang problems na puwedeng lumitaw mula rito.</p>
+<p>Puwede mo ring basahin ang mga articles na ito:</p>
+<ul>
+<li><a href="http://www.creativebloq.com/css3/how-use-supports-rule-your-css-11410545" target="_blank" rel="noopener">How to use the <code>@supports</code> rule in your CSS</a> ni Lea Verou, Enero 31, 2014</li>
+<li><a href="https://ar.al/scribbles/responsive-typography-with-css-feature-queries/" target="_blank" rel="noopener">Responsive typography with CSS Feature Queries</a> ni Aral Balkan, Abril 9, 2013</li>
+</ul>
+<h2 id="Challenge"><a href="#Challenge" class="headerlink" title="Challenge"></a>Challenge</h2><p>Kaya mo kayang gawing <i lang="en">progressively enhanced</i> ang kahit na anong site na gawa mo (or pina-practice mong gawin) gamit ang CSS Feature Queries? Kaya mo bang iangkop ang design ng site mo para magmukha pa rin itong maayos sa lahat ng browsers, kasama na ang Internet Explorer 9 (or 8 kung medyo masipag ka)?</p>
+
+  <footer class="article-footer">
+      
+  <div class="article-tags-wrapper">
+    <h4>Tags</h4>
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/antares-blog/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/antares-blog/tags/intrinsic-web-design/">intrinsic web design</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/antares-blog/tags/web/">web</a></li></ul>
+  </div>
+
+      
+  <div class="article-category">
+    <h4>Category</h4>
+    <a class="article-category-link" href="/antares-blog/categories/CSS/">CSS</a>
+  </div>
+
+  </footer>
+</article>
+</main>
+    <footer class="footer" role="contentinfo">
+  <div>
+    <p>&copy; 2019 Antares Programming</p>
+    <p>Reserbado ang lahat ng karapatan.</p>
+  </div>
+  <div><a href="/antares-blog/tungkol-sa-amin">Tungkol sa Antares Programming</a>
+  <a href="https://www.facebook.com/antaresprogramming"><i>Antares Programming</i> sa Facebook</a>
+  <p id="back-to-top"><a href="#top">Back to top</a></p></div>
+</footer>
+<script>
+    var CONFIG_ROOT = `/antares-blog/`;
+    var CONFIG_URL = `https://celestialcinnamon.github.io/antares-blog`.replace('/antares-blog', '');
+</script>
+
+    <script src="/antares-blog/js/ScrollTrigger.min.js"></script>
+    <script src="/antares-blog/js/script.js"></script>
+</body>
+</html>

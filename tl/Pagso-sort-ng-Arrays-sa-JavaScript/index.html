@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="tl" class="dark">
+
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pagso-sort ng Arrays sa JavaScript</title>
+  
+  <meta name="description" content="Sa article na ito, tatalakayin natin kung paano mag-sort nga arrays using JavaScript.">
+  <meta name="author" content="Francis Rubio &lt;francoisoibur21@gmail.com&gt;">
+  
+  <!-- Favicon and PWA theme -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/antares-blog/images/apple-touch-icon.png?v=yyL3E0AWom">
+  <link rel="icon" type="image/png" sizes="32x32" href="/antares-blog/images/favicon-32x32.png?v=yyL3E0AWom">
+  <link rel="icon" type="image/png" sizes="194x194" href="/antares-blog/images/favicon-194x194.png?v=yyL3E0AWom">
+  <link rel="icon" type="image/png" sizes="192x192" href="/antares-blog/images/android-chrome-192x192.png?v=yyL3E0AWom">
+  <link rel="icon" type="image/png" sizes="16x16" href="/antares-blog/images/favicon-16x16.png?v=yyL3E0AWom">
+  <link rel="manifest" href="/antares-blog/images/site.webmanifest?v=yyL3E0AWom">
+  <link rel="mask-icon" href="/antares-blog/images/safari-pinned-tab.svg?v=yyL3E0AWom" color="#efaa00">
+  <link rel="shortcut icon" href="/antares-blog/images/favicon.ico?v=yyL3E0AWom">
+  <meta name="apple-mobile-web-app-title" content="Antares">
+  <meta name="application-name" content="Antares">
+  <meta name="msapplication-TileColor" content="#ffc40d">
+  <meta name="msapplication-TileImage" content="/antares-blog/images/mstile-144x144.png?v=yyL3E0AWom">
+  <meta name="msapplication-config" content="/antares-blog/images/browserconfig.xml?v=yyL3E0AWom">
+  <meta name="theme-color" content="#bbbbbb">
+
+
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="Sa article na ito, tatalakayin natin kung paano mag-sort nga arrays using JavaScript.">
+
+  
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="Pagso-sort ng Arrays sa JavaScript">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://celestialcinnamon.github.io/antares-blog/tl/Pagso-sort-ng-Arrays-sa-JavaScript/">
+  <meta property="og:image" content="http://celestialcinnamon.github.io//antares-blog/images/favicon-194x194.png">
+  <meta property="og:description" content="Sa article na ito, tatalakayin natin kung paano mag-sort nga arrays using JavaScript."> 
+
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" media="screen">
+  <link href="/antares-blog/css/baseline.css" rel="stylesheet" media="screen">
+  <link href="/antares-blog/css/mobile.css" rel="stylesheet" media="screen">
+  <link href="/antares-blog/css/desktop.css" rel="stylesheet" media="screen and (min-width: 750px)">
+  <!-- <link href="/antares-blog/css/print.css" rel="stylesheet" media="print"> -->
+
+  
+
+  
+  
+
+  <!-- TODO: Uncomment these links -->
+  <link media="screen" href="https://fonts.googleapis.com/css?family=Vidaloka&display=swap" rel="stylesheet"> 
+  <link media="screen" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700&display=swap" rel="stylesheet"> 
+  <link media="screen" href="https://fonts.googleapis.com/css?family=B612+Mono&display=swap" rel="stylesheet">
+
+  <!--
+    HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
+  -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+<link rel="stylesheet" href="/antares-blog/css/prism-a11y-dark.css" type="text/css">
+<link rel="stylesheet" href="/antares-blog/css/prism-line-numbers.css" type="text/css"></head>
+
+<body>
+    <div class="banner">
+  <a href="#main-content" class="nav skiplink sr-only sr-only-focusable">Skip to content</a>
+  <header class="header" role="banner">
+    <a href="/antares-blog/" class="site-logo" aria-label="Go to home">
+      <img src="/antares-blog/images/logo_v4.png" alt="Antares Programming logo">
+    </a>
+  </header>
+  <nav class="navbar">
+    <ul class="nav-list">
+      <li class="nav-item"><a class="nav" href="/antares-blog/archives">Archives</a></li>
+      <li class="nav-item"><a class="nav" href="/antares-blog/downloads">Downloads</a></li>
+    </ul>
+  </nav>
+</div>
+
+    <div data-scroll data-scroll-showCallback="expandNavbar()"  data-scroll-hideCallback="collapseNavbar()"></div>
+    <main class="page--post">
+
+<article class="post--article">
+  <header>
+    <h1>
+      <a class="post__title" href="/antares-blog/tl/Pagso-sort-ng-Arrays-sa-JavaScript/">Pagso-sort ng Arrays sa JavaScript</a>
+    </h1>
+  </header>
+  <p>Sa article na ito, tatalakayin natin kung paano mag-sort nga arrays using JavaScript.</p>
+<a id="more"></a>
+<p>Madali lang mag-sort ng array, mga bessywap. Let’s say na may array tayo ng mga pangalan:</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">let</span> arrayOfNames <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token string">"Annalise Keating"</span><span class="token punctuation">,</span>
+    <span class="token string">"Wesley Gibbins"</span><span class="token punctuation">,</span>
+    <span class="token string">"Laurel Castillo"</span><span class="token punctuation">,</span>
+    <span class="token string">"Michaela Pratt"</span><span class="token punctuation">,</span>
+    <span class="token string">"Connor Walsh"</span><span class="token punctuation">,</span>
+    <span class="token string">"Asher Millstone"</span>
+<span class="token punctuation">]</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Kapag gusto natin silang i-sort, gagamitin lang natin ang sort() function. By default, sino-sort nito ang mga laman ng array alphabetically (according sa kanilang Unicode code point)</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript">arrayOfNames<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arrayOfNames<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">', '</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">// OUTPUTAnnalise Keating, Asher Millstone, Connor Walsh, Laurel Castillo, Michaela Pratt, Wesley Gibbins</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>Kapag gusto mong ikaw ang magdecide kung paano iso-sort ang mga items…
+Sabi sa MDN Docs, tumatanggap ang sort() function ng isa pang function na magde-define kung paano mo siya iso-sort.</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript">arrayOfNames<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token operator">...</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>Sa example na ‘to, nagpasa tayo sa sort() ng isang function na walang pangalan (anonymous function). Iyong pinasa nating function, tumatanggap siya ng dalawang arguments (a and b). Ang a at b ay dalawang item mula sa arrayOfNames na pagkukumparahin natin.</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript">arrayOfNames <span class="token operator">=</span> <span class="token punctuation">[</span>  <span class="token punctuation">{</span>name<span class="token punctuation">:</span> <span class="token string">"Annalise Keating"</span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token number">50</span><span class="token punctuation">}</span><span class="token punctuation">,</span>  <span class="token punctuation">{</span>name<span class="token punctuation">:</span> <span class="token string">"Wesley Gibbins"</span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token number">25</span><span class="token punctuation">}</span><span class="token punctuation">,</span>  <span class="token punctuation">{</span>name<span class="token punctuation">:</span> <span class="token string">"Connor Walsh"</span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token number">23</span><span class="token punctuation">}</span><span class="token punctuation">,</span>  <span class="token punctuation">{</span>name<span class="token punctuation">:</span> <span class="token string">"Laurel Castillo"</span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token number">26</span><span class="token punctuation">}</span><span class="token punctuation">,</span>  <span class="token punctuation">{</span>name<span class="token punctuation">:</span> <span class="token string">"Asher Millstone"</span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token number">24</span><span class="token punctuation">}</span><span class="token punctuation">,</span>  <span class="token punctuation">{</span>name<span class="token punctuation">:</span> <span class="token string">"Michaela Pratt"</span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token number">27</span><span class="token punctuation">}</span><span class="token punctuation">]</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>Sa array naman na ito, iso-sort natin sila depende sa age nila, mula sa pinakamatanda hanggang sa pinakabata. Sa example na ito, bawat isang item sa arrayOfNames ay may name at age na property.</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// Magde-declare tayo ng function na magso-sort ng arrayOfNames base sa age</span>
+<span class="token keyword">function</span> <span class="token function">compareAges</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">{</span>  <span class="token keyword">if</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span>age <span class="token operator">></span> b<span class="token punctuation">.</span>age<span class="token punctuation">)</span> <span class="token punctuation">{</span>    <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span>  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span>age <span class="token operator">&lt;</span> b<span class="token punctuation">.</span>age<span class="token punctuation">)</span><span class="token punctuation">{</span>    <span class="token keyword">return</span> <span class="token number">1</span>  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>    <span class="token keyword">return</span> <span class="token number">0</span>  <span class="token punctuation">}</span>  <span class="token punctuation">}</span>
+arrayOfNames<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span>compareAges<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>Sa example na ‘to, magpapasa ang sort() function ng dalawang item mula sa arrayOfNames. Hahayaan niya ang compareAges() function na mag-decide kung paano niya iso-sort ang mga item.</p>
+<ul>
+<li>Kapag mas mababa sa 0 ang ni-return ng compareAges(), mas mauuna si a.</li>
+<li>Kapag mas mataas sa 0 ang ni-return ng compareAges(), mas mauuna si b.</li>
+<li>Kapag eksaktong 0 naman ang ni-return ng compareAges(), hindi magagalaw ang dalawang item (sa mga modern browsers; hindi ganito ang nangyayari sa mga mas lumang browser).</li>
+</ul>
+<p>Kaya sa function na ginawa natin, kapag mas matanda si a kaysa kay b (a.age &gt; b.age), mas mauuna ito sa array (kaya tayo nag-return ng -1, isang number na mas mababa sa 0). Kapag si b naman ang mas matanda kay a, (a.age &lt; b.age), mas mauuna si b, kaya tayo nag-return ng 1, isang number na mas mataas sa 0.
+Ang magiging output ng program na ito ay ganito:</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript">arrayofNames<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span>compareAges<span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arrayOfNames<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">// Output[...]0: Object { name: "Annalise Keating", age: 50 },1: Object { name: "Michaela Pratt", age: 27 },2: Object { name: "Laurel Castillo", age: 26 },3: Object { name: "Wesley Gibbins", age: 25},4: Object { name: "Asher Millstone", age: 24},5: Object { name: "Connor Walsh", age: 23}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>Kung titingnan ang mga age property ng mga laman ng array, makikita na naka-sort sila mula sa pinakamatanda tungo sa pinakabata.
+Random sorting
+Let’s say na may string ka, ‘tapos gusto mong pagrambol-rambolin lahat ng letters nito.</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">let</span> strRandom <span class="token operator">=</span> <span class="token string">"HowToGetAwayWithMurder"</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>Para marambol natin ang letters, kailangan natin silang i-convert at gawing array.</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">let</span> arrRandom <span class="token operator">=</span> Array<span class="token punctuation">.</span><span class="token keyword">from</span><span class="token punctuation">(</span>strRandom<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>Gagawin nitong array ang string mo. Bawat isang item sa arrRandom ay maglalaman ng isang letter.</p>
+<ol start="2">
+<li>Gamit ang sort() function, irambol ang mga letra batay sa isang random number.</li>
+</ol>
+<pre class="line-numbers language-javascript"><code class="language-javascript">arrRandom<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>  <span class="token keyword">let</span> random <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token keyword">let</span> roundedRandom <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">round</span><span class="token punctuation">(</span>random<span class="token punctuation">)</span>  <span class="token keyword">let</span> sortingFactor <span class="token operator">=</span> roundedRandom <span class="token operator">-</span> <span class="token number">0.5</span>
+  <span class="token keyword">return</span> sortingFactor<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>Sa example na ito, may tatlo tayong variables:</p>
+<ul>
+<li>Ang random na isang random number.</li>
+<li>Ang roundedRandom na may hawak ng ni-round off na value mula sa random. Dahil laging less than 1 ang nire-return ng Math.random(), dalawa lang amg magiging value nito kapag ni-round off: either +1 or 0.</li>
+<li>At ang sortingFactor na magre-return ng either less than o greater than 0</li>
+</ul>
+<p>Isa isahin natin. Sa unang run, ang value ng random ay 0.8974618739176962. Kapag ni-round off ito, ang laging lalabas ay either +1 or 0.</p>
+<ul>
+<li>Kung +1 ang roundedRandom, magiging +0.5 ang sortingFactor.</li>
+<li>Kung 0 naman ang roundedRandom, magiging -0.5 ang sortingFactor.</li>
+</ul>
+<p>Kaya kapag ni-sort natin ang arrRandom, ganito ang isa sa posibleng maging output:</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token punctuation">[</span><span class="token string">'o'</span><span class="token punctuation">,</span> <span class="token string">'w'</span><span class="token punctuation">,</span> <span class="token string">'G'</span><span class="token punctuation">,</span> <span class="token string">'o'</span><span class="token punctuation">,</span> <span class="token string">'H'</span><span class="token punctuation">,</span> <span class="token string">'T'</span><span class="token punctuation">,</span> <span class="token string">'e'</span><span class="token punctuation">,</span> <span class="token string">'t'</span><span class="token punctuation">,</span> <span class="token string">'A'</span><span class="token punctuation">,</span> <span class="token string">'w'</span><span class="token punctuation">,</span> <span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'h'</span><span class="token punctuation">,</span> <span class="token string">'W'</span><span class="token punctuation">,</span> <span class="token string">'t'</span><span class="token punctuation">,</span> <span class="token string">'i'</span><span class="token punctuation">,</span> <span class="token string">'M'</span><span class="token punctuation">,</span> <span class="token string">'u'</span><span class="token punctuation">,</span> <span class="token string">'y'</span><span class="token punctuation">,</span> <span class="token string">'r'</span><span class="token punctuation">,</span> <span class="token string">'r'</span><span class="token punctuation">,</span> <span class="token string">'d'</span><span class="token punctuation">,</span> <span class="token string">'e'</span><span class="token punctuation">]</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ol start="3">
+<li>Ngayong na-rambol na ang letters, puwede na natin silang gawing string ulit.</li>
+</ol>
+<pre class="line-numbers language-javascript"><code class="language-javascript">strRandom <span class="token operator">=</span> arrRandom<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>Pagdudugtung-dugtungin ng join() ang lahat ng items ng array at gagawin itong string. By default, maglalagay ito ng comma sa pagitan ng bawat letters. Para matanggal iyon, nagpasa tayo ng isang string na walang laman. </p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// Output"owGoHTetAwahWtiMuyrrde"</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+  <footer class="article-footer">
+      
+  <div class="article-tags-wrapper">
+    <h4>Tags</h4>
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/antares-blog/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/antares-blog/tags/web/">web</a></li></ul>
+  </div>
+
+      
+  <div class="article-category">
+    <h4>Category</h4>
+    <a class="article-category-link" href="/antares-blog/categories/JavaScript/">JavaScript</a>
+  </div>
+
+  </footer>
+</article>
+</main>
+    <footer class="footer" role="contentinfo">
+  <div>
+    <p>&copy; 2019 Antares Programming</p>
+    <p>Reserbado ang lahat ng karapatan.</p>
+  </div>
+  <div><a href="/antares-blog/tungkol-sa-amin">Tungkol sa Antares Programming</a>
+  <a href="https://www.facebook.com/antaresprogramming"><i>Antares Programming</i> sa Facebook</a>
+  <p id="back-to-top"><a href="#top">Back to top</a></p></div>
+</footer>
+<script>
+    var CONFIG_ROOT = `/antares-blog/`;
+    var CONFIG_URL = `https://celestialcinnamon.github.io/antares-blog`.replace('/antares-blog', '');
+</script>
+
+    <script src="/antares-blog/js/ScrollTrigger.min.js"></script>
+    <script src="/antares-blog/js/script.js"></script>
+</body>
+</html>

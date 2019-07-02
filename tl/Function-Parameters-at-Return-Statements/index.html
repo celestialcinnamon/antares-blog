@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="tl" class="dark">
+
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Function Parameters at Return Statements</title>
+  
+  <meta name="description" content="Kung nahihirapan kayong maintindihan kung paano gumagana ang function parameters, kailangan nating balikan ang Math (kasi sa mga kakilala ko mas pamilyar kayo rito so ito ginamit kong example).">
+  <meta name="author" content="Francis Rubio &lt;francoisoibur21@gmail.com&gt;">
+  
+  <!-- Favicon and PWA theme -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/antares-blog/images/apple-touch-icon.png?v=yyL3E0AWom">
+  <link rel="icon" type="image/png" sizes="32x32" href="/antares-blog/images/favicon-32x32.png?v=yyL3E0AWom">
+  <link rel="icon" type="image/png" sizes="194x194" href="/antares-blog/images/favicon-194x194.png?v=yyL3E0AWom">
+  <link rel="icon" type="image/png" sizes="192x192" href="/antares-blog/images/android-chrome-192x192.png?v=yyL3E0AWom">
+  <link rel="icon" type="image/png" sizes="16x16" href="/antares-blog/images/favicon-16x16.png?v=yyL3E0AWom">
+  <link rel="manifest" href="/antares-blog/images/site.webmanifest?v=yyL3E0AWom">
+  <link rel="mask-icon" href="/antares-blog/images/safari-pinned-tab.svg?v=yyL3E0AWom" color="#efaa00">
+  <link rel="shortcut icon" href="/antares-blog/images/favicon.ico?v=yyL3E0AWom">
+  <meta name="apple-mobile-web-app-title" content="Antares">
+  <meta name="application-name" content="Antares">
+  <meta name="msapplication-TileColor" content="#ffc40d">
+  <meta name="msapplication-TileImage" content="/antares-blog/images/mstile-144x144.png?v=yyL3E0AWom">
+  <meta name="msapplication-config" content="/antares-blog/images/browserconfig.xml?v=yyL3E0AWom">
+  <meta name="theme-color" content="#bbbbbb">
+
+
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="Kung nahihirapan kayong maintindihan kung paano gumagana ang function parameters, kailangan nating balikan ang Math (kasi sa mga kakilala ko mas pamilyar kayo rito so ito ginamit kong example).">
+
+  
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="Function Parameters at Return Statements">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://celestialcinnamon.github.io/antares-blog/tl/Function-Parameters-at-Return-Statements/">
+  <meta property="og:image" content="http://celestialcinnamon.github.io//antares-blog/images/favicon-194x194.png">
+  <meta property="og:description" content="Kung nahihirapan kayong maintindihan kung paano gumagana ang function parameters, kailangan nating balikan ang Math (kasi sa mga kakilala ko mas pamilyar kayo rito so ito ginamit kong example)."> 
+
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" media="screen">
+  <link href="/antares-blog/css/baseline.css" rel="stylesheet" media="screen">
+  <link href="/antares-blog/css/mobile.css" rel="stylesheet" media="screen">
+  <link href="/antares-blog/css/desktop.css" rel="stylesheet" media="screen and (min-width: 750px)">
+  <!-- <link href="/antares-blog/css/print.css" rel="stylesheet" media="print"> -->
+
+  
+
+  
+  
+
+  <!-- TODO: Uncomment these links -->
+  <link media="screen" href="https://fonts.googleapis.com/css?family=Vidaloka&display=swap" rel="stylesheet"> 
+  <link media="screen" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700&display=swap" rel="stylesheet"> 
+  <link media="screen" href="https://fonts.googleapis.com/css?family=B612+Mono&display=swap" rel="stylesheet">
+
+  <!--
+    HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
+  -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+<link rel="stylesheet" href="/antares-blog/css/prism-a11y-dark.css" type="text/css">
+<link rel="stylesheet" href="/antares-blog/css/prism-line-numbers.css" type="text/css"></head>
+
+<body>
+    <div class="banner">
+  <a href="#main-content" class="nav skiplink sr-only sr-only-focusable">Skip to content</a>
+  <header class="header" role="banner">
+    <a href="/antares-blog/" class="site-logo" aria-label="Go to home">
+      <img src="/antares-blog/images/logo_v4.png" alt="Antares Programming logo">
+    </a>
+  </header>
+  <nav class="navbar">
+    <ul class="nav-list">
+      <li class="nav-item"><a class="nav" href="/antares-blog/archives">Archives</a></li>
+      <li class="nav-item"><a class="nav" href="/antares-blog/downloads">Downloads</a></li>
+    </ul>
+  </nav>
+</div>
+
+    <div data-scroll data-scroll-showCallback="expandNavbar()"  data-scroll-hideCallback="collapseNavbar()"></div>
+    <main class="page--post">
+
+<article class="post--article">
+  <header>
+    <h1>
+      <a class="post__title" href="/antares-blog/tl/Function-Parameters-at-Return-Statements/">Function Parameters at Return Statements</a>
+    </h1>
+  </header>
+  <p>Kung nahihirapan kayong maintindihan kung paano gumagana ang function parameters, kailangan nating balikan ang Math (kasi sa mga kakilala ko mas pamilyar kayo rito so ito ginamit kong example).</p>
+<a id="more"></a>
+<p>Actually nakuha ang term na “function” sa Math; function as in algebraic function etc. So kung gagamitin nating example ‘to:</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token function">f</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token operator">=</span> x² <span class="token operator">+</span> <span class="token number">2</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>So sa example na ‘to, ang f(x) ang function at x ang parameter. At ang expression kasunod ng equal sign ang laman ng function. So kung iko-convert natin ‘to sa JavaScript, ganito ang magiging hitsura niyan:</p>
+<figure class="img-wrapper">
+<img src="/antares-blog/tl/Function-Parameters-at-Return-Statements/47320893_1845011718942865_8779709452845580288_o.jpg" title="Ang algebraic function na f(x) kapag na-convert sa 2016 JavaScript: `const f = (x) => ( x ^ 2 ) + 2`">
+</figure>
+
+<p>Pero hindi naman ganiyan hitsura ng functions sa ibang mga programming language, so medyo gawin nating ‘traditional’:</p>
+<figure class="img-wrapper">
+<img src="/antares-blog/tl/Function-Parameters-at-Return-Statements/47245791_1845016282275742_5377634732055986176_n.jpg" title="JavaScript code: `function f(x) { return (x^2) + 2; }">
+</figure>
+
+<p>So by now siguro nage-gets niyo na. Kaya kung sa algebraic function, ganito ang magiging hitsura:</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">let</span> x <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">:</span>
+<span class="token function">f</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token operator">=</span> x² <span class="token operator">+</span> <span class="token number">2</span><span class="token function">f</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">2</span>² <span class="token operator">+</span> <span class="token number">2</span><span class="token function">f</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">4</span> <span class="token operator">+</span> <span class="token number">2</span><span class="token function">f</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">6</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>…gano’n din ang mangyayari sa functions ng programming. Magpapasa ka ng parameters (which is iyong <code>x</code>), then iyong value no’n masa-substitute sa lahat ng <code>x</code> sa loob ng function, gaya nito:</p>
+<figure class="img-wrapper">
+<img src="/antares-blog/tl/Function-Parameters-at-Return-Statements/47436228_1845022958941741_2142007783740932096_o.jpg">
+</figure>
+
+<p>So dito sa example naman na ‘to, ang ibig sabihin ng <code>return</code> ay ‘sagot’. Mismo. Sagot no’ng equation. Sagot no’ng anumang ginawa sa loob ng function. All clear pa rin? Sige, next naman.</p>
+<p>Sa example na iyon kanina, gumamit tayo ng math para maintindihan kung paano gumagana ang function parameters saka iyong <code>return</code> keyword. Pero hindi naman kasi lahat ng function math ang ginagawa. Iyong iba kumo-connect sa network, nagse-save sa database, nagse-save ng file, naglalagay ng button sa screen, etc. Paano applicable sa mga gano’n iyong math? Same principles lang din.</p>
+<p>Sa mga ganiyang instances, ang bini-visualize ko lang, iyong mga functions ay parang mas maliit na program sa loob ng program mo. Siyempre para magamit mo iyong program mo, kailangan mo ng input, then kapag tapos na siya, bibigyan ka niya ng output. Same lang din dito. Parameter ang input, iyong return value ang output.</p>
+<figure class="img-wrapper">
+<img src="/antares-blog/tl/Function-Parameters-at-Return-Statements/47252927_1845029998941037_1217255244208013312_o.jpg">
+</figure>
+
+<p>Sa example na ‘to, may function tayo na gagawing red iyong background ng <code>div</code> then ibabalik niya iyong <code>div</code> na iyon. Again, para lang ulit siyang math. Ipapasa natin sa parameter iyong <code>id</code> then, lahat ng <code>id</code> sa loob ng function, masa-substitute ng value na pinasa mo sa function.</p>
+<p>So isipin natin na math function ang <code>makeCardRed()</code>; halos same pa rin naman, isipin natin na iyong pangalawang line ay computation or algebraic expression. Kung anuman iyong nakuha doon sa operation na iyon, iyon ang sagot kaya iyon ang ire-return natin.</p>
+<p>Pero may mga function din minsan na walang sagot. Iyong mga walang return statements. Kahit wala silang return statements, siguro matatandaan niyo na sabi sa atin dati naglalagay si compiler/interpreter ng automatic na return statement, at either null or undefined ang nire-return nila. Kapag gano’n isipin niyo na lang na division by zero iyong function:</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token function">f</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token operator">=</span> x ÷ <span class="token number">0</span>
+<span class="token function">f</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//undefined</span>
+<span class="token function">f</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//undefined</span>
+<span class="token function">f</span><span class="token punctuation">(</span>∞<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//undefined</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Ganiyan din mangyayari sa mga function na walang return statements. <code>undefined</code> ang value nila, although sa ibang language <code>null</code> iyong value kasi walang <code>undefined</code> na keyword, pero same principles lang din iyon.</p>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>May dahilan kung bakit marami ang nananakot sa atin before na maraming math sa Computer Science at Information Technology (at marami naman talaga), but that is because isa tayong branch ng engineering (na recently ko lang din napagtanto). And isa ‘tong example ng math; galing talaga sa math ang mga functions ng programming. Wala tayong magagawa diyan. Pero since nag-algebra, trigo, at dalawa ($&amp;%#^$@), dalawang calculus ang marami sa atin, gamitin na rin natin iyong mga iyon sa advantage natin para ‘di masayang mga luha natin. Iyan, happy coding. Iyak habang nakangiti, I mean.</p>
+<hr>
+<p><i>Mula sa Facebook Notes ni <a href="https://facebook.com/gregantares" target="_blank" rel="noopener"><cite>Johannes Gregory Antares</cite></a>.</i></p>
+
+  <footer class="article-footer">
+      
+  <div class="article-tags-wrapper">
+    <h4>Tags</h4>
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/antares-blog/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/antares-blog/tags/web/">web</a></li></ul>
+  </div>
+
+      
+  <div class="article-category">
+    <h4>Category</h4>
+    <a class="article-category-link" href="/antares-blog/categories/JavaScript/">JavaScript</a>
+  </div>
+
+  </footer>
+</article>
+</main>
+    <footer class="footer" role="contentinfo">
+  <div>
+    <p>&copy; 2019 Antares Programming</p>
+    <p>Reserbado ang lahat ng karapatan.</p>
+  </div>
+  <div><a href="/antares-blog/tungkol-sa-amin">Tungkol sa Antares Programming</a>
+  <a href="https://www.facebook.com/antaresprogramming"><i>Antares Programming</i> sa Facebook</a>
+  <p id="back-to-top"><a href="#top">Back to top</a></p></div>
+</footer>
+<script>
+    var CONFIG_ROOT = `/antares-blog/`;
+    var CONFIG_URL = `https://celestialcinnamon.github.io/antares-blog`.replace('/antares-blog', '');
+</script>
+
+    <script src="/antares-blog/js/ScrollTrigger.min.js"></script>
+    <script src="/antares-blog/js/script.js"></script>
+</body>
+</html>
