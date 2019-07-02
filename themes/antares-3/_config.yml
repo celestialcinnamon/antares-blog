@@ -1,7 +1,9 @@
 # Header
 menu:
-  Home: /
-  Archives: /archives
+  Home: 
+  Archives: archives
+  Downloads: downloads
+  About: tungkol-sa-amin
 rss: /atom.xml
 
 # Content

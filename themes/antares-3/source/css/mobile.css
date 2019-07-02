@@ -84,6 +84,7 @@
     margin: auto;
 }
 
+.page-content,
 .post {
     max-width: 80%;
     width: auto;
@@ -237,10 +238,12 @@
     background-size: 30% 0.5rem;
 }
 
+.page-content p,
 .post--article p {
     text-indent: 2rem;
 }
 
+.page-content p,
 .img-wrapper,
 .post--article > p,
 .post--article > ol,
@@ -262,6 +265,12 @@
     clear: left;
 }
 
+.page .page-content > h1,
+.page .page-content > h2,
+.page .page-content > h3,
+.page .page-content > h4,
+.page .page-content > h5,
+.page .page-content > h6
 .post--article > h1,
 .post--article > h2,
 .post--article > h3,
@@ -274,6 +283,11 @@
     color: var(--heading-color);
     font-size: 2.5em;
     margin: 1em auto;
+}
+
+.page .page-content > h3,
+.post--article > h3 {
+    font-size: 2em;
 }
 
 .post--article > table {
@@ -299,10 +313,12 @@
     font-weight: normal;
 }
 
+.page-content > blockquote,
 .post--article > blockquote {
     padding: 4rem 0 6rem;
 }
 
+.page-content > blockquote p,
 .post--article > blockquote p {
     font-size: 2rem;
     line-height: 1.2;
@@ -312,6 +328,8 @@
 }
 
 .side-note::before, .side-note::after,
+.page-content > blockquote p:first-of-type::before,
+.page-content > blockquote p:first-of-type::after,
 .post--article > blockquote p:first-of-type::before,
 .post--article > blockquote p:first-of-type::after {
     content: '';
@@ -322,6 +340,7 @@
     margin: 2em auto;
 }
 
+.page-content > blockquote .citation,
 .post--article > blockquote .citation {
     font-family: var(--ui-font);
     font-style: normal;
@@ -329,6 +348,8 @@
 	display: block;
 	margin-top: -4rem;
 }
+
+.page-content > blockquote .citation::before,
 .post--article > blockquote .citation::before {
     content: '―'
 }
@@ -440,4 +461,8 @@
 
 .archive-article {
 	padding: 2rem;
+}
+
+.page {
+    margin: 1rem;
 }

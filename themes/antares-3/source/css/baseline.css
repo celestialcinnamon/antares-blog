@@ -207,3 +207,53 @@ body {
 	background: linear-gradient(to bottom right, var(--accent-orange-dark), var(--accent-orange-light)) repeat;
 	-webkit-background-clip: text;
 }
+
+.page {
+    margin: 1rem;
+}
+
+.page .page-content p {
+    padding-left: 0;
+}
+
+.notification {
+    font-family: var(--ui-font);
+
+    border: 1px solid var(--primary-light);
+    padding: 1rem;
+    background-color: var(--primary-dark);
+    color: var(--text-on-colored);
+    border-radius: 3px;
+}
+
+.notification__title {
+    font-family: var(--ui-font);
+    font-weight: 900;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.page .notification > p {
+    margin: 1rem auto;
+}
+
+.notification a {
+    color: var(--text-on-colored);
+    border-bottom-color: currentColor;
+}
+
+.numerical-value {
+    font-family: var(--ui-font);
+}
+
+.page-content ol,
+.page-content ul {
+    font-size: 1.2rem;
+    padding-bottom: 2rem;
+    width: 90%;
+    margin-left: auto;
+}
+
+.page-content li:not(:last-child) {
+    padding-bottom: 2rem;
+}

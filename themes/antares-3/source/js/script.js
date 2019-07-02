@@ -17,3 +17,11 @@ function collapseNavbar() {
         .classList
         .add('collapsed')
 }
+
+function initializeScroller() {
+    if(document.documentElement.scrollTop > 1)
+        collapseNavbar();
+    else expandNavbar();
+}
+
+initializeScroller();
