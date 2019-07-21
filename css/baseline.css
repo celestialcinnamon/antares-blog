@@ -39,20 +39,20 @@ html {
     --primary: #fd0;
     --primary-light: #e8da7d;
 
-    --accent-green-dark: #98d926;
-    --accent-green: #a2ff00;
-    --accent-green-light: #c1e87d;
+    --accent-blue-dark: #002033;
+    --accent-blue: #044063;
+    --accent-blue-light: #065F93;
 
-    --accent-orange-dark: rgb(217, 104, 38);
-    --accent-orange: #ff5e00;
-    --accent-orange-light: #e8a47d;
+    --accent-crimson-dark: #E50053;
+    --accent-crimson: #FF005C;
+    --accent-crimson-light: #FF73A5;
 
     --text-on-colored: #111;
     --secondary-color: #aaa;
     --text-color: #ddd;
     --heading-color: #fff;
 
-    --link-color: var(--accent-orange-light);
+    --link-color: var(--accent-crimson-light);
 
     --heading-font: "Inter", sans-serif;
     --body-font: "Inter", sans-serif;
@@ -83,9 +83,9 @@ a:not([class]):hover {
 
 .focusable:focus,
 a:not([class]):focus {
-    background-color: var(--accent-orange-light);
+    background-color: var(--accent-crimson-light);
     color: var(--background);
-    box-shadow: 0 0 0 3px var(--accent-orange-light);
+    box-shadow: 0 0 0 3px var(--accent-crimson-light);
 }
 
 /*
@@ -196,14 +196,14 @@ body {
 .hashtag {
     color: var(--heading-color);
     -webkit-text-fill-color: transparent;
-    background: linear-gradient(to bottom right, var(--accent-green-dark), var(--accent-green-light)) repeat;
+    background: linear-gradient(to bottom right, var(--accent-blue-dark), var(--accent-blue-light)) repeat;
     -webkit-background-clip: text;
 }
 
 .hashtag.category-title.resources {
 	color: var(--heading-color);
 	-webkit-text-fill-color: transparent;
-	background: linear-gradient(to bottom right, var(--accent-orange-dark), var(--accent-orange-light)) repeat;
+	background: linear-gradient(to bottom right, var(--accent-crimson-dark), var(--accent-crimson-light)) repeat;
 	-webkit-background-clip: text;
 }
 
@@ -289,7 +289,7 @@ body {
 .activity-grid.hidden::after {
     --push: -48%;
 
-    border-color: var(--accent-orange);
+    border-color: var(--accent-crimson);
     height: 5rem;
     width: 5.1rem;
 
@@ -318,13 +318,13 @@ body {
     color: inherit;
 
     border-radius: 5px;
-    background-color: var(--accent-orange);
+    background-color: var(--accent-crimson);
     color: var(--heading-color)
 }
 
 .btn:hover,
 .btn:focus {
-    background-color: var(--accent-orange-dark);
+    background-color: var(--accent-crimson-dark);
 }
 
 .btn--activity {
@@ -332,14 +332,14 @@ body {
 }
 
 .btn--activity:hover {
-    background-color: var(--accent-orange-light);
-    color: var(--accent-orange-dark);
+    background-color: var(--accent-crimson-light);
+    color: var(--accent-crimson-dark);
 }
 
 .btn--activity:focus {
     box-shadow: 
         0 3px 5px #000,
-        0 0 15px var(--accent-orange);
+        0 0 15px var(--accent-crimson);
 }
 
 .activity-area {

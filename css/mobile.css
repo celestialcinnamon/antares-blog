@@ -36,12 +36,12 @@
 }
 
 .nav:hover {
-    color: var(--accent-orange-light);
+    color: var(--accent-crimson-light);
 }
 
 .nav:focus {
-    color: var(--background);
-    background-color: var(--accent-green-light);
+    color: var(--heading-color);
+    background-color: var(--accent-blue-light);
 }
 
 .site-logo {
@@ -72,7 +72,7 @@
 }
 
 .site-logo:focus {
-    background-color: var(--accent-green-dark);
+    background-color: var(--accent-blue-dark);
 }
 
 .site-logo:focus img {
@@ -108,7 +108,7 @@
 }
 
 .post__title:hover {
-    color: var(--accent-orange);
+    color: var(--accent-crimson);
 }
 
 .post__title:focus {
@@ -184,7 +184,7 @@
 .category-list-link,
 .article-category-link {
     border-radius: 5px;
-    background-color: var(--accent-orange-dark);
+    background-color: var(--accent-crimson-dark);
     padding: 0.5rem;
     color: var(--heading-color);
     border: none;
@@ -195,15 +195,15 @@
 .article-category-link:hover,
 .tag-list-link:hover,
 .category-list-link:hover {
-    background-color: var(--accent-orange-light);
-    color: var(--accent-orange-dark);
+    background-color: var(--accent-crimson-light);
+    color: var(--accent-crimson-dark);
 }
 
 .article-tag-list-link:focus,
 .article-category-link:focus,
 .tag-list-link:focus,
 .category-list-link:focus {
-    background-color: var(--accent-orange-light);
+    background-color: var(--accent-crimson-light);
     box-shadow: 0 0 0 5px var(--primary);
 }
 
@@ -429,7 +429,7 @@
 }
 
 .side-callout blockquote {
-    border-left: 4px solid var(--accent-orange);
+    border-left: 4px solid var(--accent-crimson);
     padding: 0 1rem;
 }
 
