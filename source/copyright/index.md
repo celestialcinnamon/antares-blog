@@ -38,7 +38,7 @@ description: Mga impormasyon tungkol sa pagbibigay ng credits sa mga tumutulong 
 
     <p>Ang mga salaping ipinadadala sa Antares Programming ay dapat ituring na <i>donasyon</i> sa halip na bayad. Hindi trabaho ng Antares Programming ang anuman sa mga ginagawa nito; ang lahat ng ito resulta ng boluntaryong pagkilos mula sa pag-ibig at kabutihan sa ibang mga developer. Hindi ito dapat gawing pagkakakitaan o negosyo ng sinuman sa Antares Programming. Dapat ilaan ang mga donasyon sa budget na gagamitin sa pagbabayad ng kuryente, device, pagkain, at iba pang kinakailangan para patuloy na tumakbo ang mga gawain ng Antares Programming. Sa pagtatapos ng bawat buwan, dapat na padalhan ng Antares Programming ang bawat isang nagbigay ng donasyong pera sa buwang iyon ng isang financial report para sa mga ginawa sa buwang iyon.</p>
 
-    <h2>Pag-sponsor sa Antares Programming</h2>
+    <h2 id="sponsorship">Pag-sponsor sa Antares Programming</h2>
     <p>
         Ang mga sponsor ng Antares Programming ay maaari lang mag-sponsor ng isang artikulo, isang set ng infographics, o isang video sa YouTube channel. Obligado ang Antares Programming na gawin ang mga sumusunod:
     </p>

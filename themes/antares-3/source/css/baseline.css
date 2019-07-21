@@ -27,7 +27,7 @@
 }
 
 html {
-    font-family: "Libre Baskerville", serif;
+    font-family: "Inter", sans-serif;
     font-size: 16px;
     background-color: #111;
     color: #aaa;
@@ -39,23 +39,23 @@ html {
     --primary: #fd0;
     --primary-light: #e8da7d;
 
-    --accent-green-dark: #98d926;
-    --accent-green: #a2ff00;
-    --accent-green-light: #c1e87d;
+    --accent-blue-dark: #002033;
+    --accent-blue: #044063;
+    --accent-blue-light: #065F93;
 
-    --accent-orange-dark: #d96826;
-    --accent-orange: #ff5e00;
-    --accent-orange-light: #e8a47d;
+    --accent-crimson-dark: #E50053;
+    --accent-crimson: #FF005C;
+    --accent-crimson-light: #FF73A5;
 
     --text-on-colored: #111;
     --secondary-color: #aaa;
     --text-color: #ddd;
     --heading-color: #fff;
 
-    --link-color: var(--accent-orange-light);
+    --link-color: var(--accent-crimson-light);
 
-    --heading-font: "Vidaloka", serif;
-    --body-font: "Vidaloka", "Libre Baskerville", serif;
+    --heading-font: "Inter", sans-serif;
+    --body-font: "Inter", sans-serif;
     --ui-font: "Inter", sans-serif;
     --code-font: "B612 Mono", monospace;
 }
@@ -68,7 +68,6 @@ h1, h2, h3,
 h4, h5, h6 {
     font-family: serif;
     font-family: var(--heading-font);
-    font-weight: normal;
     line-height: 1.25;
 }
 
@@ -84,9 +83,9 @@ a:not([class]):hover {
 
 .focusable:focus,
 a:not([class]):focus {
-    background-color: var(--accent-orange-light);
+    background-color: var(--accent-crimson-light);
     color: var(--background);
-    box-shadow: 0 0 0 3px var(--accent-orange-light);
+    box-shadow: 0 0 0 3px var(--accent-crimson-light);
 }
 
 /*
@@ -197,14 +196,14 @@ body {
 .hashtag {
     color: var(--heading-color);
     -webkit-text-fill-color: transparent;
-    background: linear-gradient(to bottom right, var(--accent-green-dark), var(--accent-green-light)) repeat;
+    background: linear-gradient(to bottom right, var(--accent-blue-dark), var(--accent-blue-light)) repeat;
     -webkit-background-clip: text;
 }
 
 .hashtag.category-title.resources {
 	color: var(--heading-color);
 	-webkit-text-fill-color: transparent;
-	background: linear-gradient(to bottom right, var(--accent-orange-dark), var(--accent-orange-light)) repeat;
+	background: linear-gradient(to bottom right, var(--accent-crimson-dark), var(--accent-crimson-light)) repeat;
 	-webkit-background-clip: text;
 }
 
@@ -256,4 +255,121 @@ body {
 
 .page-content li:not(:last-child) {
     padding-bottom: 2rem;
+}
+
+/* ACTIVITY STUDIO */
+
+.activity-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+    grid-auto-rows: 5rem;
+    gap: 1rem;
+    position: relative;
+}
+
+.activity-grid.hidden::before,
+.activity-grid.hidden::after {
+    --push: -50%;
+
+    content: '';
+    position: absolute;
+    width: 5rem;
+    height: 5.1rem;
+    top: 50%;
+    left: 50%;
+    transform: translateX(var(--push)) translateY(-50%);
+
+    border-radius: 5rem;
+    border: 3px solid transparent;
+    border: 3px solid var(--primary);
+
+    animation: load 1s linear infinite;
+}
+
+.activity-grid.hidden::after {
+    --push: -48%;
+
+    border-color: var(--accent-crimson);
+    height: 5rem;
+    width: 5.1rem;
+
+    animation-delay: 1s;
+}
+
+@keyframes load {
+    from {
+        transform: translateX(-50%) translateY(var(--push)) rotate(0deg);
+    }
+    to {
+        transform: translateX(-50%) translateY(var(--push)) rotate(360deg);
+    }
+}
+
+.activity-grid.hidden .btn--activity {
+   visibility: hidden;
+}
+
+.btn {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    border: 0;
+    background: none;
+    color: inherit;
+
+    border-radius: 5px;
+    background-color: var(--accent-crimson);
+    color: var(--heading-color)
+}
+
+.btn:hover,
+.btn:focus {
+    background-color: var(--accent-crimson-dark);
+}
+
+.btn--activity {
+    box-shadow: 0 3px 5px #000a;
+}
+
+.btn--activity:hover {
+    background-color: var(--accent-crimson-light);
+    color: var(--accent-crimson-dark);
+}
+
+.btn--activity:focus {
+    box-shadow: 
+        0 3px 5px #000,
+        0 0 15px var(--accent-crimson);
+}
+
+.activity-area {
+    display: grid;
+    position: fixed;
+    top: 1rem;
+    bottom: 0;
+    left: 1rem;
+    right: 1rem;
+    z-index: 999;
+}
+
+html:not(.no-scroll) .activity-area {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.activity-area iframe {
+    background-color: #fff;
+}
+
+html.no-scroll {
+    overflow: hidden;
+}
+
+.ref {
+    border: none;
+    color: inherit;
+}
+
+.footnote {
+    border: none;
 }

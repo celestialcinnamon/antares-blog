@@ -58,3 +58,8 @@
 .page {
     margin: 5rem;
 }
+
+pre[class*="language-"].line-numbers {
+	margin: 2rem auto;
+	max-width: 80ch;
+}

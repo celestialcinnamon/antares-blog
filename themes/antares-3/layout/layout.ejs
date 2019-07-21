@@ -2,12 +2,17 @@
 <html lang="<%- page.lang %>" class="dark">
 <%- partial('_partial/head') %>
 <body>
+    <% const pageShouldBeRendered = page.render == null? true : false; %>
+    <% if(pageShouldBeRendered) { %>
     <%- partial('_partial/header', null, {cache: !config.relative_link}) %>
     <div data-scroll data-scroll-showCallback="expandNavbar()"  data-scroll-hideCallback="collapseNavbar()"></div>
+    <% } %>
     <%- body %>
+    <% if(pageShouldBeRendered) { %>
     <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
 
     <%- js('js/ScrollTrigger.min.js') %>
     <%- js('js/script.js') %>
+    <% } %>
 </body>
 </html>

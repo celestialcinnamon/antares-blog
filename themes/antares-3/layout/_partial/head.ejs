@@ -1,5 +1,6 @@
 <%
 function renderLinkPaths(pathArray = []) {
+  console.log(page.custom_scripts);
   return pathArray
     .map(path => 
       path
@@ -10,6 +11,7 @@ function renderLinkPaths(pathArray = []) {
     )
 }
 %>
+<% const pageShouldBeRendered = page.render == null? true : false; %>
 <head>
   <meta charset="utf-8" />
   <% if(page.is_autoreload) { %>
@@ -66,34 +68,36 @@ function renderLinkPaths(pathArray = []) {
   <meta property="og:url" content="https://celestialcinnamon.github.io<%- url %>" />
   <meta property="og:image" content="http://celestialcinnamon.github.io/<%- postCoverPath %>" />
   <meta property="og:description" content="<%- strip_html(description) %>" /> 
-
-  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" media="screen">
+  <% if(pageShouldBeRendered) { %>
+  <!-- <link rel="stylesheet" href="https://rsms.me/inter/inter.css" media="screen"> -->
   <link href="/antares-blog/css/baseline.css" rel="stylesheet" media="screen">
   <link href="/antares-blog/css/mobile.css" rel="stylesheet" media="screen">
   <link href="/antares-blog/css/desktop.css" rel="stylesheet" media="screen and (min-width: 750px)">
   <!-- <link href="/antares-blog/css/print.css" rel="stylesheet" media="print"> -->
-
+  <% } %>
   <%
     const links = []
-    if(is_post() && page.custom_css){
+    if(page.custom_css){
+      console.log("Page has custom css")
       const paths = renderLinkPaths(page.custom_css)
       links.push(...paths.map(path => `<link href="${path}" rel="stylesheet" />`))
     }
 
     const scripts = []
-    if(is_post() && page.custom_scripts) {
+    if(page.custom_scripts) {
+      console.log("Page has custom script")
       const paths = renderLinkPaths(page.custom_scripts)
-      scripts.push(...paths.map(path => `<script src="${path}"></script>`))
+      scripts.push(...paths.map(path => `<script async src="${path}"></script>`))
     }
-  %>
 
+  %>
   <%- links.join("\n") %>
   <%- scripts.join("\n") %>
 
   <!-- TODO: Uncomment these links -->
-  <link media="screen" href="https://fonts.googleapis.com/css?family=Vidaloka&display=swap" rel="stylesheet"> 
+  <!-- <link media="screen" href="https://fonts.googleapis.com/css?family=Vidaloka&display=swap" rel="stylesheet"> 
   <link media="screen" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700&display=swap" rel="stylesheet"> 
-  <link media="screen" href="https://fonts.googleapis.com/css?family=B612+Mono&display=swap" rel="stylesheet">
+  <link media="screen" href="https://fonts.googleapis.com/css?family=B612+Mono&display=swap" rel="stylesheet"> -->
 
   <!--
     HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
