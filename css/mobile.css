@@ -102,7 +102,7 @@
     border: none;
     letter-spacing: normal;
     font-size: 3rem;
-    font-weight: normal;
+    font-weight: bold;
 
     text-overflow: clip;
 }
@@ -228,14 +228,15 @@
 }
 
 .post--article > p:first-of-type {
-    font-family: var(--ui-font);
-    font-size: 2em;
-    font-weight: 300;
-
-    background-image: linear-gradient(var(--primary), var(--primary));
-    background-position: bottom left;
-    background-repeat: no-repeat;
-    background-size: 30% 0.5rem;
+	font-family: "Inter", sans-serif;
+	font-size: 3em;
+	font-weight: 200;
+	background-image: linear-gradient(var(--primary), var(--primary));
+	background-position: bottom left;
+	background-repeat: no-repeat;
+	background-size: 30% 0.5rem;
+	max-width: 80%;
+	padding-bottom: 1em;
 }
 
 .page-content p,
@@ -256,6 +257,10 @@
     font-size: 1.2rem;
     padding-left: 2rem;
     line-height: 2;
+}
+
+.post--article > table {
+    padding-left: 0;
 }
 
 .post--article > dl dt {
@@ -291,9 +296,10 @@
 }
 
 .post--article > table {
-	border-collapse: collapse;
+	/* border-collapse: collapse; */
 	overflow: auto;
-	display: block;
+	width: 100%;
+	background-color: var(--primary-dark);
 }
 
 .post--article > table img {
@@ -302,8 +308,9 @@
 
 .post--article > table td,
 .post--article > table th {
-    border: 1px solid var(--primary-dark);
-    padding: 1rem;
+	/* border: 1px solid var(--primary-dark); */
+	padding: 1rem;
+	background-color: var(--background);
 }
 
 .post--article > table th {
@@ -465,4 +472,9 @@
 
 .page {
     margin: 1rem;
+}
+
+.empty-cell {
+    background: var(--background) !important;
+    border: unset !important;
 }

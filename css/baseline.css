@@ -27,7 +27,7 @@
 }
 
 html {
-    font-family: "Libre Baskerville", serif;
+    font-family: "Inter", sans-serif;
     font-size: 16px;
     background-color: #111;
     color: #aaa;
@@ -43,7 +43,7 @@ html {
     --accent-green: #a2ff00;
     --accent-green-light: #c1e87d;
 
-    --accent-orange-dark: #d96826;
+    --accent-orange-dark: rgb(217, 104, 38);
     --accent-orange: #ff5e00;
     --accent-orange-light: #e8a47d;
 
@@ -54,8 +54,8 @@ html {
 
     --link-color: var(--accent-orange-light);
 
-    --heading-font: "Vidaloka", serif;
-    --body-font: "Vidaloka", "Libre Baskerville", serif;
+    --heading-font: "Inter", sans-serif;
+    --body-font: "Inter", sans-serif;
     --ui-font: "Inter", sans-serif;
     --code-font: "B612 Mono", monospace;
 }
@@ -68,7 +68,6 @@ h1, h2, h3,
 h4, h5, h6 {
     font-family: serif;
     font-family: var(--heading-font);
-    font-weight: normal;
     line-height: 1.25;
 }
 
@@ -256,4 +255,121 @@ body {
 
 .page-content li:not(:last-child) {
     padding-bottom: 2rem;
+}
+
+/* ACTIVITY STUDIO */
+
+.activity-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+    grid-auto-rows: 5rem;
+    gap: 1rem;
+    position: relative;
+}
+
+.activity-grid.hidden::before,
+.activity-grid.hidden::after {
+    --push: -50%;
+
+    content: '';
+    position: absolute;
+    width: 5rem;
+    height: 5.1rem;
+    top: 50%;
+    left: 50%;
+    transform: translateX(var(--push)) translateY(-50%);
+
+    border-radius: 5rem;
+    border: 3px solid transparent;
+    border: 3px solid var(--primary);
+
+    animation: load 1s linear infinite;
+}
+
+.activity-grid.hidden::after {
+    --push: -48%;
+
+    border-color: var(--accent-orange);
+    height: 5rem;
+    width: 5.1rem;
+
+    animation-delay: 1s;
+}
+
+@keyframes load {
+    from {
+        transform: translateX(-50%) translateY(var(--push)) rotate(0deg);
+    }
+    to {
+        transform: translateX(-50%) translateY(var(--push)) rotate(360deg);
+    }
+}
+
+.activity-grid.hidden .btn--activity {
+   visibility: hidden;
+}
+
+.btn {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    border: 0;
+    background: none;
+    color: inherit;
+
+    border-radius: 5px;
+    background-color: var(--accent-orange);
+    color: var(--heading-color)
+}
+
+.btn:hover,
+.btn:focus {
+    background-color: var(--accent-orange-dark);
+}
+
+.btn--activity {
+    box-shadow: 0 3px 5px #000a;
+}
+
+.btn--activity:hover {
+    background-color: var(--accent-orange-light);
+    color: var(--accent-orange-dark);
+}
+
+.btn--activity:focus {
+    box-shadow: 
+        0 3px 5px #000,
+        0 0 15px var(--accent-orange);
+}
+
+.activity-area {
+    display: grid;
+    position: fixed;
+    top: 1rem;
+    bottom: 0;
+    left: 1rem;
+    right: 1rem;
+    z-index: 999;
+}
+
+html:not(.no-scroll) .activity-area {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.activity-area iframe {
+    background-color: #fff;
+}
+
+html.no-scroll {
+    overflow: hidden;
+}
+
+.ref {
+    border: none;
+    color: inherit;
+}
+
+.footnote {
+    border: none;
 }
