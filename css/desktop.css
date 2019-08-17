@@ -1,65 +1,66 @@
 .post:nth-child(even) {
-    margin-left: auto;
-    text-align: right;
+  margin-left: auto;
+  text-align: right;
 }
 
 .post {
-    margin: 1rem;
-    padding: 5rem;
+  margin: 1rem;
+  padding: 5rem;
 }
 
 .post__excerpt {
-    width: 60%;
-    margin-left: auto;
+  width: 60%;
+  margin-left: auto;
 }
 
 .post:nth-child(even) .post__excerpt {
-    margin: initial;
-    margin-right: auto;
-    text-align: left;
-}.post:nth-child(even) {
-    margin-left: auto;
-    text-align: right;
+  margin: initial;
+  margin-right: auto;
+  text-align: left;
+}
+.post:nth-child(even) {
+  margin-left: auto;
+  text-align: right;
 }
 
 .post {
-    margin: 1rem;
-    padding: 5rem;
+  margin: 1rem;
+  padding: 5rem;
 }
 
 .post__excerpt {
-    width: 60%;
-    margin-left: auto;
+  width: 60%;
+  margin-left: auto;
 }
 
 .post:nth-child(even) .post__excerpt {
-    margin: initial;
-    margin-right: auto;
-    text-align: left;
+  margin: initial;
+  margin-right: auto;
+  text-align: left;
 }
 
-.post__title {
-    font-size: 5rem;
+.post__title.post--focused {
+  font-size: calc(1rem + 5vw);
 }
 
 .side-callout,
 .side-note {
-    margin: 2rem;
+  margin: 2rem;
 }
 
 .archive-article {
-    padding: 5rem;
+  padding: 5rem;
 }
 
 .archive-year {
-    font-size: 7rem;
+  font-size: 7rem;
 }
 
 .page {
-    margin: 5rem;
+  margin: 5rem;
 }
 
 pre[class*="language-"].line-numbers {
-	margin: 2rem auto;
-	max-width: 80ch;
+  margin: 2rem auto;
+  max-width: 80ch;
 }
