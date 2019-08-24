@@ -69,11 +69,11 @@ function renderLinkPaths(pathArray = []) {
   <meta property="og:image" content="http://celestialcinnamon.github.io/<%- postCoverPath %>" />
   <meta property="og:description" content="<%- strip_html(description) %>" /> 
   <% if(pageShouldBeRendered) { %>
-  <!-- <link rel="stylesheet" href="https://rsms.me/inter/inter.css" media="screen"> -->
-  <link href="/antares-blog/css/baseline.css" rel="stylesheet" media="screen">
-  <link href="/antares-blog/css/mobile.css" rel="stylesheet" media="screen">
-  <link href="/antares-blog/css/desktop.css" rel="stylesheet" media="screen and (min-width: 750px)">
-  <!-- <link href="/antares-blog/css/print.css" rel="stylesheet" media="print"> -->
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" media="only screen">
+  <link href="/antares-blog/css/baseline.css" rel="stylesheet" media="only screen">
+  <link href="/antares-blog/css/mobile.css" rel="stylesheet" media="only screen">
+  <link href="/antares-blog/css/desktop.css" rel="stylesheet" media="only screen and (min-width: 750px)">
+  <link href="/antares-blog/css/print.css" rel="stylesheet" media="only print">
   <% } %>
   <%
     const links = []

@@ -127,7 +127,7 @@ Dito sa era na ito, nagkaroon ng dalawang magkalabang opinyon sa Web design. May
     <video controls src="/antares-blog/tl/Intrinsic-Web-Design-Ito-na-ba-ang-Wakas-ng-Responsive-Web/fluid-layout.mp4">
         <p class="video-fallback"></p>
     </video>
-    <figcaption>
+    <figcaption data-video="/antares-blog/tl/Intrinsic-Web-Design-Ito-na-ba-ang-Wakas-ng-Responsive-Web/fluid-layout.mp4">
         <b>Figure 62.5674</b>: Isang halimbawa ng fluid layout.
     </figcaption>
 </figure>
@@ -139,7 +139,7 @@ May mga nagsasabi naman na "hindi, dapat nag-aadapt sa size ng screen ang layout
     <video controls src="/antares-blog/tl/Intrinsic-Web-Design-Ito-na-ba-ang-Wakas-ng-Responsive-Web/fixed-layout.mp4">
         <p class="video-fallback"></p>
     </video>
-    <figcaption>
+    <figcaption data-video="/antares-blog/tl/Intrinsic-Web-Design-Ito-na-ba-ang-Wakas-ng-Responsive-Web/fixed-layout.mp4">
         <b>Figure 43.9855</b>: Isang halimbawa ng fixed layout.
     </figcaption>
 </figure>
@@ -165,7 +165,7 @@ Hindi rin siguro ito matunog sa mga kakilala ko, pero mga ilang taon pagkatapos 
 
 <figure id="fig-73.0292" class="img-wrapper  float--wider">
     <video controls src="/antares-blog/tl/Intrinsic-Web-Design-Ito-na-ba-ang-Wakas-ng-Responsive-Web/responsive-layout.mp4"></video>
-    <figcaption>
+    <figcaption data-video="/antares-blog/tl/Intrinsic-Web-Design-Ito-na-ba-ang-Wakas-ng-Responsive-Web/responsive-layout.mp4">
         <b>Figure 73.0292</b>: Isang halimbawa ng isang responsive na layout.
     </figcaption>
 </figure>
