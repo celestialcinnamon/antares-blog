@@ -28,8 +28,6 @@
   <meta name="msapplication-config" content="/antares-blog/images/browserconfig.xml?v=yyL3E0AWom">
   <meta name="theme-color" content="#bbbbbb">
 
-
-
   <!-- Twitter Card data -->
   <meta name="twitter:card" content="Ma&shy;i&shy;nit na ma&shy;i&shy;nit sa mga Web de&shy;sign&shy;ers at de&shy;ve&shy;lo&shy;pers ang RWD o Res&shy;pon&shy;sive Web De&shy;sign. Pe&shy;ro si&shy;mu&shy;la no&shy;ong 2018, may ba&shy;gong buzz&shy;word na bi&shy;na&shy;ba&shy;to, i&shy;sang tech&shy;nique na pa&shy;pa&shy;lit sa Res&shy;pon&shy;sive Web De&shy;sign: ang In&shy;trin&shy;sic Web De&shy;sign. Da&shy;pat mo ba i&shy;tong pag-a&shy;ra&shy;lan, o i&shy;sa lang ito sa mga ba&shy;gong u&shy;so na ma&shy;la&shy;la&shy;os din pag&shy;ka&shy;ta&shy;pos ng da&shy;la&shy;wang ta&shy;on? Su&shy;lit bang pag-a&shy;ra&shy;lan ang In&shy;trin&shy;sic Web De&shy;sign?">
 
@@ -42,20 +40,17 @@
   <meta property="og:image" content="http://celestialcinnamon.github.io//antares-blog/tl/Intrinsic-Web-Design-Ito-na-ba-ang-Wakas-ng-Responsive-Web/cover.png">
   <meta property="og:description" content="Ma&shy;i&shy;nit na ma&shy;i&shy;nit sa mga Web de&shy;sign&shy;ers at de&shy;ve&shy;lo&shy;pers ang RWD o Res&shy;pon&shy;sive Web De&shy;sign. Pe&shy;ro si&shy;mu&shy;la no&shy;ong 2018, may ba&shy;gong buzz&shy;word na bi&shy;na&shy;ba&shy;to, i&shy;sang tech&shy;nique na pa&shy;pa&shy;lit sa Res&shy;pon&shy;sive Web De&shy;sign: ang In&shy;trin&shy;sic Web De&shy;sign. Da&shy;pat mo ba i&shy;tong pag-a&shy;ra&shy;lan, o i&shy;sa lang ito sa mga ba&shy;gong u&shy;so na ma&shy;la&shy;la&shy;os din pag&shy;ka&shy;ta&shy;pos ng da&shy;la&shy;wang ta&shy;on? Su&shy;lit bang pag-a&shy;ra&shy;lan ang In&shy;trin&shy;sic Web De&shy;sign?"> 
   
-  <!-- <link rel="stylesheet" href="https://rsms.me/inter/inter.css" media="screen"> -->
-  <link href="/antares-blog/css/baseline.css" rel="stylesheet" media="screen">
-  <link href="/antares-blog/css/mobile.css" rel="stylesheet" media="screen">
-  <link href="/antares-blog/css/desktop.css" rel="stylesheet" media="screen and (min-width: 750px)">
-  <!-- <link href="/antares-blog/css/print.css" rel="stylesheet" media="print"> -->
+  <link href="/antares-blog/css/antares.css" rel="stylesheet" media="only screen">
+  <link href="/antares-blog/css/print.css" rel="stylesheet" media="only print">
   
   
   
   
 
   <!-- TODO: Uncomment these links -->
-  <!-- <link media="screen" href="https://fonts.googleapis.com/css?family=Vidaloka&display=swap" rel="stylesheet"> 
+  <link media="screen" href="https://fonts.googleapis.com/css?family=Vidaloka&display=swap" rel="stylesheet"> 
   <link media="screen" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700&display=swap" rel="stylesheet"> 
-  <link media="screen" href="https://fonts.googleapis.com/css?family=B612+Mono&display=swap" rel="stylesheet"> -->
+  <link media="screen" href="https://fonts.googleapis.com/css?family=B612+Mono&display=swap" rel="stylesheet">
 
   <!--
     HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
@@ -67,12 +62,12 @@
 <link rel="stylesheet" href="/antares-blog/css/prism-a11y-dark.css" type="text/css">
 <link rel="stylesheet" href="/antares-blog/css/prism-line-numbers.css" type="text/css"></head>
 
-<body>
+<body class="layout layout--layout">
     
     
     <div class="banner">
-  <a href="#main-content" class="nav skiplink sr-only sr-only-focusable">Skip to content</a>
-  <header class="header" role="banner">
+  <a href="#main-content" class="navigation__link skiplink sr-only sr-only-focusable">Skip to content</a>
+  <header class="banner__header" role="banner">
     <a href="/antares-blog/" class="site-logo" aria-label="Go to home">
       <svg style="transform: scale(2)" width="64" height="64" viewbox="-500 -500 2040 2040" fill="none" xmlns="http://www.w3.org/2000/svg">
         <style>
@@ -90,11 +85,13 @@
             fill: #fd0;
           }
 
+          a:focus #logo-ellipse,
           svg:hover #logo-ellipse {
             transform: none;
             opacity: 1;
           }
 
+          a:focus #logo-path,
           svg:hover #logo-path {
             fill: black;
           }
@@ -105,24 +102,25 @@
       </svg>
     </a>
   </header>
-  <nav class="navbar">
-    <ul class="nav-list">
-      <li class="nav-item"><a class="nav" href="/antares-blog/archives">Archives</a></li>
-      <li class="nav-item"><a class="nav" href="/antares-blog/downloads">Downloads</a></li>
+  <nav class="banner__navigation">
+    <ul class="navigation-list">
+      <li class="navigation__item"><a class="navigation__link" href="/antares-blog/archives">Archives</a></li>
+      <li class="navigation__item"><a class="navigation__link" href="/antares-blog/downloads">Downloads</a></li>
     </ul>
   </nav>
 </div>
     <div data-scroll data-scroll-showCallback="expandNavbar()"  data-scroll-hideCallback="collapseNavbar()"></div>
     
-    <main class="page--post">
+    <main class="layout layout--post" id="main-content">
 
-<article class="post--article">
+<article class="post post--article">
   <header>
     <h1>
-      <a class="post__title post--focused" href="/antares-blog/tl/Intrinsic-Web-Design-Ito-na-ba-ang-Wakas-ng-Responsive-Web/">Intrinsic Web Design: Ito na ba ang Wakas ng Responsive Web?</a>
+      <a class="post__title" href="/antares-blog/tl/Intrinsic-Web-Design-Ito-na-ba-ang-Wakas-ng-Responsive-Web/">Intrinsic Web Design: Ito na ba ang Wakas ng Responsive Web?</a>
     </h1>
   </header>
-  <p>Ma&shy;i&shy;nit na ma&shy;i&shy;nit sa mga Web de&shy;sign&shy;ers at de&shy;ve&shy;lo&shy;pers ang RWD o Res&shy;pon&shy;sive Web De&shy;sign. Pe&shy;ro si&shy;mu&shy;la no&shy;ong 2018, may ba&shy;gong <i lang="en">buzz&shy;word</i> na bi&shy;na&shy;ba&shy;to, i&shy;sang tech&shy;nique na pa&shy;pa&shy;lit sa Res&shy;pon&shy;sive Web De&shy;sign: ang <em>In&shy;trin&shy;sic Web De&shy;sign</em>. Da&shy;pat mo ba i&shy;tong pag-a&shy;ra&shy;lan, o i&shy;sa lang ito sa mga ba&shy;gong u&shy;so na ma&shy;la&shy;la&shy;os din pag&shy;ka&shy;ta&shy;pos ng da&shy;la&shy;wang ta&shy;on? Su&shy;lit bang pag-a&shy;ra&shy;lan ang In&shy;trin&shy;sic Web De&shy;sign?</p>
+  <div class="post__content">
+    <p>Ma&shy;i&shy;nit na ma&shy;i&shy;nit sa mga Web de&shy;sign&shy;ers at de&shy;ve&shy;lo&shy;pers ang RWD o Res&shy;pon&shy;sive Web De&shy;sign. Pe&shy;ro si&shy;mu&shy;la no&shy;ong 2018, may ba&shy;gong <i lang="en">buzz&shy;word</i> na bi&shy;na&shy;ba&shy;to, i&shy;sang tech&shy;nique na pa&shy;pa&shy;lit sa Res&shy;pon&shy;sive Web De&shy;sign: ang <em>In&shy;trin&shy;sic Web De&shy;sign</em>. Da&shy;pat mo ba i&shy;tong pag-a&shy;ra&shy;lan, o i&shy;sa lang ito sa mga ba&shy;gong u&shy;so na ma&shy;la&shy;la&shy;os din pag&shy;ka&shy;ta&shy;pos ng da&shy;la&shy;wang ta&shy;on? Su&shy;lit bang pag-a&shy;ra&shy;lan ang In&shy;trin&shy;sic Web De&shy;sign?</p>
 <a id="more"></a>
 <p>Isang taon na mula nang unang marinig ng mundo ang terminong <i>Intrinsic Web Design</i> galing kay Jen Simmons sa An Event Apart, pero sa hindi pa ito gaanong matunog sa Pilipinas (or at least sa mga kakilala ko). Ito, ayon kay Jen Simmons, ang papalit sa nakasanayan nating Responsive Web Design. Sabi pa niya, isa itong bagong <i>era</i> ng Web design. Ano ang ibig niyang sabihin?</p>
 <h2 id="Ang-Iba’t-Ibang-Era-ng-Web-Design"><a href="#Ang-Iba’t-Ibang-Era-ng-Web-Design" class="headerlink" title="Ang Iba’t Ibang Era ng Web Design"></a>Ang Iba’t Ibang Era ng Web Design</h2><p>Matagal nang umiiral ang World Wide Web, at malayo na ang narating nito simula <span id="ref-1">nang maimbento ito ni Tim Berners-Lee noong 1990.</span><sup><a href="#foot-1">1</a></sup> Naging platform din ito para sa mga artist na nagnanais maglabas ng mga gawa nila sa mundo, o sa mga kompanyang nagnanais gawing artistic ang Web sites nila para umayon sa branding ng kompanya.</p>
@@ -203,7 +201,7 @@
     <video controls src="/antares-blog/tl/Intrinsic-Web-Design-Ito-na-ba-ang-Wakas-ng-Responsive-Web/fluid-layout.mp4">
         <p class="video-fallback"></p>
     </video>
-    <figcaption>
+    <figcaption data-video="/antares-blog/tl/Intrinsic-Web-Design-Ito-na-ba-ang-Wakas-ng-Responsive-Web/fluid-layout.mp4">
         <b>Figure 62.5674</b>: Isang halimbawa ng fluid layout.
     </figcaption>
 </figure>
@@ -213,7 +211,7 @@
     <video controls src="/antares-blog/tl/Intrinsic-Web-Design-Ito-na-ba-ang-Wakas-ng-Responsive-Web/fixed-layout.mp4">
         <p class="video-fallback"></p>
     </video>
-    <figcaption>
+    <figcaption data-video="/antares-blog/tl/Intrinsic-Web-Design-Ito-na-ba-ang-Wakas-ng-Responsive-Web/fixed-layout.mp4">
         <b>Figure 43.9855</b>: Isang halimbawa ng fixed layout.
     </figcaption>
 </figure>
@@ -232,7 +230,7 @@
 <p>Hindi rin siguro ito matunog sa mga kakilala ko, pero mga ilang taon pagkatapos sumikat ang Responsive Web Design, lumabas ang Adaptive Web Design. Hindi nito pinalitan ang RWD; sa halip, dinagdagan nito ang RWD ng maraming kakayahan. Sa RWD, lahat ng transformations sa layout at adjustments ay nangyayari sa browser, gamit ang CSS, at kung minsan, JavaScript. Pero nang dumating sa eksena ang Adaptive Web Design, sumama ang server sa pagbibigay ng magadang experience sa mga user.</p>
 <figure id="fig-73.0292" class="img-wrapper  float--wider">
     <video controls src="/antares-blog/tl/Intrinsic-Web-Design-Ito-na-ba-ang-Wakas-ng-Responsive-Web/responsive-layout.mp4"></video>
-    <figcaption>
+    <figcaption data-video="/antares-blog/tl/Intrinsic-Web-Design-Ito-na-ba-ang-Wakas-ng-Responsive-Web/responsive-layout.mp4">
         <b>Figure 73.0292</b>: Isang halimbawa ng isang responsive na layout.
     </figcaption>
 </figure>
@@ -291,6 +289,7 @@
 <li><span id="foot-2">Malibang binanggit sa mismong imahe, lahat ng illustrations sa article na ito ay kuha mula sa slides na ginawa ni Jen Simmons para sa An Event Apart 2018</span></li>
 </ol>
 
+  </div>
   <footer class="article-footer">
       
   <div class="article-tags-wrapper">
@@ -308,14 +307,16 @@
 </article>
 </main>
     
-    <footer class="footer" role="contentinfo">
-  <div>
+    <footer class="layout layout--footer" role="contentinfo">
+  <div class="footer__division">
+  <a href="/antares-blog/tungkol-sa-amin">Tungkol sa Antares Programming</a>
+  <a href="https://www.facebook.com/antaresprogramming"><i>Antares Programming</i> sa Facebook</a>
+  <a href="#">Back to top</a>
+  </div>
+  <div class="footer__division text-align--right">
     <p>&copy; 2019 Antares Programming</p>
     <p>Reserbado ang lahat ng karapatan.</p>
   </div>
-  <div><a href="/antares-blog/tungkol-sa-amin">Tungkol sa Antares Programming</a>
-  <a href="https://www.facebook.com/antaresprogramming"><i>Antares Programming</i> sa Facebook</a>
-  <p id="back-to-top"><a href="#top">Back to top</a></p></div>
 </footer>
 <script>
     var CONFIG_ROOT = `/antares-blog/`;

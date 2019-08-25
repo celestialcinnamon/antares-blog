@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="" class="dark">
+<html lang="tl" class="dark">
 
 
 <head><meta name="generator" content="Hexo 3.8.0">
@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Infographics</title>
+  <title>Antares Programming</title>
   
   <meta name="description" content="Current trends and best practices for Filipino developers.">
   <meta name="author" content="Francis Rubio &lt;francoisoibur21@gmail.com&gt;">
@@ -28,34 +28,29 @@
   <meta name="msapplication-config" content="/antares-blog/images/browserconfig.xml?v=yyL3E0AWom">
   <meta name="theme-color" content="#bbbbbb">
 
-
-
   <!-- Twitter Card data -->
   <meta name="twitter:card" content="Current trends and best practices for Filipino developers.">
 
   
 
   <!-- Open Graph data -->
-  <meta property="og:title" content="Infographics">
+  <meta property="og:title" content="Antares Programming">
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://celestialcinnamon.github.io/antares-blog/infographics/index.html">
+  <meta property="og:url" content="https://celestialcinnamon.github.io/antares-blog/categories/Opinion/index.html">
   <meta property="og:image" content="http://celestialcinnamon.github.io//antares-blog/images/favicon-194x194.png">
   <meta property="og:description" content="Current trends and best practices for Filipino developers."> 
   
-  <!-- <link rel="stylesheet" href="https://rsms.me/inter/inter.css" media="screen"> -->
-  <link href="/antares-blog/css/baseline.css" rel="stylesheet" media="screen">
-  <link href="/antares-blog/css/mobile.css" rel="stylesheet" media="screen">
-  <link href="/antares-blog/css/desktop.css" rel="stylesheet" media="screen and (min-width: 750px)">
-  <!-- <link href="/antares-blog/css/print.css" rel="stylesheet" media="print"> -->
+  <link href="/antares-blog/css/antares.css" rel="stylesheet" media="only screen">
+  <link href="/antares-blog/css/print.css" rel="stylesheet" media="only print">
   
   
   
   
 
   <!-- TODO: Uncomment these links -->
-  <!-- <link media="screen" href="https://fonts.googleapis.com/css?family=Vidaloka&display=swap" rel="stylesheet"> 
+  <link media="screen" href="https://fonts.googleapis.com/css?family=Vidaloka&display=swap" rel="stylesheet"> 
   <link media="screen" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700&display=swap" rel="stylesheet"> 
-  <link media="screen" href="https://fonts.googleapis.com/css?family=B612+Mono&display=swap" rel="stylesheet"> -->
+  <link media="screen" href="https://fonts.googleapis.com/css?family=B612+Mono&display=swap" rel="stylesheet">
 
   <!--
     HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
@@ -67,12 +62,12 @@
 <link rel="stylesheet" href="/antares-blog/css/prism-a11y-dark.css" type="text/css">
 <link rel="stylesheet" href="/antares-blog/css/prism-line-numbers.css" type="text/css"></head>
 
-<body>
+<body class="layout layout--layout">
     
     
     <div class="banner">
-  <a href="#main-content" class="nav skiplink sr-only sr-only-focusable">Skip to content</a>
-  <header class="header" role="banner">
+  <a href="#main-content" class="navigation__link skiplink sr-only sr-only-focusable">Skip to content</a>
+  <header class="banner__header" role="banner">
     <a href="/antares-blog/" class="site-logo" aria-label="Go to home">
       <svg style="transform: scale(2)" width="64" height="64" viewbox="-500 -500 2040 2040" fill="none" xmlns="http://www.w3.org/2000/svg">
         <style>
@@ -90,11 +85,13 @@
             fill: #fd0;
           }
 
+          a:focus #logo-ellipse,
           svg:hover #logo-ellipse {
             transform: none;
             opacity: 1;
           }
 
+          a:focus #logo-path,
           svg:hover #logo-path {
             fill: black;
           }
@@ -105,56 +102,60 @@
       </svg>
     </a>
   </header>
-  <nav class="navbar">
-    <ul class="nav-list">
-      <li class="nav-item"><a class="nav" href="/antares-blog/archives">Archives</a></li>
-      <li class="nav-item"><a class="nav" href="/antares-blog/downloads">Downloads</a></li>
+  <nav class="banner__navigation">
+    <ul class="navigation-list">
+      <li class="navigation__item"><a class="navigation__link" href="/antares-blog/archives">Archives</a></li>
+      <li class="navigation__item"><a class="navigation__link" href="/antares-blog/downloads">Downloads</a></li>
     </ul>
   </nav>
 </div>
     <div data-scroll data-scroll-showCallback="expandNavbar()"  data-scroll-hideCallback="collapseNavbar()"></div>
     
-    <main class="page">
     
-<div style="padding: 1rem 0;">
-  Sa page na ito, makikita ang lahat ng mga infographic na nai-post sa
-  <a href="https://facebook.com/antaresprogramming" target="_blank" rel="noopener"> Facebook page </a> ng
-  Antares.
-</div>
 
-<a id="more"></a>
 
-<ul class="card-grid card-grid--img">
-  <li>
-    <a href="/antares-blog/Guidelines-for-Initializing-Variables/" class="card">
-      <img src="index/init-var.png" alt="">
-      <span class="card__header">Guidelines for initializing variables</span>
-    </a>
-  </li>
-  <li>
-    <a href="#!" class="card">
-      <img src="index/name-var.png" alt="">
-      <span class="card__header">How to name variables</span>
-    </a>
-  </li>
-  <li>
-    <a href="#!" class="card">
-      <img src="index/fact-bits.png" alt="">
-      <span class="card__header">Fact Bits</span>
-    </a>
-  </li>
-</ul>
 
-</main>
+
+<section class="archive__by-year">
+  <a href="/antares-blog/archives/2019" class="archive-year">
+     
     
-    <footer class="footer" role="contentinfo">
-  <div>
+    Opinion
+    
+    in
+    2019
+  </a>
+  <div class="archive__posts">
+  
+    
+<article class="post post--archive">
+    <header class="post__header">
+        <h2>
+            <a href="/antares-blog/tl/Paano-Mag-aral-ng-Programming/" class="post__title">Paano Mag-aral ng Programming?</a>
+        </h2>
+        <div class="post__meta">
+            <address rel="author" class="post__author">Francis Rubio</address>
+            <time pubdate="" datetime="2019-08-24T00:34:10.000Z" class="post__publish-date">August 24, 2019</time>
+        </div>
+    </header>
+</article>
+  
+  </div>
+</section>
+
+
+
+    
+    <footer class="layout layout--footer" role="contentinfo">
+  <div class="footer__division">
+  <a href="/antares-blog/tungkol-sa-amin">Tungkol sa Antares Programming</a>
+  <a href="https://www.facebook.com/antaresprogramming"><i>Antares Programming</i> sa Facebook</a>
+  <a href="#">Back to top</a>
+  </div>
+  <div class="footer__division text-align--right">
     <p>&copy; 2019 Antares Programming</p>
     <p>Reserbado ang lahat ng karapatan.</p>
   </div>
-  <div><a href="/antares-blog/tungkol-sa-amin">Tungkol sa Antares Programming</a>
-  <a href="https://www.facebook.com/antaresprogramming"><i>Antares Programming</i> sa Facebook</a>
-  <p id="back-to-top"><a href="#top">Back to top</a></p></div>
 </footer>
 <script>
     var CONFIG_ROOT = `/antares-blog/`;

@@ -28,8 +28,6 @@
   <meta name="msapplication-config" content="/antares-blog/images/browserconfig.xml?v=yyL3E0AWom">
   <meta name="theme-color" content="#bbbbbb">
 
-
-
   <!-- Twitter Card data -->
   <meta name="twitter:card" content="Mas delikado na ang Internet ngayon higit kailanman. Protektahan ang sarili mo at ang privacy mo.">
 
@@ -42,20 +40,17 @@
   <meta property="og:image" content="http://celestialcinnamon.github.io//antares-blog/tl/bakit-firefox-dapat/cover.png">
   <meta property="og:description" content="Mas delikado na ang Internet ngayon higit kailanman. Protektahan ang sarili mo at ang privacy mo."> 
   
-  <!-- <link rel="stylesheet" href="https://rsms.me/inter/inter.css" media="screen"> -->
-  <link href="/antares-blog/css/baseline.css" rel="stylesheet" media="screen">
-  <link href="/antares-blog/css/mobile.css" rel="stylesheet" media="screen">
-  <link href="/antares-blog/css/desktop.css" rel="stylesheet" media="screen and (min-width: 750px)">
-  <!-- <link href="/antares-blog/css/print.css" rel="stylesheet" media="print"> -->
+  <link href="/antares-blog/css/antares.css" rel="stylesheet" media="only screen">
+  <link href="/antares-blog/css/print.css" rel="stylesheet" media="only print">
   
   
   
   
 
   <!-- TODO: Uncomment these links -->
-  <!-- <link media="screen" href="https://fonts.googleapis.com/css?family=Vidaloka&display=swap" rel="stylesheet"> 
+  <link media="screen" href="https://fonts.googleapis.com/css?family=Vidaloka&display=swap" rel="stylesheet"> 
   <link media="screen" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700&display=swap" rel="stylesheet"> 
-  <link media="screen" href="https://fonts.googleapis.com/css?family=B612+Mono&display=swap" rel="stylesheet"> -->
+  <link media="screen" href="https://fonts.googleapis.com/css?family=B612+Mono&display=swap" rel="stylesheet">
 
   <!--
     HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
@@ -67,12 +62,12 @@
 <link rel="stylesheet" href="/antares-blog/css/prism-a11y-dark.css" type="text/css">
 <link rel="stylesheet" href="/antares-blog/css/prism-line-numbers.css" type="text/css"></head>
 
-<body>
+<body class="layout layout--layout">
     
     
     <div class="banner">
-  <a href="#main-content" class="nav skiplink sr-only sr-only-focusable">Skip to content</a>
-  <header class="header" role="banner">
+  <a href="#main-content" class="navigation__link skiplink sr-only sr-only-focusable">Skip to content</a>
+  <header class="banner__header" role="banner">
     <a href="/antares-blog/" class="site-logo" aria-label="Go to home">
       <svg style="transform: scale(2)" width="64" height="64" viewbox="-500 -500 2040 2040" fill="none" xmlns="http://www.w3.org/2000/svg">
         <style>
@@ -90,11 +85,13 @@
             fill: #fd0;
           }
 
+          a:focus #logo-ellipse,
           svg:hover #logo-ellipse {
             transform: none;
             opacity: 1;
           }
 
+          a:focus #logo-path,
           svg:hover #logo-path {
             fill: black;
           }
@@ -105,24 +102,25 @@
       </svg>
     </a>
   </header>
-  <nav class="navbar">
-    <ul class="nav-list">
-      <li class="nav-item"><a class="nav" href="/antares-blog/archives">Archives</a></li>
-      <li class="nav-item"><a class="nav" href="/antares-blog/downloads">Downloads</a></li>
+  <nav class="banner__navigation">
+    <ul class="navigation-list">
+      <li class="navigation__item"><a class="navigation__link" href="/antares-blog/archives">Archives</a></li>
+      <li class="navigation__item"><a class="navigation__link" href="/antares-blog/downloads">Downloads</a></li>
     </ul>
   </nav>
 </div>
     <div data-scroll data-scroll-showCallback="expandNavbar()"  data-scroll-hideCallback="collapseNavbar()"></div>
     
-    <main class="page--post">
+    <main class="layout layout--post" id="main-content">
 
-<article class="post--article">
+<article class="post post--article">
   <header>
     <h1>
-      <a class="post__title post--focused" href="/antares-blog/tl/bakit-firefox-dapat/">Maging Safe sa Pagba-browse ng Web sites</a>
+      <a class="post__title" href="/antares-blog/tl/bakit-firefox-dapat/">Maging Safe sa Pagba-browse ng Web sites</a>
     </h1>
   </header>
-  <p>Mas delikado na ang Internet ngayon higit kailanman. Protektahan ang sarili mo at ang privacy mo.
+  <div class="post__content">
+    <p>Mas delikado na ang Internet ngayon higit kailanman. Protektahan ang sarili mo at ang privacy mo.
 <a id="more"></a></p>
 <p>Napakadelikado ng Internet. Ang isa sa pinakamalaking industriya ngayon ay ang industriya ng <i>online advertising</i>. Isa itong anyo ng marketing na ginagawa sa Web. <a class="ref" id="ref-1">Noong 2017, umabot sa $83.0 billion ang revenue ng online advertising</a>.<sup><a class="footnote" href="#foot-1">*</a></sup> Pero hindi tulad ng tradisyunal na advertisements sa radyo, TV, at diyaryo, mas mapanganib ang online advertising. </p>
 <p><a class="ref" id="ref-2">Ayon sa isang report ng US Senate, may <q>significant security, privacy risk</q> sa mga users ang online advertising.</a><sup><a class="footnote" href="#foot-2">*</a></sup> Gumagana ang mga online ads sa pamamagitan ng mga Web sites na nagdi-display nito. Kasama rito ang mga <i>popup ads</i>, mga video ads, at mga banners sa mga sites. Karamihan sa mga ito ay dumedepende sa isang technique na tinatawag na <i>behavioral targeting</i>. Sa technique na ito, tina-track ng ads ang online activity ng mga user para higit na maunawaan ang behavior ng mga consumer at maibigay sa kanila ang advertisements para sa mga produktong may pinakamalaking posibilidad na pag-interesan nila. Ginagawa ito sa pamamagitan ng pag-iiwan ng mga <i>cookie</i>, o mga maliliit na piraso ng data na naglalaman ng ilang impormasyon tungkol sa user. Totoo, puwede namang burahin ang lahat ng cookies mula sa lahat ng sites. Pero may mga ads na nagta-track ng <i>MAC address</i> sa halip na cookies. Ang MAC Address ay isang code o ID na parang plate number para sa device mo, desktop man ito, laptop, smartphone, tablet, o iba pa. Dahil dito, kahit burahin mo ang cookies, kilala ka pa rin ng online advertisers dahil sa MAC address mo.</p>
@@ -177,6 +175,7 @@ at marami pang iba. Lahat ng ginagawa mo, alam ng Google.</p>
 <li><a href="https://blog.mozilla.org/blog/2017/11/14/introducing-firefox-quantum/" target="_blank" rel="noopener">Introducing the New Firefox Quantum</a>. The Mozilla Blog, November 14, 2017</li>
 </ol>
 
+  </div>
   <footer class="article-footer">
       
   <div class="article-tags-wrapper">
@@ -194,14 +193,16 @@ at marami pang iba. Lahat ng ginagawa mo, alam ng Google.</p>
 </article>
 </main>
     
-    <footer class="footer" role="contentinfo">
-  <div>
+    <footer class="layout layout--footer" role="contentinfo">
+  <div class="footer__division">
+  <a href="/antares-blog/tungkol-sa-amin">Tungkol sa Antares Programming</a>
+  <a href="https://www.facebook.com/antaresprogramming"><i>Antares Programming</i> sa Facebook</a>
+  <a href="#">Back to top</a>
+  </div>
+  <div class="footer__division text-align--right">
     <p>&copy; 2019 Antares Programming</p>
     <p>Reserbado ang lahat ng karapatan.</p>
   </div>
-  <div><a href="/antares-blog/tungkol-sa-amin">Tungkol sa Antares Programming</a>
-  <a href="https://www.facebook.com/antaresprogramming"><i>Antares Programming</i> sa Facebook</a>
-  <p id="back-to-top"><a href="#top">Back to top</a></p></div>
 </footer>
 <script>
     var CONFIG_ROOT = `/antares-blog/`;

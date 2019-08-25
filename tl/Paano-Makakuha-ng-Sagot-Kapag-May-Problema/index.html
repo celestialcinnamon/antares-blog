@@ -28,8 +28,6 @@
   <meta name="msapplication-config" content="/antares-blog/images/browserconfig.xml?v=yyL3E0AWom">
   <meta name="theme-color" content="#bbbbbb">
 
-
-
   <!-- Twitter Card data -->
   <meta name="twitter:card" content="Sabi nga nila, there are no stupid questions. Pero may tamang paraan ng pagtatanong at paghingi ng tulong kapag nagkaroon ka ng problema sa programming.">
 
@@ -39,23 +37,20 @@
   <meta property="og:title" content="Walang Sumasagot sa Tanong Ko—Paano Makakuha ng Sagot Kapag May Problema ka sa Programming">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://celestialcinnamon.github.io/antares-blog/tl/Paano-Makakuha-ng-Sagot-Kapag-May-Problema/">
-  <meta property="og:image" content="http://celestialcinnamon.github.io//antares-blog/images/favicon-194x194.png">
+  <meta property="og:image" content="http://celestialcinnamon.github.io//antares-blog/tl/Paano-Makakuha-ng-Sagot-Kapag-May-Problema/undefined">
   <meta property="og:description" content="Sabi nga nila, there are no stupid questions. Pero may tamang paraan ng pagtatanong at paghingi ng tulong kapag nagkaroon ka ng problema sa programming."> 
   
-  <!-- <link rel="stylesheet" href="https://rsms.me/inter/inter.css" media="screen"> -->
-  <link href="/antares-blog/css/baseline.css" rel="stylesheet" media="screen">
-  <link href="/antares-blog/css/mobile.css" rel="stylesheet" media="screen">
-  <link href="/antares-blog/css/desktop.css" rel="stylesheet" media="screen and (min-width: 750px)">
-  <!-- <link href="/antares-blog/css/print.css" rel="stylesheet" media="print"> -->
+  <link href="/antares-blog/css/antares.css" rel="stylesheet" media="only screen">
+  <link href="/antares-blog/css/print.css" rel="stylesheet" media="only print">
   
   
   
   
 
   <!-- TODO: Uncomment these links -->
-  <!-- <link media="screen" href="https://fonts.googleapis.com/css?family=Vidaloka&display=swap" rel="stylesheet"> 
+  <link media="screen" href="https://fonts.googleapis.com/css?family=Vidaloka&display=swap" rel="stylesheet"> 
   <link media="screen" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700&display=swap" rel="stylesheet"> 
-  <link media="screen" href="https://fonts.googleapis.com/css?family=B612+Mono&display=swap" rel="stylesheet"> -->
+  <link media="screen" href="https://fonts.googleapis.com/css?family=B612+Mono&display=swap" rel="stylesheet">
 
   <!--
     HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
@@ -67,12 +62,12 @@
 <link rel="stylesheet" href="/antares-blog/css/prism-a11y-dark.css" type="text/css">
 <link rel="stylesheet" href="/antares-blog/css/prism-line-numbers.css" type="text/css"></head>
 
-<body>
+<body class="layout layout--layout">
     
     
     <div class="banner">
-  <a href="#main-content" class="nav skiplink sr-only sr-only-focusable">Skip to content</a>
-  <header class="header" role="banner">
+  <a href="#main-content" class="navigation__link skiplink sr-only sr-only-focusable">Skip to content</a>
+  <header class="banner__header" role="banner">
     <a href="/antares-blog/" class="site-logo" aria-label="Go to home">
       <svg style="transform: scale(2)" width="64" height="64" viewbox="-500 -500 2040 2040" fill="none" xmlns="http://www.w3.org/2000/svg">
         <style>
@@ -90,11 +85,13 @@
             fill: #fd0;
           }
 
+          a:focus #logo-ellipse,
           svg:hover #logo-ellipse {
             transform: none;
             opacity: 1;
           }
 
+          a:focus #logo-path,
           svg:hover #logo-path {
             fill: black;
           }
@@ -105,24 +102,25 @@
       </svg>
     </a>
   </header>
-  <nav class="navbar">
-    <ul class="nav-list">
-      <li class="nav-item"><a class="nav" href="/antares-blog/archives">Archives</a></li>
-      <li class="nav-item"><a class="nav" href="/antares-blog/downloads">Downloads</a></li>
+  <nav class="banner__navigation">
+    <ul class="navigation-list">
+      <li class="navigation__item"><a class="navigation__link" href="/antares-blog/archives">Archives</a></li>
+      <li class="navigation__item"><a class="navigation__link" href="/antares-blog/downloads">Downloads</a></li>
     </ul>
   </nav>
 </div>
     <div data-scroll data-scroll-showCallback="expandNavbar()"  data-scroll-hideCallback="collapseNavbar()"></div>
     
-    <main class="page--post">
+    <main class="layout layout--post" id="main-content">
 
-<article class="post--article">
+<article class="post post--article">
   <header>
     <h1>
-      <a class="post__title post--focused" href="/antares-blog/tl/Paano-Makakuha-ng-Sagot-Kapag-May-Problema/">Walang Sumasagot sa Tanong Ko—Paano Makakuha ng Sagot Kapag May Problema ka sa Programming</a>
+      <a class="post__title" href="/antares-blog/tl/Paano-Makakuha-ng-Sagot-Kapag-May-Problema/">Walang Sumasagot sa Tanong Ko—Paano Makakuha ng Sagot Kapag May Problema ka sa Programming</a>
     </h1>
   </header>
-  <p>Sabi nga nila, <q><i lang="en">there are no stupid questions.</i></q> Pero may tamang paraan ng pagtatanong at paghingi ng tulong kapag nagkaroon ka ng problema sa programming.</p>
+  <div class="post__content">
+    <p>Sabi nga nila, <q><i lang="en">there are no stupid questions.</i></q> Pero may tamang paraan ng pagtatanong at paghingi ng tulong kapag nagkaroon ka ng problema sa programming.</p>
 <a id="more"></a>
 <p>Naranasan mo na bang mag-post sa mga Facebook groups, o sa mga programming forums gaya ng StackOverflow, pero walang sumasagot? Dina-downvote ang tanong mo? O baka naman napuno ng Haha reacts ang post mo, at puro “uso mag-Google” at “search-search din bes” ang nasa comments? Hindi ikaw ang problema; ang tanong mo.</p>
 <p>Kung isa kang bagúhan sa larangan ng programming, marami kang dapat tandaan kapag nagtatanong. Sa mga programming forums at discussion groups, paulit-ulit nang nakikita ng mga mas marurunong ang mga tanong na palaging itinatanong ng mga bagúhang programmer. Kaya kadalasan nang hindi ito pinapansin o tino-troll na lang din minsan. Oo, hindi magandang ginagawa nila ito, pero hindi mo rin sila masisisi dahil paulit-ulit na lumilitaw ang iyon at iyon ding mga tanong. Sa article na ito, pag-usapan natin kung paano mo mai-improve ang paraan mo ng pagtatanong para makakuha ng mas malaking tsansa na may sumagot sa tanong mo.</p>
@@ -191,6 +189,7 @@
 <p>In general, ‘wag mong i-repost ang tanong mo; nakakairita ‘to. Baka natutulog pa ang taong nakakaalam ng sagot sa tanong mo kaya walang nagre-reply. Baka rin hindi maayos ang pagkakatanong mo, check mo rin. Subukan mo ring magtanong sa ibang groups.</p>
 <h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>Medyo marami kang dapat alalahanin kapag nagtatanong. Nakita kong dapat magkaroon ng ganitong post dito dahil karamihan sa mga baguhang kakilala ko, hindi alam ito. At isa rin ito sa mga skills na madadala mo kahit tumagal na. Mawawala ang C at C++, kakaunti ang gumagamit ng Bootstrap at Foundation, malalaos ang object-oriented programming. Pero ang mga skills na gaya nito ay mananatili. Kaya sa susunod na magtanong ka, i-check ulit ang article na ito; i-bookmark mo para hindi mo makalimutan. Tandaan, parang kandado ang mga problema; nasa tamang tanong ang susi para makuha ang tamang sagot.</p>
 
+  </div>
   <footer class="article-footer">
       
   <div class="article-tags-wrapper">
@@ -208,14 +207,16 @@
 </article>
 </main>
     
-    <footer class="footer" role="contentinfo">
-  <div>
+    <footer class="layout layout--footer" role="contentinfo">
+  <div class="footer__division">
+  <a href="/antares-blog/tungkol-sa-amin">Tungkol sa Antares Programming</a>
+  <a href="https://www.facebook.com/antaresprogramming"><i>Antares Programming</i> sa Facebook</a>
+  <a href="#">Back to top</a>
+  </div>
+  <div class="footer__division text-align--right">
     <p>&copy; 2019 Antares Programming</p>
     <p>Reserbado ang lahat ng karapatan.</p>
   </div>
-  <div><a href="/antares-blog/tungkol-sa-amin">Tungkol sa Antares Programming</a>
-  <a href="https://www.facebook.com/antaresprogramming"><i>Antares Programming</i> sa Facebook</a>
-  <p id="back-to-top"><a href="#top">Back to top</a></p></div>
 </footer>
 <script>
     var CONFIG_ROOT = `/antares-blog/`;

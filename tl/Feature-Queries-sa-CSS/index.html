@@ -28,8 +28,6 @@
   <meta name="msapplication-config" content="/antares-blog/images/browserconfig.xml?v=yyL3E0AWom">
   <meta name="theme-color" content="#bbbbbb">
 
-
-
   <!-- Twitter Card data -->
   <meta name="twitter:card" content="Paano mo masisigurong gagana sa lahat ng browsers ang design ng Web site mo? Kasama sa isang set ng techniques na kung tawagin ay progressive enhancement ang bagong feature ng CSS, ang Feature Queries.">
 
@@ -42,20 +40,17 @@
   <meta property="og:image" content="http://celestialcinnamon.github.io//antares-blog/tl/Feature-Queries-sa-CSS/cover.png">
   <meta property="og:description" content="Paano mo masisigurong gagana sa lahat ng browsers ang design ng Web site mo? Kasama sa isang set ng techniques na kung tawagin ay progressive enhancement ang bagong feature ng CSS, ang Feature Queries."> 
   
-  <!-- <link rel="stylesheet" href="https://rsms.me/inter/inter.css" media="screen"> -->
-  <link href="/antares-blog/css/baseline.css" rel="stylesheet" media="screen">
-  <link href="/antares-blog/css/mobile.css" rel="stylesheet" media="screen">
-  <link href="/antares-blog/css/desktop.css" rel="stylesheet" media="screen and (min-width: 750px)">
-  <!-- <link href="/antares-blog/css/print.css" rel="stylesheet" media="print"> -->
+  <link href="/antares-blog/css/antares.css" rel="stylesheet" media="only screen">
+  <link href="/antares-blog/css/print.css" rel="stylesheet" media="only print">
   
   
   
   
 
   <!-- TODO: Uncomment these links -->
-  <!-- <link media="screen" href="https://fonts.googleapis.com/css?family=Vidaloka&display=swap" rel="stylesheet"> 
+  <link media="screen" href="https://fonts.googleapis.com/css?family=Vidaloka&display=swap" rel="stylesheet"> 
   <link media="screen" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700&display=swap" rel="stylesheet"> 
-  <link media="screen" href="https://fonts.googleapis.com/css?family=B612+Mono&display=swap" rel="stylesheet"> -->
+  <link media="screen" href="https://fonts.googleapis.com/css?family=B612+Mono&display=swap" rel="stylesheet">
 
   <!--
     HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
@@ -67,12 +62,12 @@
 <link rel="stylesheet" href="/antares-blog/css/prism-a11y-dark.css" type="text/css">
 <link rel="stylesheet" href="/antares-blog/css/prism-line-numbers.css" type="text/css"></head>
 
-<body>
+<body class="layout layout--layout">
     
     
     <div class="banner">
-  <a href="#main-content" class="nav skiplink sr-only sr-only-focusable">Skip to content</a>
-  <header class="header" role="banner">
+  <a href="#main-content" class="navigation__link skiplink sr-only sr-only-focusable">Skip to content</a>
+  <header class="banner__header" role="banner">
     <a href="/antares-blog/" class="site-logo" aria-label="Go to home">
       <svg style="transform: scale(2)" width="64" height="64" viewbox="-500 -500 2040 2040" fill="none" xmlns="http://www.w3.org/2000/svg">
         <style>
@@ -90,11 +85,13 @@
             fill: #fd0;
           }
 
+          a:focus #logo-ellipse,
           svg:hover #logo-ellipse {
             transform: none;
             opacity: 1;
           }
 
+          a:focus #logo-path,
           svg:hover #logo-path {
             fill: black;
           }
@@ -105,24 +102,25 @@
       </svg>
     </a>
   </header>
-  <nav class="navbar">
-    <ul class="nav-list">
-      <li class="nav-item"><a class="nav" href="/antares-blog/archives">Archives</a></li>
-      <li class="nav-item"><a class="nav" href="/antares-blog/downloads">Downloads</a></li>
+  <nav class="banner__navigation">
+    <ul class="navigation-list">
+      <li class="navigation__item"><a class="navigation__link" href="/antares-blog/archives">Archives</a></li>
+      <li class="navigation__item"><a class="navigation__link" href="/antares-blog/downloads">Downloads</a></li>
     </ul>
   </nav>
 </div>
     <div data-scroll data-scroll-showCallback="expandNavbar()"  data-scroll-hideCallback="collapseNavbar()"></div>
     
-    <main class="page--post">
+    <main class="layout layout--post" id="main-content">
 
-<article class="post--article">
+<article class="post post--article">
   <header>
     <h1>
-      <a class="post__title post--focused" href="/antares-blog/tl/Feature-Queries-sa-CSS/">Feature Queries sa CSS</a>
+      <a class="post__title" href="/antares-blog/tl/Feature-Queries-sa-CSS/">Feature Queries sa CSS</a>
     </h1>
   </header>
-  <p>Paano mo masisigurong gagana sa lahat ng browsers ang design ng Web site mo? Kasama sa isang set ng techniques na kung tawagin ay <i>progressive enhancement</i> ang bagong feature ng CSS, ang Feature Queries.</p>
+  <div class="post__content">
+    <p>Paano mo masisigurong gagana sa lahat ng browsers ang design ng Web site mo? Kasama sa isang set ng techniques na kung tawagin ay <i>progressive enhancement</i> ang bagong feature ng CSS, ang Feature Queries.</p>
 <a id="more"></a>
 <p>Kilala rin ang Feature Queries bilang <code>@supports</code> rule. Gaya rin ito ng Media Queries, pero sa halip na type ng device, width or height ng viewport, atbp., tinitingnan nito kung supported ba ng browser ang isang feature na gusto mong gamitin. Para itong <code>if</code> statement sa CSS.</p>
 <p>Kaya ito idinagdag sa CSS para makagawa tayo ng mga styles gamit ang pinakabagong CSS at magkaroon ng <i>graceful degradation</i> sa mga browsers na hindi sinu-support ang feature na gusto nating gamitin. Totoo, bago pa man lumabas ang Feature Queries, nasa dugo na ng CSS na mag-degrade gracefully; kapag hindi supported ng browser ang ginamit na style, ini-ignore lang ito. Sa paraang ito, hindi nasisira o naaapektuhan ang ibang styles na supported naman ng browser. Pero gaya ng makikita sa karanasan ng maraming Web developers, at dahil na rin sa bilis ng mga pagbabago sa Web platform, kailangan natin ng higit pa sa basta pag-ignore lang sa mga unsupported properties.</p>
@@ -213,6 +211,7 @@
 </ul>
 <h2 id="Challenge"><a href="#Challenge" class="headerlink" title="Challenge"></a>Challenge</h2><p>Kaya mo kayang gawing <i lang="en">progressively enhanced</i> ang kahit na anong site na gawa mo (or pina-practice mong gawin) gamit ang CSS Feature Queries? Kaya mo bang iangkop ang design ng site mo para magmukha pa rin itong maayos sa lahat ng browsers, kasama na ang Internet Explorer 9 (or 8 kung medyo masipag ka)?</p>
 
+  </div>
   <footer class="article-footer">
       
   <div class="article-tags-wrapper">
@@ -230,14 +229,16 @@
 </article>
 </main>
     
-    <footer class="footer" role="contentinfo">
-  <div>
+    <footer class="layout layout--footer" role="contentinfo">
+  <div class="footer__division">
+  <a href="/antares-blog/tungkol-sa-amin">Tungkol sa Antares Programming</a>
+  <a href="https://www.facebook.com/antaresprogramming"><i>Antares Programming</i> sa Facebook</a>
+  <a href="#">Back to top</a>
+  </div>
+  <div class="footer__division text-align--right">
     <p>&copy; 2019 Antares Programming</p>
     <p>Reserbado ang lahat ng karapatan.</p>
   </div>
-  <div><a href="/antares-blog/tungkol-sa-amin">Tungkol sa Antares Programming</a>
-  <a href="https://www.facebook.com/antaresprogramming"><i>Antares Programming</i> sa Facebook</a>
-  <p id="back-to-top"><a href="#top">Back to top</a></p></div>
 </footer>
 <script>
     var CONFIG_ROOT = `/antares-blog/`;

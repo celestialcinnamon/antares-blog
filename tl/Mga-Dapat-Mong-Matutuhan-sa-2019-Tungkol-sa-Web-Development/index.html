@@ -28,8 +28,6 @@
   <meta name="msapplication-config" content="/antares-blog/images/browserconfig.xml?v=yyL3E0AWom">
   <meta name="theme-color" content="#bbbbbb">
 
-
-
   <!-- Twitter Card data -->
   <meta name="twitter:card" content="Sa taong 2019, ano-ano ang mga dapat mong ilagay sa Web Development skillset mo?">
 
@@ -39,23 +37,20 @@
   <meta property="og:title" content="Mga Dapat Mong Matutuhan sa 2019 Tungkol sa Web Development">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://celestialcinnamon.github.io/antares-blog/tl/Mga-Dapat-Mong-Matutuhan-sa-2019-Tungkol-sa-Web-Development/">
-  <meta property="og:image" content="http://celestialcinnamon.github.io//antares-blog/images/favicon-194x194.png">
+  <meta property="og:image" content="http://celestialcinnamon.github.io//antares-blog/tl/Mga-Dapat-Mong-Matutuhan-sa-2019-Tungkol-sa-Web-Development/undefined">
   <meta property="og:description" content="Sa taong 2019, ano-ano ang mga dapat mong ilagay sa Web Development skillset mo?"> 
   
-  <!-- <link rel="stylesheet" href="https://rsms.me/inter/inter.css" media="screen"> -->
-  <link href="/antares-blog/css/baseline.css" rel="stylesheet" media="screen">
-  <link href="/antares-blog/css/mobile.css" rel="stylesheet" media="screen">
-  <link href="/antares-blog/css/desktop.css" rel="stylesheet" media="screen and (min-width: 750px)">
-  <!-- <link href="/antares-blog/css/print.css" rel="stylesheet" media="print"> -->
+  <link href="/antares-blog/css/antares.css" rel="stylesheet" media="only screen">
+  <link href="/antares-blog/css/print.css" rel="stylesheet" media="only print">
   
   
   
   
 
   <!-- TODO: Uncomment these links -->
-  <!-- <link media="screen" href="https://fonts.googleapis.com/css?family=Vidaloka&display=swap" rel="stylesheet"> 
+  <link media="screen" href="https://fonts.googleapis.com/css?family=Vidaloka&display=swap" rel="stylesheet"> 
   <link media="screen" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700&display=swap" rel="stylesheet"> 
-  <link media="screen" href="https://fonts.googleapis.com/css?family=B612+Mono&display=swap" rel="stylesheet"> -->
+  <link media="screen" href="https://fonts.googleapis.com/css?family=B612+Mono&display=swap" rel="stylesheet">
 
   <!--
     HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
@@ -67,12 +62,12 @@
 <link rel="stylesheet" href="/antares-blog/css/prism-a11y-dark.css" type="text/css">
 <link rel="stylesheet" href="/antares-blog/css/prism-line-numbers.css" type="text/css"></head>
 
-<body>
+<body class="layout layout--layout">
     
     
     <div class="banner">
-  <a href="#main-content" class="nav skiplink sr-only sr-only-focusable">Skip to content</a>
-  <header class="header" role="banner">
+  <a href="#main-content" class="navigation__link skiplink sr-only sr-only-focusable">Skip to content</a>
+  <header class="banner__header" role="banner">
     <a href="/antares-blog/" class="site-logo" aria-label="Go to home">
       <svg style="transform: scale(2)" width="64" height="64" viewbox="-500 -500 2040 2040" fill="none" xmlns="http://www.w3.org/2000/svg">
         <style>
@@ -90,11 +85,13 @@
             fill: #fd0;
           }
 
+          a:focus #logo-ellipse,
           svg:hover #logo-ellipse {
             transform: none;
             opacity: 1;
           }
 
+          a:focus #logo-path,
           svg:hover #logo-path {
             fill: black;
           }
@@ -105,24 +102,25 @@
       </svg>
     </a>
   </header>
-  <nav class="navbar">
-    <ul class="nav-list">
-      <li class="nav-item"><a class="nav" href="/antares-blog/archives">Archives</a></li>
-      <li class="nav-item"><a class="nav" href="/antares-blog/downloads">Downloads</a></li>
+  <nav class="banner__navigation">
+    <ul class="navigation-list">
+      <li class="navigation__item"><a class="navigation__link" href="/antares-blog/archives">Archives</a></li>
+      <li class="navigation__item"><a class="navigation__link" href="/antares-blog/downloads">Downloads</a></li>
     </ul>
   </nav>
 </div>
     <div data-scroll data-scroll-showCallback="expandNavbar()"  data-scroll-hideCallback="collapseNavbar()"></div>
     
-    <main class="page--post">
+    <main class="layout layout--post" id="main-content">
 
-<article class="post--article">
+<article class="post post--article">
   <header>
     <h1>
-      <a class="post__title post--focused" href="/antares-blog/tl/Mga-Dapat-Mong-Matutuhan-sa-2019-Tungkol-sa-Web-Development/">Mga Dapat Mong Matutuhan sa 2019 Tungkol sa Web Development</a>
+      <a class="post__title" href="/antares-blog/tl/Mga-Dapat-Mong-Matutuhan-sa-2019-Tungkol-sa-Web-Development/">Mga Dapat Mong Matutuhan sa 2019 Tungkol sa Web Development</a>
     </h1>
   </header>
-  <p>Sa taong 2019, ano-ano ang mga dapat mong ilagay sa Web Development skillset mo?</p>
+  <div class="post__content">
+    <p>Sa taong 2019, ano-ano ang mga dapat mong ilagay sa Web Development skillset mo?</p>
 <a id="more"></a>
 <p>Pumunta ako kahapon sa isang event, ang <i>CoRES 2019</i>, isang 4-day event na inihanda ng Polytechnic University of The Philippines kung saan nagsasalita ang iba’t ibang mga professionals tungkol sa mga bagong technology na mayroon ngayon. Pumunta ako sa <cite>Web Developer Skillset</cite> talk ni Mr. Toni-Jan Keith Monserrat, kung saan in-introduce niya ang audience sa mga bagong updates sa Web standards. Binanggit din niya ang iba’t ibang framework na ginagamit ngayon sa industriya gaya ng Angular, React, Vue, Ember, Redux, at iba pa.</p>
 <p>Pero sa list na ito, hindi iyan ang gusto kong ikuwento. Dahil nga naman may maikling shelf life ang mga ito, mas praktikal na aralin ang Web standards.</p>
@@ -218,6 +216,7 @@
 </ul>
 <h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>Kung titingnan baka sobrang dami nito para pag-aralan. Parang ang hirap makasabay. Baka hindi ka umabot. Pero hindi naman ito ganoon kahirap. Mukha lang itong marami pero makakahabol ka rin. At hindi mo rin kailangang malaman lahat. Kadalasan sapat nang alam mo na may ganitong features para alam mo na meron kang puwedeng gamitin kapag kailangan mo na sila.</p>
 
+  </div>
   <footer class="article-footer">
       
   <div class="article-tags-wrapper">
@@ -235,14 +234,16 @@
 </article>
 </main>
     
-    <footer class="footer" role="contentinfo">
-  <div>
+    <footer class="layout layout--footer" role="contentinfo">
+  <div class="footer__division">
+  <a href="/antares-blog/tungkol-sa-amin">Tungkol sa Antares Programming</a>
+  <a href="https://www.facebook.com/antaresprogramming"><i>Antares Programming</i> sa Facebook</a>
+  <a href="#">Back to top</a>
+  </div>
+  <div class="footer__division text-align--right">
     <p>&copy; 2019 Antares Programming</p>
     <p>Reserbado ang lahat ng karapatan.</p>
   </div>
-  <div><a href="/antares-blog/tungkol-sa-amin">Tungkol sa Antares Programming</a>
-  <a href="https://www.facebook.com/antaresprogramming"><i>Antares Programming</i> sa Facebook</a>
-  <p id="back-to-top"><a href="#top">Back to top</a></p></div>
 </footer>
 <script>
     var CONFIG_ROOT = `/antares-blog/`;

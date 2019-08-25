@@ -28,8 +28,6 @@
   <meta name="msapplication-config" content="/antares-blog/images/browserconfig.xml?v=yyL3E0AWom">
   <meta name="theme-color" content="#bbbbbb">
 
-
-
   <!-- Twitter Card data -->
   <meta name="twitter:card" content="Current trends and best practices for Filipino developers.">
 
@@ -42,20 +40,17 @@
   <meta property="og:image" content="http://celestialcinnamon.github.io//antares-blog/images/favicon-194x194.png">
   <meta property="og:description" content="Current trends and best practices for Filipino developers."> 
   
-  <!-- <link rel="stylesheet" href="https://rsms.me/inter/inter.css" media="screen"> -->
-  <link href="/antares-blog/css/baseline.css" rel="stylesheet" media="screen">
-  <link href="/antares-blog/css/mobile.css" rel="stylesheet" media="screen">
-  <link href="/antares-blog/css/desktop.css" rel="stylesheet" media="screen and (min-width: 750px)">
-  <!-- <link href="/antares-blog/css/print.css" rel="stylesheet" media="print"> -->
+  <link href="/antares-blog/css/antares.css" rel="stylesheet" media="only screen">
+  <link href="/antares-blog/css/print.css" rel="stylesheet" media="only print">
   
   
   
   
 
   <!-- TODO: Uncomment these links -->
-  <!-- <link media="screen" href="https://fonts.googleapis.com/css?family=Vidaloka&display=swap" rel="stylesheet"> 
+  <link media="screen" href="https://fonts.googleapis.com/css?family=Vidaloka&display=swap" rel="stylesheet"> 
   <link media="screen" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700&display=swap" rel="stylesheet"> 
-  <link media="screen" href="https://fonts.googleapis.com/css?family=B612+Mono&display=swap" rel="stylesheet"> -->
+  <link media="screen" href="https://fonts.googleapis.com/css?family=B612+Mono&display=swap" rel="stylesheet">
 
   <!--
     HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
@@ -67,12 +62,12 @@
 <link rel="stylesheet" href="/antares-blog/css/prism-a11y-dark.css" type="text/css">
 <link rel="stylesheet" href="/antares-blog/css/prism-line-numbers.css" type="text/css"></head>
 
-<body>
+<body class="layout layout--layout">
     
     
     <div class="banner">
-  <a href="#main-content" class="nav skiplink sr-only sr-only-focusable">Skip to content</a>
-  <header class="header" role="banner">
+  <a href="#main-content" class="navigation__link skiplink sr-only sr-only-focusable">Skip to content</a>
+  <header class="banner__header" role="banner">
     <a href="/antares-blog/" class="site-logo" aria-label="Go to home">
       <svg style="transform: scale(2)" width="64" height="64" viewbox="-500 -500 2040 2040" fill="none" xmlns="http://www.w3.org/2000/svg">
         <style>
@@ -90,11 +85,13 @@
             fill: #fd0;
           }
 
+          a:focus #logo-ellipse,
           svg:hover #logo-ellipse {
             transform: none;
             opacity: 1;
           }
 
+          a:focus #logo-path,
           svg:hover #logo-path {
             fill: black;
           }
@@ -105,27 +102,43 @@
       </svg>
     </a>
   </header>
-  <nav class="navbar">
-    <ul class="nav-list">
-      <li class="nav-item"><a class="nav" href="/antares-blog/archives">Archives</a></li>
-      <li class="nav-item"><a class="nav" href="/antares-blog/downloads">Downloads</a></li>
+  <nav class="banner__navigation">
+    <ul class="navigation-list">
+      <li class="navigation__item"><a class="navigation__link" href="/antares-blog/archives">Archives</a></li>
+      <li class="navigation__item"><a class="navigation__link" href="/antares-blog/downloads">Downloads</a></li>
     </ul>
   </nav>
 </div>
     <div data-scroll data-scroll-showCallback="expandNavbar()"  data-scroll-hideCallback="collapseNavbar()"></div>
     
     <h1 class="sr-only">Antares Programming</h1>
-<div class="posts-wrapper">
-    <main id="main-content" class="main--index">
-        
-            <article class="post">
+<main id="main-content" class="layout layout--index">
+    
+        <article class="post post--excerpt">
+    <header class="post__header">
+        <h2>
+            <a href="/antares-blog/tl/Paano-Mag-aral-ng-Programming/" class="post__title">Paano Mag-aral ng Programming?</a>
+        </h2>
+        <div class="post__meta">
+            <address rel="author" class="post__author">Francis Rubio</address>
+            <time pubdate="" datetime="2019-08-24T00:34:10.000Z" class="post__publish-date">August 24, 2019</time>
+        </div>
+    </header>
+    
+    <section class="post__excerpt">
+        <p>Ilang tips para sa mas mabisa at mabilis na pagkatuto ng programming.
+    </p></section>
+    
+</article>
+    
+        <article class="post post--excerpt">
     <header class="post__header">
         <h2>
             <a href="/antares-blog/tl/bakit-firefox-dapat/" class="post__title">Maging Safe sa Pagba-browse ng Web sites</a>
         </h2>
         <div class="post__meta">
-            <address rel="author" class="author-name sr-only">Francis Rubio</address>
-            <time pubdate="" datetime="2019-07-21T15:21:37.000Z" class="article-date">July 21, 2019</time>
+            <address rel="author" class="post__author">Francis Rubio</address>
+            <time pubdate="" datetime="2019-07-21T15:21:37.000Z" class="post__publish-date">July 21, 2019</time>
         </div>
     </header>
     
@@ -134,15 +147,15 @@
     </p></section>
     
 </article>
-        
-            <article class="post">
+    
+        <article class="post post--excerpt">
     <header class="post__header">
         <h2>
             <a href="/antares-blog/tl/Mag-drop-ka-na-sa-College-10-Web-Sites-na-Puwede-Mong-Gamitin-Para-Maging-Mas-Magaling-sa-mga-May-Degree/" class="post__title">Mag-drop ka na sa College: 10 Web Sites na Puwede Mong Gamitin Para Maging Mas Magaling sa mga May Degree</a>
         </h2>
         <div class="post__meta">
-            <address rel="author" class="author-name sr-only">Francis Rubio</address>
-            <time pubdate="" datetime="2019-04-27T14:45:39.000Z" class="article-date">April 27, 2019</time>
+            <address rel="author" class="post__author">Francis Rubio</address>
+            <time pubdate="" datetime="2019-04-27T14:45:39.000Z" class="post__publish-date">April 27, 2019</time>
         </div>
     </header>
     
@@ -151,15 +164,15 @@
     </section>
     
 </article>
-        
-            <article class="post">
+    
+        <article class="post post--excerpt">
     <header class="post__header">
         <h2>
             <a href="/antares-blog/tl/Hindi-Lang-Para-sa-Mga-Bulag-ang-Web-Accessibility/" class="post__title">Hindi Lang Para sa Mga Bulag ang Web Accessibility</a>
         </h2>
         <div class="post__meta">
-            <address rel="author" class="author-name sr-only">Francis Rubio</address>
-            <time pubdate="" datetime="2019-04-27T08:44:05.000Z" class="article-date">April 27, 2019</time>
+            <address rel="author" class="post__author">Francis Rubio</address>
+            <time pubdate="" datetime="2019-04-27T08:44:05.000Z" class="post__publish-date">April 27, 2019</time>
         </div>
     </header>
     
@@ -168,15 +181,15 @@
     </section>
     
 </article>
-        
-            <article class="post">
+    
+        <article class="post post--excerpt">
     <header class="post__header">
         <h2>
             <a href="/antares-blog/tl/Cards-Layout-Gamit-ang-CSS-Multi-Column/" class="post__title">Cards Layout Gamit ang CSS Multi-Column</a>
         </h2>
         <div class="post__meta">
-            <address rel="author" class="author-name sr-only">Francis Rubio</address>
-            <time pubdate="" datetime="2019-03-06T09:44:25.000Z" class="article-date">March 6, 2019</time>
+            <address rel="author" class="post__author">Francis Rubio</address>
+            <time pubdate="" datetime="2019-03-06T09:44:25.000Z" class="post__publish-date">March 6, 2019</time>
         </div>
     </header>
     
@@ -185,15 +198,15 @@
     </section>
     
 </article>
-        
-            <article class="post">
+    
+        <article class="post post--excerpt">
     <header class="post__header">
         <h2>
             <a href="/antares-blog/tl/Destructuring-sa-JavaScript/" class="post__title">Destructuring sa JavaScript</a>
         </h2>
         <div class="post__meta">
-            <address rel="author" class="author-name sr-only">Francis Rubio</address>
-            <time pubdate="" datetime="2019-02-26T05:00:50.000Z" class="article-date">February 26, 2019</time>
+            <address rel="author" class="post__author">Francis Rubio</address>
+            <time pubdate="" datetime="2019-02-26T05:00:50.000Z" class="post__publish-date">February 26, 2019</time>
         </div>
     </header>
     
@@ -202,15 +215,15 @@
     </section>
     
 </article>
-        
-            <article class="post">
+    
+        <article class="post post--excerpt">
     <header class="post__header">
         <h2>
             <a href="/antares-blog/tl/Feature-Queries-sa-CSS/" class="post__title">Feature Queries sa CSS</a>
         </h2>
         <div class="post__meta">
-            <address rel="author" class="author-name sr-only">Francis Rubio</address>
-            <time pubdate="" datetime="2019-02-17T10:09:50.000Z" class="article-date">February 17, 2019</time>
+            <address rel="author" class="post__author">Francis Rubio</address>
+            <time pubdate="" datetime="2019-02-17T10:09:50.000Z" class="post__publish-date">February 17, 2019</time>
         </div>
     </header>
     
@@ -219,15 +232,15 @@
     </section>
     
 </article>
-        
-            <article class="post">
+    
+        <article class="post post--excerpt">
     <header class="post__header">
         <h2>
             <a href="/antares-blog/tl/Mga-Dapat-Mong-Matutuhan-sa-2019-Tungkol-sa-Web-Development/" class="post__title">Mga Dapat Mong Matutuhan sa 2019 Tungkol sa Web Development</a>
         </h2>
         <div class="post__meta">
-            <address rel="author" class="author-name sr-only">Francis Rubio</address>
-            <time pubdate="" datetime="2019-02-09T15:59:38.000Z" class="article-date">February 9, 2019</time>
+            <address rel="author" class="post__author">Francis Rubio</address>
+            <time pubdate="" datetime="2019-02-09T15:59:38.000Z" class="post__publish-date">February 9, 2019</time>
         </div>
     </header>
     
@@ -236,15 +249,15 @@
     </section>
     
 </article>
-        
-            <article class="post">
+    
+        <article class="post post--excerpt">
     <header class="post__header">
         <h2>
             <a href="/antares-blog/tl/Paano-Makakuha-ng-Sagot-Kapag-May-Problema/" class="post__title">Walang Sumasagot sa Tanong Ko—Paano Makakuha ng Sagot Kapag May Problema ka sa Programming</a>
         </h2>
         <div class="post__meta">
-            <address rel="author" class="author-name sr-only">Francis Rubio</address>
-            <time pubdate="" datetime="2019-01-14T15:52:15.000Z" class="article-date">January 14, 2019</time>
+            <address rel="author" class="post__author">Francis Rubio</address>
+            <time pubdate="" datetime="2019-01-14T15:52:15.000Z" class="post__publish-date">January 14, 2019</time>
         </div>
     </header>
     
@@ -253,15 +266,15 @@
     </section>
     
 </article>
-        
-            <article class="post">
+    
+        <article class="post post--excerpt">
     <header class="post__header">
         <h2>
             <a href="/antares-blog/tl/Mula-sa-Interwebz/" class="post__title">Mula sa Interwebz</a>
         </h2>
         <div class="post__meta">
-            <address rel="author" class="author-name sr-only">Francis Rubio</address>
-            <time pubdate="" datetime="2019-01-09T17:44:31.000Z" class="article-date">January 10, 2019</time>
+            <address rel="author" class="post__author">Francis Rubio</address>
+            <time pubdate="" datetime="2019-01-09T17:44:31.000Z" class="post__publish-date">January 10, 2019</time>
         </div>
     </header>
     
@@ -270,15 +283,15 @@
     </section>
     
 </article>
-        
-            <article class="post">
+    
+        <article class="post post--excerpt">
     <header class="post__header">
         <h2>
             <a href="/antares-blog/tl/May-Dark-Mode-na-ang-Antares/" class="post__title">May Dark Mode na ang Antares</a>
         </h2>
         <div class="post__meta">
-            <address rel="author" class="author-name sr-only">Francis Rubio</address>
-            <time pubdate="" datetime="2019-01-09T13:44:53.000Z" class="article-date">January 9, 2019</time>
+            <address rel="author" class="post__author">Francis Rubio</address>
+            <time pubdate="" datetime="2019-01-09T13:44:53.000Z" class="post__publish-date">January 9, 2019</time>
         </div>
     </header>
     
@@ -287,15 +300,15 @@
     </section>
     
 </article>
-        
-            <article class="post">
+    
+        <article class="post post--excerpt">
     <header class="post__header">
         <h2>
             <a href="/antares-blog/tl/CSS-Units-px-percent-rem-em-Ano-Ba-Dapat-Ang-Gagamitin-Ko/" class="post__title">CSS Units: px, percent, rem, em... Ano Ba Dapat Ang Gagamitin Ko?</a>
         </h2>
         <div class="post__meta">
-            <address rel="author" class="author-name sr-only">Francis Rubio</address>
-            <time pubdate="" datetime="2019-01-08T19:39:12.000Z" class="article-date">January 9, 2019</time>
+            <address rel="author" class="post__author">Francis Rubio</address>
+            <time pubdate="" datetime="2019-01-08T19:39:12.000Z" class="post__publish-date">January 9, 2019</time>
         </div>
     </header>
     
@@ -304,15 +317,15 @@
     </section>
     
 </article>
-        
-            <article class="post">
+    
+        <article class="post post--excerpt">
     <header class="post__header">
         <h2>
             <a href="/antares-blog/tl/Fetch-API-POST-Requests/" class="post__title">Fetch API: POST Requests</a>
         </h2>
         <div class="post__meta">
-            <address rel="author" class="author-name sr-only">Francis Rubio</address>
-            <time pubdate="" datetime="2018-12-30T04:10:52.000Z" class="article-date">December 30, 2018</time>
+            <address rel="author" class="post__author">Francis Rubio</address>
+            <time pubdate="" datetime="2018-12-30T04:10:52.000Z" class="post__publish-date">December 30, 2018</time>
         </div>
     </header>
     
@@ -321,15 +334,15 @@
     </section>
     
 </article>
-        
-            <article class="post">
+    
+        <article class="post post--excerpt">
     <header class="post__header">
         <h2>
             <a href="/antares-blog/tl/Intrinsic-Web-Design-Ito-na-ba-ang-Wakas-ng-Responsive-Web/" class="post__title">Intrinsic Web Design: Ito na ba ang Wakas ng Responsive Web?</a>
         </h2>
         <div class="post__meta">
-            <address rel="author" class="author-name sr-only">Francis Rubio</address>
-            <time pubdate="" datetime="2018-12-23T12:25:15.000Z" class="article-date">December 23, 2018</time>
+            <address rel="author" class="post__author">Francis Rubio</address>
+            <time pubdate="" datetime="2018-12-23T12:25:15.000Z" class="post__publish-date">December 23, 2018</time>
         </div>
     </header>
     
@@ -338,15 +351,15 @@
     </section>
     
 </article>
-        
-            <article class="post">
+    
+        <article class="post post--excerpt">
     <header class="post__header">
         <h2>
             <a href="/antares-blog/tl/Fetch-API-GET-Requests/" class="post__title">Fetch API: GET Requests</a>
         </h2>
         <div class="post__meta">
-            <address rel="author" class="author-name sr-only">Francis Rubio</address>
-            <time pubdate="" datetime="2018-12-15T16:32:56.000Z" class="article-date">December 16, 2018</time>
+            <address rel="author" class="post__author">Francis Rubio</address>
+            <time pubdate="" datetime="2018-12-15T16:32:56.000Z" class="post__publish-date">December 16, 2018</time>
         </div>
     </header>
     
@@ -355,15 +368,15 @@
     </section>
     
 </article>
-        
-            <article class="post">
+    
+        <article class="post post--excerpt">
     <header class="post__header">
         <h2>
             <a href="/antares-blog/tl/Function-Parameters-at-Return-Statements/" class="post__title">Function Parameters at Return Statements</a>
         </h2>
         <div class="post__meta">
-            <address rel="author" class="author-name sr-only">Francis Rubio</address>
-            <time pubdate="" datetime="2018-12-14T15:43:37.000Z" class="article-date">December 14, 2018</time>
+            <address rel="author" class="post__author">Francis Rubio</address>
+            <time pubdate="" datetime="2018-12-14T15:43:37.000Z" class="post__publish-date">December 14, 2018</time>
         </div>
     </header>
     
@@ -372,15 +385,15 @@
     </section>
     
 </article>
-        
-            <article class="post">
+    
+        <article class="post post--excerpt">
     <header class="post__header">
         <h2>
             <a href="/antares-blog/tl/Pagso-sort-ng-Arrays-sa-JavaScript/" class="post__title">Pagso-sort ng Arrays sa JavaScript</a>
         </h2>
         <div class="post__meta">
-            <address rel="author" class="author-name sr-only">Francis Rubio</address>
-            <time pubdate="" datetime="2018-12-14T13:52:53.000Z" class="article-date">December 14, 2018</time>
+            <address rel="author" class="post__author">Francis Rubio</address>
+            <time pubdate="" datetime="2018-12-14T13:52:53.000Z" class="post__publish-date">December 14, 2018</time>
         </div>
     </header>
     
@@ -389,15 +402,15 @@
     </section>
     
 </article>
-        
-            <article class="post">
+    
+        <article class="post post--excerpt">
     <header class="post__header">
         <h2>
             <a href="/antares-blog/tl/Array-Filters/" class="post__title">Array Filters</a>
         </h2>
         <div class="post__meta">
-            <address rel="author" class="author-name sr-only">Francis Rubio</address>
-            <time pubdate="" datetime="2018-12-05T22:46:53.000Z" class="article-date">December 6, 2018</time>
+            <address rel="author" class="post__author">Francis Rubio</address>
+            <time pubdate="" datetime="2018-12-05T22:46:53.000Z" class="post__publish-date">December 6, 2018</time>
         </div>
     </header>
     
@@ -406,15 +419,15 @@
     </section>
     
 </article>
-        
-            <article class="post">
+    
+        <article class="post post--excerpt">
     <header class="post__header">
         <h2>
             <a href="/antares-blog/en/en/Welcome-to-the-Antares-Programming-Blog/" class="post__title">Welcome to Antares Programming Blog</a>
         </h2>
         <div class="post__meta">
-            <address rel="author" class="author-name sr-only">Francis Rubio</address>
-            <time pubdate="" datetime="2018-12-05T17:51:53.000Z" class="article-date">December 6, 2018</time>
+            <address rel="author" class="post__author">Francis Rubio</address>
+            <time pubdate="" datetime="2018-12-05T17:51:53.000Z" class="post__publish-date">December 6, 2018</time>
         </div>
     </header>
     
@@ -423,46 +436,47 @@
     </section>
     
 </article>
-        
-    </main>
-    <aside class="sidebar">
-  <section class="author-sidebar">
-    <img src="images/francis_rubio.jpg" alt="Photo of Francis Rubio" class="author-photo">
-    <address>by <a href="https://celestialcinnamon.github.io/" class="author-name focusable">Francis Rubio</a></address>
-    <p>Freelance Web developer and designer from The Philippines</p>
-  </section>
-  
     
-  <section class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/antares-blog/categories/CSS/">CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/antares-blog/categories/General/">General</a></li><li class="category-list-item"><a class="category-list-link" href="/antares-blog/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/antares-blog/categories/Meta/">Meta</a></li><li class="category-list-item"><a class="category-list-link" href="/antares-blog/categories/Resources/">Resources</a></li><li class="category-list-item"><a class="category-list-link" href="/antares-blog/categories/Soft-Skills/">Soft Skills</a></li><li class="category-list-item"><a class="category-list-link" href="/antares-blog/categories/Web-Development/">Web Development</a></li></ul>
+</main>
+<aside class="sidebar">
+  <section class="sidebar__author">
+    <img src="images/francis_rubio.jpg" alt="Photo of Francis Rubio" class="author__photo">
+    <address class="author__name">articles by <a href="https://celestialcinnamon.github.io/" class="author__link">Francis Rubio</a></address>
+    <p class="author__bio">Freelance Web developer and designer from The Philippines</p>
+  </section>
+  <div class="widgets">
+  
+  <section class="widget">
+    <h3 class="widget__title">Categories</h3>
+    <div class="widget__component">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/antares-blog/categories/CSS/">CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/antares-blog/categories/General/">General</a></li><li class="category-list-item"><a class="category-list-link" href="/antares-blog/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/antares-blog/categories/Meta/">Meta</a></li><li class="category-list-item"><a class="category-list-link" href="/antares-blog/categories/Opinion/">Opinion</a></li><li class="category-list-item"><a class="category-list-link" href="/antares-blog/categories/Resources/">Resources</a></li><li class="category-list-item"><a class="category-list-link" href="/antares-blog/categories/Soft-Skills/">Soft Skills</a></li><li class="category-list-item"><a class="category-list-link" href="/antares-blog/categories/Web-Development/">Web Development</a></li></ul>
     </div>
   
 
 </section>
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
+  
+  <div class="widget">
+    <h3 class="widget__title">Tags</h3>
+    <div class="widget__component">
       <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/antares-blog/tags/accessibility/">accessibility</a></li><li class="tag-list-item"><a class="tag-list-link" href="/antares-blog/tags/ajax/">ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/antares-blog/tags/announcement/">announcement</a></li><li class="tag-list-item"><a class="tag-list-link" href="/antares-blog/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/antares-blog/tags/fetch/">fetch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/antares-blog/tags/front-end/">front end</a></li><li class="tag-list-item"><a class="tag-list-link" href="/antares-blog/tags/general/">general</a></li><li class="tag-list-item"><a class="tag-list-link" href="/antares-blog/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/antares-blog/tags/intrinsic-web-design/">intrinsic web design</a></li><li class="tag-list-item"><a class="tag-list-link" href="/antares-blog/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/antares-blog/tags/meta/">meta</a></li><li class="tag-list-item"><a class="tag-list-link" href="/antares-blog/tags/privacy/">privacy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/antares-blog/tags/programming/">programming</a></li><li class="tag-list-item"><a class="tag-list-link" href="/antares-blog/tags/security/">security</a></li><li class="tag-list-item"><a class="tag-list-link" href="/antares-blog/tags/ui/">ui</a></li><li class="tag-list-item"><a class="tag-list-link" href="/antares-blog/tags/web/">web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/antares-blog/tags/web-design/">web design</a></li></ul>
     </div>
   </div>
 
 
-  
+  </div>
 </aside>
-</div>
     
-    <footer class="footer" role="contentinfo">
-  <div>
+    <footer class="layout layout--footer" role="contentinfo">
+  <div class="footer__division">
+  <a href="/antares-blog/tungkol-sa-amin">Tungkol sa Antares Programming</a>
+  <a href="https://www.facebook.com/antaresprogramming"><i>Antares Programming</i> sa Facebook</a>
+  <a href="#">Back to top</a>
+  </div>
+  <div class="footer__division text-align--right">
     <p>&copy; 2019 Antares Programming</p>
     <p>Reserbado ang lahat ng karapatan.</p>
   </div>
-  <div><a href="/antares-blog/tungkol-sa-amin">Tungkol sa Antares Programming</a>
-  <a href="https://www.facebook.com/antaresprogramming"><i>Antares Programming</i> sa Facebook</a>
-  <p id="back-to-top"><a href="#top">Back to top</a></p></div>
 </footer>
 <script>
     var CONFIG_ROOT = `/antares-blog/`;

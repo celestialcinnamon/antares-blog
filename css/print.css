@@ -1,382 +1,372 @@
-/* Setup page for printing */
-@page :first {
-    margin-bottom: 100pt;
-}
-
-html,
-.dark {
-    --bg: #eee;
-    --bg-d1: #ebebeb;
-    --bg-d2: #d4d4d4;
-    --bg-d3: #bbb;
-    --bg-d4: #aaa;
-    --bg-l1: #fff;
-    --bg-invert: #212121;
-    --bg-invert-d1: #2a2a2a;
-    --bg-invert-d2: #333;
-    --bg-invert-d3: #3a3a3a;
-    --bg-invert-d4: #444;
-    --bg-invert-l1: #111;
-
-    --bg-invert-o-75: #2121214b;
-    --bg-invert-o-50: #21212136;
-    --bg-invert-o-25: #21212119;
-
-    --text-color: #555;
-    --text-color-i1: #333;
-    --text-color-i2: #212121;
-    --text-color-i3: #111;
-    --text-color-i4: #000;
-    --text-color-invert: #bbb;
-    --text-color-invert-i1: #ccc;
-    --text-color-invert-i2: #ddd;
-    --text-color-invert-i3: #eee;
-    --text-color-invert-i4: #fff;
-
-    --white: var(--text-color-invert-i4);
-    --white-i1: var(--text-color-invert);
-
-    --primary: #fd0;
-    --primary-darker: #ffa100;
-    --primary-lighter: #fe4;
-    --primary-o-75: #ffdd004b;
-    --primary-o-50: #ffdd0036;
-    --primary-o-25: #ffdd0019;
-
-    --primary-l-75: hsl(52, 100%, 60%);
-    --primary-l-50: hsl(52, 100%, 70%);
-    --primary-l-25: hsl(52, 100%, 80%);
-
-    --accent: #add;
-    --accent-darker: #5ad;
-    --accent-lighter: #cdf;
-    --accent-on-dark: var(--accent-lighter);
-    --accent-on-light: var(--accent-darker);
-
-    --gray-i2: #ccc;
-    --gray-i1: #ddd;
-    --gray: #e4e4e4;
-
-    --text-on-gray: #333;
-    --text-on-gray-1: #222;
-    --text-on-gray-2: #111;
-
-    --text-on-primary: #000;
-
-    --serif: "Literata Bookset", serif;
-    --sans-serif: "Montserrat", sans-serif;
-    --monospace: "Source Code Pro", monospace;
-
-    --error: #e33;
-    --success: #adb;
-    --focus-color: var(--accent-darker);
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
 }
 
 html {
-    font-size: 12pt !important;
-}
+	font-family: "Inter", sans-serif;
+	font-size: 12pt;
 
-body {
-    border: none;
-    background: transparent;
-}
+	--background: #111;
 
-h1, h2, h3,
-h4, h5, h6 {
-    font-family: "Montserrat", sans-serif !important;
-    color: #000 !important;
-}
+	--primary-dark: #d9c126;
+	--primary: #fd0;
+	--primary-light: #e8da7d;
 
-#back-to-top,
-.navbar,
-.article-footer,
-.headerlink,
-#article-nav,
-div.widget-wrap,
-.link-title small,
-.toast {
-    display: none;
-}
+	--accent-blue-dark: #002033;
+	--accent-blue: #044063;
+	--accent-blue-light: #065f93;
 
-.header {
-    position: unset;
-    display: block;
-}
+	--accent-crimson-dark: #e50053;
+	--accent-crimson: #ff005c;
+	--accent-crimson-light: #ff73a5;
 
-.site-logo svg {
-    width: 100%;
-}
+	--text-on-colored: #111;
+	--secondary-color: #aaa;
+	--text-color: #eee;
+	--heading-color: #fff;
 
-.post.post--featured,
-.cover {
-    height: auto;
-    display: flex;
-    flex-direction: column-reverse;
-    page-break-after: always;
-}
+	--link-color: var(--accent-crimson-light);
 
-.post__wrapper:hover + .cover-display,
-.cover-display {
-    all: unset;
-    height: auto;
-    width: 100%;
-    filter: none;
-}
-
-.post__wrapper {
-    background: transparent;
-    color: var(--text-color);
-}
-
-.post__header,
-.post__title,
-.post__header * {
-    color: var(--text-color) !important;
-}
-
-.post__content {
-    max-width: none;
-    columns: 2;
-}
-
-.footer a::after,
-.post__content a {
-    color: #35f !important;
-}
-
-.print-notice {
-    display: block;
-}
-
-.print-notice::before {
-    column-span: all;
-    font-weight: 900;
-    page-break-after: avoid;
-    margin-bottom: 24pt !important;
-}
-
-.print-notice:lang(en)::before {
-    content: "See the latest version of this article at";
-}
-
-.print-notice:lang(tl)::before {
-    content: "Tingnan ang pinakabagong version ng artikulong ito sa";
-}
-
-.print-notice::after {
-    content: attr(data-permalink);
-    color: #37c !important;
-    font-weight: normal;
-    display: block;
-}
-
-.post__content p:first-of-type {
-    float: none;
-    margin: initial;
-    max-width: none;
-}
-
-em, strong, b, i {
-    font-family: inherit;
-}
-
-strong, b {
-    font-weight: bold;
-}
-
-.post__content p, .post__content ul, .post__content ol, .post__content dl {
-	font-size: 12pt !important;
-    font-family: "Literata Bookset", sans-serif;
-    line-height: 2;
-    widows: 2;
-    orphans: 2;
-}
-
-.post__content h1, .post__content h2, .post__content h3, .post__content h4, .post__content h5, .post__content h6 {
-	margin-left: initial;
-	display: inline-block;
-    width: 100%;
-    break-before: column;
-    break-after: avoid-page;
-    page-break-after: avoid;
-    margin: 5pt !important;
-    font-weight: 900;
-    font-family: "Montserrat", sans-serif;
-}
-
-.post__content > p:first-of-type {
-	column-span: all;
-}
-
-.post__content hr ~ * {
-    column-span: all;
-    font-size: 11pt;
-}
-
-.float-left, .float-right {
-    float: none;
-    margin: auto !important;
-}
-
-video ~ figcaption:lang(en)::before {
-    content: "Video won't move in print, sorry!"
-}
-
-video ~ figcaption:lang(tl)::before {
-    content: "Pasensya na, hindi mapapanood ang videos sa papel!";
-}
-
-video ~ figcaption strong::after {
-    content: " (video)";
-}
-
-video {
-    display: none;
-}
-
-img {
-    max-width: 100%;
-}
-
-img {
-   page-break-inside: avoid;
-}
-
-.side-note dd {
-    font-family: "Montserrat", sans-serif;
-}
-
-.side-note dt {
-    font-size: 2rem;
-    font-weight: 900;
-    font-family: "Montserrat", sans-serif;
-}
-
-a {
-    color: var(--text-color) !important;
-    text-decoration: none;
-}
-
-a[href^="http"]:not([href*="celestialcinnamon.github.io/"]):after,
-a[href^="http"]:not([href*="/antares-blog/"]):after {
-  content: " (" attr(href) ")";
-}
-
-.post__title {
-    text-decoration: none;
-}
-
-.archive-article-title a::after,
-.post__title::after {
-  content: "https://celestialcinnamon.github.io" attr(href);
-  font-size: 10pt;
-  display: block;
-  font-weight: normal;
-}
-
-.post__excerpt {
-    font-family: "Literata Bookset";
-    color: #333;
-}
-
-.tags::before {
-    content: "Tags: ";
-}
-
-section.category::before {
-    content: "Category: ";
-}
-
-
-.link-title a::after {
-    content: attr(href) !important;
-    display: block;
-    font-weight: normal;
-}
-
-.link-author::before {
-	content: "— ";
-}
-
-.link-excerpt {
-	font-family: "Literata Bookset";
-	margin-left: 2rem;
-	line-height: 1.5;
-	margin-top: 1rem;
-}
-
-a.archive-year {
-    font-size: 45pt;
-    font-weight: 900;
-    margin-top: 24pt;
-}
-
-.archive-article-date,
-.archives .meta {
-    font-family: "Literata Bookset", serif;
-}
-
-.archives .meta:lang(en)::before {
-    content: "Written by "
-}
-
-.archives .meta:lang(tl)::before {
-    content: "Isinulat ni "
-}
-
-.archive-article-date:lang(en)::before {
-    content: "Written on ";
-}
-
-.archive-article-date:lang(tl)::before {
-    content: "Isinulat noong ";
-}
-
-.highlight pre {
-    white-space: pre-wrap !important;       /* Since CSS 2.1 */
-    white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
-    white-space: -pre-wrap !important;      /* Opera 4-6 */
-    white-space: -o-pre-wrap !important;    /* Opera 7 */
-    word-wrap: break-word !important;  
+	--heading-font: "Inter", sans-serif;
+	--body-font: "Inter", sans-serif;
+	--ui-font: "Inter", sans-serif;
+	--code-font: "Inconsolata", monospace;
 }
 
 pre,
-code {
-    font-family: "Source Code Pro", monospace;
+code,
+var,
+samp,
+kbd,
+output {
+	font-family: var(--code-font);
 }
 
-.example-container > * {
-    display: none;
-}
-
-.example-container::before {
-    color: #ddd;
-}
-
-.example-container:lang(en)::before {
-    content: "Live examples have been provided at the site.";
-}
-
-.example-container:lang(tl)::before {
-    content: "May live examples sa site.";
-}
-
-.badge {
-    font-family: "Monsterrat", sans-serif;
-    font-weight: 900;
-    text-transform: uppercase;
-    font-size: 10pt;
+abbr {
+	text-decoration: none;
+	border: none;
 }
 
 abbr[title]::after {
-    content: " (" attr(title) ")";
+	content: " (" attr(title) ")";
 }
 
-.article-title {
-    font-size: 36pt;
-    font-weight: 900;
+.page-content > h1,
+.page-content > h2,
+.page-content > h3,
+.page-content > h4,
+.page-content > h5,
+.page-content > h6,
+.post__content > h1,
+.post__content > h2,
+.post__content > h3,
+.post__content > h4,
+.post__content > h5,
+.post__content > h6 {
+	line-height: 1.25;
+	/* margin-left: 20%; */
+	border-left: 20vw solid #fd0a;
+	padding-left: 16pt;
 }
 
-.highlight .gutter {
-    display: none !important;
+a {
+	color: #000;
+	text-decoration: none;
+}
+
+/* Hide everything we don't need */
+.banner,
+.article-footer,
+iframe.youtube-frame,
+.footer a {
+	display: none;
+}
+
+body::before {
+	content: "";
+	top: 0;
+	display: block;
+	width: 30%;
+	margin-left: 8pt;
+	border-top: 16pt solid #fd0;
+}
+
+header .post__title {
+	font-size: 32pt;
+	font-weight: 900;
+	color: #000;
+	orphans: 0;
+}
+
+.post__title::after {
+	content: " ↗ https://celestialcinnamon.github.io" attr(href);
+	font-size: 12pt;
+	display: block;
+	font-weight: normal;
+	opacity: 0.5;
+}
+
+.post--article header > h1 {
+	margin-left: 0;
+	border: 0;
+	padding: 0;
+}
+.page-content > dl,
+.page-content > ol,
+.page-content > ul,
+.page-content > p,
+.post__content > dl,
+.post__content > ol,
+.post__content > ul,
+.post__content > p {
+	margin-left: 20%;
+	line-height: 2;
+}
+
+.page-content p,
+.post__content p {
+	text-indent: 24pt;
+}
+
+.page-content > dl dt,
+.post__content > dl dt {
+	font-weight: bold;
+}
+
+.page-content li + li .post__content li + li {
+	margin-top: 12pt;
+}
+
+.page-contet > p:first-of-type,
+.post__content > p:first-of-type {
+	font-size: 15pt;
+	font-weight: 200;
+	margin: auto;
+}
+
+.footer {
+	border-top: 1px solid currentColor;
+}
+
+.footer div {
+	display: flex;
+}
+
+.footer div p:last-child {
+	margin-left: auto;
+}
+
+.footer::after {
+	content: " ↗ bit.ly/antaresprogramming";
+	color: #55f;
+}
+
+q::before {
+	content: "“";
+}
+
+q::after {
+	content: "”";
+}
+
+.page-content > blockquote:not([class]),
+.post__content > blockquote:not([class]) {
+	padding: 24pt;
+}
+
+.page-content > blockquote:not([class]) p,
+.post__content > blockquote:not([class]) p {
+	font-size: 16pt;
+	line-height: 1.2;
+	font-weight: 200;
+	text-align: center;
+	margin: auto;
+}
+
+.page-content > blockquote p:first-of-type::before,
+.page-content > blockquote p:first-of-type::after,
+.post__content > blockquote p:first-of-type::before,
+.post__content > blockquote p:first-of-type::after {
+	content: "";
+	display: block;
+	border-top: 1pt solid #000;
+	width: 50%;
+	margin: auto;
+	margin-bottom: 24pt;
+}
+
+.page-content > blockquote p:first-of-type::after,
+.post__content > blockquote p:first-of-type::after {
+	margin-top: 24pt;
+	margin-bottom: 0;
+}
+
+.page-content > blockquote .citation,
+.post__content > blockquote .citation {
+	text-align: center;
+	display: block;
+	margin-top: 12pt;
+}
+
+.page-content > blockquote .citation::before,
+.post__content > blockquote .citation::before {
+	content: "―";
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+th {
+	font-size: 16pt;
+}
+
+th,
+td {
+	border: 1pt solid;
+	padding: 8pt 12pt;
+}
+
+td img {
+	max-width: 100%;
+}
+
+a:not([class])[href^='https://']::after {
+	content: " ↗ " attr(href);
+	color: #55f;
+}
+
+.img-wrapper {
+	text-align: center;
+	display: inline;
+}
+
+.img-wrapper img {
+	display: block;
+	margin: auto;
+	max-width: 100%;
+	box-shadow: 2px 2px 15px #0005;
+}
+
+.img-wrapper figcaption {
+	width: 50%;
+	margin: auto;
+	margin-top: 12pt;
+	opacity: 0.5;
+}
+
+.side-callout,
+.side-note {
+	border: 1pt solid #fd0a;
+	border-left: 12pt solid #fd0a;
+	margin-left: 20%;
+	padding: 12pt;
+}
+
+.side-callout > p,
+.side-note > p {
+	margin: auto;
+}
+
+.side-note dt {
+	font-weight: bold;
+	font-size: 24pt;
+}
+
+dd,
+.side-note dd {
+	margin-top: 12pt;
+	line-height: 1.5;
+	box-decoration-break: clone;
+}
+
+pre[class*="language-"] {
+	white-space: pre-wrap !important;
+}
+
+code[class*="language-"] {
+	color: #000 !important;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: hsl(54, 32%, 35%) !important;
+}
+
+.token.punctuation {
+	color: hsl(0, 0%, 30%) !important;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: hsl(17, 100%, 34%) !important;
+}
+
+.token.boolean,
+.token.number {
+	color: hsl(180, 100%, 34%) !important;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: hsl(80, 75%, 25%) !important;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: hsl(187, 100%, 44%) !important;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function {
+	color: hsl(32, 100%, 40%) !important;
+}
+
+.token.keyword {
+	color: hsl(180, 100%, 34%) !important;
+}
+
+.token.regex,
+.token.important {
+	color: hsl(51, 100%, 30%) !important;
+}
+
+video {
+	display: none;
+}
+
+video ~ figcaption::before {
+	width: calc(150pt * (16 / 9));
+	border: 1px solid;
+	padding-bottom: 30%;
+	margin: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+
+video ~ figcaption:lang(en)::before {
+	content: "Watch this video online: " attr(data-video);
+}
+
+video ~ figcaption:lang(tl)::before {
+	content: "Panoorin ang video na ito online: " attr(data-video);
 }

@@ -1,24 +1,24 @@
 'use strict'
 
-var scope = { expandNavbar, collapseNavbar };
-var trigger = new ScrollTrigger();
-trigger.callScope = scope;
+var scope = { expandNavbar, collapseNavbar }
+var trigger = new ScrollTrigger()
+trigger.callScope = scope
 
-function expandNavbar() {
+function expandNavbar () {
     document
         .querySelector('.banner')
         .classList
-        .remove('collapsed')
+        .remove('banner--collapsed')
 }
 
-function collapseNavbar() {
+function collapseNavbar () {
     document
         .querySelector('.banner')
         .classList
-        .add('collapsed')
+        .add('banner--collapsed')
 }
 
-function initializeScroller() {
+function initializeScroller () {
     if(document.documentElement.scrollTop > 1)
         collapseNavbar();
     else expandNavbar();

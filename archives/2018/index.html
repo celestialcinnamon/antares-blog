@@ -28,8 +28,6 @@
   <meta name="msapplication-config" content="/antares-blog/images/browserconfig.xml?v=yyL3E0AWom">
   <meta name="theme-color" content="#bbbbbb">
 
-
-
   <!-- Twitter Card data -->
   <meta name="twitter:card" content="Current trends and best practices for Filipino developers.">
 
@@ -42,20 +40,17 @@
   <meta property="og:image" content="http://celestialcinnamon.github.io//antares-blog/images/favicon-194x194.png">
   <meta property="og:description" content="Current trends and best practices for Filipino developers."> 
   
-  <!-- <link rel="stylesheet" href="https://rsms.me/inter/inter.css" media="screen"> -->
-  <link href="/antares-blog/css/baseline.css" rel="stylesheet" media="screen">
-  <link href="/antares-blog/css/mobile.css" rel="stylesheet" media="screen">
-  <link href="/antares-blog/css/desktop.css" rel="stylesheet" media="screen and (min-width: 750px)">
-  <!-- <link href="/antares-blog/css/print.css" rel="stylesheet" media="print"> -->
+  <link href="/antares-blog/css/antares.css" rel="stylesheet" media="only screen">
+  <link href="/antares-blog/css/print.css" rel="stylesheet" media="only print">
   
   
   
   
 
   <!-- TODO: Uncomment these links -->
-  <!-- <link media="screen" href="https://fonts.googleapis.com/css?family=Vidaloka&display=swap" rel="stylesheet"> 
+  <link media="screen" href="https://fonts.googleapis.com/css?family=Vidaloka&display=swap" rel="stylesheet"> 
   <link media="screen" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700&display=swap" rel="stylesheet"> 
-  <link media="screen" href="https://fonts.googleapis.com/css?family=B612+Mono&display=swap" rel="stylesheet"> -->
+  <link media="screen" href="https://fonts.googleapis.com/css?family=B612+Mono&display=swap" rel="stylesheet">
 
   <!--
     HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
@@ -67,12 +62,12 @@
 <link rel="stylesheet" href="/antares-blog/css/prism-a11y-dark.css" type="text/css">
 <link rel="stylesheet" href="/antares-blog/css/prism-line-numbers.css" type="text/css"></head>
 
-<body>
+<body class="layout layout--layout">
     
     
     <div class="banner">
-  <a href="#main-content" class="nav skiplink sr-only sr-only-focusable">Skip to content</a>
-  <header class="header" role="banner">
+  <a href="#main-content" class="navigation__link skiplink sr-only sr-only-focusable">Skip to content</a>
+  <header class="banner__header" role="banner">
     <a href="/antares-blog/" class="site-logo" aria-label="Go to home">
       <svg style="transform: scale(2)" width="64" height="64" viewbox="-500 -500 2040 2040" fill="none" xmlns="http://www.w3.org/2000/svg">
         <style>
@@ -90,11 +85,13 @@
             fill: #fd0;
           }
 
+          a:focus #logo-ellipse,
           svg:hover #logo-ellipse {
             transform: none;
             opacity: 1;
           }
 
+          a:focus #logo-path,
           svg:hover #logo-path {
             fill: black;
           }
@@ -105,155 +102,150 @@
       </svg>
     </a>
   </header>
-  <nav class="navbar">
-    <ul class="nav-list">
-      <li class="nav-item"><a class="nav" href="/antares-blog/archives">Archives</a></li>
-      <li class="nav-item"><a class="nav" href="/antares-blog/downloads">Downloads</a></li>
+  <nav class="banner__navigation">
+    <ul class="navigation-list">
+      <li class="navigation__item"><a class="navigation__link" href="/antares-blog/archives">Archives</a></li>
+      <li class="navigation__item"><a class="navigation__link" href="/antares-blog/downloads">Downloads</a></li>
     </ul>
   </nav>
 </div>
     <div data-scroll data-scroll-showCallback="expandNavbar()"  data-scroll-hideCallback="collapseNavbar()"></div>
     
+    <main id="main-content" class="layout layout--archive">
     
 
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="archive__by-year">
+  <a href="/antares-blog/archives/2018" class="archive-year">
+     
+    Posts
+    in
+    2018
+  </a>
+  <div class="archive__posts">
   
     
-    
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          
-          Mga Post Mula sa 
-          
-          <a href="/antares-blog/archives/2018" class="archive-year">2018</a>
+<article class="post post--archive">
+    <header class="post__header">
+        <h2>
+            <a href="/antares-blog/tl/Fetch-API-POST-Requests/" class="post__title">Fetch API: POST Requests</a>
+        </h2>
+        <div class="post__meta">
+            <address rel="author" class="post__author">Francis Rubio</address>
+            <time pubdate="" datetime="2018-12-30T04:10:52.000Z" class="post__publish-date">December 30, 2018</time>
         </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-    <header class="archive-article-header">
-        <h2>
-          <a class="post__title" href="/antares-blog/tl/Fetch-API-POST-Requests/">Fetch API: POST Requests</a>
-        </h2>
-      <div class="meta">
-        Francis Rubio
-      </div>
     </header>
-    <a href="/antares-blog/tl/Fetch-API-POST-Requests/" class="archive-article-date">
-  <time datetime="2018-12-30T04:10:52.000Z" itemprop="datePublished">Dec 30</time>
-</a>
 </article>
   
     
-    
-    <article class="archive-article archive-type-post">
-    <header class="archive-article-header">
+<article class="post post--archive">
+    <header class="post__header">
         <h2>
-          <a class="post__title" href="/antares-blog/tl/Intrinsic-Web-Design-Ito-na-ba-ang-Wakas-ng-Responsive-Web/">Intrinsic Web Design: Ito na ba ang Wakas ng Responsive Web?</a>
+            <a href="/antares-blog/tl/Intrinsic-Web-Design-Ito-na-ba-ang-Wakas-ng-Responsive-Web/" class="post__title">Intrinsic Web Design: Ito na ba ang Wakas ng Responsive Web?</a>
         </h2>
-      <div class="meta">
-        Francis Rubio
-      </div>
+        <div class="post__meta">
+            <address rel="author" class="post__author">Francis Rubio</address>
+            <time pubdate="" datetime="2018-12-23T12:25:15.000Z" class="post__publish-date">December 23, 2018</time>
+        </div>
     </header>
-    <a href="/antares-blog/tl/Intrinsic-Web-Design-Ito-na-ba-ang-Wakas-ng-Responsive-Web/" class="archive-article-date">
-  <time datetime="2018-12-23T12:25:15.000Z" itemprop="datePublished">Dec 23</time>
-</a>
 </article>
   
     
-    
-    <article class="archive-article archive-type-post">
-    <header class="archive-article-header">
+<article class="post post--archive">
+    <header class="post__header">
         <h2>
-          <a class="post__title" href="/antares-blog/tl/Fetch-API-GET-Requests/">Fetch API: GET Requests</a>
+            <a href="/antares-blog/tl/Fetch-API-GET-Requests/" class="post__title">Fetch API: GET Requests</a>
         </h2>
-      <div class="meta">
-        Francis Rubio
-      </div>
+        <div class="post__meta">
+            <address rel="author" class="post__author">Francis Rubio</address>
+            <time pubdate="" datetime="2018-12-15T16:32:56.000Z" class="post__publish-date">December 16, 2018</time>
+        </div>
     </header>
-    <a href="/antares-blog/tl/Fetch-API-GET-Requests/" class="archive-article-date">
-  <time datetime="2018-12-15T16:32:56.000Z" itemprop="datePublished">Dec 16</time>
-</a>
 </article>
   
     
-    
-    <article class="archive-article archive-type-post">
-    <header class="archive-article-header">
+<article class="post post--archive">
+    <header class="post__header">
         <h2>
-          <a class="post__title" href="/antares-blog/tl/Function-Parameters-at-Return-Statements/">Function Parameters at Return Statements</a>
+            <a href="/antares-blog/tl/Function-Parameters-at-Return-Statements/" class="post__title">Function Parameters at Return Statements</a>
         </h2>
-      <div class="meta">
-        Francis Rubio
-      </div>
+        <div class="post__meta">
+            <address rel="author" class="post__author">Francis Rubio</address>
+            <time pubdate="" datetime="2018-12-14T15:43:37.000Z" class="post__publish-date">December 14, 2018</time>
+        </div>
     </header>
-    <a href="/antares-blog/tl/Function-Parameters-at-Return-Statements/" class="archive-article-date">
-  <time datetime="2018-12-14T15:43:37.000Z" itemprop="datePublished">Dec 14</time>
-</a>
 </article>
   
     
-    
-    <article class="archive-article archive-type-post">
-    <header class="archive-article-header">
+<article class="post post--archive">
+    <header class="post__header">
         <h2>
-          <a class="post__title" href="/antares-blog/tl/Pagso-sort-ng-Arrays-sa-JavaScript/">Pagso-sort ng Arrays sa JavaScript</a>
+            <a href="/antares-blog/tl/Pagso-sort-ng-Arrays-sa-JavaScript/" class="post__title">Pagso-sort ng Arrays sa JavaScript</a>
         </h2>
-      <div class="meta">
-        Francis Rubio
-      </div>
+        <div class="post__meta">
+            <address rel="author" class="post__author">Francis Rubio</address>
+            <time pubdate="" datetime="2018-12-14T13:52:53.000Z" class="post__publish-date">December 14, 2018</time>
+        </div>
     </header>
-    <a href="/antares-blog/tl/Pagso-sort-ng-Arrays-sa-JavaScript/" class="archive-article-date">
-  <time datetime="2018-12-14T13:52:53.000Z" itemprop="datePublished">Dec 14</time>
-</a>
 </article>
   
     
-    
-    <article class="archive-article archive-type-post">
-    <header class="archive-article-header">
+<article class="post post--archive">
+    <header class="post__header">
         <h2>
-          <a class="post__title" href="/antares-blog/tl/Array-Filters/">Array Filters</a>
+            <a href="/antares-blog/tl/Array-Filters/" class="post__title">Array Filters</a>
         </h2>
-      <div class="meta">
-        Francis Rubio
-      </div>
+        <div class="post__meta">
+            <address rel="author" class="post__author">Francis Rubio</address>
+            <time pubdate="" datetime="2018-12-05T22:46:53.000Z" class="post__publish-date">December 6, 2018</time>
+        </div>
     </header>
-    <a href="/antares-blog/tl/Array-Filters/" class="archive-article-date">
-  <time datetime="2018-12-05T22:46:53.000Z" itemprop="datePublished">Dec 6</time>
-</a>
 </article>
   
     
-    
-    <article class="archive-article archive-type-post">
-    <header class="archive-article-header">
+<article class="post post--archive">
+    <header class="post__header">
         <h2>
-          <a class="post__title" href="/antares-blog/en/en/Welcome-to-the-Antares-Programming-Blog/">Welcome to Antares Programming Blog</a>
+            <a href="/antares-blog/en/en/Welcome-to-the-Antares-Programming-Blog/" class="post__title">Welcome to Antares Programming Blog</a>
         </h2>
-      <div class="meta">
-        Francis Rubio
-      </div>
+        <div class="post__meta">
+            <address rel="author" class="post__author">Francis Rubio</address>
+            <time pubdate="" datetime="2018-12-05T17:51:53.000Z" class="post__publish-date">December 6, 2018</time>
+        </div>
     </header>
-    <a href="/antares-blog/en/en/Welcome-to-the-Antares-Programming-Blog/" class="archive-article-date">
-  <time datetime="2018-12-05T17:51:53.000Z" itemprop="datePublished">Dec 6</time>
-</a>
 </article>
   
-  
-    </div></section>
-  
+  </div>
+</section>
 
 
+
+</main>
     
-    <footer class="footer" role="contentinfo">
-  <div>
+    <footer class="layout layout--footer" role="contentinfo">
+  <div class="footer__division">
+  <a href="/antares-blog/tungkol-sa-amin">Tungkol sa Antares Programming</a>
+  <a href="https://www.facebook.com/antaresprogramming"><i>Antares Programming</i> sa Facebook</a>
+  <a href="#">Back to top</a>
+  </div>
+  <div class="footer__division text-align--right">
     <p>&copy; 2019 Antares Programming</p>
     <p>Reserbado ang lahat ng karapatan.</p>
   </div>
-  <div><a href="/antares-blog/tungkol-sa-amin">Tungkol sa Antares Programming</a>
-  <a href="https://www.facebook.com/antaresprogramming"><i>Antares Programming</i> sa Facebook</a>
-  <p id="back-to-top"><a href="#top">Back to top</a></p></div>
 </footer>
 <script>
     var CONFIG_ROOT = `/antares-blog/`;
