@@ -1,11 +1,11 @@
-<article class="post">
+<article class="post post--excerpt">
     <header class="post__header">
         <h2>
             <a href="<%- config.root %><%- item.path %>" class="post__title"><%- item.title %></a>
         </h2>
         <div class="post__meta">
-            <address rel="author" class="author-name sr-only"><%= item.author.name %></address>
-            <time pubdate datetime="<%= new Date(item.date).toJSON() %>" class="article-date"><%= item.date.format(config.date_format) %></time>
+            <address rel="author" class="post__author"><%= item.author.name || "" %></address>
+            <time pubdate datetime="<%= new Date(item.date).toJSON() %>" class="post__publish-date"><%= item.date.format(config.date_format) %></time>
         </div>
     </header>
     <% if(with_excerpt) { %>

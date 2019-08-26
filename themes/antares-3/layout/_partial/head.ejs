@@ -46,8 +46,6 @@ function renderLinkPaths(pathArray = []) {
   <meta name="msapplication-config" content="/antares-blog/images/browserconfig.xml?v=yyL3E0AWom">
   <meta name="theme-color" content="#bbbbbb">
 
-
-
   <!-- Twitter Card data -->
   <meta name="twitter:card" content="<%- strip_html(description) %>">
 
@@ -56,9 +54,7 @@ function renderLinkPaths(pathArray = []) {
     var url = page.path? config.root + page.path : config.root;
 
     if(is_post()) {
-      if(page.is_featured) {
-        postCoverPath = config.root + page.path + page.cover_image
-      }
+      postCoverPath = config.root + page.path + page.cover_image
     }
   %>
 
@@ -69,10 +65,7 @@ function renderLinkPaths(pathArray = []) {
   <meta property="og:image" content="http://celestialcinnamon.github.io/<%- postCoverPath %>" />
   <meta property="og:description" content="<%- strip_html(description) %>" /> 
   <% if(pageShouldBeRendered) { %>
-  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" media="only screen">
-  <link href="/antares-blog/css/baseline.css" rel="stylesheet" media="only screen">
-  <link href="/antares-blog/css/mobile.css" rel="stylesheet" media="only screen">
-  <link href="/antares-blog/css/desktop.css" rel="stylesheet" media="only screen and (min-width: 750px)">
+  <link href="/antares-blog/css/antares.css" rel="stylesheet" media="only screen">
   <link href="/antares-blog/css/print.css" rel="stylesheet" media="only print">
   <% } %>
   <%
@@ -95,9 +88,9 @@ function renderLinkPaths(pathArray = []) {
   <%- scripts.join("\n") %>
 
   <!-- TODO: Uncomment these links -->
-  <!-- <link media="screen" href="https://fonts.googleapis.com/css?family=Vidaloka&display=swap" rel="stylesheet"> 
+  <link media="screen" href="https://fonts.googleapis.com/css?family=Vidaloka&display=swap" rel="stylesheet"> 
   <link media="screen" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700&display=swap" rel="stylesheet"> 
-  <link media="screen" href="https://fonts.googleapis.com/css?family=B612+Mono&display=swap" rel="stylesheet"> -->
+  <link media="screen" href="https://fonts.googleapis.com/css?family=B612+Mono&display=swap" rel="stylesheet">
 
   <!--
     HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries

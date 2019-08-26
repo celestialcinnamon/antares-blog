@@ -1,10 +1,10 @@
 <aside class="sidebar">
-  <section class="author-sidebar">
-    <img src="images/francis_rubio.jpg" alt="Photo of Francis Rubio" class="author-photo">
-    <address>by <a href="https://celestialcinnamon.github.io/" class="author-name focusable">Francis Rubio</a></address>
-    <p>Freelance Web developer and designer from The Philippines</p>
+  <section class="sidebar__author">
+    <img src="images/francis_rubio.jpg" alt="Photo of Francis Rubio" class="author__photo">
+    <address class="author__name">articles by <a href="https://celestialcinnamon.github.io/" class="author__link">Francis Rubio</a></address>
+    <p class="author__bio">Freelance Web developer and designer from The Philippines</p>
   </section>
-  <% theme.widgets.forEach(function(widget){ %>
-    <%- partial('_widget/' + widget) %>
-  <% }) %>
+  <div class="widgets"><% theme.widgets.forEach(function(widget){ %>
+  <%- partial('_widget/' + widget) %>
+  <% }) %></div>
 </aside>

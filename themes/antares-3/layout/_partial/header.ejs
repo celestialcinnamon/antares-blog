@@ -1,6 +1,6 @@
 <div class="banner">
-  <a href="#main-content" class="nav skiplink sr-only sr-only-focusable">Skip to content</a>
-  <header class="header" role="banner">
+  <a href="#main-content" class="navigation__link skiplink sr-only sr-only-focusable">Skip to content</a>
+  <header class="banner__header" role="banner">
     <a href="<%- config.root %>" class="site-logo" aria-label="Go to home">
       <svg style="transform: scale(2)" width="64" height="64" viewBox="-500 -500 2040 2040" fill="none" xmlns="http://www.w3.org/2000/svg">
         <style>
@@ -18,11 +18,13 @@
             fill: #fd0;
           }
 
+          a:focus #logo-ellipse,
           svg:hover #logo-ellipse {
             transform: none;
             opacity: 1;
           }
 
+          a:focus #logo-path,
           svg:hover #logo-path {
             fill: black;
           }
@@ -35,10 +37,10 @@
       </svg>
     </a>
   </header>
-  <nav class="navbar">
-    <ul class="nav-list">
-      <li class="nav-item"><a class="nav" href="<%- config.root + theme.menu.Archives %>">Archives</a></li>
-      <li class="nav-item"><a class="nav" href="<%- config.root + theme.menu.Downloads %>">Downloads</a></li>
+  <nav class="banner__navigation">
+    <ul class="navigation-list">
+      <li class="navigation__item"><a class="navigation__link" href="<%- config.root + theme.menu.Archives %>">Archives</a></li>
+      <li class="navigation__item"><a class="navigation__link" href="<%- config.root + theme.menu.Downloads %>">Downloads</a></li>
     </ul>
   </nav>
 </div>

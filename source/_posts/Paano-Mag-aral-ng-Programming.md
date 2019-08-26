@@ -7,6 +7,7 @@ lang: tl
 date: 2019-08-24 08:34:10
 tags: [programming, general]
 category: Opinion
+cover_image: cover.png
 ---
 Ilang tips para sa mas mabisa at mabilis na pagkatuto ng programming.
 <!--more-->

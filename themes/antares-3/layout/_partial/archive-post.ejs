@@ -1,11 +1,12 @@
-<article class="archive-article archive-type-<%= post.layout %>">
-    <header class="archive-article-header">
+<% const item = post %>
+<article class="post post--archive">
+    <header class="post__header">
         <h2>
-          <a class="post__title" href="<%- url_for(post.path) %>"><%= post.title %></a>
+            <a href="<%- config.root %><%- item.path %>" class="post__title"><%- item.title %></a>
         </h2>
-      <div class="meta">
-        <%- post.author.name %>
-      </div>
+        <div class="post__meta">
+            <address rel="author" class="post__author"><%= item.author.name %></address>
+            <time pubdate datetime="<%= new Date(item.date).toJSON() %>" class="post__publish-date"><%= item.date.format(config.date_format) %></time>
+        </div>
     </header>
-    <%- partial('post/date', {class_name: 'archive-article-date', date_format: 'MMM D'}) %>
 </article>
