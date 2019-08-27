@@ -539,6 +539,16 @@ table, .table {
 	font-size: 0.8rem;
 }
 
+pre[class*="language-"] {
+	white-space: pre-wrap;
+	word-wrap: break-word;
+	text-align: justify;
+}
+
+.post__content {
+	display: grid;
+}
+
 .page-content ol,
 .page-content ul,
 .page-content dl,
