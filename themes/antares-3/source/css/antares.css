@@ -6,6 +6,27 @@ This is the official refactored CSS code for the Antares v3.0 theme.
 MIT Licensed 2019
 */
 
+/* == FONTS */
+/* latin-ext */
+@font-face {
+	font-family: 'Inconsolata';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: local('Inconsolata Regular'), local('Inconsolata-Regular'), url(./fonts/QldKNThLqRwH-OJ1UHjlKGlX5qhWxg.woff2) format('woff2');
+	unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+/* latin */
+@font-face {
+font-family: 'Inconsolata';
+font-style: normal;
+font-weight: 400;
+font-display: swap;
+src: local('Inconsolata Regular'), local('Inconsolata-Regular'), url(./fonts/QldKNThLqRwH-OJ1UHjlKGlZ5qg.woff2) format('woff2');
+unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+  
+
 /* == BASE STYLES */
 
 *,
@@ -80,7 +101,7 @@ var,
 samp,
 kbd,
 output {
-	font-family: var(--code-font);
+	font-family: var(--code-font) !important;
 	color: var(--heading-color);
 }
 
@@ -93,6 +114,10 @@ h6 {
 	font-family: serif;
 	font-family: var(--heading-font);
 	line-height: 1.25;
+}
+
+#more {
+	display: none;
 }
 
 a {
@@ -393,7 +418,7 @@ body {
 }
 
 .post {
-	padding: 2rem;
+	padding: 1rem;
 	max-width: 100%;
 
 	display: grid;
@@ -540,13 +565,15 @@ table, .table {
 }
 
 pre[class*="language-"] {
-	white-space: pre-wrap;
-	word-wrap: break-word;
-	text-align: justify;
+	white-space: pre-wrap !important;
+	word-wrap: break-word !important;
+	text-align: justify !important;
 }
 
 .post__content {
 	display: grid;
+	max-width: 960px;
+	margin: auto;
 }
 
 .page-content ol,
@@ -599,10 +626,11 @@ table th,
 .page-content ul,
 .post__content ol,
 .post__content ul {
-    padding-left: 6rem;
+	padding-left: 6rem;
+	width: 100%;
 }
 
-.post__content p:first-child {
+.post__content > p:first-child {
 	font-size: calc(1em + 2vw);
 	line-height: 1.5;
 	font-weight: 300;
@@ -660,7 +688,6 @@ table th,
 	border: none;
 	background-color: var(--primary);
     
-	margin-left: -1rem;
 	margin-right: 0.5rem;
 	min-height: 0.8rem;
 	flex: 0;
@@ -796,8 +823,6 @@ blockquote.default-blockquote p {
 	text-align: center;
 }
 
-.side-note::before,
-.side-note::after,
 .page-content > blockquote p:first-of-type::before,
 .page-content > blockquote p:first-of-type::after,
 .post__content > blockquote p:first-of-type::before,
@@ -963,4 +988,31 @@ blockquote.default-blockquote p {
 
 .text-align--right {
 	text-align: right;
+}
+
+
+.side-note {
+	margin-left: auto;
+	background-color: #0005;
+	border-left: 5px solid var(--primary);
+	position: relative;
+	padding-top: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+.side-note::before {
+	content: 'Side Note';
+	padding: 0.5rem 1rem;
+	display: inline-block;
+	background-color: #fd0;
+	color: var(--text-on-colored);
+	border-left: 5px solid var(--primary);
+
+	position: absolute;
+	left: -5px;
+	top: -1rem;
+}
+
+.side-note p {
+	margin: 1rem;
 }
