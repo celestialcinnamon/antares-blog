@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="tl" class="dark">
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Fetch API Overview</title>
+  
+  <meta name="description" content="Sa unang article sa Fetch API series, tingnan natin ang kabuuan ng Fetch API at kung ano ang puwede nating magawa gamit ito.">
+  <meta name="author" content="Francis Rubio &lt;francoisoibur21@gmail.com&gt;">
+  
+  <meta name="apple-mobile-web-app-title" content="Antares">
+  <meta name="application-name" content="Antares">
+  <meta name="msapplication-TileColor" content="#ffc40d">
+  <meta name="msapplication-TileImage" content="/antares-blog/images/mstile-144x144.png?v=yyL3E0AWom">
+  <meta name="msapplication-config" content="/antares-blog/images/browserconfig.xml?v=yyL3E0AWom">
+  <meta name="theme-color" content="#bbbbbb">
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="Sa unang article sa Fetch API series, tingnan natin ang kabuuan ng Fetch API at kung ano ang puwede nating magawa gamit ito.">
+
+  
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="Fetch API Overview">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://celestialcinnamon.github.io/antares-blog/tl/fetch-api-overview/">
+  <meta property="og:image" content="http://celestialcinnamon.github.io//antares-blog/images/default-cover.png">
+  <meta property="og:description" content="Sa unang article sa Fetch API series, tingnan natin ang kabuuan ng Fetch API at kung ano ang puwede nating magawa gamit ito."> 
+  
+  <link href="/antares-blog/css/antares.css" rel="stylesheet" media="only screen">
+  <link href="/antares-blog/css/print.css" rel="stylesheet" media="only print">
+  
+  
+  
+  
+
+  <!-- TODO: Uncomment these links -->
+
+  <noscript>
+    <link media="screen" href="https://fonts.googleapis.com/css?family=Inconsolata&display=swap" rel="stylesheet">
+  </noscript>
+
+  <!--
+    HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
+  -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+  <!-- Favicon and PWA theme -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/antares-blog/images/apple-touch-icon.png?v=yyL3E0AWom">
+  <link rel="icon" type="image/png" sizes="32x32" href="/antares-blog/images/favicon-32x32.png?v=yyL3E0AWom">
+  <link rel="icon" type="image/png" sizes="194x194" href="/antares-blog/images/favicon-194x194.png?v=yyL3E0AWom">
+  <link rel="icon" type="image/png" sizes="192x192" href="/antares-blog/images/android-chrome-192x192.png?v=yyL3E0AWom">
+  <link rel="icon" type="image/png" sizes="16x16" href="/antares-blog/images/favicon-16x16.png?v=yyL3E0AWom">
+  <link rel="manifest" href="/antares-blog/images/site.webmanifest?v=yyL3E0AWom">
+  <link rel="mask-icon" href="/antares-blog/images/safari-pinned-tab.svg?v=yyL3E0AWom" color="#efaa00">
+  <link rel="shortcut icon" href="/antares-blog/images/favicon.ico?v=yyL3E0AWom">
+<link rel="stylesheet" href="/antares-blog/css/prism-a11y-dark.css" type="text/css">
+<link rel="stylesheet" href="/antares-blog/css/prism-line-numbers.css" type="text/css"></head>
+
+<body class="layout layout--layout">
+    
+    
+    <div class="banner">
+  <a href="#main-content" class="navigation__link skiplink sr-only sr-only-focusable">Skip to content</a>
+  <header class="banner__header" role="banner">
+    <a href="/antares-blog/" class="site-logo" aria-label="Go to home">
+      <svg style="transform: scale(2)" width="64" height="64" viewbox="-500 -500 2040 2040" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <style>
+          * {
+            transition: all 300ms;
+          }
+
+          #logo-ellipse {
+            transform-origin: center;
+            transform: scale(2) translate(10%, 13%);
+            opacity: 0;
+          }
+
+          #logo-path {
+            fill: #fd0;
+          }
+
+          a:focus #logo-ellipse,
+          svg:hover #logo-ellipse {
+            transform: none;
+            opacity: 1;
+          }
+
+          a:focus #logo-path,
+          svg:hover #logo-path {
+            fill: black;
+          }
+        </style>
+        <ellipse id="logo-ellipse" cx="512.5" cy="464" rx="397.5" ry="401" fill="#FFDD00"/>
+        
+        <path id="logo-path" d="M293.333 144.667C227.2 153.867 169.467 182.133 124 227.867C73.2 278.933 42.1333 344.8 31.7333 424C29.6 440.4 29.6 494.266 31.7333 510.666C37.3333 553.466 48.8 591.2 66.8 626.666C112.533 716.933 194.933 775.733 293.733 788.666C313.867 791.2 351.333 791.2 370.933 788.666C428.533 781.066 481.466 755.866 523.066 716C530 709.466 536 704 536.533 704C536.933 704 537.333 719.6 537.333 738.666V773.333H746.666V160H534.666V217.733L530.8 214.533C528.666 212.8 522.8 207.867 517.866 203.6C482 173.067 433.066 152.4 379.867 145.333C356.133 142.133 313.733 141.867 293.333 144.667V144.667ZM433.467 327.067C464.4 335.2 489.6 351.2 508.533 374.8C552.266 429.6 549.6 515.733 502.666 567.066C452.266 622.266 353.2 625.466 297.333 573.866C277.867 555.733 264.8 531.866 257.067 500C256 495.2 255.333 484 255.333 467.333C255.333 445.867 255.867 440.267 258.267 430.667C270.933 381.067 306 343.6 353.467 329.2C370.533 324 380.933 322.667 401.333 323.2C416.533 323.6 423.467 324.4 433.467 327.067V327.067ZM689.6 522.266C698.666 526.266 708.133 535.866 712.4 545.066C716.8 554.666 716.533 571.466 711.866 581.466C699.466 607.866 665.466 616.266 643.066 598.533C631.466 589.2 624.133 572.133 626 558.266C630 527.2 661.066 509.733 689.6 522.266V522.266ZM678.666 632C700.933 636.266 716 652.133 716 671.333C715.866 690.933 700 712.8 670.933 733.333C664.133 738.133 658.133 742.133 657.6 742.266C657.066 742.533 656.666 736.266 656.666 728.266C656.533 715.6 656.133 713.066 652.933 706.266C647.733 694.933 640 686.4 625.866 676.533C612.666 667.333 608.533 662.8 607.2 656.133C605.2 646.4 624.4 636.4 652 632.666C668.266 630.4 670.266 630.4 678.666 632Z" fill="black"/>
+      </svg>
+    </a>
+  </header>
+  <nav class="banner__navigation">
+    <ul class="navigation-list">
+      <li class="navigation__item"><a class="navigation__link" href="/antares-blog/archives">Archives</a></li>
+      <li class="navigation__item"><a class="navigation__link" href="/antares-blog/downloads">Downloads</a></li>
+    </ul>
+  </nav>
+</div>
+    <div data-scroll data-scroll-showCallback="expandNavbar()"  data-scroll-hideCallback="collapseNavbar()"></div>
+    
+    <main class="layout layout--post" id="main-content">
+
+<article class="post post--article">
+  <header>
+    <h1>
+      <a class="post__title" href="/antares-blog/tl/fetch-api-overview/">Fetch API Overview</a>
+    </h1>
+  </header>
+  <div class="post__content">
+    <p>Sa unang article sa Fetch API series, tingnan natin ang kabuuan ng Fetch API at kung ano ang puwede nating magawa gamit ito.
+<a id="more"></a></p>
+<p>Ang Fetch API ang sagot sa <code>ajax()</code> function ng jQuery, na minsan nang naging popular dahil sa pagresolba nito sa incompatibility sa pagitan ng mga browser. Under the hood, ginamit ng jQuery ang <code>XMLHttpRequest</code> ng JavaScript para magpadala ng mga request sa server nang hindi nire-reload ang buong page. Ganitong-ganito rin ang ginagawa ng Fetch API, pero may iba pa itong kayang ibigay.</p>
+<h2 id="Fetch-API-vs-jQuery-ajax"><a href="#Fetch-API-vs-jQuery-ajax" class="headerlink" title="Fetch API vs. jQuery.ajax()"></a>Fetch API vs. <code>jQuery.ajax()</code></h2><p>Bagaman magkapareho ng problemang nilulutas ang Fetch API at <code>jQuery.ajax()</code> functions, may mga pagkakaiba sila. At to a certain extent, masasabing mas magandang gamitin ang Fetch API:</p>
+<ul>
+<li>Hindi gaya ng <code>jQuery.ajax()</code>, hindi itinuturing na error ng Fetch API kapag nagbalik ang server ng response na <code>404 Not Found</code> o <code>500 Internal Server Error</code>. Sa halip, magre-resolve nang normal ang response, pero ipapaalam nito sa iyo sa pamamagitan ng <code>ok</code> property (na may value na <code>false</code>) na may error code na ibinalik ang server. Magkaka-error lang sa Fetch API kapag nagkaroon ng network failure o may kahit anong nangyari na pumigil sa request para magpatuloy.</li>
+<li>By default, hindi nagpapadala o tumatanggap ng cookies sa server ang Fetch API. Magreresulta ito sa mga error kapag nagre-require ang server ng user session sa bawat request.</li>
+</ul>
+<h2 id="Ang-mga-Promise"><a href="#Ang-mga-Promise" class="headerlink" title="Ang mga Promise"></a>Ang mga <code>Promise</code></h2><p>Umiikot ang Fetch API sa mga <code>Promise</code>. Ito ang mechanism para sa paggawa ng mga asynchronous task sa JavaScript. Nire-represent nito ang state ng isang asynchronous task once na nakumpleto na ito (successful man o hindi ang task na iyon).</p>
+<p>Hindi gaya ng mga callback functions na ipinapasa natin sa mga functions na gumagawa ng asynchronous tasks (gaya ng <code>jQuery.ajax()</code>), may ilang bagay na sinisiguro sa atin ang <code>Promise</code> objects:</p>
+<ul>
+<li>Hindi tatawagin ang mga callback functions na ipinasa natin sa mga <code>Promise</code> bago matapos ang <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop#Run-to-completion" target="_blank" rel="noopener">current run ng JavaScript event loop</a>. <sup id="src-1"><a href="#ref-1">1</a></sup></li>
+<li>Puwede kang magdagdag ng higit sa isang callback na tatawagin kapag nakumpleto na ang <code>Promise</code> anuman ang naging result nito.</li>
+</ul>
+<p>Isa rin sa pinakamagagandang features ng <code>Promise</code> ay ang chaining.</p>
+<h3 id="Method-Chaining"><a href="#Method-Chaining" class="headerlink" title="Method Chaining"></a>Method Chaining</h3><p>Isa sa kadalasang kailangan kapag gagamit tayo ng mga <code>Promise</code> ay ang pag-e-execute ng dalawa o higit pang asynchronous functions nang magkakasunod; ibig sabihin, kung anuman ang result ng unang function, matatanggap iyon ng kasunod na function, and so on. Ito ang tinatawag na <strong>method chaining</strong>.</p>
+<p>Halimbawa, kunwari may function tayo na <code>doSomething()</code> na nagre-return ng isang Promise. At pagkatapos, may gusto tayong gawin kapag successful ang nangyari sa <code>Promise</code> na iyon:</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">const</span> promise <span class="token operator">=</span> <span class="token function">doSomething</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> promise1 <span class="token operator">=</span> promise<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>functionNaTatawaginKapagSuccess<span class="token punctuation">,</span> functionNaTatawaginKapagFailed<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>Agad-agad sa example na ito, makikita natin kung paano gumagana ang mga <code>Promise</code>. May <code>then()</code> method sila na tumatanggap ng dalawang functions, ang una tatawagin lang kapag success ang operation. Ang ikalawa naman, tatawagin lang kapag nag-fail ang operation ng Promise. Ang isang mahalagang konsepto na dapat tandaan dito ay <strong>nagre-return din ng <code>Promise</code> ang <code>then()</code> method.</strong> Ibig sabihin, puwede tayong magkabit ulit ng isa pang <code>then()</code> method sa return value ng unang <code>then()</code>:</p>
+<pre class="line-numbers language-js"><code class="language-js">promise
+  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>functionNaTatawaginKapagSuccess<span class="token punctuation">,</span> functionNaTatawaginKapagFailed<span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>functionNaTatawaginKapagSuccess<span class="token punctuation">,</span> functionNaTatawaginKapagFailed<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>At mapapansing unlimited ang puwede nating idugtong dito. Ito mismo ang ibig sabihin ng method chaining.</p>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>Ngayong alam na natin kung ano ang ilan sa mga ginagamit sa Fetch API, handa na tayo para sa susunod na article. Talakayin natin kung paano natin magagamit ang Fetch API para kumuha ng data mula sa isang server, at kung paano rin mag-send ng data.</p>
+<a href="/antares-blog/tl/fetch-api-create-read/" title="Create at Read Operations Gamit ang Fetch API">Create at Read Operations Gamit ang Fetch API</a>
+<h2 id="Resources"><a href="#Resources" class="headerlink" title="Resources"></a>Resources</h2><ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API" target="_blank" rel="noopener">Fetch API</a>, mula sa Mozilla Developer Network</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises" target="_blank" rel="noopener">Using Promises</a>, mula sa Mozilla Developer Network</li>
+</ul>
+<h2 id="Footnote"><a href="#Footnote" class="headerlink" title="Footnote"></a>Footnote</h2><ol>
+  <li id="ref-1"><a href="#src-1">^</a> Ang event loop ay isang konsepto sa kung paano ino-organize ng JavaScript ang execution ng mga task na ginagawa nito. Kailangan ito dahil <i>single-threaded</i> ang JavaScript: ang mga asynchronous task nito ay hindi ginagawa kasabay ng main thread. Para sa higit pang detalye, panoorin ang video ng talk na <cite><a href="https://youtu.be/8aGhZQkoFbQ" target="_blank" rel="noopener">What the heck is the event loop anyway?</a></cite> ni Philip Roberts sa JSConf EU. Ito ang pinakamadaling intindihin na explanation ng event loop na nahanap ko.</li>
+</ol>
+  </div>
+  <footer class="article-footer">
+      
+  <div class="article-tags-wrapper">
+    <h4>Tags</h4>
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/antares-blog/tags/ajax/">ajax</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/antares-blog/tags/fetch/">fetch</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/antares-blog/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/antares-blog/tags/meta/">meta</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/antares-blog/tags/programming/">programming</a></li></ul>
+  </div>
+
+      
+  <div class="article-category">
+    <h4>Category</h4>
+    <a class="article-category-link" href="/antares-blog/categories/JavaScript/">JavaScript</a>
+  </div>
+
+  </footer>
+</article>
+</main>
+    
+    <footer class="layout layout--footer" role="contentinfo">
+  <div class="footer__division">
+  <a href="/antares-blog/tungkol-sa-amin">Tungkol sa Antares Programming</a>
+  <a href="https://www.facebook.com/antaresprogramming"><i>Antares Programming</i> sa Facebook</a>
+  <a href="#">Back to top</a>
+  </div>
+  <div class="footer__division text-align--right">
+    <p>&copy; 2019 Antares Programming</p>
+    <p>Reserbado ang lahat ng karapatan.</p>
+  </div>
+</footer>
+<script>
+    var CONFIG_ROOT = `/antares-blog/`;
+    var CONFIG_URL = `https://celestialcinnamon.github.io/antares-blog`.replace('/antares-blog', '');
+</script>
+
+    <script src="/antares-blog/js/ScrollTrigger.min.js"></script>
+    <script src="/antares-blog/js/script.js"></script>
+    <script src="/antares-blog/js/prism-keep-markup.js"></script>
+    
+
+
+
+</body>
+</html>

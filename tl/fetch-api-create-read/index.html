@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="tl" class="dark">
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Create at Read Operations Gamit ang Fetch API</title>
+  
+  <meta name="description" content="Sa ikalawang article, tingnan natin kung paano gagamitin ang Fetch API para makagawa ng simpleng application na nagri-read at create ng resource.">
+  <meta name="author" content="Francis Rubio &lt;francoisoibur21@gmail.com&gt;">
+  
+  <meta name="apple-mobile-web-app-title" content="Antares">
+  <meta name="application-name" content="Antares">
+  <meta name="msapplication-TileColor" content="#ffc40d">
+  <meta name="msapplication-TileImage" content="/antares-blog/images/mstile-144x144.png?v=yyL3E0AWom">
+  <meta name="msapplication-config" content="/antares-blog/images/browserconfig.xml?v=yyL3E0AWom">
+  <meta name="theme-color" content="#bbbbbb">
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="Sa ikalawang article, tingnan natin kung paano gagamitin ang Fetch API para makagawa ng simpleng application na nagri-read at create ng resource.">
+
+  
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="Create at Read Operations Gamit ang Fetch API">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://celestialcinnamon.github.io/antares-blog/tl/fetch-api-create-read/">
+  <meta property="og:image" content="http://celestialcinnamon.github.io//antares-blog/images/default-cover.png">
+  <meta property="og:description" content="Sa ikalawang article, tingnan natin kung paano gagamitin ang Fetch API para makagawa ng simpleng application na nagri-read at create ng resource."> 
+  
+  <link href="/antares-blog/css/antares.css" rel="stylesheet" media="only screen">
+  <link href="/antares-blog/css/print.css" rel="stylesheet" media="only print">
+  
+  
+  
+  
+
+  <!-- TODO: Uncomment these links -->
+
+  <noscript>
+    <link media="screen" href="https://fonts.googleapis.com/css?family=Inconsolata&display=swap" rel="stylesheet">
+  </noscript>
+
+  <!--
+    HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
+  -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+  <!-- Favicon and PWA theme -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/antares-blog/images/apple-touch-icon.png?v=yyL3E0AWom">
+  <link rel="icon" type="image/png" sizes="32x32" href="/antares-blog/images/favicon-32x32.png?v=yyL3E0AWom">
+  <link rel="icon" type="image/png" sizes="194x194" href="/antares-blog/images/favicon-194x194.png?v=yyL3E0AWom">
+  <link rel="icon" type="image/png" sizes="192x192" href="/antares-blog/images/android-chrome-192x192.png?v=yyL3E0AWom">
+  <link rel="icon" type="image/png" sizes="16x16" href="/antares-blog/images/favicon-16x16.png?v=yyL3E0AWom">
+  <link rel="manifest" href="/antares-blog/images/site.webmanifest?v=yyL3E0AWom">
+  <link rel="mask-icon" href="/antares-blog/images/safari-pinned-tab.svg?v=yyL3E0AWom" color="#efaa00">
+  <link rel="shortcut icon" href="/antares-blog/images/favicon.ico?v=yyL3E0AWom">
+<link rel="stylesheet" href="/antares-blog/css/prism-a11y-dark.css" type="text/css">
+<link rel="stylesheet" href="/antares-blog/css/prism-line-numbers.css" type="text/css"></head>
+
+<body class="layout layout--layout">
+    
+    
+    <div class="banner">
+  <a href="#main-content" class="navigation__link skiplink sr-only sr-only-focusable">Skip to content</a>
+  <header class="banner__header" role="banner">
+    <a href="/antares-blog/" class="site-logo" aria-label="Go to home">
+      <svg style="transform: scale(2)" width="64" height="64" viewbox="-500 -500 2040 2040" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <style>
+          * {
+            transition: all 300ms;
+          }
+
+          #logo-ellipse {
+            transform-origin: center;
+            transform: scale(2) translate(10%, 13%);
+            opacity: 0;
+          }
+
+          #logo-path {
+            fill: #fd0;
+          }
+
+          a:focus #logo-ellipse,
+          svg:hover #logo-ellipse {
+            transform: none;
+            opacity: 1;
+          }
+
+          a:focus #logo-path,
+          svg:hover #logo-path {
+            fill: black;
+          }
+        </style>
+        <ellipse id="logo-ellipse" cx="512.5" cy="464" rx="397.5" ry="401" fill="#FFDD00"/>
+        
+        <path id="logo-path" d="M293.333 144.667C227.2 153.867 169.467 182.133 124 227.867C73.2 278.933 42.1333 344.8 31.7333 424C29.6 440.4 29.6 494.266 31.7333 510.666C37.3333 553.466 48.8 591.2 66.8 626.666C112.533 716.933 194.933 775.733 293.733 788.666C313.867 791.2 351.333 791.2 370.933 788.666C428.533 781.066 481.466 755.866 523.066 716C530 709.466 536 704 536.533 704C536.933 704 537.333 719.6 537.333 738.666V773.333H746.666V160H534.666V217.733L530.8 214.533C528.666 212.8 522.8 207.867 517.866 203.6C482 173.067 433.066 152.4 379.867 145.333C356.133 142.133 313.733 141.867 293.333 144.667V144.667ZM433.467 327.067C464.4 335.2 489.6 351.2 508.533 374.8C552.266 429.6 549.6 515.733 502.666 567.066C452.266 622.266 353.2 625.466 297.333 573.866C277.867 555.733 264.8 531.866 257.067 500C256 495.2 255.333 484 255.333 467.333C255.333 445.867 255.867 440.267 258.267 430.667C270.933 381.067 306 343.6 353.467 329.2C370.533 324 380.933 322.667 401.333 323.2C416.533 323.6 423.467 324.4 433.467 327.067V327.067ZM689.6 522.266C698.666 526.266 708.133 535.866 712.4 545.066C716.8 554.666 716.533 571.466 711.866 581.466C699.466 607.866 665.466 616.266 643.066 598.533C631.466 589.2 624.133 572.133 626 558.266C630 527.2 661.066 509.733 689.6 522.266V522.266ZM678.666 632C700.933 636.266 716 652.133 716 671.333C715.866 690.933 700 712.8 670.933 733.333C664.133 738.133 658.133 742.133 657.6 742.266C657.066 742.533 656.666 736.266 656.666 728.266C656.533 715.6 656.133 713.066 652.933 706.266C647.733 694.933 640 686.4 625.866 676.533C612.666 667.333 608.533 662.8 607.2 656.133C605.2 646.4 624.4 636.4 652 632.666C668.266 630.4 670.266 630.4 678.666 632Z" fill="black"/>
+      </svg>
+    </a>
+  </header>
+  <nav class="banner__navigation">
+    <ul class="navigation-list">
+      <li class="navigation__item"><a class="navigation__link" href="/antares-blog/archives">Archives</a></li>
+      <li class="navigation__item"><a class="navigation__link" href="/antares-blog/downloads">Downloads</a></li>
+    </ul>
+  </nav>
+</div>
+    <div data-scroll data-scroll-showCallback="expandNavbar()"  data-scroll-hideCallback="collapseNavbar()"></div>
+    
+    <main class="layout layout--post" id="main-content">
+
+<article class="post post--article">
+  <header>
+    <h1>
+      <a class="post__title" href="/antares-blog/tl/fetch-api-create-read/">Create at Read Operations Gamit ang Fetch API</a>
+    </h1>
+  </header>
+  <div class="post__content">
+    <p>Sa ikalawang article, tingnan natin kung paano gagamitin ang Fetch API para makagawa ng simpleng application na nagri-read at create ng resource.</p>
+<a id="more"></a>
+<p>Sa pinaka-basic form ito, para magamit ang buong Fetch API, kailangan lang nating gamitin ang <code>fetch()</code> na global function. May isa itong mandatory parameter, ang URL ng resource na gusto ating i-fetch:</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">"https://celestialcinnamon.github.io/antares-blog/"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>Nagre-return ang <code>fetch()</code> ng isang <code>Promise</code> object na naglalaman ng data na makukuha sa <code>https://celestialcinnamon.github.io/antares-blog/</code>. Pero hindi pa natin agad makukuha iyon dahil asynchronous ang mga <code>Promise</code>, at hindi natin alam kung kailan matatapos ang process ng pagda-download ng resource mula sa URL na ipinasa natin. Kaya ang kailangan natin ay sabihin sa <code>Promise</code> object kung ano ang next niyang gagawin once na natapos na siya sa pagpe-fetch ng data. Para diyan, gagamitin natin ang <code>then()</code> na tinalakay din natin sa <a href="/antares-blog/tl/fetch-api-overview/" title="unang article ng series na ito">unang article ng series na ito</a>.</p>
+<h2 id="Pagse-send-ng-Request"><a href="#Pagse-send-ng-Request" class="headerlink" title="Pagse-send ng Request"></a>Pagse-send ng Request</h2><p>Ang <code>then()</code> ay isang <dfn>higher-order function</dfn>. Ibig sabihin, isa itong function na tumatanggap ng isa pang function bilang parameter nito. Ang ipapasa nating argument sa <code>then()</code> function ay hindi number o string o object. Sa halip, ang ipapasa natin ay isa pang function. Ito ang magsasabi sa <code>Promise</code> kung ano ang susunod niyang gagawin kapag na-fetch na niya ang data na kailangan natin.</p>
+<p>Una muna sa lahat, kailangan nating makuha ang data pabalik. Kaya gamitin natin ang <code>then()</code> para makuha ang kailangan natin.</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">"https://celestialcinnamon.github.io/antares-blog/"</span><span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>rawData<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>rawData<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Sa example na ito, gumamit tayo ng <code>then()</code> para sabihin sa <code>Promise</code> kung ano ang gagawin kapag tapos na itong ma-fetch ang lahat ng kailangan natin sa URL. Tulad ng nabanggit na, ang <code>then()</code> ay isang higher order function, kaya naman nagpasa tayo ng isang function bilang parameter nito. Ang function na tinatanggap ng <code>then()</code> ay may isang parameter. Dito sa parameter na ito, sa <code>rawData</code>, mapupunta ang lahat ng result na makukuha natin sa <code>Promise</code> na ibabalik sa atin ng <code>fetch()</code>.</p>
+<p>Kapag na-execute natin ito, makikita natin sa console ang ganitong output:</p>
+<pre class="line-numbers language-js"><code class="language-js">Response <span class="token punctuation">{</span>
+  type<span class="token punctuation">:</span> <span class="token string">"cors"</span><span class="token punctuation">,</span>
+  url<span class="token punctuation">:</span> <span class="token string">"https://celestialcinnamon.github.io/antares-blog/"</span><span class="token punctuation">,</span>
+  redirected<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  status<span class="token punctuation">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
+  ok<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  statusText<span class="token punctuation">:</span> <span class="token string">"OK"</span><span class="token punctuation">,</span>
+  headers<span class="token punctuation">:</span> Headers<span class="token punctuation">,</span>
+  body<span class="token punctuation">:</span> ReadableStream<span class="token punctuation">,</span>
+  bodyUsed<span class="token punctuation">:</span> <span class="token boolean">false</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Ito ang tinatawag nating <code>Response</code> object. Kapag tinawag natin ang <code>fetch()</code> function, gumagawa ito ng isang object na kung tawagin ay <code>Request</code>, at ito ang ginagamit ng JavaScript para mapadali ang pag-process sa data na gusto nating i-send sa network. Kapag natapos na ang pagpe-fetch, makakakuha tayo ng message mula sa server, at iko-convert ito ng JavaScript patungo sa isang <code>Response</code> object. Ang <code>Response</code> ay isang class na may maraming properties na puwede nating magamit.</p>
+<p>Gaya ng mapapansin, makikita rito ang <code>url</code> na pinuntahan ng request natin kanina, kung <code>redirected</code> ba ang request natin, at siyempre ang <code>status</code> code. Sa halimbawa natin, <code>200</code> ang value ng <code>status</code> property, at ang kahulugan nito ay makikita sa value ng <code>statusText</code> property. Sa kaso natin, <code>&quot;OK&quot;</code> ang nakalagay dito. Paano naman kung halimbawang hindi pala nag-e-exist o walang laman ang URL na pinadalhan natin ng request? Halimbawa, magpadala tayo ng request sa URL na <code>https://celestialcinnamon.github.io/antares-blog/walang-lamang-url-dito-sample-lang</code>. Ang URL na ito ay walang laman. Ano kaya ang mangyayari?</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">"https://celestialcinnamon.github.io/antares-blog/walang-lamang-url-dito-sample-lang"</span><span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>rawData<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>rawData<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-js"><code class="language-js">Response <span class="token punctuation">{</span>
+  type<span class="token punctuation">:</span> <span class="token string">"cors"</span><span class="token punctuation">,</span>
+  url<span class="token punctuation">:</span> <span class="token string">"https://celestialcinnamon.github.io/antares-blog/walang-lamang-url-dito-sample-lang"</span><span class="token punctuation">,</span>
+  redirected<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  status<span class="token punctuation">:</span> <span class="token number">404</span><span class="token punctuation">,</span>
+  ok<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  statusText<span class="token punctuation">:</span> <span class="token string">"Not Found"</span><span class="token punctuation">,</span>
+  headers<span class="token punctuation">:</span> Headers<span class="token punctuation">,</span> 
+  body<span class="token punctuation">:</span> ReadableStream<span class="token punctuation">,</span>
+  bodyUsed<span class="token punctuation">:</span> <span class="token boolean">false</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Mapapansin natin na ang naging value ng <code>status</code> ay <code>404</code>. Iyan ang eksaktong code para sa <code>&quot;Not Found&quot;</code> na status. Para sa lahat ng values ng mga HTTP status codes, tingnan ang website na <cite><a href="https://httpstatuses.com/" target="_blank" rel="noopener">HTTP Status Codes</a></cite></p>
+<h2 id="Pag-e-extract-ng-Data"><a href="#Pag-e-extract-ng-Data" class="headerlink" title="Pag-e-extract ng Data"></a>Pag-e-extract ng Data</h2><p>Sa <code>Response</code> na nakuha natin, nalalaman natin ang status code ng result, kung naging ok ba ang pagse-send ng requests, kung na-redirect ba ito, etc. Pero hindi pa natin nakukuha ang data na kailangan natin. Sa kaso natin, nire-request natin ang home page ng Antares Blog. Kung mapapansin sa <code>Response</code> object, may property ito na <code>body</code>. Ito ay isang object mula sa class na <code>ReadableStream</code>. Ang mga stream ay hindi gaya ng mga data na karaniwan nating ginagamit tulad ng mga string at mga number. Ang mga stream ay <i>raw data</i>. Hindi natin ito kayang gamitin o i-display sa user dahil raw data ito; kailangan muna itong i-process.</p>
+<p>Para makuha natin ang actual information na gusto nating makuha, gagamit tayo ng isa pang method. Ang <code>Response</code> object ay may method na kung tawagin ay <code>text()</code>. Ipa-process nito ang <code>body</code> property at iko-convert ito sa isang <code>string</code>:</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">"https://celestialcinnamon.github.io/antares-blog/"</span><span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>rawData<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>rawData<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Pero teka. Kapag pinagana natin ito sa browser, ganito ang lalabas:</p>
+<pre class="line-numbers language-js"><code class="language-js">Promise <span class="token punctuation">{</span> <span class="token operator">&lt;</span>state<span class="token operator">></span><span class="token punctuation">:</span> <span class="token string">"pending"</span> <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>Naglabas ulit ng panibagong <code>Promise</code> ang <code>text()</code>. Ibig sabihin, kailangan natin itong ipasa sa isa pang <code>then()</code> method para makuha natin ang actual na laman ng <code>Response</code>. Sa halip na i-output natin sa console ang <code>rawData.text()</code>, kailangan natin itong i-<code>return</code> para magamit natin ito sa susunod na <code>then()</code> method:</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">"https://celestialcinnamon.github.io/antares-blog/"</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>rawData<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> rawData<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Sa susunod na <code>then()</code> method, doon pa lang natin makukuha ang data na galing sa <code>Response</code> object:</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">"https://celestialcinnamon.github.io/antares-blog/"</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token operator">...</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>actualData<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>actualData<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Ngayon, makukuha na natin ang data mula sa Antares Blog home page:</p>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token doctype">&lt;!DOCTYPE html></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tl<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>dark<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>generator<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Hexo 3.8.0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>width<span class="token punctuation">=</span>device-width, initial-scale<span class="token punctuation">=</span>1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>X-UA-Compatible<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>IE<span class="token punctuation">=</span>edge<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Antares Programming<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+  ...
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>layout layout--layout<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>banner<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  ...
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>    
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>sr-only<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Antares Programming<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>main</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>main-content<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>layout layout--index<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  ...
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>main</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>aside</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>sidebar<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  ...
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>aside</span><span class="token punctuation">></span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>footer</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>layout layout--footer<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>contentinfo<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  ...
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>footer</span><span class="token punctuation">></span></span>    
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="Paggamit-ng-fetch-Para-Kumuha-ng-Data-Mula-sa-Isang-API"><a href="#Paggamit-ng-fetch-Para-Kumuha-ng-Data-Mula-sa-Isang-API" class="headerlink" title="Paggamit ng fetch() Para Kumuha ng Data Mula sa Isang API"></a>Paggamit ng <code>fetch()</code> Para Kumuha ng Data Mula sa Isang API</h2><p>Karaniwan nang naglalabas ng JSON strings ang mga API bilang output. Kung hindi ganito ang pagkakagawa sa back-end ng Web app mo, may mga magagandang rason kung bakit dapat mong i-consider na gumamit ng JSON. Isa sa mga ito ang built-in class na <code>JSON</code> sa JavaScript, at isa pa, supported ito ng ilan sa pinakamalalaking server technologies gaya ng <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> at NodeJS. Bukod pa riyan, built-in din sa <code>Response</code> object ang method na <code>json()</code>. Gaya rin ito ng <code>text()</code>, pero sa halip na i-convert ang stream patungo sa isang string, iko-convert niya ito into a JavaScript object.</p>
+<p>Halimbawa, sa isang project na ginawa ko noon, gumamit ako ng <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> para sa back-end programming. Gumawa ako ng isang <abbr title="Representational State Transfer">REST</abbr> API para sa front end, at gumagamit ako ng <code>fetch()</code> para makuha ang data mula sa server. Naglalabas ng ganitong output ang API na ginawa ko:</p>
+<pre class="line-numbers language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"user_id"</span><span class="token operator">:</span> <span class="token string">"5cc8b771-a7ec-5a48-986c-93b1c587406e"</span><span class="token punctuation">,</span>
+  <span class="token property">"name"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"first"</span><span class="token operator">:</span> <span class="token string">"Francis"</span><span class="token punctuation">,</span>
+    <span class="token property">"middle"</span><span class="token operator">:</span> <span class="token null">null</span><span class="token punctuation">,</span>
+    <span class="token property">"last"</span><span class="token operator">:</span> <span class="token string">"Rubio"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"username"</span><span class="token operator">:</span> <span class="token string">"gregantares"</span><span class="token punctuation">,</span>
+  <span class="token property">"password_hash"</span><span class="token operator">:</span> <span class="token string">"gWdGte9VJDKKIhqyPUhdTlq3AT2LBGGbDQTLmfgenc6xSBh0x..."</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Madali natin itong maa-access gamit ang <code>fetch()</code>. Halimbawa, sabihin nating ang API na ginagamit ko ay nasa URL na <code>https://example.com/api/v1.0.0/user/</code> (Pansinin na wala naman talagang ganitong API sa URL na ibinigay ko; para ma-test mo ang sumusunod na examples, puwede mong gamitin ang site na <a href="http://jsonplaceholder.typicode.com/" target="_blank" rel="noopener">JSON Placeholder</a>). Magagamit natin ito sa ganitong paraan. Una, kailangan nating mag-send ng request sa URL na iyon.</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">"https://example.com/api/v1.0.0/user/"</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<aside class="side-note">
+  <p>
+    By default, nagse-send ang <code>fetch()</code> ng isang <code>GET</code> request papunta sa server.
+  </p>
+  <p>
+  Ayon sa <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/GET" target="_blank" rel="noopener">Mozilla Developer Network</a>, ginagamit lang ang <code>GET</code> requests para mag-retrieve ng data. Para sa pagse-send ng data sa server, ang dapat nating gamitin ay <code>POST</code> requests. Mas secure ito kumpara sa <code>GET</code>.
+  </p>
+</aside>
+
+<p>Ngayon naman, maglagay tayo ng isang <code>then()</code> para i-extract ang data mula sa <code>Response</code> object na ibabalik sa atin ng <code>fetch()</code>. Puwede natin itong gamitan ng <code>text()</code> para makuha ang JSON string at ipasa iyon sa <code>JSON.parse()</code> para maging JSON object ang data. Pero may mas madaling way na ibinibigay sa atin ang <code>Response</code> objects.</p>
+<p>Gamit ang built-in method na <code>json()</code>, puwede nating makuha ang data bilang isang JSON object. Ang <code>Response</code> object na mismo ang magko-convert nito mula sa isang stream papunta sa string, at pagkatapos ay papunta sa isang JSON object:</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">"https://example.com/api/v1.0.0/user/"</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>rawData<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> rawData<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>convertedData<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>convertedData<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Sa pagkakataong ito, kinuha natin ang data na ibinalik sa atin ng <code>fetch()</code> gamit ang <code>json()</code>. Sa tulong ng method na ito, instead na string ang makuha natin pabalik, automatic na itong na-convert sa isang JSON object. Hindi na natin ito kailangang paraanin sa <code>JSON.parse()</code>.</p>
+<p>Kaya naman, puwede na nating makuha ang mga properties na nasa loob ng ibinalik na data ng server:</p>
+<pre class="line-numbers language-js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>convertedData<span class="token punctuation">.</span>name<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// { first: "Francis", middle: null, last: "Rubio" }</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>convertedData<span class="token punctuation">.</span>username<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// "gregantares"</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>convertedData<span class="token punctuation">.</span>user_id<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// "5cc8b771-a7ec-5a48-986c-93b1c587406e"</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="Pagse-send-ng-Data-sa-Server-Gamit-ang-fetch"><a href="#Pagse-send-ng-Data-sa-Server-Gamit-ang-fetch" class="headerlink" title="Pagse-send ng Data sa Server Gamit ang fetch()"></a>Pagse-send ng Data sa Server Gamit ang <code>fetch()</code></h2><p>Para makapag-send ng data sa server, gagamitin natin ang ikalawang parameter ng <code>fetch()</code>: ang <code>init</code> parameter.</p>
+<p>May ilang properties ang <code>init</code> parameter na kailangan nating ibigay sa <code>fetch()</code>. Sa example na ito, gagamit lang tayo ng ilan:</p>
+<dl>
+<dt><code>body</code></dt>
+<dd>Ang data na ipapadala natin sa server</dd>
+<dt><code>method</code></dt>
+<dd>Ang <abbr title="HyperText Transfer Protocol">HTTP</abbr> method na gusto nating gawin. Ito ay puwedeng <code>GET</code>, <code>POST</code>, <code>PUT</code>, <code>DELETE</code>, <code>HEAD</code>, o <code>OPTIONS</code></dd>
+</dl>
+
+<p>Halimbawa, paano kung gusto nating gumawa ng isang user? Puwede tayong mag-send ng isang JSON object papunta sa server:</p>
+<pre class="line-numbers language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"name"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"first"</span><span class="token operator">:</span> <span class="token string">"Francis"</span><span class="token punctuation">,</span>
+    <span class="token property">"middle"</span><span class="token operator">:</span> <span class="token null">null</span><span class="token punctuation">,</span>
+    <span class="token property">"last"</span><span class="token operator">:</span> <span class="token string">"Rubio"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"username"</span><span class="token operator">:</span> <span class="token string">"gregantares"</span><span class="token punctuation">,</span>
+  <span class="token property">"password"</span><span class="token operator">:</span> <span class="token string">"sample_password_na_hindi_encrypted"</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Pansinin na nagse-send tayo ng unencrypted na password papunta sa server. Ito ay isang malaking vulnerability. Kaya dapat na gumamit tayo ng <code>POST</code> sa halip na <code>GET</code> request. Itatago kasi ng <code>POST</code> requests ang mga data na ipinapadala mo. Kung halimbawang ipapadala mo ang data na ito gamit ang <code>GET</code>, lilitaw ang data nito na parang url parameters:</p>
+<pre class="line-numbers language-http">
+<code class="language-http">GET <mark>/users?username=gregantares&password=sample_password_na_hindi_encrypted</mark> HTTP/1.1
+<span class="token header-name keyword">Host:</span> www.example.com
+<span class="token header-name keyword">User-Agent:</span> Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+<span class="token header-name keyword">Accept:</span> */*
+<span class="token header-name keyword">Accept-Language:</span> en-US,en;q=0.5
+<span class="token header-name keyword">Accept-Encoding:</span> gzip, deflate, br
+<span class="token header-name keyword">DNT:</span> 1
+<span class="token header-name keyword">Connection:</span> keep-alive</code>
+</pre>
+
+<p>Pero kung <code>POST</code> ang gagamitin natin, ganito ang magiging hitsura ng headers ng request:</p>
+<pre class="line-numbers language-http"><code class="language-http">POST /users HTTP/1.1
+<span class="token header-name keyword">Host:</span> jsonplaceholder.typicode.com
+<span class="token header-name keyword">User-Agent:</span> Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+<span class="token header-name keyword">Accept:</span> */*
+<span class="token header-name keyword">Accept-Language:</span> en-US,en;q=0.5
+<span class="token header-name keyword">Accept-Encoding:</span> gzip, deflate
+<span class="token header-name keyword">Content-Type:</span> text/plain;charset=UTF-8
+<span class="token header-name keyword">Content-Length:</span> 74
+<span class="token header-name keyword">DNT:</span> 1
+<span class="token header-name keyword">Connection:</span> keep-alive
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Kapansin-pansin, hindi kasama sa HTTP header ang lamang data ng request natin. Sa halip, nakalagay ito sa request body, ang part na ine-encrypt kapag nagse-send tayo ng request gamit ang <code>POST</code> method. Kaya tandaan, <strong>laging gumamit ng <code>POST</code> method kapag nagse-send ng data!</strong></p>
+<p>Para makapag-send ng data gamit ang <code>fetch()</code>, tingnan ang halimbawang ito:</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">const</span> newUser <span class="token operator">=</span> <span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    first<span class="token punctuation">:</span> <span class="token string">"Francis"</span><span class="token punctuation">,</span>
+    middle<span class="token punctuation">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+    last<span class="token punctuation">:</span> "Rubio
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  username<span class="token punctuation">:</span> <span class="token string">"gregantares"</span><span class="token punctuation">,</span>
+  password<span class="token punctuation">:</span> <span class="token string">"password_na_hindi_encrypted"</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">"https://example.com/api/v1.0.0/user/"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  method<span class="token punctuation">:</span> <span class="token string">"POST"</span><span class="token punctuation">,</span>
+  body<span class="token punctuation">:</span> JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>newUser<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Ginamit natin ang dalawang properties ng ikalawang parameter ng <code>fetch()</code>. Gaya ng nabanggit na, ang <code>method</code> ay ang HTTP verb na gagamitin para sa request, sa kasong ito, <code>POST</code>. Pero pansinin ang data na ibinigay natin sa <code>body</code> property: pinadaan natin ito sa <code>JSON.stringify()</code>. Hindi tumatanggap ng JavaScript objects ang <code>fetch()</code>. Sa halip, kailangan mo muna itong i-convert sa string.</p>
+<p>Sa back-end mo, puwede mong i-check kung <code>POST</code> ang request na natanggap ng server mo. Halimbawa, sa <abbr title="PHP: Hypertext Preprocessor">PHP</abbr>, puwede mong i-check kung may laman ang variable na <code>$_POST</code>. Kapag wala, puwede kang mag-fallback sa default na nangyayari kapag <code>GET</code> ang request:</p>
+<pre class="line-numbers language-php"><code class="language-php"><span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">isset</span><span class="token punctuation">(</span><span class="token variable">$_POST</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// Create new user</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// Return list of users, etc...</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Puwede mong ma-access ang mga properties ng data na sinend mo gamit ang array accessors ng <abbr title="PHP: Hypertext Preprocessor">PHP</abbr>. Halimbawa, puwede mong makuha ang pangalan ng user sa ganitong paraan:</p>
+<pre class="line-numbers language-php"><code class="language-php"><span class="token variable">$first_name</span> <span class="token operator">=</span> <span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string">'name'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'first'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token variable">$middle_name</span> <span class="token operator">=</span> <span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string">'name'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'middle'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token variable">$last_name</span> <span class="token operator">=</span> <span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string">'name'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'last'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>Puwede mo rin itong dagdagan ng mga properties na kailangan mong ipasok sa database mo. Halimbawa, kailangan na ma-encrypt ang password ng user, kaya puwede kang magdagdag ng isang property na gaya ng <code>password_hash</code>:</p>
+<pre class="line-numbers language-php"><code class="language-php"><span class="token variable">$user_data</span> <span class="token operator">=</span> <span class="token variable">$_POST</span><span class="token punctuation">;</span>
+
+<span class="token variable">$user_data</span><span class="token punctuation">[</span><span class="token string">'password_hash'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">password_hash</span><span class="token punctuation">(</span><span class="token variable">$user_data</span><span class="token punctuation">[</span><span class="token string">'password'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token constant">PASSWORD_DEFAULT</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>Sa susunod na article sa series na ito, pag-usapan naman natin kung paano tayo puwedeng mag-delete at mag-update ng data.</p>
+<ol>
+<li><a href="/antares-blog/tl/Fetch-API-Revisited/" title="Fetch API Revisited">Fetch API Revisited</a></li>
+<li><a href="/antares-blog/tl/fetch-api-overview/" title="Fetch API Overview">Fetch API Overview</a></li>
+<li><a href="/antares-blog/tl/fetch-api-create-read/" title="Create at Read Operations Gamit ang Fetch API">Create at Read Operations Gamit ang Fetch API</a></li>
+<li></li>
+</ol>
+
+  </div>
+  <footer class="article-footer">
+      
+  <div class="article-tags-wrapper">
+    <h4>Tags</h4>
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/antares-blog/tags/ajax/">ajax</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/antares-blog/tags/fetch/">fetch</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/antares-blog/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/antares-blog/tags/meta/">meta</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/antares-blog/tags/programming/">programming</a></li></ul>
+  </div>
+
+      
+  <div class="article-category">
+    <h4>Category</h4>
+    <a class="article-category-link" href="/antares-blog/categories/JavaScript/">JavaScript</a>
+  </div>
+
+  </footer>
+</article>
+</main>
+    
+    <footer class="layout layout--footer" role="contentinfo">
+  <div class="footer__division">
+  <a href="/antares-blog/tungkol-sa-amin">Tungkol sa Antares Programming</a>
+  <a href="https://www.facebook.com/antaresprogramming"><i>Antares Programming</i> sa Facebook</a>
+  <a href="#">Back to top</a>
+  </div>
+  <div class="footer__division text-align--right">
+    <p>&copy; 2019 Antares Programming</p>
+    <p>Reserbado ang lahat ng karapatan.</p>
+  </div>
+</footer>
+<script>
+    var CONFIG_ROOT = `/antares-blog/`;
+    var CONFIG_URL = `https://celestialcinnamon.github.io/antares-blog`.replace('/antares-blog', '');
+</script>
+
+    <script src="/antares-blog/js/ScrollTrigger.min.js"></script>
+    <script src="/antares-blog/js/script.js"></script>
+    <script src="/antares-blog/js/prism-keep-markup.js"></script>
+    
+
+
+
+</body>
+</html>
